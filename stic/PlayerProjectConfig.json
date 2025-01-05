@@ -1,0 +1,669 @@
+{
+  "data": {
+    "result": {
+      "__typename": "PlayerProjectConfig",
+      "isDev": false,
+      "isAllowedOrigin": true,
+      "config": {
+        "lang": "",
+        "avatarGenerator": "dicebear_retro",
+        "avatarGeneratorTemplate": "https://api.dicebear.com/7.x/identicon/png?seed={{hash}}&backgroundColor=e1e1e1&size={{size}}",
+        "ymCounterId": 96028201,
+        "gtagCounterId": "",
+        "showLoader": false,
+        "showReqCounter": true,
+        "orientation": "LANDSCAPE",
+        "showOrientationOverlay": false,
+        "targetOS": [
+          "Android",
+          "Desktop",
+          "IOS",
+          "TV"
+        ],
+        "showUnsupportedOSOverlay": false,
+        "communityLinks": {
+          "en": "",
+          "fr": "",
+          "it": "",
+          "de": "",
+          "es": "",
+          "zh": "",
+          "pt": "",
+          "ko": "",
+          "ja": "",
+          "ru": "",
+          "tr": "",
+          "ar": "",
+          "id": "",
+          "hi": ""
+        }
+      },
+      "project": {
+        "name": " Битва красно-синих агентов",
+        "description": "Если вы ищете увлекательную игру, которая проверит ваши боевые навыки, попробуйте \"Битва красно-синих агентов\" и соревнуйтесь с другими игроками, друзьями на одном устройстве.",
+        "icon": "https://cdn.eponesh.com/static/256x256/images/659/ef1/659ef19109766541dcdc024b-512x512.webp",
+        "mainChatId": 0,
+        "enableMainChat": false,
+        "achievements": {
+          "isLockedVisible": true,
+          "isLockedDescriptionVisible": true,
+          "enableUnlockToast": true
+        },
+        "ads": {
+          "showCountdownOverlay": false,
+          "showRewardedFailedOverlay": false
+        }
+      },
+      "platformConfig": {
+        "type": "YANDEX",
+        "tag": "",
+        "appId": "283309",
+        "gameLink": "",
+        "publicKey": "",
+        "progressSaveFormat": "CLOUD",
+        "alwaysSyncPublicFields": false,
+        "communityLinks": {
+          "en": "",
+          "fr": "",
+          "it": "",
+          "de": "",
+          "es": "",
+          "zh": "",
+          "pt": "",
+          "ko": "",
+          "ja": "",
+          "ru": "",
+          "tr": "",
+          "ar": "",
+          "id": "",
+          "hi": ""
+        },
+        "banners": [
+          {
+            "type": "PRELOADER",
+            "enabled": true,
+            "bannerId": "",
+            "desktopBannerId": "",
+            "adServer": null,
+            "adServerDesktop": null,
+            "frequency": 0,
+            "refreshInterval": 30,
+            "maxWidth": 0,
+            "maxHeight": 0,
+            "maxWidthDimension": "PX",
+            "maxHeightDimension": "PX",
+            "desktopMaxWidth": 0,
+            "desktopMaxHeight": 0,
+            "desktopMaxWidthDimension": "PX",
+            "desktopMaxHeightDimension": "PX",
+            "fitCanvas": false,
+            "position": "",
+            "limits": {
+              "hour": 0,
+              "day": 0,
+              "session": 0
+            },
+            "useNative": false
+          },
+          {
+            "type": "FULLSCREEN",
+            "enabled": true,
+            "bannerId": "",
+            "desktopBannerId": "",
+            "adServer": null,
+            "adServerDesktop": null,
+            "frequency": 0,
+            "refreshInterval": 30,
+            "maxWidth": 0,
+            "maxHeight": 0,
+            "maxWidthDimension": "PX",
+            "maxHeightDimension": "PX",
+            "desktopMaxWidth": 0,
+            "desktopMaxHeight": 0,
+            "desktopMaxWidthDimension": "PX",
+            "desktopMaxHeightDimension": "PX",
+            "fitCanvas": false,
+            "position": "",
+            "limits": {
+              "hour": 0,
+              "day": 0,
+              "session": 0
+            },
+            "useNative": false
+          },
+          {
+            "type": "REWARDED",
+            "enabled": true,
+            "bannerId": "",
+            "desktopBannerId": "",
+            "adServer": null,
+            "adServerDesktop": null,
+            "frequency": 0,
+            "refreshInterval": 30,
+            "maxWidth": 0,
+            "maxHeight": 0,
+            "maxWidthDimension": "PX",
+            "maxHeightDimension": "PX",
+            "desktopMaxWidth": 0,
+            "desktopMaxHeight": 0,
+            "desktopMaxWidthDimension": "PX",
+            "desktopMaxHeightDimension": "PX",
+            "fitCanvas": false,
+            "position": "",
+            "limits": {
+              "hour": 0,
+              "day": 0,
+              "session": 0
+            },
+            "useNative": false
+          },
+          {
+            "type": "STICKY",
+            "enabled": true,
+            "bannerId": "",
+            "desktopBannerId": "",
+            "adServer": null,
+            "adServerDesktop": null,
+            "frequency": 0,
+            "refreshInterval": 30,
+            "maxWidth": 0,
+            "maxHeight": 0,
+            "maxWidthDimension": "PX",
+            "maxHeightDimension": "PX",
+            "desktopMaxWidth": 0,
+            "desktopMaxHeight": 0,
+            "desktopMaxWidthDimension": "PX",
+            "desktopMaxHeightDimension": "PX",
+            "fitCanvas": true,
+            "position": "bottom",
+            "limits": {
+              "hour": 0,
+              "day": 0,
+              "session": 0
+            },
+            "useNative": true
+          }
+        ],
+        "payload": {},
+        "customAdsConfig": {
+          "id": "000000000000000000000000",
+          "name": "",
+          "description": "",
+          "adFoxOwnerId": "",
+          "tmAdsAppKey": "",
+          "configs": {
+            "web": {
+              "banners": [
+                {
+                  "type": "FULLSCREEN",
+                  "enabled": true,
+                  "bannerId": "",
+                  "adServer": null,
+                  "adServerDesktop": null,
+                  "desktopBannerId": "",
+                  "frequency": 0,
+                  "refreshInterval": 0,
+                  "maxWidth": 0,
+                  "maxHeight": 0,
+                  "maxWidthDimension": "PX",
+                  "maxHeightDimension": "PX",
+                  "desktopMaxWidth": 0,
+                  "desktopMaxHeight": 0,
+                  "desktopMaxWidthDimension": "PX",
+                  "desktopMaxHeightDimension": "PX",
+                  "fitCanvas": false,
+                  "position": "",
+                  "limits": {
+                    "hour": 0,
+                    "day": 0,
+                    "session": 0
+                  },
+                  "useNative": true
+                },
+                {
+                  "type": "PRELOADER",
+                  "enabled": true,
+                  "bannerId": "",
+                  "adServer": null,
+                  "adServerDesktop": null,
+                  "desktopBannerId": "",
+                  "frequency": 0,
+                  "refreshInterval": 0,
+                  "maxWidth": 0,
+                  "maxHeight": 0,
+                  "maxWidthDimension": "PX",
+                  "maxHeightDimension": "PX",
+                  "desktopMaxWidth": 0,
+                  "desktopMaxHeight": 0,
+                  "desktopMaxWidthDimension": "PX",
+                  "desktopMaxHeightDimension": "PX",
+                  "fitCanvas": false,
+                  "position": "",
+                  "limits": {
+                    "hour": 0,
+                    "day": 0,
+                    "session": 0
+                  },
+                  "useNative": true
+                },
+                {
+                  "type": "REWARDED",
+                  "enabled": true,
+                  "bannerId": "",
+                  "adServer": null,
+                  "adServerDesktop": null,
+                  "desktopBannerId": "",
+                  "frequency": 0,
+                  "refreshInterval": 0,
+                  "maxWidth": 0,
+                  "maxHeight": 0,
+                  "maxWidthDimension": "PX",
+                  "maxHeightDimension": "PX",
+                  "desktopMaxWidth": 0,
+                  "desktopMaxHeight": 0,
+                  "desktopMaxWidthDimension": "PX",
+                  "desktopMaxHeightDimension": "PX",
+                  "fitCanvas": false,
+                  "position": "",
+                  "limits": {
+                    "hour": 0,
+                    "day": 0,
+                    "session": 0
+                  },
+                  "useNative": true
+                },
+                {
+                  "type": "STICKY",
+                  "enabled": true,
+                  "bannerId": "",
+                  "adServer": null,
+                  "adServerDesktop": null,
+                  "desktopBannerId": "",
+                  "frequency": 0,
+                  "refreshInterval": 0,
+                  "maxWidth": 0,
+                  "maxHeight": 0,
+                  "maxWidthDimension": "PX",
+                  "maxHeightDimension": "PX",
+                  "desktopMaxWidth": 0,
+                  "desktopMaxHeight": 0,
+                  "desktopMaxWidthDimension": "PX",
+                  "desktopMaxHeightDimension": "PX",
+                  "fitCanvas": true,
+                  "position": "bottom",
+                  "limits": {
+                    "hour": 0,
+                    "day": 0,
+                    "session": 0
+                  },
+                  "useNative": true
+                }
+              ]
+            },
+            "android": {
+              "banners": [
+                {
+                  "type": "FULLSCREEN",
+                  "enabled": true,
+                  "bannerId": "",
+                  "adServer": null,
+                  "adServerDesktop": null,
+                  "desktopBannerId": "",
+                  "frequency": 0,
+                  "refreshInterval": 0,
+                  "maxWidth": 0,
+                  "maxHeight": 0,
+                  "maxWidthDimension": "PX",
+                  "maxHeightDimension": "PX",
+                  "desktopMaxWidth": 0,
+                  "desktopMaxHeight": 0,
+                  "desktopMaxWidthDimension": "PX",
+                  "desktopMaxHeightDimension": "PX",
+                  "fitCanvas": false,
+                  "position": "",
+                  "limits": {
+                    "hour": 0,
+                    "day": 0,
+                    "session": 0
+                  },
+                  "useNative": true
+                },
+                {
+                  "type": "PRELOADER",
+                  "enabled": true,
+                  "bannerId": "",
+                  "adServer": null,
+                  "adServerDesktop": null,
+                  "desktopBannerId": "",
+                  "frequency": 0,
+                  "refreshInterval": 0,
+                  "maxWidth": 0,
+                  "maxHeight": 0,
+                  "maxWidthDimension": "PX",
+                  "maxHeightDimension": "PX",
+                  "desktopMaxWidth": 0,
+                  "desktopMaxHeight": 0,
+                  "desktopMaxWidthDimension": "PX",
+                  "desktopMaxHeightDimension": "PX",
+                  "fitCanvas": false,
+                  "position": "",
+                  "limits": {
+                    "hour": 0,
+                    "day": 0,
+                    "session": 0
+                  },
+                  "useNative": true
+                },
+                {
+                  "type": "REWARDED",
+                  "enabled": true,
+                  "bannerId": "",
+                  "adServer": null,
+                  "adServerDesktop": null,
+                  "desktopBannerId": "",
+                  "frequency": 0,
+                  "refreshInterval": 0,
+                  "maxWidth": 0,
+                  "maxHeight": 0,
+                  "maxWidthDimension": "PX",
+                  "maxHeightDimension": "PX",
+                  "desktopMaxWidth": 0,
+                  "desktopMaxHeight": 0,
+                  "desktopMaxWidthDimension": "PX",
+                  "desktopMaxHeightDimension": "PX",
+                  "fitCanvas": false,
+                  "position": "",
+                  "limits": {
+                    "hour": 0,
+                    "day": 0,
+                    "session": 0
+                  },
+                  "useNative": true
+                },
+                {
+                  "type": "STICKY",
+                  "enabled": true,
+                  "bannerId": "",
+                  "adServer": null,
+                  "adServerDesktop": null,
+                  "desktopBannerId": "",
+                  "frequency": 0,
+                  "refreshInterval": 0,
+                  "maxWidth": 0,
+                  "maxHeight": 0,
+                  "maxWidthDimension": "PX",
+                  "maxHeightDimension": "PX",
+                  "desktopMaxWidth": 0,
+                  "desktopMaxHeight": 0,
+                  "desktopMaxWidthDimension": "PX",
+                  "desktopMaxHeightDimension": "PX",
+                  "fitCanvas": true,
+                  "position": "bottom",
+                  "limits": {
+                    "hour": 0,
+                    "day": 0,
+                    "session": 0
+                  },
+                  "useNative": true
+                }
+              ]
+            },
+            "telegram": {
+              "banners": [
+                {
+                  "type": "FULLSCREEN",
+                  "enabled": true,
+                  "bannerId": "",
+                  "adServer": null,
+                  "adServerDesktop": null,
+                  "desktopBannerId": "",
+                  "frequency": 0,
+                  "refreshInterval": 0,
+                  "maxWidth": 0,
+                  "maxHeight": 0,
+                  "maxWidthDimension": "PX",
+                  "maxHeightDimension": "PX",
+                  "desktopMaxWidth": 0,
+                  "desktopMaxHeight": 0,
+                  "desktopMaxWidthDimension": "PX",
+                  "desktopMaxHeightDimension": "PX",
+                  "fitCanvas": false,
+                  "position": "",
+                  "limits": {
+                    "hour": 0,
+                    "day": 0,
+                    "session": 0
+                  },
+                  "useNative": true
+                },
+                {
+                  "type": "PRELOADER",
+                  "enabled": true,
+                  "bannerId": "",
+                  "adServer": null,
+                  "adServerDesktop": null,
+                  "desktopBannerId": "",
+                  "frequency": 0,
+                  "refreshInterval": 0,
+                  "maxWidth": 0,
+                  "maxHeight": 0,
+                  "maxWidthDimension": "PX",
+                  "maxHeightDimension": "PX",
+                  "desktopMaxWidth": 0,
+                  "desktopMaxHeight": 0,
+                  "desktopMaxWidthDimension": "PX",
+                  "desktopMaxHeightDimension": "PX",
+                  "fitCanvas": false,
+                  "position": "",
+                  "limits": {
+                    "hour": 0,
+                    "day": 0,
+                    "session": 0
+                  },
+                  "useNative": true
+                },
+                {
+                  "type": "REWARDED",
+                  "enabled": true,
+                  "bannerId": "",
+                  "adServer": null,
+                  "adServerDesktop": null,
+                  "desktopBannerId": "",
+                  "frequency": 0,
+                  "refreshInterval": 0,
+                  "maxWidth": 0,
+                  "maxHeight": 0,
+                  "maxWidthDimension": "PX",
+                  "maxHeightDimension": "PX",
+                  "desktopMaxWidth": 0,
+                  "desktopMaxHeight": 0,
+                  "desktopMaxWidthDimension": "PX",
+                  "desktopMaxHeightDimension": "PX",
+                  "fitCanvas": false,
+                  "position": "",
+                  "limits": {
+                    "hour": 0,
+                    "day": 0,
+                    "session": 0
+                  },
+                  "useNative": true
+                },
+                {
+                  "type": "STICKY",
+                  "enabled": true,
+                  "bannerId": "",
+                  "adServer": null,
+                  "adServerDesktop": null,
+                  "desktopBannerId": "",
+                  "frequency": 0,
+                  "refreshInterval": 0,
+                  "maxWidth": 0,
+                  "maxHeight": 0,
+                  "maxWidthDimension": "PX",
+                  "maxHeightDimension": "PX",
+                  "desktopMaxWidth": 0,
+                  "desktopMaxHeight": 0,
+                  "desktopMaxWidthDimension": "PX",
+                  "desktopMaxHeightDimension": "PX",
+                  "fitCanvas": true,
+                  "position": "bottom",
+                  "limits": {
+                    "hour": 0,
+                    "day": 0,
+                    "session": 0
+                  },
+                  "useNative": true
+                }
+              ]
+            }
+          }
+        },
+        "customAdsConfigId": "",
+        "paymentsConfig": {
+          "id": "",
+          "name": "",
+          "description": "",
+          "sandbox": false,
+          "configs": {
+            "web": {
+              "activeService": null
+            },
+            "android": {
+              "activeService": null
+            }
+          }
+        },
+        "paymentsConfigId": "",
+        "authConfig": {
+          "id": "",
+          "name": "",
+          "description": "",
+          "xsollaConfig": {
+            "loginProjectId": ""
+          },
+          "configs": {
+            "web": {
+              "activeService": null
+            },
+            "android": {
+              "activeService": null
+            }
+          }
+        },
+        "authConfigId": ""
+      },
+      "playerFields": [
+        {
+          "name": "Очки",
+          "key": "score",
+          "type": "stats",
+          "default": 0,
+          "important": true,
+          "public": true,
+          "intervalIncrement": null,
+          "limits": null,
+          "variants": []
+        },
+        {
+          "name": "Имя",
+          "key": "name",
+          "type": "data",
+          "default": "",
+          "important": false,
+          "public": true,
+          "intervalIncrement": null,
+          "limits": null,
+          "variants": []
+        },
+        {
+          "name": "Аватар",
+          "key": "avatar",
+          "type": "data",
+          "default": "",
+          "important": false,
+          "public": true,
+          "intervalIncrement": null,
+          "limits": null,
+          "variants": []
+        },
+        {
+          "name": "SOUND",
+          "key": "SOUND",
+          "type": "stats",
+          "default": 1,
+          "important": false,
+          "public": false,
+          "intervalIncrement": null,
+          "limits": null,
+          "variants": []
+        },
+        {
+          "name": "HighScore",
+          "key": "HighScore",
+          "type": "stats",
+          "default": 0,
+          "important": false,
+          "public": false,
+          "intervalIncrement": null,
+          "limits": null,
+          "variants": []
+        }
+      ],
+      "serverTime": "2024-10-31T18:32:58Z",
+      "gameVariables": [],
+      "rewards": [],
+      "triggers": [],
+      "achievements": [],
+      "achievementsGroups": [
+        {
+          "id": 0,
+          "tag": "others",
+          "name": "Остальные",
+          "description": "",
+          "achievements": [],
+          "names": {
+            "en": "Other",
+            "fr": "Autres",
+            "it": "Altri",
+            "de": "Andere",
+            "es": "Otros",
+            "zh": "其他",
+            "pt": "Outras",
+            "ko": "기타",
+            "ja": "その他の",
+            "ru": "Остальные",
+            "tr": "Diğer",
+            "ar": "آخر",
+            "id": "Lainnya",
+            "hi": "अन्य"
+          },
+          "descriptions": {
+            "en": "",
+            "fr": "",
+            "it": "",
+            "de": "",
+            "es": "",
+            "zh": "",
+            "pt": "",
+            "ko": "",
+            "ja": "",
+            "ru": "",
+            "tr": "",
+            "ar": "",
+            "id": "",
+            "hi": ""
+          }
+        }
+      ],
+      "products": [],
+      "schedulers": [],
+      "events": [],
+      "acl": {
+        "canUploadImages": false,
+        "canUploadFiles": false,
+        "canConnectOnline": false,
+        "canCollectStats": true
+      }
+    }
+  }
+}
