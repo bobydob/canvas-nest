@@ -51,4 +51,5 @@
   result: CreateProject(input: $input) {
     ...project
   }
-};
+}
+    ${Pe}`},6438:(e,t,n)=>{"use strict";n.d(t,{Z:()=>s});
