@@ -7109,9 +7109,6 @@
                                 v.setPlayerData(e)
                             };
                         _r(this, yr, v, "f"), this._services = g, this._pointersManager = new mn, _r(this, mr, new cn, "f");
-						const originalConsoleError = console.error;
-console.error = function() {
-};
                         const E = {
                             apiClient: v,
                             gp: this,
@@ -8518,48 +8515,29 @@ console.error = function() {
                             credentials: this.credentials
                         })
                     }
-getField(e) {
-    try {
-        const t = l(this, r, "f")[e];
-        if (!t) {
-            const t = `Field "${e}" not exists on player model`;
-            throw new Error(t);  
-        }
-        return t;
-    } catch (error) {
-        return null;
-    }
-}
-
-getFieldName(e) {
-    try {
-        return this.getField(e).name || "";
-    } catch (error) {
-        return "";
-    }
-}
-
-getFieldVariantName(e, t) {
-    try {
-        var n;
-        return (null === (n = this.getField(e).variants.find((e => e.value === t))) || void 0 === n ? void 0 : n.name) || "";
-    } catch (error) {
-        return "";
-    }
-}
-
-getMinValue(e) {
-    try {
-        var t;
-        if (null == (null === (t = this.getField(e).limits) || void 0 === t ? void 0 : t.min)) {
-            const t = `minValue not exists on field "${e}"`;
-            throw new Error(t);
-        }
-        return this.get(`${e}:min`);
-    } catch (error) {
-        return null;
-    }
-}
+                    getField(e) {
+                        const t = l(this, r, "f")[e];
+                        if (!t) {
+                            const t = `Field "${e}" not exists on player model`;
+                            throw o.kg.error(t), new Error(t)
+                        }
+                        return t
+                    }
+                    getFieldName(e) {
+                        return this.getField(e).name || ""
+                    }
+                    getFieldVariantName(e, t) {
+                        var n;
+                        return (null === (n = this.getField(e).variants.find((e => e.value === t))) || void 0 === n ? void 0 : n.name) || ""
+                    }
+                    getMinValue(e) {
+                        var t;
+                        if (null == (null === (t = this.getField(e).limits) || void 0 === t ? void 0 : t.min)) {
+                            const t = `minValue not exists on field "${e}"`;
+                            throw o.kg.error(t), new Error(t)
+                        }
+                        return this.get(`${e}:min`)
+                    }
                     getMaxValue(e) {
                         var t;
                         if (null == (null === (t = this.getField(e).limits) || void 0 === t ? void 0 : t.max)) {
@@ -8607,36 +8585,20 @@ getMinValue(e) {
                     remove() {
                         this.state.id = 0, this.reset()
                     }
-_convert(e, t) {
-    const n = this.getField(e);
-
-    // Проверка на null или undefined для n
-    if (!n) {
-        const errorMessage = `Field "${e}" not found`;
-        // Можно логировать ошибку или вернуть значение по умолчанию
-        console.error(errorMessage);
-        return; // Или возвращаем значение по умолчанию, если требуется
-    }
-
-    const i = d[n.type];
-    
-    // Проверка на существование типа, если его нет в d
-    if (!i) {
-        const errorMessage = `Cannot mutate "${e}", it's readonly`;
-        // Можно логировать ошибку или вернуть значение по умолчанию
-        console.error(errorMessage);
-        return;
-    }
-
-    const r = i(t);
-
-    if (n.variants.length && !n.variants.some((e) => e.value === r)) {
-        const errorMessage = `Invalid variant ${r} of "${e}"`;
-        // Можно логировать ошибку или вернуть значение по умолчанию
-        console.error(errorMessage);
-        return;
-    }
-}
+                    _convert(e, t) {
+                        const n = this.getField(e),
+                            i = d[n.type];
+                        if (!i) {
+                            const t = `Cannot mutate "${e}", it's readonly`;
+                            throw o.kg.error(t), new Error(t)
+                        }
+                        const r = i(t);
+                        if (n.variants.length && !n.variants.some((e => e.value === r))) {
+                            const t = `Invalid variant ${r} of "${e}"`;
+                            throw o.kg.error(t), new Error(t)
+                        }
+                        return r
+                    }
                     _initializeIncrementFields() {
                         l(this, s, "f").forEach((e => {
                             e.intervalIncrement && this._incrementField(e)
@@ -9376,21 +9338,13 @@ _convert(e, t) {
                 } = {}) {
                     let t = !1;
                     const n = {},
-    r = new Promise((function(e, s) {
-        n.done = function(n) {
-            if (!t) {
-                t = !0;
-                e(n);
-                return r;
-            }
-        };
-        n.abort = function(e) {
-            if (!t) {
-                s(e);
-                return r;
-            }
-        };
-    }));
+                        r = new Promise(((e, s) => {
+                            n.done = n => {
+                                if (!t) return t = !0, e(n), r
+                            }, n.abort = e => {
+                                if (!t) return t = !0, i.kg.error(e), s(e), r
+                            }
+                        }));
                     return e && setTimeout((() => {
                         t || n.abort(`Timeout ${e}ms exceeded`)
                     }), e), n.ready = r, n
