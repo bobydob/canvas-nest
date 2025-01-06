@@ -10857,20 +10857,6 @@
                         "Content-Type": "application/json;charset=utf-8"
                     }, s = o;
 
-                        if (String(null == e ? void 0 : e.message).includes("Failed to fetch")) throw "connection_error";
-                        throw e
-                    })).then((e => Be(this, void 0, void 0, (function*() {
-                        var t;
-                        if (!e.ok) {
-                            const t = yield e.text();
-                            throw new Error(`${e.status}. ${t}`)
-                        }
-                        const n = yield e.json();
-                        if ((null === (t = n.errors) || void 0 === t ? void 0 : t.length) > 0) throw new Error(n.errors[0].message);
-                        return Object.values(n.data || {}).forEach((e => {
-                            "Problem" != e.__typename && this.reqCounter++
-                        })), n
-                    })))).then((e => e.data))
                 }))
             }
         }
