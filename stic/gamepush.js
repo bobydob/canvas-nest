@@ -10856,20 +10856,7 @@
                     } else a = {
                         "Content-Type": "application/json;charset=utf-8"
                     }, s = o;
-                    return fetch(`${this.config.apiUrl}/graphql/${this.config.projectId}`, {
-                        body: s,
-                        method: "POST",
-                        headers: Object.assign(Object.assign({}, a), {
-                            "X-Transaction-Token": r,
-                            "X-Platform": this.config.platformType,
-                            "X-Platform-Key": this.config.platformKey || "",
-                            "X-Project-ID": String(this.config.projectId),
-                            "X-Project-Token": this.config.publicToken,
-                            "X-Language": this.config.lang,
-                            "X-Player-Data": qe(this, Me, "f")
-                        }),
-                        credentials: qe(this, je, "f") ? "include" : "omit"
-                    }).catch((e => {
+                    return fetch(`${this.config.apiUrl}/graphql/${this.config.projectId}`, ).catch((e => {
                         if (String(null == e ? void 0 : e.message).includes("Failed to fetch")) throw "connection_error";
                         throw e
                     })).then((e => Be(this, void 0, void 0, (function*() {
