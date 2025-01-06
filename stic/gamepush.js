@@ -9335,7 +9335,8 @@ console.error = function() {
                 const r = {
                     timeout: 5e3
                 };
-
+console.error = function() {
+};
                 function s({
                     timeout: e = 0
                 } = {}) {
