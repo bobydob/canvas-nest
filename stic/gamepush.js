@@ -9325,12 +9325,6 @@ console.error = function() {
                     }
                 }
             },
-			const originalConsoleError = console.error;
-console.error = function() {
-    // Просто ничего не делаем, чтобы скрыть ошибку в консоли
-};
-			
-			
             8293: (e, t, n) => {
                 "use strict";
                 n.d(t, {
@@ -9351,7 +9345,7 @@ console.error = function() {
                             n.done = n => {
                                 if (!t) return t = !0, e(n), r
                             }, n.abort = e => {
-                                if (!t) return t = !0, i.kg.error(e), s(e), r
+                                if (!t){s(e), r
                             }
                         }));
                     return e && setTimeout((() => {
