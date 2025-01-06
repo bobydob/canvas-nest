@@ -9325,7 +9325,7 @@ console.error = function() {
                     }
                 }
             },
-const originalConsoleError = console.error;
+
 console.error = function() {
     // Просто ничего не делаем, чтобы скрыть ошибку в консоли
 };
