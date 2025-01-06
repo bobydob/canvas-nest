@@ -8523,12 +8523,11 @@ getField(e) {
         const t = l(this, r, "f")[e];
         if (!t) {
             const t = `Field "${e}" not exists on player model`;
-            throw new Error(t);  // Выбрасываем ошибку
+            throw new Error(t);  
         }
         return t;
     } catch (error) {
-        // Просто игнорируем ошибку, ничего не выводя в консоль
-        return null;  // Возвращаем null или значение по умолчанию
+        return null;
     }
 }
 
@@ -8536,7 +8535,7 @@ getFieldName(e) {
     try {
         return this.getField(e).name || "";
     } catch (error) {
-        return "";  // Возвращаем пустую строку, если произошла ошибка
+        return "";
     }
 }
 
@@ -8545,7 +8544,7 @@ getFieldVariantName(e, t) {
         var n;
         return (null === (n = this.getField(e).variants.find((e => e.value === t))) || void 0 === n ? void 0 : n.name) || "";
     } catch (error) {
-        return "";  // Возвращаем пустую строку в случае ошибки
+        return "";
     }
 }
 
@@ -8554,11 +8553,11 @@ getMinValue(e) {
         var t;
         if (null == (null === (t = this.getField(e).limits) || void 0 === t ? void 0 : t.min)) {
             const t = `minValue not exists on field "${e}"`;
-            throw new Error(t);  // Выбрасываем ошибку
+            throw new Error(t);
         }
         return this.get(`${e}:min`);
     } catch (error) {
-        return null;  // Возвращаем null, если произошла ошибка
+        return null;
     }
 }
                     getMaxValue(e) {
@@ -8608,20 +8607,36 @@ getMinValue(e) {
                     remove() {
                         this.state.id = 0, this.reset()
                     }
-                    _convert(e, t) {
-                        const n = this.getField(e),
-                            i = d[n.type];
-                        if (!i) {
-                            const t = `Cannot mutate "${e}", it's readonly`;
-                            throw o.kg.error(t), new Error(t)
-                        }
-                        const r = i(t);
-                        if (n.variants.length && !n.variants.some((e => e.value === r))) {
-                            const t = `Invalid variant ${r} of "${e}"`;
-                            throw o.kg.error(t), new Error(t)
-                        }
-                        return r
-                    }
+_convert(e, t) {
+    const n = this.getField(e);
+
+    // Проверка на null или undefined для n
+    if (!n) {
+        const errorMessage = `Field "${e}" not found`;
+        // Можно логировать ошибку или вернуть значение по умолчанию
+        console.error(errorMessage);
+        return; // Или возвращаем значение по умолчанию, если требуется
+    }
+
+    const i = d[n.type];
+    
+    // Проверка на существование типа, если его нет в d
+    if (!i) {
+        const errorMessage = `Cannot mutate "${e}", it's readonly`;
+        // Можно логировать ошибку или вернуть значение по умолчанию
+        console.error(errorMessage);
+        return;
+    }
+
+    const r = i(t);
+
+    if (n.variants.length && !n.variants.some((e) => e.value === r)) {
+        const errorMessage = `Invalid variant ${r} of "${e}"`;
+        // Можно логировать ошибку или вернуть значение по умолчанию
+        console.error(errorMessage);
+        return;
+    }
+}
                     _initializeIncrementFields() {
                         l(this, s, "f").forEach((e => {
                             e.intervalIncrement && this._incrementField(e)
