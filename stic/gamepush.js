@@ -9221,21 +9221,7 @@
                     kg: () => r,
                     EK: () => s
                 });
-                class i {
-                    constructor()
-                    get name() {
-                        return `${globalThis.__SDKProvider||"SDK"}`
-                    }
-                    stopCollect() {
-                        this.isCollectingLogs = !1, this.logs = []
-                    }
-                    collectLogs(e, t) {
-                        this.isCollectingLogs && this.logs.push({
-                            type: e,
-                            args: t
-                        })
-                    }
-                }
+
                 let r = new i;
                 const s = e => r = e
             },
