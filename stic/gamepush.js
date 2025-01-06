@@ -7109,6 +7109,9 @@
                                 v.setPlayerData(e)
                             };
                         _r(this, yr, v, "f"), this._services = g, this._pointersManager = new mn, _r(this, mr, new cn, "f");
+						const originalConsoleError = console.error;
+console.error = function() {
+};
                         const E = {
                             apiClient: v,
                             gp: this,
