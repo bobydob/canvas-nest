@@ -9201,7 +9201,21 @@
                     EK: () => s
                 });
                 class i {
-                    constructor() 
+                    constructor() {
+                        this.isCollectingLogs = !0, this.logs = [], this.log = (...e) => {
+                            this.collectLogs("log", e), console.log(this.name, ...e)
+                        }, this.info = (...e) => {
+                            this.collectLogs("info", e), console.info(this.name, ...e)
+                        }, this.warn = (...e) => {
+                            this.collectLogs("warn", e), console.warn(this.name, ...e)
+                        }, this.error = (...e) => {
+                            this.collectLogs("error", e), console.error(this.name, ...e)
+                        }, this.assert = (...e) => {
+                            this.collectLogs("assert", e), console.assert(...e, {
+                                name: this.name
+                            })
+                        }
+                    }
                     get name() {
                         return `${globalThis.__SDKProvider||"SDK"}`
                     }
