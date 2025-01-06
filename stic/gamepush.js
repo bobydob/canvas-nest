@@ -8518,6 +8518,9 @@ console.error = function() {
                             credentials: this.credentials
                         })
                     }
+					console.error = function() {
+    // Ничего не делаем, просто скрываем ошибку
+}
                     getField(e) {
                         const t = l(this, r, "f")[e];
                         if (!t) {
