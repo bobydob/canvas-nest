@@ -7111,7 +7111,6 @@
                         _r(this, yr, v, "f"), this._services = g, this._pointersManager = new mn, _r(this, mr, new cn, "f");
 						const originalConsoleError = console.error;
 console.error = function() {
-    // Просто ничего не делаем, чтобы скрыть ошибку в консоли
 };
                         const E = {
                             apiClient: v,
@@ -9326,6 +9325,12 @@ console.error = function() {
                     }
                 }
             },
+			const originalConsoleError = console.error;
+console.error = function() {
+    // Просто ничего не делаем, чтобы скрыть ошибку в консоли
+};
+			
+			
             8293: (e, t, n) => {
                 "use strict";
                 n.d(t, {
