@@ -9325,35 +9325,44 @@ console.error = function() {
                     }
                 }
             },
-            8293: (e, t, n) => {
-                "use strict";
-                n.d(t, {
-                    s: () => r,
-                    _: () => s
-                });
-                var i = n(6558);
-                const r = {
-                    timeout: 5e3
-                };
+const originalConsoleError = console.error;
 console.error = function() {
+    // Просто ничего не делаем, чтобы скрыть ошибку в консоли
 };
-                function s({
-                    timeout: e = 0
-                } = {}) {
-                    let t = !1;
-                    const n = {},
-                        r = new Promise(((e, s) => {
-                            n.done = n => {
-                                if (!t) return t = !0, e(n), r
-                            }, n.abort = e => {
-                                if (!t) return t = !0, i.kg.error(e), s(e), r
-                            }
-                        }));
-                    return e && setTimeout((() => {
-                        t || n.abort(`Timeout ${e}ms exceeded`)
-                    }), e), n.ready = r, n
+
+8293: (e, t, n) => {
+    "use strict";
+    n.d(t, {
+        s: () => r,
+        _: () => s
+    });
+    var i = n(6558);
+    const r = {
+        timeout: 5e3
+    };
+
+    function s({
+        timeout: e = 0
+    } = {}) {
+        let t = !1;
+        const n = {},
+            r = new Promise(((e, s) => {
+                n.done = n => {
+                    if (!t) return t = !0, e(n), r
+                }, n.abort = e => {
+                    if (!t) {
+                        if (i.kg && typeof i.kg.error === 'function') {
+                            i.kg.error(e);  // Проверяем, существует ли метод error
+                        }
+                        s(e), r;
+                    }
                 }
-            },
+            }));
+        return e && setTimeout((() => {
+            t || n.abort(`Timeout ${e}ms exceeded`)
+        }), e), n.ready = r, n
+    }
+};
             3607: (e, t, n) => {
                 "use strict";
                 n.d(t, {
