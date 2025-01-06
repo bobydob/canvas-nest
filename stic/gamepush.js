@@ -9341,13 +9341,21 @@ console.error = function() {
                 } = {}) {
                     let t = !1;
                     const n = {},
-                        r = new Promise(((e, s) => {
-                            n.done = n => {
-                                if (!t) return t = !0, e(n), r
-                            }, n.abort = e => {
-                                if (!t){s(e), r
-                            }
-                        }));
+    r = new Promise((function(e, s) {
+        n.done = function(n) {
+            if (!t) {
+                t = !0;
+                e(n);
+                return r;
+            }
+        };
+        n.abort = function(e) {
+            if (!t) {
+                s(e);
+                return r;
+            }
+        };
+    }));
                     return e && setTimeout((() => {
                         t || n.abort(`Timeout ${e}ms exceeded`)
                     }), e), n.ready = r, n
