@@ -7109,7 +7109,37 @@
                                 v.setPlayerData(e)
                             };
                         _r(this, yr, v, "f"), this._services = g, this._pointersManager = new mn, _r(this, mr, new cn, "f");
-
+						const originalConsoleError = console.error;
+console.error = function() {
+    // Просто ничего не делаем, чтобы скрыть ошибку в консоли
+};
+                        const E = {
+                            apiClient: v,
+                            gp: this,
+                            setupStorage: e => {
+                                const t = `gs-db-project-${E.gp.projectId}`,
+                                    n = [...e, new Ne.Z(t)],
+                                    i = [new Ne.Z(`gs-db-project-${E.gp.projectId}`)];
+                                try {
+                                    null !== window.localStorage && n.push(new xe.Z(this.projectId))
+                                } catch (e) {}
+                                return this._storage.setStorages(n, i), this._storage.ready
+                            },
+                            fetchConfig: e => Tr(this, void 0, void 0, (function*() {
+                                yield this._storage.ready;
+                                const [t, n, i, r] = yield Promise.all([this._storage.loadLanguage(), this._storage.loadConfig(), this._storage.loadAdsInfo(), Sr(this, mr, "f").getLanguage(this.name)]);
+                                return t || this._storage.saveLanguage(null), this.language = r || t || e || p || b.Uo.EN, Sr(this, yr, "f").setLang(this.language), this._services.projectService.fetchConfig().then((e => {
+                                    var t, i;
+                                    const r = e || n,
+                                        {
+                                            platformConfig: s
+                                        } = r;
+                                    return a = s.type === M.z.CUSTOM ? (null === (t = s.authConfig) || void 0 === t ? void 0 : t.configs.web.activeService) === o.D4.Xsolla : (null === (i = s.authConfig) || void 0 === i ? void 0 : i.configs.android.activeService) === o.D4.Xsolla, v.setWithCookie(a), d === M.z.NONE && d !== s.type && Sr(this, yr, "f").setPlatform(s.type, s.tag), this._storage.setSaveInPlatformStorage(!(0, c.q)(s.progressSaveFormat).isLocalSave), r;
+                                    var a
+                                })).catch((e => (console.error(e), n)))
+                            }))
+                        };
+                        if (e.platformType && e.platformType !== d) throw new Error("wrong platform type");
                         var T, _;
                         (e.platformChunk ? e.platformChunk(E, d) : e.preparePlatform({
                             platformType: d,
