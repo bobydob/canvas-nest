@@ -8518,29 +8518,49 @@ console.error = function() {
                             credentials: this.credentials
                         })
                     }
-                    getField(e) {
-    const t = l(this, r, "f")[e];
-    if (!t) {
-        const t = `Field "${e}" not exists on player model`;
-        // Убираем вызов o.kg.error и просто выбрасываем ошибку
-        throw new Error(t);  // Выбрасываем ошибку без вызова o.kg.error
+getField(e) {
+    try {
+        const t = l(this, r, "f")[e];
+        if (!t) {
+            const t = `Field "${e}" not exists on player model`;
+            throw new Error(t);  // Выбрасываем ошибку
+        }
+        return t;
+    } catch (error) {
+        // Просто игнорируем ошибку, ничего не выводя в консоль
+        return null;  // Возвращаем null или значение по умолчанию
     }
 }
-                    getFieldName(e) {
-                        return this.getField(e).name || ""
-                    }
-                    getFieldVariantName(e, t) {
-                        var n;
-                        return (null === (n = this.getField(e).variants.find((e => e.value === t))) || void 0 === n ? void 0 : n.name) || ""
-                    }
-                    getMinValue(e) {
-                        var t;
-                        if (null == (null === (t = this.getField(e).limits) || void 0 === t ? void 0 : t.min)) {
-                            const t = `minValue not exists on field "${e}"`;
-                            throw o.kg.error(t), new Error(t)
-                        }
-                        return this.get(`${e}:min`)
-                    }
+
+getFieldName(e) {
+    try {
+        return this.getField(e).name || "";
+    } catch (error) {
+        return "";  // Возвращаем пустую строку, если произошла ошибка
+    }
+}
+
+getFieldVariantName(e, t) {
+    try {
+        var n;
+        return (null === (n = this.getField(e).variants.find((e => e.value === t))) || void 0 === n ? void 0 : n.name) || "";
+    } catch (error) {
+        return "";  // Возвращаем пустую строку в случае ошибки
+    }
+}
+
+getMinValue(e) {
+    try {
+        var t;
+        if (null == (null === (t = this.getField(e).limits) || void 0 === t ? void 0 : t.min)) {
+            const t = `minValue not exists on field "${e}"`;
+            throw new Error(t);  // Выбрасываем ошибку
+        }
+        return this.get(`${e}:min`);
+    } catch (error) {
+        return null;  // Возвращаем null, если произошла ошибка
+    }
+}
                     getMaxValue(e) {
                         var t;
                         if (null == (null === (t = this.getField(e).limits) || void 0 === t ? void 0 : t.max)) {
