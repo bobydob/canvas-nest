@@ -10767,7 +10767,113 @@
                 return "a" === i ? r.call(e, n) : r ? r.value = n : t.set(e, n), n
             };
         const We = "... on Success { success }";
+        class ze {
+            constructor(e) {
+                Me.set(this, ""), je.set(this, !1), Ue.set(this, 0), $e.set(this, (() => {})), this.config = {
+                    apiUrl: e.apiUrl,
+                    projectId: e.projectId,
+                    publicToken: e.publicToken,
+                    lang: e.lang,
+                    platformType: e.platformType,
+                    platformKey: e.platformKey
+                }
+            }
+            get reqCounter() {
+                return qe(this, Ue, "f")
+            }
+            set reqCounter(e) {
+                Ve(this, Ue, e, "f"), qe(this, $e, "f").call(this, e)
+            }
+            getOptions() {
+                return Object.assign({}, this.config)
+            }
+            addCounterListener(e) {
+                Ve(this, $e, e, "f")
+            }
+            setLang(e) {
+                this.config.lang = e
+            }
+            setWithCookie(e) {
+                Ve(this, je, e, "f")
+            }
+            setPlayerData(e) {
+                Ve(this, Me, btoa(JSON.stringify(e)), "f")
+            }
+            setPlatform(e, t) {
+                this.config.platformType = e, this.config.platformKey = t
+            }
+            ping(e) {
+                fetch(`${this.config.apiUrl}/ping?t=${e}`)
+            }
+            signQuery(e = null) {
+                return Be(this, void 0, void 0, (function*() {
+                    const t = {
+                            projectId: this.config.projectId,
+                            query: Ye(e),
+                            token: this.config.publicToken
+                        },
+                        n = yield(0, Ge.X)(JSON.stringify(t));
+                    return {
+                        input: e,
+                        hash: n
+                    }
+                }))
+            }
+            fetch(e, t, n) {
+                return Be(this, void 0, void 0, (function*() {
+                    return this.fetchMany(e, t, n).then((({
+                        result: e
+                    }) => ((e => {
+                        if ("Problem" === (null == e ? void 0 : e.__typename)) throw e.message
+                    })(e), e)))
+                }))
+            }
+            fetchMany(e, t, n = {}) {
+                return Be(this, void 0, void 0, (function*() {
+                    const {
+                        input: i,
+                        hash: r
+                    } = yield this.signQuery(t);
+                    let s, a = {};
+                    const o = JSON.stringify({
+                            query: e,
+                            variables: Object.assign({
+                                input: i,
+                                lang: this.config.lang.toUpperCase()
+                            }, n)
+                        }),
+                        c = function(e = {}) {
+                            return Object.keys(e).filter((t => e[t] instanceof File))
+                        }(t);
+                    if (c.length > 0) {
+                        s = new FormData, s.append("operations", o);
+                        const e = {};
+                        c.forEach(((t, n) => {
+                            e[n] = [`variables.input.${t}`]
+                        })), s.append("map", JSON.stringify(e)), c.forEach(((e, n) => {
+                            s.append(n, t[e])
+                        }))
+                    } else a = {
+                        "Content-Type": "application/json;charset=utf-8"
+                    }, s = o;
 
+                        if (String(null == e ? void 0 : e.message).includes("Failed to fetch")) throw "connection_error";
+                        throw e
+                    })).then((e => Be(this, void 0, void 0, (function*() {
+                        var t;
+                        if (!e.ok) {
+                            const t = yield e.text();
+                            throw new Error(`${e.status}. ${t}`)
+                        }
+                        const n = yield e.json();
+                        if ((null === (t = n.errors) || void 0 === t ? void 0 : t.length) > 0) throw new Error(n.errors[0].message);
+                        return Object.values(n.data || {}).forEach((e => {
+                            "Problem" != e.__typename && this.reqCounter++
+                        })), n
+                    })))).then((e => e.data))
+                }))
+            }
+        }
 
         function Ye(e) {
             var t;
