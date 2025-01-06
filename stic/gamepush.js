@@ -1,1332 +1,1333 @@
+/*! For license information please see gamepush.js.LICENSE.txt */
 (() => {
-        var e, t, n, i, r = {
-                2616: e => {
-                    "use strict";
-                    e.exports = function (e) {
-                        var t = [];
-                        return t.toString = function () {
-                            return this.map((function (t) {
-                                var n = e(t);
-                                return t[2] ? "@media ".concat(t[2], " {").concat(n, "}") : n
-                            })).join("")
-                        }, t.i = function (e, n, i) {
-                            "string" == typeof e && (e = [
-                                [null, e, ""]
-                            ]);
-                            var r = {};
-                            if (i)
-                                for (var s = 0; s < this.length; s++) {
-                                    var a = this[s][0];
-                                    null != a && (r[a] = !0)
-                                }
-                            for (var o = 0; o < e.length; o++) {
-                                var c = [].concat(e[o]);
-                                i && r[c[0]] || (n && (c[2] ? c[2] = "".concat(n, " and ").concat(c[2]) : c[2] = n), t.push(c))
+    var e, t, n, i, r = {
+            2616: e => {
+                "use strict";
+                e.exports = function(e) {
+                    var t = [];
+                    return t.toString = function() {
+                        return this.map((function(t) {
+                            var n = e(t);
+                            return t[2] ? "@media ".concat(t[2], " {").concat(n, "}") : n
+                        })).join("")
+                    }, t.i = function(e, n, i) {
+                        "string" == typeof e && (e = [
+                            [null, e, ""]
+                        ]);
+                        var r = {};
+                        if (i)
+                            for (var s = 0; s < this.length; s++) {
+                                var a = this[s][0];
+                                null != a && (r[a] = !0)
                             }
-                        }, t
-                    }
-                },
-                5585: e => {
-                    ! function (t) {
-                        e.exports = t;
-                        var n = {
-                            on: function (e, t) {
-                                return s(this, e).push(t), this
-                            },
-                            once: function (e, t) {
-                                var n = this;
-                                return i.originalListener = t, s(n, e).push(i), n;
-
-                                function i() {
-                                    r.call(n, e, i), t.apply(this, arguments)
-                                }
-                            },
-                            off: r,
-                            emit: function (e, t) {
-                                var n = this,
-                                    i = s(n, e, !0);
-                                if (!i) return !1;
-                                var r = arguments.length;
-                                if (1 === r) i.forEach(o);
-                                else if (2 === r) i.forEach(c);
-                                else {
-                                    var a = Array.prototype.slice.call(arguments, 1);
-                                    i.forEach(l)
-                                }
-                                return !!i.length;
-
-                                function o(e) {
-                                    e.call(n)
-                                }
-
-                                function c(e) {
-                                    e.call(n, t)
-                                }
-
-                                function l(e) {
-                                    e.apply(n, a)
-                                }
-                            }
-                        };
-
-                        function i(e) {
-                            for (var t in n) e[t] = n[t];
-                            return e
+                        for (var o = 0; o < e.length; o++) {
+                            var c = [].concat(e[o]);
+                            i && r[c[0]] || (n && (c[2] ? c[2] = "".concat(n, " and ").concat(c[2]) : c[2] = n), t.push(c))
                         }
+                    }, t
+                }
+            },
+            5585: e => {
+                ! function(t) {
+                    e.exports = t;
+                    var n = {
+                        on: function(e, t) {
+                            return s(this, e).push(t), this
+                        },
+                        once: function(e, t) {
+                            var n = this;
+                            return i.originalListener = t, s(n, e).push(i), n;
 
-                        function r(e, t) {
-                            var n, i = this;
-                            if (arguments.length) {
-                                if (t) {
-                                    if (n = s(i, e, !0)) {
-                                        if (!(n = n.filter(a)).length) return r.call(i, e);
-                                        i.listeners[e] = n
-                                    }
-                                } else if ((n = i.listeners) && (delete n[e], !Object.keys(n).length)) return r.call(i)
-                            } else delete i.listeners;
-                            return i;
+                            function i() {
+                                r.call(n, e, i), t.apply(this, arguments)
+                            }
+                        },
+                        off: r,
+                        emit: function(e, t) {
+                            var n = this,
+                                i = s(n, e, !0);
+                            if (!i) return !1;
+                            var r = arguments.length;
+                            if (1 === r) i.forEach(o);
+                            else if (2 === r) i.forEach(c);
+                            else {
+                                var a = Array.prototype.slice.call(arguments, 1);
+                                i.forEach(l)
+                            }
+                            return !!i.length;
 
-                            function a(e) {
-                                return e !== t && e.originalListener !== t
+                            function o(e) {
+                                e.call(n)
+                            }
+
+                            function c(e) {
+                                e.call(n, t)
+                            }
+
+                            function l(e) {
+                                e.apply(n, a)
                             }
                         }
-
-                        function s(e, t, n) {
-                            if (!n || e.listeners) {
-                                var i = e.listeners || (e.listeners = {});
-                                return i[t] || (i[t] = [])
-                            }
-                        }
-                        i(t.prototype), t.mixin = i
-                    }((function e() {
-                        if (!(this instanceof e)) return new e
-                    }))
-                },
-                4809: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        ZP: () => m
-                    });
-                    var i = n(3559),
-                        r = n(9691);
-
-                    function s(e) {
-                        return (s = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
-                            return typeof e
-                        } : function (e) {
-                            return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
-                        })(e)
-                    }
-                    var a = new Map,
-                        o = new Map,
-                        c = !0,
-                        l = !1;
-
-                    function h(e) {
-                        return e.replace(/[\s,]+/g, " ").trim()
-                    }
-
-                    function d(e) {
-                        var t, n, d, u = h(e);
-                        if (!a.has(u)) {
-                            var p = (0, r.Qc)(e, {
-                                experimentalFragmentVariables: l
-                            });
-                            if (!p || "Document" !== p.kind) throw new Error("Not a valid GraphQL document.");
-                            a.set(u, function (e) {
-                                var t = new Set(e.definitions);
-                                t.forEach((function (e) {
-                                    e.loc && delete e.loc, Object.keys(e).forEach((function (n) {
-                                        var i = e[n];
-                                        i && "object" === s(i) && t.add(i)
-                                    }))
-                                }));
-                                var n = e.loc;
-                                return n && (delete n.startToken, delete n.endToken), e
-                            }((t = p, n = new Set, d = [], t.definitions.forEach((function (e) {
-                                if ("FragmentDefinition" === e.kind) {
-                                    var t = e.name.value,
-                                        i = h((s = e.loc).source.body.substring(s.start, s.end)),
-                                        r = o.get(t);
-                                    r && !r.has(i) ? c && console.warn("Warning: fragment with name " + t + " already exists.\ngraphql-tag enforces all fragment names across your application to be unique; read more about\nthis in the docs: http://dev.apollodata.com/core/fragments.html#unique-names") : r || o.set(t, r = new Set), r.add(i), n.has(i) || (n.add(i), d.push(e))
-                                } else d.push(e);
-                                var s
-                            })), (0, i.pi)((0, i.pi)({}, t), {
-                                definitions: d
-                            }))))
-                        }
-                        return a.get(u)
-                    }
-
-                    function u(e) {
-                        for (var t = [], n = 1; n < arguments.length; n++) t[n - 1] = arguments[n];
-                        "string" == typeof e && (e = [e]);
-                        var i = e[0];
-                        return t.forEach((function (t, n) {
-                            t && "Document" === t.kind ? i += t.loc.source.body : i += t, i += e[n + 1]
-                        })), d(i)
-                    }
-                    var p, f = u;
-                    (p = u || (u = {})).gql = f, p.resetCaches = function () {
-                        a.clear(), o.clear()
-                    }, p.disableFragmentWarnings = function () {
-                        c = !1
-                    }, p.enableExperimentalFragmentVariables = function () {
-                        l = !0
-                    }, p.disableExperimentalFragmentVariables = function () {
-                        l = !1
-                    }, u.default = u;
-                    const m = u
-                },
-                4943: e => {
-                    "use strict";
-                    e.exports = i, e.exports.isMobile = i, e.exports.default = i;
-                    var t = /(android|bb\d+|meego).+mobile|armv7l|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series[46]0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i,
-                        n = /android|ipad|playbook|silk/i;
+                    };
 
                     function i(e) {
-                        e || (e = {});
-                        var i = e.ua;
-                        if (i || "undefined" == typeof navigator || (i = navigator.userAgent), i && i.headers && "string" == typeof i.headers["user-agent"] && (i = i.headers["user-agent"]), "string" != typeof i) return !1;
-                        var r = t.test(i) || !!e.tablet && n.test(i);
-                        return !r && e.tablet && e.featureDetect && navigator && navigator.maxTouchPoints > 1 && -1 !== i.indexOf("Macintosh") && -1 !== i.indexOf("Safari") && (r = !0), r
-                    }
-                },
-                2096: () => {
-                    "function" != typeof Promise.prototype.finally && (Promise.prototype.finally = function (e) {
-                        var t = this;
-                        return this.then((function (n) {
-                            return t.constructor.resolve(e()).then((function () {
-                                return n
-                            }))
-                        })).catch((function (n) {
-                            return t.constructor.resolve(e()).then((function () {
-                                throw n
-                            }))
-                        }))
-                    })
-                },
-                3559: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        pi: () => i
-                    });
-                    var i = function () {
-                        return (i = Object.assign || function (e) {
-                            for (var t, n = 1, i = arguments.length; n < i; n++)
-                                for (var r in t = arguments[n]) Object.prototype.hasOwnProperty.call(t, r) && (e[r] = t[r]);
-                            return e
-                        }).apply(this, arguments)
-                    };
-                    Object.create, Object.create
-                },
-                6256: function (e, t, n) {
-                    var i;
-
-                    function r(e) {
-                        return (r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
-                            return typeof e
-                        } : function (e) {
-                            return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
-                        })(e)
-                    }
-                    e = n.nmd(e),
-                        function (s, a) {
-                            "use strict";
-                            var o = "function",
-                                c = "undefined",
-                                l = "object",
-                                h = "string",
-                                d = "model",
-                                u = "name",
-                                p = "type",
-                                f = "vendor",
-                                m = "version",
-                                v = "architecture",
-                                y = "console",
-                                g = "mobile",
-                                w = "tablet",
-                                b = "smarttv",
-                                P = "wearable",
-                                E = "embedded",
-                                T = "Amazon",
-                                S = "Apple",
-                                _ = "ASUS",
-                                A = "BlackBerry",
-                                I = "Google",
-                                C = "Huawei",
-                                k = "LG",
-                                R = "Microsoft",
-                                O = "Motorola",
-                                D = "Samsung",
-                                N = "Sharp",
-                                x = "Sony",
-                                L = "Xiaomi",
-                                F = "Zebra",
-                                M = "Facebook",
-                                j = "Chromium OS",
-                                U = "Mac OS",
-                                $ = function (e) {
-                                    for (var t = {}, n = 0; n < e.length; n++) t[e[n].toUpperCase()] = e[n];
-                                    return t
-                                },
-                                G = function (e, t) {
-                                    return r(e) === h && -1 !== B(t).indexOf(B(e))
-                                },
-                                B = function (e) {
-                                    return e.toLowerCase()
-                                },
-                                q = function (e, t) {
-                                    if (r(e) === h) return e = e.replace(/^\s\s*/, ""), r(t) === c ? e : e.substring(0, 350)
-                                },
-                                V = function (e, t) {
-                                    for (var n, i, s, c, h, d, u = 0; u < t.length && !h;) {
-                                        var p = t[u],
-                                            f = t[u + 1];
-                                        for (n = i = 0; n < p.length && !h && p[n];)
-                                            if (h = p[n++].exec(e))
-                                                for (s = 0; s < f.length; s++) d = h[++i], r(c = f[s]) === l && c.length > 0 ? 2 === c.length ? r(c[1]) == o ? this[c[0]] = c[1].call(this, d) : this[c[0]] = c[1] : 3 === c.length ? r(c[1]) !== o || c[1].exec && c[1].test ? this[c[0]] = d ? d.replace(c[1], c[2]) : a : this[c[0]] = d ? c[1].call(this, d, c[2]) : a : 4 === c.length && (this[c[0]] = d ? c[3].call(this, d.replace(c[1], c[2])) : a) : this[c] = d || a;
-                                        u += 2
-                                    }
-                                },
-                                W = function (e, t) {
-                                    for (var n in t)
-                                        if (r(t[n]) === l && t[n].length > 0) {
-                                            for (var i = 0; i < t[n].length; i++)
-                                                if (G(t[n][i], e)) return "?" === n ? a : n
-                                        } else if (G(t[n], e)) return "?" === n ? a : n;
-                                    return e
-                                },
-                                z = {
-                                    ME: "4.90",
-                                    "NT 3.11": "NT3.51",
-                                    "NT 4.0": "NT4.0",
-                                    2e3: "NT 5.0",
-                                    XP: ["NT 5.1", "NT 5.2"],
-                                    Vista: "NT 6.0",
-                                    7: "NT 6.1",
-                                    8: "NT 6.2",
-                                    8.1: "NT 6.3",
-                                    10: ["NT 6.4", "NT 10.0"],
-                                    RT: "ARM"
-                                },
-                                Y = {
-                                    browser: [
-                                        [/\b(?:crmo|crios)\/([\w\.]+)/i],
-                                        [m, [u, "Chrome"]],
-                                        [/edg(?:e|ios|a)?\/([\w\.]+)/i],
-                                        [m, [u, "Edge"]],
-                                        [/(opera mini)\/([-\w\.]+)/i, /(opera [mobiletab]{3,6})\b.+version\/([-\w\.]+)/i, /(opera)(?:.+version\/|[\/ ]+)([\w\.]+)/i],
-                                        [u, m],
-                                        [/opios[\/ ]+([\w\.]+)/i],
-                                        [m, [u, "Opera Mini"]],
-                                        [/\bopr\/([\w\.]+)/i],
-                                        [m, [u, "Opera"]],
-                                        [/(kindle)\/([\w\.]+)/i, /(lunascape|maxthon|netfront|jasmine|blazer)[\/ ]?([\w\.]*)/i, /(avant |iemobile|slim)(?:browser)?[\/ ]?([\w\.]*)/i, /(ba?idubrowser)[\/ ]?([\w\.]+)/i, /(?:ms|\()(ie) ([\w\.]+)/i, /(flock|rockmelt|midori|epiphany|silk|skyfire|bolt|iron|vivaldi|iridium|phantomjs|bowser|quark|qupzilla|falkon|rekonq|puffin|brave|whale(?!.+naver)|qqbrowserlite|qq|duckduckgo)\/([-\w\.]+)/i, /(heytap|ovi)browser\/([\d\.]+)/i, /(weibo)__([\d\.]+)/i],
-                                        [u, m],
-                                        [/(?:\buc? ?browser|(?:juc.+)ucweb)[\/ ]?([\w\.]+)/i],
-                                        [m, [u, "UCBrowser"]],
-                                        [/microm.+\bqbcore\/([\w\.]+)/i, /\bqbcore\/([\w\.]+).+microm/i],
-                                        [m, [u, "WeChat(Win) Desktop"]],
-                                        [/micromessenger\/([\w\.]+)/i],
-                                        [m, [u, "WeChat"]],
-                                        [/konqueror\/([\w\.]+)/i],
-                                        [m, [u, "Konqueror"]],
-                                        [/trident.+rv[: ]([\w\.]{1,9})\b.+like gecko/i],
-                                        [m, [u, "IE"]],
-                                        [/ya(?:search)?browser\/([\w\.]+)/i],
-                                        [m, [u, "Yandex"]],
-                                        [/(avast|avg)\/([\w\.]+)/i],
-                                        [
-                                            [u, /(.+)/, "$1 Secure Browser"], m
-                                        ],
-                                        [/\bfocus\/([\w\.]+)/i],
-                                        [m, [u, "Firefox Focus"]],
-                                        [/\bopt\/([\w\.]+)/i],
-                                        [m, [u, "Opera Touch"]],
-                                        [/coc_coc\w+\/([\w\.]+)/i],
-                                        [m, [u, "Coc Coc"]],
-                                        [/dolfin\/([\w\.]+)/i],
-                                        [m, [u, "Dolphin"]],
-                                        [/coast\/([\w\.]+)/i],
-                                        [m, [u, "Opera Coast"]],
-                                        [/miuibrowser\/([\w\.]+)/i],
-                                        [m, [u, "MIUI Browser"]],
-                                        [/fxios\/([-\w\.]+)/i],
-                                        [m, [u, "Firefox"]],
-                                        [/\bqihu|(qi?ho?o?|360)browser/i],
-                                        [
-                                            [u, "360 Browser"]
-                                        ],
-                                        [/(oculus|samsung|sailfish|huawei)browser\/([\w\.]+)/i],
-                                        [
-                                            [u, /(.+)/, "$1 Browser"], m
-                                        ],
-                                        [/(comodo_dragon)\/([\w\.]+)/i],
-                                        [
-                                            [u, /_/g, " "], m
-                                        ],
-                                        [/(electron)\/([\w\.]+) safari/i, /(tesla)(?: qtcarbrowser|\/(20\d\d\.[-\w\.]+))/i, /m?(qqbrowser|baiduboxapp|2345Explorer)[\/ ]?([\w\.]+)/i],
-                                        [u, m],
-                                        [/(metasr)[\/ ]?([\w\.]+)/i, /(lbbrowser)/i, /\[(linkedin)app\]/i],
-                                        [u],
-                                        [/((?:fban\/fbios|fb_iab\/fb4a)(?!.+fbav)|;fbav\/([\w\.]+);)/i],
-                                        [
-                                            [u, M], m
-                                        ],
-                                        [/(kakao(?:talk|story))[\/ ]([\w\.]+)/i, /(naver)\(.*?(\d+\.[\w\.]+).*\)/i, /safari (line)\/([\w\.]+)/i, /\b(line)\/([\w\.]+)\/iab/i, /(chromium|instagram)[\/ ]([-\w\.]+)/i],
-                                        [u, m],
-                                        [/\bgsa\/([\w\.]+) .*safari\//i],
-                                        [m, [u, "GSA"]],
-                                        [/musical_ly(?:.+app_?version\/|_)([\w\.]+)/i],
-                                        [m, [u, "TikTok"]],
-                                        [/headlesschrome(?:\/([\w\.]+)| )/i],
-                                        [m, [u, "Chrome Headless"]],
-                                        [/ wv\).+(chrome)\/([\w\.]+)/i],
-                                        [
-                                            [u, "Chrome WebView"], m
-                                        ],
-                                        [/droid.+ version\/([\w\.]+)\b.+(?:mobile safari|safari)/i],
-                                        [m, [u, "Android Browser"]],
-                                        [/(chrome|omniweb|arora|[tizenoka]{5} ?browser)\/v?([\w\.]+)/i],
-                                        [u, m],
-                                        [/version\/([\w\.\,]+) .*mobile\/\w+ (safari)/i],
-                                        [m, [u, "Mobile Safari"]],
-                                        [/version\/([\w(\.|\,)]+) .*(mobile ?safari|safari)/i],
-                                        [m, u],
-                                        [/webkit.+?(mobile ?safari|safari)(\/[\w\.]+)/i],
-                                        [u, [m, W, {
-                                            "1.0": "/8",
-                                            1.2: "/1",
-                                            1.3: "/3",
-                                            "2.0": "/412",
-                                            "2.0.2": "/416",
-                                            "2.0.3": "/417",
-                                            "2.0.4": "/419",
-                                            "?": "/"
-                                        }]],
-                                        [/(webkit|khtml)\/([\w\.]+)/i],
-                                        [u, m],
-                                        [/(navigator|netscape\d?)\/([-\w\.]+)/i],
-                                        [
-                                            [u, "Netscape"], m
-                                        ],
-                                        [/mobile vr; rv:([\w\.]+)\).+firefox/i],
-                                        [m, [u, "Firefox Reality"]],
-                                        [/ekiohf.+(flow)\/([\w\.]+)/i, /(swiftfox)/i, /(icedragon|iceweasel|camino|chimera|fennec|maemo browser|minimo|conkeror|klar)[\/ ]?([\w\.\+]+)/i, /(seamonkey|k-meleon|icecat|iceape|firebird|phoenix|palemoon|basilisk|waterfox)\/([-\w\.]+)$/i, /(firefox)\/([\w\.]+)/i, /(mozilla)\/([\w\.]+) .+rv\:.+gecko\/\d+/i, /(polaris|lynx|dillo|icab|doris|amaya|w3m|netsurf|sleipnir|obigo|mosaic|(?:go|ice|up)[\. ]?browser)[-\/ ]?v?([\w\.]+)/i, /(links) \(([\w\.]+)/i, /panasonic;(viera)/i],
-                                        [u, m],
-                                        [/(cobalt)\/([\w\.]+)/i],
-                                        [u, [m, /master.|lts./, ""]]
-                                    ],
-                                    cpu: [
-                                        [/(?:(amd|x(?:(?:86|64)[-_])?|wow|win)64)[;\)]/i],
-                                        [
-                                            [v, "amd64"]
-                                        ],
-                                        [/(ia32(?=;))/i],
-                                        [
-                                            [v, B]
-                                        ],
-                                        [/((?:i[346]|x)86)[;\)]/i],
-                                        [
-                                            [v, "ia32"]
-                                        ],
-                                        [/\b(aarch64|arm(v?8e?l?|_?64))\b/i],
-                                        [
-                                            [v, "arm64"]
-                                        ],
-                                        [/\b(arm(?:v[67])?ht?n?[fl]p?)\b/i],
-                                        [
-                                            [v, "armhf"]
-                                        ],
-                                        [/windows (ce|mobile); ppc;/i],
-                                        [
-                                            [v, "arm"]
-                                        ],
-                                        [/((?:ppc|powerpc)(?:64)?)(?: mac|;|\))/i],
-                                        [
-                                            [v, /ower/, "", B]
-                                        ],
-                                        [/(sun4\w)[;\)]/i],
-                                        [
-                                            [v, "sparc"]
-                                        ],
-                                        [/((?:avr32|ia64(?=;))|68k(?=\))|\barm(?=v(?:[1-7]|[5-7]1)l?|;|eabi)|(?=atmel )avr|(?:irix|mips|sparc)(?:64)?\b|pa-risc)/i],
-                                        [
-                                            [v, B]
-                                        ]
-                                    ],
-                                    device: [
-                                        [/\b(sch-i[89]0\d|shw-m380s|sm-[ptx]\w{2,4}|gt-[pn]\d{2,4}|sgh-t8[56]9|nexus 10)/i],
-                                        [d, [f, D],
-                                            [p, w]
-                                        ],
-                                        [/\b((?:s[cgp]h|gt|sm)-\w+|sc[g-]?[\d]+a?|galaxy nexus)/i, /samsung[- ]([-\w]+)/i, /sec-(sgh\w+)/i],
-                                        [d, [f, D],
-                                            [p, g]
-                                        ],
-                                        [/(?:\/|\()(ip(?:hone|od)[\w, ]*)(?:\/|;)/i],
-                                        [d, [f, S],
-                                            [p, g]
-                                        ],
-                                        [/\((ipad);[-\w\),; ]+apple/i, /applecoremedia\/[\w\.]+ \((ipad)/i, /\b(ipad)\d\d?,\d\d?[;\]].+ios/i],
-                                        [d, [f, S],
-                                            [p, w]
-                                        ],
-                                        [/(macintosh);/i],
-                                        [d, [f, S]],
-                                        [/\b(sh-?[altvz]?\d\d[a-ekm]?)/i],
-                                        [d, [f, N],
-                                            [p, g]
-                                        ],
-                                        [/\b((?:ag[rs][23]?|bah2?|sht?|btv)-a?[lw]\d{2})\b(?!.+d\/s)/i],
-                                        [d, [f, C],
-                                            [p, w]
-                                        ],
-                                        [/(?:huawei|honor)([-\w ]+)[;\)]/i, /\b(nexus 6p|\w{2,4}e?-[atu]?[ln][\dx][012359c][adn]?)\b(?!.+d\/s)/i],
-                                        [d, [f, C],
-                                            [p, g]
-                                        ],
-                                        [/\b(poco[\w ]+)(?: bui|\))/i, /\b; (\w+) build\/hm\1/i, /\b(hm[-_ ]?note?[_ ]?(?:\d\w)?) bui/i, /\b(redmi[\-_ ]?(?:note|k)?[\w_ ]+)(?: bui|\))/i, /\b(mi[-_ ]?(?:a\d|one|one[_ ]plus|note lte|max|cc)?[_ ]?(?:\d?\w?)[_ ]?(?:plus|se|lite)?)(?: bui|\))/i],
-                                        [
-                                            [d, /_/g, " "],
-                                            [f, L],
-                                            [p, g]
-                                        ],
-                                        [/\b(mi[-_ ]?(?:pad)(?:[\w_ ]+))(?: bui|\))/i],
-                                        [
-                                            [d, /_/g, " "],
-                                            [f, L],
-                                            [p, w]
-                                        ],
-                                        [/; (\w+) bui.+ oppo/i, /\b(cph[12]\d{3}|p(?:af|c[al]|d\w|e[ar])[mt]\d0|x9007|a101op)\b/i],
-                                        [d, [f, "OPPO"],
-                                            [p, g]
-                                        ],
-                                        [/vivo (\w+)(?: bui|\))/i, /\b(v[12]\d{3}\w?[at])(?: bui|;)/i],
-                                        [d, [f, "Vivo"],
-                                            [p, g]
-                                        ],
-                                        [/\b(rmx[12]\d{3})(?: bui|;|\))/i],
-                                        [d, [f, "Realme"],
-                                            [p, g]
-                                        ],
-                                        [/\b(milestone|droid(?:[2-4x]| (?:bionic|x2|pro|razr))?:?( 4g)?)\b[\w ]+build\//i, /\bmot(?:orola)?[- ](\w*)/i, /((?:moto[\w\(\) ]+|xt\d{3,4}|nexus 6)(?= bui|\)))/i],
-                                        [d, [f, O],
-                                            [p, g]
-                                        ],
-                                        [/\b(mz60\d|xoom[2 ]{0,2}) build\//i],
-                                        [d, [f, O],
-                                            [p, w]
-                                        ],
-                                        [/((?=lg)?[vl]k\-?\d{3}) bui| 3\.[-\w; ]{10}lg?-([06cv9]{3,4})/i],
-                                        [d, [f, k],
-                                            [p, w]
-                                        ],
-                                        [/(lm(?:-?f100[nv]?|-[\w\.]+)(?= bui|\))|nexus [45])/i, /\blg[-e;\/ ]+((?!browser|netcast|android tv)\w+)/i, /\blg-?([\d\w]+) bui/i],
-                                        [d, [f, k],
-                                            [p, g]
-                                        ],
-                                        [/(ideatab[-\w ]+)/i, /lenovo ?(s[56]000[-\w]+|tab(?:[\w ]+)|yt[-\d\w]{6}|tb[-\d\w]{6})/i],
-                                        [d, [f, "Lenovo"],
-                                            [p, w]
-                                        ],
-                                        [/(?:maemo|nokia).*(n900|lumia \d+)/i, /nokia[-_ ]?([-\w\.]*)/i],
-                                        [
-                                            [d, /_/g, " "],
-                                            [f, "Nokia"],
-                                            [p, g]
-                                        ],
-                                        [/(pixel c)\b/i],
-                                        [d, [f, I],
-                                            [p, w]
-                                        ],
-                                        [/droid.+; (pixel[\daxl ]{0,6})(?: bui|\))/i],
-                                        [d, [f, I],
-                                            [p, g]
-                                        ],
-                                        [/droid.+ (a?\d[0-2]{2}so|[c-g]\d{4}|so[-gl]\w+|xq-a\w[4-7][12])(?= bui|\).+chrome\/(?![1-6]{0,1}\d\.))/i],
-                                        [d, [f, x],
-                                            [p, g]
-                                        ],
-                                        [/sony tablet [ps]/i, /\b(?:sony)?sgp\w+(?: bui|\))/i],
-                                        [
-                                            [d, "Xperia Tablet"],
-                                            [f, x],
-                                            [p, w]
-                                        ],
-                                        [/ (kb2005|in20[12]5|be20[12][59])\b/i, /(?:one)?(?:plus)? (a\d0\d\d)(?: b|\))/i],
-                                        [d, [f, "OnePlus"],
-                                            [p, g]
-                                        ],
-                                        [/(alexa)webm/i, /(kf[a-z]{2}wi|aeo[c-r]{2})( bui|\))/i, /(kf[a-z]+)( bui|\)).+silk\//i],
-                                        [d, [f, T],
-                                            [p, w]
-                                        ],
-                                        [/((?:sd|kf)[0349hijorstuw]+)( bui|\)).+silk\//i],
-                                        [
-                                            [d, /(.+)/g, "Fire Phone $1"],
-                                            [f, T],
-                                            [p, g]
-                                        ],
-                                        [/(playbook);[-\w\),; ]+(rim)/i],
-                                        [d, f, [p, w]],
-                                        [/\b((?:bb[a-f]|st[hv])100-\d)/i, /\(bb10; (\w+)/i],
-                                        [d, [f, A],
-                                            [p, g]
-                                        ],
-                                        [/(?:\b|asus_)(transfo[prime ]{4,10} \w+|eeepc|slider \w+|nexus 7|padfone|p00[cj])/i],
-                                        [d, [f, _],
-                                            [p, w]
-                                        ],
-                                        [/ (z[bes]6[027][012][km][ls]|zenfone \d\w?)\b/i],
-                                        [d, [f, _],
-                                            [p, g]
-                                        ],
-                                        [/(nexus 9)/i],
-                                        [d, [f, "HTC"],
-                                            [p, w]
-                                        ],
-                                        [/(htc)[-;_ ]{1,2}([\w ]+(?=\)| bui)|\w+)/i, /(zte)[- ]([\w ]+?)(?: bui|\/|\))/i, /(alcatel|geeksphone|nexian|panasonic(?!(?:;|\.))|sony(?!-bra))[-_ ]?([-\w]*)/i],
-                                        [f, [d, /_/g, " "],
-                                            [p, g]
-                                        ],
-                                        [/droid.+; ([ab][1-7]-?[0178a]\d\d?)/i],
-                                        [d, [f, "Acer"],
-                                            [p, w]
-                                        ],
-                                        [/droid.+; (m[1-5] note) bui/i, /\bmz-([-\w]{2,})/i],
-                                        [d, [f, "Meizu"],
-                                            [p, g]
-                                        ],
-                                        [/(blackberry|benq|palm(?=\-)|sonyericsson|acer|asus|dell|meizu|motorola|polytron)[-_ ]?([-\w]*)/i, /(hp) ([\w ]+\w)/i, /(asus)-?(\w+)/i, /(microsoft); (lumia[\w ]+)/i, /(lenovo)[-_ ]?([-\w]+)/i, /(jolla)/i, /(oppo) ?([\w ]+) bui/i],
-                                        [f, d, [p, g]],
-                                        [/(kobo)\s(ereader|touch)/i, /(archos) (gamepad2?)/i, /(hp).+(touchpad(?!.+tablet)|tablet)/i, /(kindle)\/([\w\.]+)/i, /(nook)[\w ]+build\/(\w+)/i, /(dell) (strea[kpr\d ]*[\dko])/i, /(le[- ]+pan)[- ]+(\w{1,9}) bui/i, /(trinity)[- ]*(t\d{3}) bui/i, /(gigaset)[- ]+(q\w{1,9}) bui/i, /(vodafone) ([\w ]+)(?:\)| bui)/i],
-                                        [f, d, [p, w]],
-                                        [/(surface duo)/i],
-                                        [d, [f, R],
-                                            [p, w]
-                                        ],
-                                        [/droid [\d\.]+; (fp\du?)(?: b|\))/i],
-                                        [d, [f, "Fairphone"],
-                                            [p, g]
-                                        ],
-                                        [/(u304aa)/i],
-                                        [d, [f, "AT&T"],
-                                            [p, g]
-                                        ],
-                                        [/\bsie-(\w*)/i],
-                                        [d, [f, "Siemens"],
-                                            [p, g]
-                                        ],
-                                        [/\b(rct\w+) b/i],
-                                        [d, [f, "RCA"],
-                                            [p, w]
-                                        ],
-                                        [/\b(venue[\d ]{2,7}) b/i],
-                                        [d, [f, "Dell"],
-                                            [p, w]
-                                        ],
-                                        [/\b(q(?:mv|ta)\w+) b/i],
-                                        [d, [f, "Verizon"],
-                                            [p, w]
-                                        ],
-                                        [/\b(?:barnes[& ]+noble |bn[rt])([\w\+ ]*) b/i],
-                                        [d, [f, "Barnes & Noble"],
-                                            [p, w]
-                                        ],
-                                        [/\b(tm\d{3}\w+) b/i],
-                                        [d, [f, "NuVision"],
-                                            [p, w]
-                                        ],
-                                        [/\b(k88) b/i],
-                                        [d, [f, "ZTE"],
-                                            [p, w]
-                                        ],
-                                        [/\b(nx\d{3}j) b/i],
-                                        [d, [f, "ZTE"],
-                                            [p, g]
-                                        ],
-                                        [/\b(gen\d{3}) b.+49h/i],
-                                        [d, [f, "Swiss"],
-                                            [p, g]
-                                        ],
-                                        [/\b(zur\d{3}) b/i],
-                                        [d, [f, "Swiss"],
-                                            [p, w]
-                                        ],
-                                        [/\b((zeki)?tb.*\b) b/i],
-                                        [d, [f, "Zeki"],
-                                            [p, w]
-                                        ],
-                                        [/\b([yr]\d{2}) b/i, /\b(dragon[- ]+touch |dt)(\w{5}) b/i],
-                                        [
-                                            [f, "Dragon Touch"], d, [p, w]
-                                        ],
-                                        [/\b(ns-?\w{0,9}) b/i],
-                                        [d, [f, "Insignia"],
-                                            [p, w]
-                                        ],
-                                        [/\b((nxa|next)-?\w{0,9}) b/i],
-                                        [d, [f, "NextBook"],
-                                            [p, w]
-                                        ],
-                                        [/\b(xtreme\_)?(v(1[045]|2[015]|[3469]0|7[05])) b/i],
-                                        [
-                                            [f, "Voice"], d, [p, g]
-                                        ],
-                                        [/\b(lvtel\-)?(v1[12]) b/i],
-                                        [
-                                            [f, "LvTel"], d, [p, g]
-                                        ],
-                                        [/\b(ph-1) /i],
-                                        [d, [f, "Essential"],
-                                            [p, g]
-                                        ],
-                                        [/\b(v(100md|700na|7011|917g).*\b) b/i],
-                                        [d, [f, "Envizen"],
-                                            [p, w]
-                                        ],
-                                        [/\b(trio[-\w\. ]+) b/i],
-                                        [d, [f, "MachSpeed"],
-                                            [p, w]
-                                        ],
-                                        [/\btu_(1491) b/i],
-                                        [d, [f, "Rotor"],
-                                            [p, w]
-                                        ],
-                                        [/(shield[\w ]+) b/i],
-                                        [d, [f, "Nvidia"],
-                                            [p, w]
-                                        ],
-                                        [/(sprint) (\w+)/i],
-                                        [f, d, [p, g]],
-                                        [/(kin\.[onetw]{3})/i],
-                                        [
-                                            [d, /\./g, " "],
-                                            [f, R],
-                                            [p, g]
-                                        ],
-                                        [/droid.+; (cc6666?|et5[16]|mc[239][23]x?|vc8[03]x?)\)/i],
-                                        [d, [f, F],
-                                            [p, w]
-                                        ],
-                                        [/droid.+; (ec30|ps20|tc[2-8]\d[kx])\)/i],
-                                        [d, [f, F],
-                                            [p, g]
-                                        ],
-                                        [/smart-tv.+(samsung)/i],
-                                        [f, [p, b]],
-                                        [/hbbtv.+maple;(\d+)/i],
-                                        [
-                                            [d, /^/, "SmartTV"],
-                                            [f, D],
-                                            [p, b]
-                                        ],
-                                        [/(nux; netcast.+smarttv|lg (netcast\.tv-201\d|android tv))/i],
-                                        [
-                                            [f, k],
-                                            [p, b]
-                                        ],
-                                        [/(apple) ?tv/i],
-                                        [f, [d, "Apple TV"],
-                                            [p, b]
-                                        ],
-                                        [/crkey/i],
-                                        [
-                                            [d, "Chromecast"],
-                                            [f, I],
-                                            [p, b]
-                                        ],
-                                        [/droid.+aft(\w)( bui|\))/i],
-                                        [d, [f, T],
-                                            [p, b]
-                                        ],
-                                        [/\(dtv[\);].+(aquos)/i, /(aquos-tv[\w ]+)\)/i],
-                                        [d, [f, N],
-                                            [p, b]
-                                        ],
-                                        [/(bravia[\w ]+)( bui|\))/i],
-                                        [d, [f, x],
-                                            [p, b]
-                                        ],
-                                        [/(mitv-\w{5}) bui/i],
-                                        [d, [f, L],
-                                            [p, b]
-                                        ],
-                                        [/Hbbtv.*(technisat) (.*);/i],
-                                        [f, d, [p, b]],
-                                        [/\b(roku)[\dx]*[\)\/]((?:dvp-)?[\d\.]*)/i, /hbbtv\/\d+\.\d+\.\d+ +\([\w\+ ]*; *([\w\d][^;]*);([^;]*)/i],
-                                        [
-                                            [f, q],
-                                            [d, q],
-                                            [p, b]
-                                        ],
-                                        [/\b(android tv|smart[- ]?tv|opera tv|tv; rv:)\b/i],
-                                        [
-                                            [p, b]
-                                        ],
-                                        [/(ouya)/i, /(nintendo) ([wids3utch]+)/i],
-                                        [f, d, [p, y]],
-                                        [/droid.+; (shield) bui/i],
-                                        [d, [f, "Nvidia"],
-                                            [p, y]
-                                        ],
-                                        [/(playstation [345portablevi]+)/i],
-                                        [d, [f, x],
-                                            [p, y]
-                                        ],
-                                        [/\b(xbox(?: one)?(?!; xbox))[\); ]/i],
-                                        [d, [f, R],
-                                            [p, y]
-                                        ],
-                                        [/((pebble))app/i],
-                                        [f, d, [p, P]],
-                                        [/(watch)(?: ?os[,\/]|\d,\d\/)[\d\.]+/i],
-                                        [d, [f, S],
-                                            [p, P]
-                                        ],
-                                        [/droid.+; (glass) \d/i],
-                                        [d, [f, I],
-                                            [p, P]
-                                        ],
-                                        [/droid.+; (wt63?0{2,3})\)/i],
-                                        [d, [f, F],
-                                            [p, P]
-                                        ],
-                                        [/(quest( 2| pro)?)/i],
-                                        [d, [f, M],
-                                            [p, P]
-                                        ],
-                                        [/(tesla)(?: qtcarbrowser|\/[-\w\.]+)/i],
-                                        [f, [p, E]],
-                                        [/(aeobc)\b/i],
-                                        [d, [f, T],
-                                            [p, E]
-                                        ],
-                                        [/droid .+?; ([^;]+?)(?: bui|\) applew).+? mobile safari/i],
-                                        [d, [p, g]],
-                                        [/droid .+?; ([^;]+?)(?: bui|\) applew).+?(?! mobile) safari/i],
-                                        [d, [p, w]],
-                                        [/\b((tablet|tab)[;\/]|focus\/\d(?!.+mobile))/i],
-                                        [
-                                            [p, w]
-                                        ],
-                                        [/(phone|mobile(?:[;\/]| [ \w\/\.]*safari)|pda(?=.+windows ce))/i],
-                                        [
-                                            [p, g]
-                                        ],
-                                        [/(android[-\w\. ]{0,9});.+buil/i],
-                                        [d, [f, "Generic"]]
-                                    ],
-                                    engine: [
-                                        [/windows.+ edge\/([\w\.]+)/i],
-                                        [m, [u, "EdgeHTML"]],
-                                        [/webkit\/537\.36.+chrome\/(?!27)([\w\.]+)/i],
-                                        [m, [u, "Blink"]],
-                                        [/(presto)\/([\w\.]+)/i, /(webkit|trident|netfront|netsurf|amaya|lynx|w3m|goanna)\/([\w\.]+)/i, /ekioh(flow)\/([\w\.]+)/i, /(khtml|tasman|links)[\/ ]\(?([\w\.]+)/i, /(icab)[\/ ]([23]\.[\d\.]+)/i, /\b(libweb)/i],
-                                        [u, m],
-                                        [/rv\:([\w\.]{1,9})\b.+(gecko)/i],
-                                        [m, u]
-                                    ],
-                                    os: [
-                                        [/microsoft (windows) (vista|xp)/i],
-                                        [u, m],
-                                        [/(windows) nt 6\.2; (arm)/i, /(windows (?:phone(?: os)?|mobile))[\/ ]?([\d\.\w ]*)/i, /(windows)[\/ ]?([ntce\d\. ]+\w)(?!.+xbox)/i],
-                                        [u, [m, W, z]],
-                                        [/(win(?=3|9|n)|win 9x )([nt\d\.]+)/i],
-                                        [
-                                            [u, "Windows"],
-                                            [m, W, z]
-                                        ],
-                                        [/ip[honead]{2,4}\b(?:.*os ([\w]+) like mac|; opera)/i, /ios;fbsv\/([\d\.]+)/i, /cfnetwork\/.+darwin/i],
-                                        [
-                                            [m, /_/g, "."],
-                                            [u, "iOS"]
-                                        ],
-                                        [/(mac os x) ?([\w\. ]*)/i, /(macintosh|mac_powerpc\b)(?!.+haiku)/i],
-                                        [
-                                            [u, U],
-                                            [m, /_/g, "."]
-                                        ],
-                                        [/droid ([\w\.]+)\b.+(android[- ]x86|harmonyos)/i],
-                                        [m, u],
-                                        [/(android|webos|qnx|bada|rim tablet os|maemo|meego|sailfish)[-\/ ]?([\w\.]*)/i, /(blackberry)\w*\/([\w\.]*)/i, /(tizen|kaios)[\/ ]([\w\.]+)/i, /\((series40);/i],
-                                        [u, m],
-                                        [/\(bb(10);/i],
-                                        [m, [u, A]],
-                                        [/(?:symbian ?os|symbos|s60(?=;)|series60)[-\/ ]?([\w\.]*)/i],
-                                        [m, [u, "Symbian"]],
-                                        [/mozilla\/[\d\.]+ \((?:mobile|tablet|tv|mobile; [\w ]+); rv:.+ gecko\/([\w\.]+)/i],
-                                        [m, [u, "Firefox OS"]],
-                                        [/web0s;.+rt(tv)/i, /\b(?:hp)?wos(?:browser)?\/([\w\.]+)/i],
-                                        [m, [u, "webOS"]],
-                                        [/watch(?: ?os[,\/]|\d,\d\/)([\d\.]+)/i],
-                                        [m, [u, "watchOS"]],
-                                        [/crkey\/([\d\.]+)/i],
-                                        [m, [u, "Chromecast"]],
-                                        [/(cros) [\w]+(?:\)| ([\w\.]+)\b)/i],
-                                        [
-                                            [u, j], m
-                                        ],
-                                        [/panasonic;(viera)/i, /(netrange)mmh/i, /(nettv)\/(\d+\.[\w\.]+)/i, /(nintendo|playstation) ([wids345portablevuch]+)/i, /(xbox); +xbox ([^\);]+)/i, /\b(joli|palm)\b ?(?:os)?\/?([\w\.]*)/i, /(mint)[\/\(\) ]?(\w*)/i, /(mageia|vectorlinux)[; ]/i, /([kxln]?ubuntu|debian|suse|opensuse|gentoo|arch(?= linux)|slackware|fedora|mandriva|centos|pclinuxos|red ?hat|zenwalk|linpus|raspbian|plan 9|minix|risc os|contiki|deepin|manjaro|elementary os|sabayon|linspire)(?: gnu\/linux)?(?: enterprise)?(?:[- ]linux)?(?:-gnu)?[-\/ ]?(?!chrom|package)([-\w\.]*)/i, /(hurd|linux) ?([\w\.]*)/i, /(gnu) ?([\w\.]*)/i, /\b([-frentopcghs]{0,5}bsd|dragonfly)[\/ ]?(?!amd|[ix346]{1,2}86)([\w\.]*)/i, /(haiku) (\w+)/i],
-                                        [u, m],
-                                        [/(sunos) ?([\w\.\d]*)/i],
-                                        [
-                                            [u, "Solaris"], m
-                                        ],
-                                        [/((?:open)?solaris)[-\/ ]?([\w\.]*)/i, /(aix) ((\d)(?=\.|\)| )[\w\.])*/i, /\b(beos|os\/2|amigaos|morphos|openvms|fuchsia|hp-ux|serenityos)/i, /(unix) ?([\w\.]*)/i],
-                                        [u, m]
-                                    ]
-                                },
-                                K = function e(t, n) {
-                                    if (r(t) === l && (n = t, t = a), !(this instanceof e)) return new e(t, n).getResult();
-                                    var i = r(s) !== c && s.navigator ? s.navigator : a,
-                                        d = t || (i && i.userAgent ? i.userAgent : ""),
-                                        u = i && i.userAgentData ? i.userAgentData : a,
-                                        p = n ? function (e, t) {
-                                            var n = {};
-                                            for (var i in e) t[i] && t[i].length % 2 == 0 ? n[i] = t[i].concat(e[i]) : n[i] = e[i];
-                                            return n
-                                        }(Y, n) : Y,
-                                        f = i && i.userAgent == d;
-                                    return this.getBrowser = function () {
-                                        var e, t = {};
-                                        return t.name = a, t.version = a, V.call(t, d, p.browser), t.major = r(e = t.version) === h ? e.replace(/[^\d\.]/g, "").split(".")[0] : a, f && i && i.brave && r(i.brave.isBrave) == o && (t.name = "Brave"), t
-                                    }, this.getCPU = function () {
-                                        var e = {};
-                                        return e.architecture = a, V.call(e, d, p.cpu), e
-                                    }, this.getDevice = function () {
-                                        var e = {};
-                                        return e.vendor = a, e.model = a, e.type = a, V.call(e, d, p.device), f && !e.type && u && u.mobile && (e.type = g), f && "Macintosh" == e.model && i && r(i.standalone) !== c && i.maxTouchPoints && i.maxTouchPoints > 2 && (e.model = "iPad", e.type = w), e
-                                    }, this.getEngine = function () {
-                                        var e = {};
-                                        return e.name = a, e.version = a, V.call(e, d, p.engine), e
-                                    }, this.getOS = function () {
-                                        var e = {};
-                                        return e.name = a, e.version = a, V.call(e, d, p.os), f && !e.name && u && "Unknown" != u.platform && (e.name = u.platform.replace(/chrome os/i, j).replace(/macos/i, U)), e
-                                    }, this.getResult = function () {
-                                        return {
-                                            ua: this.getUA(),
-                                            browser: this.getBrowser(),
-                                            engine: this.getEngine(),
-                                            os: this.getOS(),
-                                            device: this.getDevice(),
-                                            cpu: this.getCPU()
-                                        }
-                                    }, this.getUA = function () {
-                                        return d
-                                    }, this.setUA = function (e) {
-                                        return d = r(e) === h && e.length > 350 ? q(e, 350) : e, this
-                                    }, this.setUA(d), this
-                                };
-                            K.VERSION = "1.0.35", K.BROWSER = $([u, m, "major"]), K.CPU = $([v]), K.DEVICE = $([d, f, p, y, g, b, w, P, E]), K.ENGINE = K.OS = $([u, m]), r(t) !== c ? (r(e) !== c && e.exports && (t = e.exports = K), t.UAParser = K) : r(n.amdD) === o && n.amdO ? (i = function () {
-                                return K
-                            }.call(t, n, t, e)) === a || (e.exports = i) : r(s) !== c && (s.UAParser = K);
-                            var J = r(s) !== c && (s.jQuery || s.Zepto);
-                            if (J && !J.ua) {
-                                var Z = new K;
-                                J.ua = Z.getResult(), J.ua.get = function () {
-                                    return Z.getUA()
-                                }, J.ua.set = function (e) {
-                                    Z.setUA(e);
-                                    var t = Z.getResult();
-                                    for (var n in t) J.ua[n] = t[n]
-                                }
-                            }
-                        }("object" === ("undefined" == typeof window ? "undefined" : r(window)) ? window : this)
-                },
-                8205: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        Z: () => s
-                    });
-                    var i = n(2616),
-                        r = n.n(i)()((function (e) {
-                            return e[1]
-                        }));
-                    r.push([e.id, ".gs-global-loader{position:fixed;z-index:99999;top:8px;right:8px;width:48px;height:48px}@media only screen and (min-width: 1024px){.gs-global-loader{top:inherit;right:16px;bottom:16px}}.gs-loader{position:relative;width:40px;height:40px;border-radius:50%;display:flex}.gs-loader__outter{box-sizing:border-box;position:absolute;border:4px solid #f50057;border-left-color:transparent;width:100%;height:100%;border-radius:50%;-webkit-animation:loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;animation:loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite}.gs-loader__inner{box-sizing:border-box;position:absolute;border:4px solid #f50057;border-radius:50%;width:20px;height:20px;left:calc(50% - 10px);top:calc(50% - 10px);border-top-color:transparent;-webkit-animation:loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;animation:loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite}@keyframes loader-outter{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes loader-inner{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(-360deg);transform:rotate(-360deg)}}.gs-loader-hidden{display:none}", ""]);
-                    const s = r
-                },
-                4610: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        _: () => v
-                    });
-                    var i = n(9312),
-                        r = n(824),
-                        s = n(1654),
-                        a = n(6803);
-
-                    function o(e) {
-                        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
-                            return typeof e
-                        } : function (e) {
-                            return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
-                        })(e)
-                    }
-
-                    function c(e, t) {
-                        for (var n = 0; n < t.length; n++) {
-                            var i = t[n];
-                            i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
-                        }
-                    }
-
-                    function l(e, t) {
-                        return !t || "object" !== o(t) && "function" != typeof t ? h(e) : t
-                    }
-
-                    function h(e) {
-                        if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                        for (var t in n) e[t] = n[t];
                         return e
                     }
 
-                    function d(e) {
-                        var t = "function" == typeof Map ? new Map : void 0;
-                        return (d = function (e) {
-                            if (null === e || (n = e, -1 === Function.toString.call(n).indexOf("[native code]"))) return e;
-                            var n;
-                            if ("function" != typeof e) throw new TypeError("Super expression must either be null or a function");
-                            if (void 0 !== t) {
-                                if (t.has(e)) return t.get(e);
-                                t.set(e, i)
-                            }
-
-                            function i() {
-                                return u(e, arguments, m(this).constructor)
-                            }
-                            return i.prototype = Object.create(e.prototype, {
-                                constructor: {
-                                    value: i,
-                                    enumerable: !1,
-                                    writable: !0,
-                                    configurable: !0
+                    function r(e, t) {
+                        var n, i = this;
+                        if (arguments.length) {
+                            if (t) {
+                                if (n = s(i, e, !0)) {
+                                    if (!(n = n.filter(a)).length) return r.call(i, e);
+                                    i.listeners[e] = n
                                 }
-                            }), f(i, e)
-                        })(e)
-                    }
+                            } else if ((n = i.listeners) && (delete n[e], !Object.keys(n).length)) return r.call(i)
+                        } else delete i.listeners;
+                        return i;
 
-                    function u(e, t, n) {
-                        return (u = p() ? Reflect.construct : function (e, t, n) {
-                            var i = [null];
-                            i.push.apply(i, t);
-                            var r = new(Function.bind.apply(e, i));
-                            return n && f(r, n.prototype), r
-                        }).apply(null, arguments)
-                    }
-
-                    function p() {
-                        if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
-                        if (Reflect.construct.sham) return !1;
-                        if ("function" == typeof Proxy) return !0;
-                        try {
-                            return Date.prototype.toString.call(Reflect.construct(Date, [], (function () {}))), !0
-                        } catch (e) {
-                            return !1
+                        function a(e) {
+                            return e !== t && e.originalListener !== t
                         }
                     }
 
-                    function f(e, t) {
-                        return (f = Object.setPrototypeOf || function (e, t) {
-                            return e.__proto__ = t, e
-                        })(e, t)
+                    function s(e, t, n) {
+                        if (!n || e.listeners) {
+                            var i = e.listeners || (e.listeners = {});
+                            return i[t] || (i[t] = [])
+                        }
                     }
+                    i(t.prototype), t.mixin = i
+                }((function e() {
+                    if (!(this instanceof e)) return new e
+                }))
+            },
+            4809: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    ZP: () => m
+                });
+                var i = n(3559),
+                    r = n(9691);
 
-                    function m(e) {
-                        return (m = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
-                            return e.__proto__ || Object.getPrototypeOf(e)
-                        })(e)
-                    }
-                    var v = function (e) {
-                        ! function (e, t) {
-                            if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function");
-                            e.prototype = Object.create(t && t.prototype, {
-                                constructor: {
-                                    value: e,
-                                    writable: !0,
-                                    configurable: !0
-                                }
-                            }), t && f(e, t)
-                        }(v, e);
-                        var t, n, o, d, u = (t = v, n = p(), function () {
-                            var e, i = m(t);
-                            if (n) {
-                                var r = m(this).constructor;
-                                e = Reflect.construct(i, arguments, r)
-                            } else e = i.apply(this, arguments);
-                            return l(this, e)
+                function s(e) {
+                    return (s = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+                        return typeof e
+                    } : function(e) {
+                        return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
+                    })(e)
+                }
+                var a = new Map,
+                    o = new Map,
+                    c = !0,
+                    l = !1;
+
+                function h(e) {
+                    return e.replace(/[\s,]+/g, " ").trim()
+                }
+
+                function d(e) {
+                    var t, n, d, u = h(e);
+                    if (!a.has(u)) {
+                        var p = (0, r.Qc)(e, {
+                            experimentalFragmentVariables: l
                         });
+                        if (!p || "Document" !== p.kind) throw new Error("Not a valid GraphQL document.");
+                        a.set(u, function(e) {
+                            var t = new Set(e.definitions);
+                            t.forEach((function(e) {
+                                e.loc && delete e.loc, Object.keys(e).forEach((function(n) {
+                                    var i = e[n];
+                                    i && "object" === s(i) && t.add(i)
+                                }))
+                            }));
+                            var n = e.loc;
+                            return n && (delete n.startToken, delete n.endToken), e
+                        }((t = p, n = new Set, d = [], t.definitions.forEach((function(e) {
+                            if ("FragmentDefinition" === e.kind) {
+                                var t = e.name.value,
+                                    i = h((s = e.loc).source.body.substring(s.start, s.end)),
+                                    r = o.get(t);
+                                r && !r.has(i) ? c && console.warn("Warning: fragment with name " + t + " already exists.\ngraphql-tag enforces all fragment names across your application to be unique; read more about\nthis in the docs: http://dev.apollodata.com/core/fragments.html#unique-names") : r || o.set(t, r = new Set), r.add(i), n.has(i) || (n.add(i), d.push(e))
+                            } else d.push(e);
+                            var s
+                        })), (0, i.pi)((0, i.pi)({}, t), {
+                            definitions: d
+                        }))))
+                    }
+                    return a.get(u)
+                }
 
-                        function v(e, t, n, r, a, o, c) {
-                            var d, p, f, m, y;
-                            ! function (e, t) {
-                                if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
-                            }(this, v), y = u.call(this, e);
-                            var g, w = Array.isArray(t) ? 0 !== t.length ? t : void 0 : t ? [t] : void 0,
-                                b = n;
-                            !b && w && (b = null === (g = w[0].loc) || void 0 === g ? void 0 : g.source);
-                            var P, E = r;
-                            !E && w && (E = w.reduce((function (e, t) {
-                                return t.loc && e.push(t.loc.start), e
-                            }), [])), E && 0 === E.length && (E = void 0), r && n ? P = r.map((function (e) {
-                                return (0, s.k)(n, e)
-                            })) : w && (P = w.reduce((function (e, t) {
-                                return t.loc && e.push((0, s.k)(t.loc.source, t.loc.start)), e
-                            }), []));
-                            var T = c;
-                            if (null == T && null != o) {
-                                var S = o.extensions;
-                                (0, i.Z)(S) && (T = S)
-                            }
-                            return Object.defineProperties(h(y), {
-                                name: {
-                                    value: "GraphQLError"
-                                },
-                                message: {
-                                    value: e,
-                                    enumerable: !0,
-                                    writable: !0
-                                },
-                                locations: {
-                                    value: null !== (d = P) && void 0 !== d ? d : void 0,
-                                    enumerable: null != P
-                                },
-                                path: {
-                                    value: null != a ? a : void 0,
-                                    enumerable: null != a
-                                },
-                                nodes: {
-                                    value: null != w ? w : void 0
-                                },
-                                source: {
-                                    value: null !== (p = b) && void 0 !== p ? p : void 0
-                                },
-                                positions: {
-                                    value: null !== (f = E) && void 0 !== f ? f : void 0
-                                },
-                                originalError: {
-                                    value: o
-                                },
-                                extensions: {
-                                    value: null !== (m = T) && void 0 !== m ? m : void 0,
-                                    enumerable: null != T
+                function u(e) {
+                    for (var t = [], n = 1; n < arguments.length; n++) t[n - 1] = arguments[n];
+                    "string" == typeof e && (e = [e]);
+                    var i = e[0];
+                    return t.forEach((function(t, n) {
+                        t && "Document" === t.kind ? i += t.loc.source.body : i += t, i += e[n + 1]
+                    })), d(i)
+                }
+                var p, f = u;
+                (p = u || (u = {})).gql = f, p.resetCaches = function() {
+                    a.clear(), o.clear()
+                }, p.disableFragmentWarnings = function() {
+                    c = !1
+                }, p.enableExperimentalFragmentVariables = function() {
+                    l = !0
+                }, p.disableExperimentalFragmentVariables = function() {
+                    l = !1
+                }, u.default = u;
+                const m = u
+            },
+            4943: e => {
+                "use strict";
+                e.exports = i, e.exports.isMobile = i, e.exports.default = i;
+                var t = /(android|bb\d+|meego).+mobile|armv7l|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series[46]0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i,
+                    n = /android|ipad|playbook|silk/i;
+
+                function i(e) {
+                    e || (e = {});
+                    var i = e.ua;
+                    if (i || "undefined" == typeof navigator || (i = navigator.userAgent), i && i.headers && "string" == typeof i.headers["user-agent"] && (i = i.headers["user-agent"]), "string" != typeof i) return !1;
+                    var r = t.test(i) || !!e.tablet && n.test(i);
+                    return !r && e.tablet && e.featureDetect && navigator && navigator.maxTouchPoints > 1 && -1 !== i.indexOf("Macintosh") && -1 !== i.indexOf("Safari") && (r = !0), r
+                }
+            },
+            2096: () => {
+                "function" != typeof Promise.prototype.finally && (Promise.prototype.finally = function(e) {
+                    var t = this;
+                    return this.then((function(n) {
+                        return t.constructor.resolve(e()).then((function() {
+                            return n
+                        }))
+                    })).catch((function(n) {
+                        return t.constructor.resolve(e()).then((function() {
+                            throw n
+                        }))
+                    }))
+                })
+            },
+            3559: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    pi: () => i
+                });
+                var i = function() {
+                    return (i = Object.assign || function(e) {
+                        for (var t, n = 1, i = arguments.length; n < i; n++)
+                            for (var r in t = arguments[n]) Object.prototype.hasOwnProperty.call(t, r) && (e[r] = t[r]);
+                        return e
+                    }).apply(this, arguments)
+                };
+                Object.create, Object.create
+            },
+            6256: function(e, t, n) {
+                var i;
+
+                function r(e) {
+                    return (r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+                        return typeof e
+                    } : function(e) {
+                        return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
+                    })(e)
+                }
+                e = n.nmd(e),
+                    function(s, a) {
+                        "use strict";
+                        var o = "function",
+                            c = "undefined",
+                            l = "object",
+                            h = "string",
+                            d = "model",
+                            u = "name",
+                            p = "type",
+                            f = "vendor",
+                            m = "version",
+                            v = "architecture",
+                            y = "console",
+                            g = "mobile",
+                            w = "tablet",
+                            b = "smarttv",
+                            P = "wearable",
+                            E = "embedded",
+                            T = "Amazon",
+                            S = "Apple",
+                            _ = "ASUS",
+                            A = "BlackBerry",
+                            I = "Google",
+                            C = "Huawei",
+                            k = "LG",
+                            R = "Microsoft",
+                            O = "Motorola",
+                            D = "Samsung",
+                            N = "Sharp",
+                            x = "Sony",
+                            L = "Xiaomi",
+                            F = "Zebra",
+                            M = "Facebook",
+                            j = "Chromium OS",
+                            U = "Mac OS",
+                            $ = function(e) {
+                                for (var t = {}, n = 0; n < e.length; n++) t[e[n].toUpperCase()] = e[n];
+                                return t
+                            },
+                            G = function(e, t) {
+                                return r(e) === h && -1 !== B(t).indexOf(B(e))
+                            },
+                            B = function(e) {
+                                return e.toLowerCase()
+                            },
+                            q = function(e, t) {
+                                if (r(e) === h) return e = e.replace(/^\s\s*/, ""), r(t) === c ? e : e.substring(0, 350)
+                            },
+                            V = function(e, t) {
+                                for (var n, i, s, c, h, d, u = 0; u < t.length && !h;) {
+                                    var p = t[u],
+                                        f = t[u + 1];
+                                    for (n = i = 0; n < p.length && !h && p[n];)
+                                        if (h = p[n++].exec(e))
+                                            for (s = 0; s < f.length; s++) d = h[++i], r(c = f[s]) === l && c.length > 0 ? 2 === c.length ? r(c[1]) == o ? this[c[0]] = c[1].call(this, d) : this[c[0]] = c[1] : 3 === c.length ? r(c[1]) !== o || c[1].exec && c[1].test ? this[c[0]] = d ? d.replace(c[1], c[2]) : a : this[c[0]] = d ? c[1].call(this, d, c[2]) : a : 4 === c.length && (this[c[0]] = d ? c[3].call(this, d.replace(c[1], c[2])) : a) : this[c] = d || a;
+                                    u += 2
                                 }
-                            }), null != o && o.stack ? (Object.defineProperty(h(y), "stack", {
-                                value: o.stack,
-                                writable: !0,
-                                configurable: !0
-                            }), l(y)) : (Error.captureStackTrace ? Error.captureStackTrace(h(y), v) : Object.defineProperty(h(y), "stack", {
-                                value: Error().stack,
-                                writable: !0,
-                                configurable: !0
-                            }), y)
+                            },
+                            W = function(e, t) {
+                                for (var n in t)
+                                    if (r(t[n]) === l && t[n].length > 0) {
+                                        for (var i = 0; i < t[n].length; i++)
+                                            if (G(t[n][i], e)) return "?" === n ? a : n
+                                    } else if (G(t[n], e)) return "?" === n ? a : n;
+                                return e
+                            },
+                            z = {
+                                ME: "4.90",
+                                "NT 3.11": "NT3.51",
+                                "NT 4.0": "NT4.0",
+                                2e3: "NT 5.0",
+                                XP: ["NT 5.1", "NT 5.2"],
+                                Vista: "NT 6.0",
+                                7: "NT 6.1",
+                                8: "NT 6.2",
+                                8.1: "NT 6.3",
+                                10: ["NT 6.4", "NT 10.0"],
+                                RT: "ARM"
+                            },
+                            Y = {
+                                browser: [
+                                    [/\b(?:crmo|crios)\/([\w\.]+)/i],
+                                    [m, [u, "Chrome"]],
+                                    [/edg(?:e|ios|a)?\/([\w\.]+)/i],
+                                    [m, [u, "Edge"]],
+                                    [/(opera mini)\/([-\w\.]+)/i, /(opera [mobiletab]{3,6})\b.+version\/([-\w\.]+)/i, /(opera)(?:.+version\/|[\/ ]+)([\w\.]+)/i],
+                                    [u, m],
+                                    [/opios[\/ ]+([\w\.]+)/i],
+                                    [m, [u, "Opera Mini"]],
+                                    [/\bopr\/([\w\.]+)/i],
+                                    [m, [u, "Opera"]],
+                                    [/(kindle)\/([\w\.]+)/i, /(lunascape|maxthon|netfront|jasmine|blazer)[\/ ]?([\w\.]*)/i, /(avant |iemobile|slim)(?:browser)?[\/ ]?([\w\.]*)/i, /(ba?idubrowser)[\/ ]?([\w\.]+)/i, /(?:ms|\()(ie) ([\w\.]+)/i, /(flock|rockmelt|midori|epiphany|silk|skyfire|bolt|iron|vivaldi|iridium|phantomjs|bowser|quark|qupzilla|falkon|rekonq|puffin|brave|whale(?!.+naver)|qqbrowserlite|qq|duckduckgo)\/([-\w\.]+)/i, /(heytap|ovi)browser\/([\d\.]+)/i, /(weibo)__([\d\.]+)/i],
+                                    [u, m],
+                                    [/(?:\buc? ?browser|(?:juc.+)ucweb)[\/ ]?([\w\.]+)/i],
+                                    [m, [u, "UCBrowser"]],
+                                    [/microm.+\bqbcore\/([\w\.]+)/i, /\bqbcore\/([\w\.]+).+microm/i],
+                                    [m, [u, "WeChat(Win) Desktop"]],
+                                    [/micromessenger\/([\w\.]+)/i],
+                                    [m, [u, "WeChat"]],
+                                    [/konqueror\/([\w\.]+)/i],
+                                    [m, [u, "Konqueror"]],
+                                    [/trident.+rv[: ]([\w\.]{1,9})\b.+like gecko/i],
+                                    [m, [u, "IE"]],
+                                    [/ya(?:search)?browser\/([\w\.]+)/i],
+                                    [m, [u, "Yandex"]],
+                                    [/(avast|avg)\/([\w\.]+)/i],
+                                    [
+                                        [u, /(.+)/, "$1 Secure Browser"], m
+                                    ],
+                                    [/\bfocus\/([\w\.]+)/i],
+                                    [m, [u, "Firefox Focus"]],
+                                    [/\bopt\/([\w\.]+)/i],
+                                    [m, [u, "Opera Touch"]],
+                                    [/coc_coc\w+\/([\w\.]+)/i],
+                                    [m, [u, "Coc Coc"]],
+                                    [/dolfin\/([\w\.]+)/i],
+                                    [m, [u, "Dolphin"]],
+                                    [/coast\/([\w\.]+)/i],
+                                    [m, [u, "Opera Coast"]],
+                                    [/miuibrowser\/([\w\.]+)/i],
+                                    [m, [u, "MIUI Browser"]],
+                                    [/fxios\/([-\w\.]+)/i],
+                                    [m, [u, "Firefox"]],
+                                    [/\bqihu|(qi?ho?o?|360)browser/i],
+                                    [
+                                        [u, "360 Browser"]
+                                    ],
+                                    [/(oculus|samsung|sailfish|huawei)browser\/([\w\.]+)/i],
+                                    [
+                                        [u, /(.+)/, "$1 Browser"], m
+                                    ],
+                                    [/(comodo_dragon)\/([\w\.]+)/i],
+                                    [
+                                        [u, /_/g, " "], m
+                                    ],
+                                    [/(electron)\/([\w\.]+) safari/i, /(tesla)(?: qtcarbrowser|\/(20\d\d\.[-\w\.]+))/i, /m?(qqbrowser|baiduboxapp|2345Explorer)[\/ ]?([\w\.]+)/i],
+                                    [u, m],
+                                    [/(metasr)[\/ ]?([\w\.]+)/i, /(lbbrowser)/i, /\[(linkedin)app\]/i],
+                                    [u],
+                                    [/((?:fban\/fbios|fb_iab\/fb4a)(?!.+fbav)|;fbav\/([\w\.]+);)/i],
+                                    [
+                                        [u, M], m
+                                    ],
+                                    [/(kakao(?:talk|story))[\/ ]([\w\.]+)/i, /(naver)\(.*?(\d+\.[\w\.]+).*\)/i, /safari (line)\/([\w\.]+)/i, /\b(line)\/([\w\.]+)\/iab/i, /(chromium|instagram)[\/ ]([-\w\.]+)/i],
+                                    [u, m],
+                                    [/\bgsa\/([\w\.]+) .*safari\//i],
+                                    [m, [u, "GSA"]],
+                                    [/musical_ly(?:.+app_?version\/|_)([\w\.]+)/i],
+                                    [m, [u, "TikTok"]],
+                                    [/headlesschrome(?:\/([\w\.]+)| )/i],
+                                    [m, [u, "Chrome Headless"]],
+                                    [/ wv\).+(chrome)\/([\w\.]+)/i],
+                                    [
+                                        [u, "Chrome WebView"], m
+                                    ],
+                                    [/droid.+ version\/([\w\.]+)\b.+(?:mobile safari|safari)/i],
+                                    [m, [u, "Android Browser"]],
+                                    [/(chrome|omniweb|arora|[tizenoka]{5} ?browser)\/v?([\w\.]+)/i],
+                                    [u, m],
+                                    [/version\/([\w\.\,]+) .*mobile\/\w+ (safari)/i],
+                                    [m, [u, "Mobile Safari"]],
+                                    [/version\/([\w(\.|\,)]+) .*(mobile ?safari|safari)/i],
+                                    [m, u],
+                                    [/webkit.+?(mobile ?safari|safari)(\/[\w\.]+)/i],
+                                    [u, [m, W, {
+                                        "1.0": "/8",
+                                        1.2: "/1",
+                                        1.3: "/3",
+                                        "2.0": "/412",
+                                        "2.0.2": "/416",
+                                        "2.0.3": "/417",
+                                        "2.0.4": "/419",
+                                        "?": "/"
+                                    }]],
+                                    [/(webkit|khtml)\/([\w\.]+)/i],
+                                    [u, m],
+                                    [/(navigator|netscape\d?)\/([-\w\.]+)/i],
+                                    [
+                                        [u, "Netscape"], m
+                                    ],
+                                    [/mobile vr; rv:([\w\.]+)\).+firefox/i],
+                                    [m, [u, "Firefox Reality"]],
+                                    [/ekiohf.+(flow)\/([\w\.]+)/i, /(swiftfox)/i, /(icedragon|iceweasel|camino|chimera|fennec|maemo browser|minimo|conkeror|klar)[\/ ]?([\w\.\+]+)/i, /(seamonkey|k-meleon|icecat|iceape|firebird|phoenix|palemoon|basilisk|waterfox)\/([-\w\.]+)$/i, /(firefox)\/([\w\.]+)/i, /(mozilla)\/([\w\.]+) .+rv\:.+gecko\/\d+/i, /(polaris|lynx|dillo|icab|doris|amaya|w3m|netsurf|sleipnir|obigo|mosaic|(?:go|ice|up)[\. ]?browser)[-\/ ]?v?([\w\.]+)/i, /(links) \(([\w\.]+)/i, /panasonic;(viera)/i],
+                                    [u, m],
+                                    [/(cobalt)\/([\w\.]+)/i],
+                                    [u, [m, /master.|lts./, ""]]
+                                ],
+                                cpu: [
+                                    [/(?:(amd|x(?:(?:86|64)[-_])?|wow|win)64)[;\)]/i],
+                                    [
+                                        [v, "amd64"]
+                                    ],
+                                    [/(ia32(?=;))/i],
+                                    [
+                                        [v, B]
+                                    ],
+                                    [/((?:i[346]|x)86)[;\)]/i],
+                                    [
+                                        [v, "ia32"]
+                                    ],
+                                    [/\b(aarch64|arm(v?8e?l?|_?64))\b/i],
+                                    [
+                                        [v, "arm64"]
+                                    ],
+                                    [/\b(arm(?:v[67])?ht?n?[fl]p?)\b/i],
+                                    [
+                                        [v, "armhf"]
+                                    ],
+                                    [/windows (ce|mobile); ppc;/i],
+                                    [
+                                        [v, "arm"]
+                                    ],
+                                    [/((?:ppc|powerpc)(?:64)?)(?: mac|;|\))/i],
+                                    [
+                                        [v, /ower/, "", B]
+                                    ],
+                                    [/(sun4\w)[;\)]/i],
+                                    [
+                                        [v, "sparc"]
+                                    ],
+                                    [/((?:avr32|ia64(?=;))|68k(?=\))|\barm(?=v(?:[1-7]|[5-7]1)l?|;|eabi)|(?=atmel )avr|(?:irix|mips|sparc)(?:64)?\b|pa-risc)/i],
+                                    [
+                                        [v, B]
+                                    ]
+                                ],
+                                device: [
+                                    [/\b(sch-i[89]0\d|shw-m380s|sm-[ptx]\w{2,4}|gt-[pn]\d{2,4}|sgh-t8[56]9|nexus 10)/i],
+                                    [d, [f, D],
+                                        [p, w]
+                                    ],
+                                    [/\b((?:s[cgp]h|gt|sm)-\w+|sc[g-]?[\d]+a?|galaxy nexus)/i, /samsung[- ]([-\w]+)/i, /sec-(sgh\w+)/i],
+                                    [d, [f, D],
+                                        [p, g]
+                                    ],
+                                    [/(?:\/|\()(ip(?:hone|od)[\w, ]*)(?:\/|;)/i],
+                                    [d, [f, S],
+                                        [p, g]
+                                    ],
+                                    [/\((ipad);[-\w\),; ]+apple/i, /applecoremedia\/[\w\.]+ \((ipad)/i, /\b(ipad)\d\d?,\d\d?[;\]].+ios/i],
+                                    [d, [f, S],
+                                        [p, w]
+                                    ],
+                                    [/(macintosh);/i],
+                                    [d, [f, S]],
+                                    [/\b(sh-?[altvz]?\d\d[a-ekm]?)/i],
+                                    [d, [f, N],
+                                        [p, g]
+                                    ],
+                                    [/\b((?:ag[rs][23]?|bah2?|sht?|btv)-a?[lw]\d{2})\b(?!.+d\/s)/i],
+                                    [d, [f, C],
+                                        [p, w]
+                                    ],
+                                    [/(?:huawei|honor)([-\w ]+)[;\)]/i, /\b(nexus 6p|\w{2,4}e?-[atu]?[ln][\dx][012359c][adn]?)\b(?!.+d\/s)/i],
+                                    [d, [f, C],
+                                        [p, g]
+                                    ],
+                                    [/\b(poco[\w ]+)(?: bui|\))/i, /\b; (\w+) build\/hm\1/i, /\b(hm[-_ ]?note?[_ ]?(?:\d\w)?) bui/i, /\b(redmi[\-_ ]?(?:note|k)?[\w_ ]+)(?: bui|\))/i, /\b(mi[-_ ]?(?:a\d|one|one[_ ]plus|note lte|max|cc)?[_ ]?(?:\d?\w?)[_ ]?(?:plus|se|lite)?)(?: bui|\))/i],
+                                    [
+                                        [d, /_/g, " "],
+                                        [f, L],
+                                        [p, g]
+                                    ],
+                                    [/\b(mi[-_ ]?(?:pad)(?:[\w_ ]+))(?: bui|\))/i],
+                                    [
+                                        [d, /_/g, " "],
+                                        [f, L],
+                                        [p, w]
+                                    ],
+                                    [/; (\w+) bui.+ oppo/i, /\b(cph[12]\d{3}|p(?:af|c[al]|d\w|e[ar])[mt]\d0|x9007|a101op)\b/i],
+                                    [d, [f, "OPPO"],
+                                        [p, g]
+                                    ],
+                                    [/vivo (\w+)(?: bui|\))/i, /\b(v[12]\d{3}\w?[at])(?: bui|;)/i],
+                                    [d, [f, "Vivo"],
+                                        [p, g]
+                                    ],
+                                    [/\b(rmx[12]\d{3})(?: bui|;|\))/i],
+                                    [d, [f, "Realme"],
+                                        [p, g]
+                                    ],
+                                    [/\b(milestone|droid(?:[2-4x]| (?:bionic|x2|pro|razr))?:?( 4g)?)\b[\w ]+build\//i, /\bmot(?:orola)?[- ](\w*)/i, /((?:moto[\w\(\) ]+|xt\d{3,4}|nexus 6)(?= bui|\)))/i],
+                                    [d, [f, O],
+                                        [p, g]
+                                    ],
+                                    [/\b(mz60\d|xoom[2 ]{0,2}) build\//i],
+                                    [d, [f, O],
+                                        [p, w]
+                                    ],
+                                    [/((?=lg)?[vl]k\-?\d{3}) bui| 3\.[-\w; ]{10}lg?-([06cv9]{3,4})/i],
+                                    [d, [f, k],
+                                        [p, w]
+                                    ],
+                                    [/(lm(?:-?f100[nv]?|-[\w\.]+)(?= bui|\))|nexus [45])/i, /\blg[-e;\/ ]+((?!browser|netcast|android tv)\w+)/i, /\blg-?([\d\w]+) bui/i],
+                                    [d, [f, k],
+                                        [p, g]
+                                    ],
+                                    [/(ideatab[-\w ]+)/i, /lenovo ?(s[56]000[-\w]+|tab(?:[\w ]+)|yt[-\d\w]{6}|tb[-\d\w]{6})/i],
+                                    [d, [f, "Lenovo"],
+                                        [p, w]
+                                    ],
+                                    [/(?:maemo|nokia).*(n900|lumia \d+)/i, /nokia[-_ ]?([-\w\.]*)/i],
+                                    [
+                                        [d, /_/g, " "],
+                                        [f, "Nokia"],
+                                        [p, g]
+                                    ],
+                                    [/(pixel c)\b/i],
+                                    [d, [f, I],
+                                        [p, w]
+                                    ],
+                                    [/droid.+; (pixel[\daxl ]{0,6})(?: bui|\))/i],
+                                    [d, [f, I],
+                                        [p, g]
+                                    ],
+                                    [/droid.+ (a?\d[0-2]{2}so|[c-g]\d{4}|so[-gl]\w+|xq-a\w[4-7][12])(?= bui|\).+chrome\/(?![1-6]{0,1}\d\.))/i],
+                                    [d, [f, x],
+                                        [p, g]
+                                    ],
+                                    [/sony tablet [ps]/i, /\b(?:sony)?sgp\w+(?: bui|\))/i],
+                                    [
+                                        [d, "Xperia Tablet"],
+                                        [f, x],
+                                        [p, w]
+                                    ],
+                                    [/ (kb2005|in20[12]5|be20[12][59])\b/i, /(?:one)?(?:plus)? (a\d0\d\d)(?: b|\))/i],
+                                    [d, [f, "OnePlus"],
+                                        [p, g]
+                                    ],
+                                    [/(alexa)webm/i, /(kf[a-z]{2}wi|aeo[c-r]{2})( bui|\))/i, /(kf[a-z]+)( bui|\)).+silk\//i],
+                                    [d, [f, T],
+                                        [p, w]
+                                    ],
+                                    [/((?:sd|kf)[0349hijorstuw]+)( bui|\)).+silk\//i],
+                                    [
+                                        [d, /(.+)/g, "Fire Phone $1"],
+                                        [f, T],
+                                        [p, g]
+                                    ],
+                                    [/(playbook);[-\w\),; ]+(rim)/i],
+                                    [d, f, [p, w]],
+                                    [/\b((?:bb[a-f]|st[hv])100-\d)/i, /\(bb10; (\w+)/i],
+                                    [d, [f, A],
+                                        [p, g]
+                                    ],
+                                    [/(?:\b|asus_)(transfo[prime ]{4,10} \w+|eeepc|slider \w+|nexus 7|padfone|p00[cj])/i],
+                                    [d, [f, _],
+                                        [p, w]
+                                    ],
+                                    [/ (z[bes]6[027][012][km][ls]|zenfone \d\w?)\b/i],
+                                    [d, [f, _],
+                                        [p, g]
+                                    ],
+                                    [/(nexus 9)/i],
+                                    [d, [f, "HTC"],
+                                        [p, w]
+                                    ],
+                                    [/(htc)[-;_ ]{1,2}([\w ]+(?=\)| bui)|\w+)/i, /(zte)[- ]([\w ]+?)(?: bui|\/|\))/i, /(alcatel|geeksphone|nexian|panasonic(?!(?:;|\.))|sony(?!-bra))[-_ ]?([-\w]*)/i],
+                                    [f, [d, /_/g, " "],
+                                        [p, g]
+                                    ],
+                                    [/droid.+; ([ab][1-7]-?[0178a]\d\d?)/i],
+                                    [d, [f, "Acer"],
+                                        [p, w]
+                                    ],
+                                    [/droid.+; (m[1-5] note) bui/i, /\bmz-([-\w]{2,})/i],
+                                    [d, [f, "Meizu"],
+                                        [p, g]
+                                    ],
+                                    [/(blackberry|benq|palm(?=\-)|sonyericsson|acer|asus|dell|meizu|motorola|polytron)[-_ ]?([-\w]*)/i, /(hp) ([\w ]+\w)/i, /(asus)-?(\w+)/i, /(microsoft); (lumia[\w ]+)/i, /(lenovo)[-_ ]?([-\w]+)/i, /(jolla)/i, /(oppo) ?([\w ]+) bui/i],
+                                    [f, d, [p, g]],
+                                    [/(kobo)\s(ereader|touch)/i, /(archos) (gamepad2?)/i, /(hp).+(touchpad(?!.+tablet)|tablet)/i, /(kindle)\/([\w\.]+)/i, /(nook)[\w ]+build\/(\w+)/i, /(dell) (strea[kpr\d ]*[\dko])/i, /(le[- ]+pan)[- ]+(\w{1,9}) bui/i, /(trinity)[- ]*(t\d{3}) bui/i, /(gigaset)[- ]+(q\w{1,9}) bui/i, /(vodafone) ([\w ]+)(?:\)| bui)/i],
+                                    [f, d, [p, w]],
+                                    [/(surface duo)/i],
+                                    [d, [f, R],
+                                        [p, w]
+                                    ],
+                                    [/droid [\d\.]+; (fp\du?)(?: b|\))/i],
+                                    [d, [f, "Fairphone"],
+                                        [p, g]
+                                    ],
+                                    [/(u304aa)/i],
+                                    [d, [f, "AT&T"],
+                                        [p, g]
+                                    ],
+                                    [/\bsie-(\w*)/i],
+                                    [d, [f, "Siemens"],
+                                        [p, g]
+                                    ],
+                                    [/\b(rct\w+) b/i],
+                                    [d, [f, "RCA"],
+                                        [p, w]
+                                    ],
+                                    [/\b(venue[\d ]{2,7}) b/i],
+                                    [d, [f, "Dell"],
+                                        [p, w]
+                                    ],
+                                    [/\b(q(?:mv|ta)\w+) b/i],
+                                    [d, [f, "Verizon"],
+                                        [p, w]
+                                    ],
+                                    [/\b(?:barnes[& ]+noble |bn[rt])([\w\+ ]*) b/i],
+                                    [d, [f, "Barnes & Noble"],
+                                        [p, w]
+                                    ],
+                                    [/\b(tm\d{3}\w+) b/i],
+                                    [d, [f, "NuVision"],
+                                        [p, w]
+                                    ],
+                                    [/\b(k88) b/i],
+                                    [d, [f, "ZTE"],
+                                        [p, w]
+                                    ],
+                                    [/\b(nx\d{3}j) b/i],
+                                    [d, [f, "ZTE"],
+                                        [p, g]
+                                    ],
+                                    [/\b(gen\d{3}) b.+49h/i],
+                                    [d, [f, "Swiss"],
+                                        [p, g]
+                                    ],
+                                    [/\b(zur\d{3}) b/i],
+                                    [d, [f, "Swiss"],
+                                        [p, w]
+                                    ],
+                                    [/\b((zeki)?tb.*\b) b/i],
+                                    [d, [f, "Zeki"],
+                                        [p, w]
+                                    ],
+                                    [/\b([yr]\d{2}) b/i, /\b(dragon[- ]+touch |dt)(\w{5}) b/i],
+                                    [
+                                        [f, "Dragon Touch"], d, [p, w]
+                                    ],
+                                    [/\b(ns-?\w{0,9}) b/i],
+                                    [d, [f, "Insignia"],
+                                        [p, w]
+                                    ],
+                                    [/\b((nxa|next)-?\w{0,9}) b/i],
+                                    [d, [f, "NextBook"],
+                                        [p, w]
+                                    ],
+                                    [/\b(xtreme\_)?(v(1[045]|2[015]|[3469]0|7[05])) b/i],
+                                    [
+                                        [f, "Voice"], d, [p, g]
+                                    ],
+                                    [/\b(lvtel\-)?(v1[12]) b/i],
+                                    [
+                                        [f, "LvTel"], d, [p, g]
+                                    ],
+                                    [/\b(ph-1) /i],
+                                    [d, [f, "Essential"],
+                                        [p, g]
+                                    ],
+                                    [/\b(v(100md|700na|7011|917g).*\b) b/i],
+                                    [d, [f, "Envizen"],
+                                        [p, w]
+                                    ],
+                                    [/\b(trio[-\w\. ]+) b/i],
+                                    [d, [f, "MachSpeed"],
+                                        [p, w]
+                                    ],
+                                    [/\btu_(1491) b/i],
+                                    [d, [f, "Rotor"],
+                                        [p, w]
+                                    ],
+                                    [/(shield[\w ]+) b/i],
+                                    [d, [f, "Nvidia"],
+                                        [p, w]
+                                    ],
+                                    [/(sprint) (\w+)/i],
+                                    [f, d, [p, g]],
+                                    [/(kin\.[onetw]{3})/i],
+                                    [
+                                        [d, /\./g, " "],
+                                        [f, R],
+                                        [p, g]
+                                    ],
+                                    [/droid.+; (cc6666?|et5[16]|mc[239][23]x?|vc8[03]x?)\)/i],
+                                    [d, [f, F],
+                                        [p, w]
+                                    ],
+                                    [/droid.+; (ec30|ps20|tc[2-8]\d[kx])\)/i],
+                                    [d, [f, F],
+                                        [p, g]
+                                    ],
+                                    [/smart-tv.+(samsung)/i],
+                                    [f, [p, b]],
+                                    [/hbbtv.+maple;(\d+)/i],
+                                    [
+                                        [d, /^/, "SmartTV"],
+                                        [f, D],
+                                        [p, b]
+                                    ],
+                                    [/(nux; netcast.+smarttv|lg (netcast\.tv-201\d|android tv))/i],
+                                    [
+                                        [f, k],
+                                        [p, b]
+                                    ],
+                                    [/(apple) ?tv/i],
+                                    [f, [d, "Apple TV"],
+                                        [p, b]
+                                    ],
+                                    [/crkey/i],
+                                    [
+                                        [d, "Chromecast"],
+                                        [f, I],
+                                        [p, b]
+                                    ],
+                                    [/droid.+aft(\w)( bui|\))/i],
+                                    [d, [f, T],
+                                        [p, b]
+                                    ],
+                                    [/\(dtv[\);].+(aquos)/i, /(aquos-tv[\w ]+)\)/i],
+                                    [d, [f, N],
+                                        [p, b]
+                                    ],
+                                    [/(bravia[\w ]+)( bui|\))/i],
+                                    [d, [f, x],
+                                        [p, b]
+                                    ],
+                                    [/(mitv-\w{5}) bui/i],
+                                    [d, [f, L],
+                                        [p, b]
+                                    ],
+                                    [/Hbbtv.*(technisat) (.*);/i],
+                                    [f, d, [p, b]],
+                                    [/\b(roku)[\dx]*[\)\/]((?:dvp-)?[\d\.]*)/i, /hbbtv\/\d+\.\d+\.\d+ +\([\w\+ ]*; *([\w\d][^;]*);([^;]*)/i],
+                                    [
+                                        [f, q],
+                                        [d, q],
+                                        [p, b]
+                                    ],
+                                    [/\b(android tv|smart[- ]?tv|opera tv|tv; rv:)\b/i],
+                                    [
+                                        [p, b]
+                                    ],
+                                    [/(ouya)/i, /(nintendo) ([wids3utch]+)/i],
+                                    [f, d, [p, y]],
+                                    [/droid.+; (shield) bui/i],
+                                    [d, [f, "Nvidia"],
+                                        [p, y]
+                                    ],
+                                    [/(playstation [345portablevi]+)/i],
+                                    [d, [f, x],
+                                        [p, y]
+                                    ],
+                                    [/\b(xbox(?: one)?(?!; xbox))[\); ]/i],
+                                    [d, [f, R],
+                                        [p, y]
+                                    ],
+                                    [/((pebble))app/i],
+                                    [f, d, [p, P]],
+                                    [/(watch)(?: ?os[,\/]|\d,\d\/)[\d\.]+/i],
+                                    [d, [f, S],
+                                        [p, P]
+                                    ],
+                                    [/droid.+; (glass) \d/i],
+                                    [d, [f, I],
+                                        [p, P]
+                                    ],
+                                    [/droid.+; (wt63?0{2,3})\)/i],
+                                    [d, [f, F],
+                                        [p, P]
+                                    ],
+                                    [/(quest( 2| pro)?)/i],
+                                    [d, [f, M],
+                                        [p, P]
+                                    ],
+                                    [/(tesla)(?: qtcarbrowser|\/[-\w\.]+)/i],
+                                    [f, [p, E]],
+                                    [/(aeobc)\b/i],
+                                    [d, [f, T],
+                                        [p, E]
+                                    ],
+                                    [/droid .+?; ([^;]+?)(?: bui|\) applew).+? mobile safari/i],
+                                    [d, [p, g]],
+                                    [/droid .+?; ([^;]+?)(?: bui|\) applew).+?(?! mobile) safari/i],
+                                    [d, [p, w]],
+                                    [/\b((tablet|tab)[;\/]|focus\/\d(?!.+mobile))/i],
+                                    [
+                                        [p, w]
+                                    ],
+                                    [/(phone|mobile(?:[;\/]| [ \w\/\.]*safari)|pda(?=.+windows ce))/i],
+                                    [
+                                        [p, g]
+                                    ],
+                                    [/(android[-\w\. ]{0,9});.+buil/i],
+                                    [d, [f, "Generic"]]
+                                ],
+                                engine: [
+                                    [/windows.+ edge\/([\w\.]+)/i],
+                                    [m, [u, "EdgeHTML"]],
+                                    [/webkit\/537\.36.+chrome\/(?!27)([\w\.]+)/i],
+                                    [m, [u, "Blink"]],
+                                    [/(presto)\/([\w\.]+)/i, /(webkit|trident|netfront|netsurf|amaya|lynx|w3m|goanna)\/([\w\.]+)/i, /ekioh(flow)\/([\w\.]+)/i, /(khtml|tasman|links)[\/ ]\(?([\w\.]+)/i, /(icab)[\/ ]([23]\.[\d\.]+)/i, /\b(libweb)/i],
+                                    [u, m],
+                                    [/rv\:([\w\.]{1,9})\b.+(gecko)/i],
+                                    [m, u]
+                                ],
+                                os: [
+                                    [/microsoft (windows) (vista|xp)/i],
+                                    [u, m],
+                                    [/(windows) nt 6\.2; (arm)/i, /(windows (?:phone(?: os)?|mobile))[\/ ]?([\d\.\w ]*)/i, /(windows)[\/ ]?([ntce\d\. ]+\w)(?!.+xbox)/i],
+                                    [u, [m, W, z]],
+                                    [/(win(?=3|9|n)|win 9x )([nt\d\.]+)/i],
+                                    [
+                                        [u, "Windows"],
+                                        [m, W, z]
+                                    ],
+                                    [/ip[honead]{2,4}\b(?:.*os ([\w]+) like mac|; opera)/i, /ios;fbsv\/([\d\.]+)/i, /cfnetwork\/.+darwin/i],
+                                    [
+                                        [m, /_/g, "."],
+                                        [u, "iOS"]
+                                    ],
+                                    [/(mac os x) ?([\w\. ]*)/i, /(macintosh|mac_powerpc\b)(?!.+haiku)/i],
+                                    [
+                                        [u, U],
+                                        [m, /_/g, "."]
+                                    ],
+                                    [/droid ([\w\.]+)\b.+(android[- ]x86|harmonyos)/i],
+                                    [m, u],
+                                    [/(android|webos|qnx|bada|rim tablet os|maemo|meego|sailfish)[-\/ ]?([\w\.]*)/i, /(blackberry)\w*\/([\w\.]*)/i, /(tizen|kaios)[\/ ]([\w\.]+)/i, /\((series40);/i],
+                                    [u, m],
+                                    [/\(bb(10);/i],
+                                    [m, [u, A]],
+                                    [/(?:symbian ?os|symbos|s60(?=;)|series60)[-\/ ]?([\w\.]*)/i],
+                                    [m, [u, "Symbian"]],
+                                    [/mozilla\/[\d\.]+ \((?:mobile|tablet|tv|mobile; [\w ]+); rv:.+ gecko\/([\w\.]+)/i],
+                                    [m, [u, "Firefox OS"]],
+                                    [/web0s;.+rt(tv)/i, /\b(?:hp)?wos(?:browser)?\/([\w\.]+)/i],
+                                    [m, [u, "webOS"]],
+                                    [/watch(?: ?os[,\/]|\d,\d\/)([\d\.]+)/i],
+                                    [m, [u, "watchOS"]],
+                                    [/crkey\/([\d\.]+)/i],
+                                    [m, [u, "Chromecast"]],
+                                    [/(cros) [\w]+(?:\)| ([\w\.]+)\b)/i],
+                                    [
+                                        [u, j], m
+                                    ],
+                                    [/panasonic;(viera)/i, /(netrange)mmh/i, /(nettv)\/(\d+\.[\w\.]+)/i, /(nintendo|playstation) ([wids345portablevuch]+)/i, /(xbox); +xbox ([^\);]+)/i, /\b(joli|palm)\b ?(?:os)?\/?([\w\.]*)/i, /(mint)[\/\(\) ]?(\w*)/i, /(mageia|vectorlinux)[; ]/i, /([kxln]?ubuntu|debian|suse|opensuse|gentoo|arch(?= linux)|slackware|fedora|mandriva|centos|pclinuxos|red ?hat|zenwalk|linpus|raspbian|plan 9|minix|risc os|contiki|deepin|manjaro|elementary os|sabayon|linspire)(?: gnu\/linux)?(?: enterprise)?(?:[- ]linux)?(?:-gnu)?[-\/ ]?(?!chrom|package)([-\w\.]*)/i, /(hurd|linux) ?([\w\.]*)/i, /(gnu) ?([\w\.]*)/i, /\b([-frentopcghs]{0,5}bsd|dragonfly)[\/ ]?(?!amd|[ix346]{1,2}86)([\w\.]*)/i, /(haiku) (\w+)/i],
+                                    [u, m],
+                                    [/(sunos) ?([\w\.\d]*)/i],
+                                    [
+                                        [u, "Solaris"], m
+                                    ],
+                                    [/((?:open)?solaris)[-\/ ]?([\w\.]*)/i, /(aix) ((\d)(?=\.|\)| )[\w\.])*/i, /\b(beos|os\/2|amigaos|morphos|openvms|fuchsia|hp-ux|serenityos)/i, /(unix) ?([\w\.]*)/i],
+                                    [u, m]
+                                ]
+                            },
+                            K = function e(t, n) {
+                                if (r(t) === l && (n = t, t = a), !(this instanceof e)) return new e(t, n).getResult();
+                                var i = r(s) !== c && s.navigator ? s.navigator : a,
+                                    d = t || (i && i.userAgent ? i.userAgent : ""),
+                                    u = i && i.userAgentData ? i.userAgentData : a,
+                                    p = n ? function(e, t) {
+                                        var n = {};
+                                        for (var i in e) t[i] && t[i].length % 2 == 0 ? n[i] = t[i].concat(e[i]) : n[i] = e[i];
+                                        return n
+                                    }(Y, n) : Y,
+                                    f = i && i.userAgent == d;
+                                return this.getBrowser = function() {
+                                    var e, t = {};
+                                    return t.name = a, t.version = a, V.call(t, d, p.browser), t.major = r(e = t.version) === h ? e.replace(/[^\d\.]/g, "").split(".")[0] : a, f && i && i.brave && r(i.brave.isBrave) == o && (t.name = "Brave"), t
+                                }, this.getCPU = function() {
+                                    var e = {};
+                                    return e.architecture = a, V.call(e, d, p.cpu), e
+                                }, this.getDevice = function() {
+                                    var e = {};
+                                    return e.vendor = a, e.model = a, e.type = a, V.call(e, d, p.device), f && !e.type && u && u.mobile && (e.type = g), f && "Macintosh" == e.model && i && r(i.standalone) !== c && i.maxTouchPoints && i.maxTouchPoints > 2 && (e.model = "iPad", e.type = w), e
+                                }, this.getEngine = function() {
+                                    var e = {};
+                                    return e.name = a, e.version = a, V.call(e, d, p.engine), e
+                                }, this.getOS = function() {
+                                    var e = {};
+                                    return e.name = a, e.version = a, V.call(e, d, p.os), f && !e.name && u && "Unknown" != u.platform && (e.name = u.platform.replace(/chrome os/i, j).replace(/macos/i, U)), e
+                                }, this.getResult = function() {
+                                    return {
+                                        ua: this.getUA(),
+                                        browser: this.getBrowser(),
+                                        engine: this.getEngine(),
+                                        os: this.getOS(),
+                                        device: this.getDevice(),
+                                        cpu: this.getCPU()
+                                    }
+                                }, this.getUA = function() {
+                                    return d
+                                }, this.setUA = function(e) {
+                                    return d = r(e) === h && e.length > 350 ? q(e, 350) : e, this
+                                }, this.setUA(d), this
+                            };
+                        K.VERSION = "1.0.35", K.BROWSER = $([u, m, "major"]), K.CPU = $([v]), K.DEVICE = $([d, f, p, y, g, b, w, P, E]), K.ENGINE = K.OS = $([u, m]), r(t) !== c ? (r(e) !== c && e.exports && (t = e.exports = K), t.UAParser = K) : r(n.amdD) === o && n.amdO ? (i = function() {
+                            return K
+                        }.call(t, n, t, e)) === a || (e.exports = i) : r(s) !== c && (s.UAParser = K);
+                        var J = r(s) !== c && (s.jQuery || s.Zepto);
+                        if (J && !J.ua) {
+                            var Z = new K;
+                            J.ua = Z.getResult(), J.ua.get = function() {
+                                return Z.getUA()
+                            }, J.ua.set = function(e) {
+                                Z.setUA(e);
+                                var t = Z.getResult();
+                                for (var n in t) J.ua[n] = t[n]
+                            }
                         }
-                        return o = v, (d = [{
-                            key: "toString",
-                            value: function () {
-                                return function (e) {
-                                    var t = e.message;
-                                    if (e.nodes)
-                                        for (var n = 0, i = e.nodes; n < i.length; n++) {
-                                            var r = i[n];
-                                            r.loc && (t += "\n\n" + (0, a.Q)(r.loc))
-                                        } else if (e.source && e.locations)
-                                            for (var s = 0, o = e.locations; s < o.length; s++) {
-                                                var c = o[s];
-                                                t += "\n\n" + (0, a.z)(e.source, c)
-                                            }
-                                    return t
-                                }(this)
+                    }("object" === ("undefined" == typeof window ? "undefined" : r(window)) ? window : this)
+            },
+            8205: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    Z: () => s
+                });
+                var i = n(2616),
+                    r = n.n(i)()((function(e) {
+                        return e[1]
+                    }));
+                r.push([e.id, ".gs-global-loader{position:fixed;z-index:99999;top:8px;right:8px;width:48px;height:48px}@media only screen and (min-width: 1024px){.gs-global-loader{top:inherit;right:16px;bottom:16px}}.gs-loader{position:relative;width:40px;height:40px;border-radius:50%;display:flex}.gs-loader__outter{box-sizing:border-box;position:absolute;border:4px solid #f50057;border-left-color:transparent;width:100%;height:100%;border-radius:50%;-webkit-animation:loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;animation:loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite}.gs-loader__inner{box-sizing:border-box;position:absolute;border:4px solid #f50057;border-radius:50%;width:20px;height:20px;left:calc(50% - 10px);top:calc(50% - 10px);border-top-color:transparent;-webkit-animation:loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;animation:loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite}@keyframes loader-outter{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes loader-inner{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(-360deg);transform:rotate(-360deg)}}.gs-loader-hidden{display:none}", ""]);
+                const s = r
+            },
+            4610: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    _: () => v
+                });
+                var i = n(9312),
+                    r = n(824),
+                    s = n(1654),
+                    a = n(6803);
+
+                function o(e) {
+                    return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+                        return typeof e
+                    } : function(e) {
+                        return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
+                    })(e)
+                }
+
+                function c(e, t) {
+                    for (var n = 0; n < t.length; n++) {
+                        var i = t[n];
+                        i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
+                    }
+                }
+
+                function l(e, t) {
+                    return !t || "object" !== o(t) && "function" != typeof t ? h(e) : t
+                }
+
+                function h(e) {
+                    if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                    return e
+                }
+
+                function d(e) {
+                    var t = "function" == typeof Map ? new Map : void 0;
+                    return (d = function(e) {
+                        if (null === e || (n = e, -1 === Function.toString.call(n).indexOf("[native code]"))) return e;
+                        var n;
+                        if ("function" != typeof e) throw new TypeError("Super expression must either be null or a function");
+                        if (void 0 !== t) {
+                            if (t.has(e)) return t.get(e);
+                            t.set(e, i)
+                        }
+
+                        function i() {
+                            return u(e, arguments, m(this).constructor)
+                        }
+                        return i.prototype = Object.create(e.prototype, {
+                            constructor: {
+                                value: i,
+                                enumerable: !1,
+                                writable: !0,
+                                configurable: !0
                             }
-                        }, {
-                            key: r.YF,
-                            get: function () {
-                                return "Object"
+                        }), f(i, e)
+                    })(e)
+                }
+
+                function u(e, t, n) {
+                    return (u = p() ? Reflect.construct : function(e, t, n) {
+                        var i = [null];
+                        i.push.apply(i, t);
+                        var r = new(Function.bind.apply(e, i));
+                        return n && f(r, n.prototype), r
+                    }).apply(null, arguments)
+                }
+
+                function p() {
+                    if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
+                    if (Reflect.construct.sham) return !1;
+                    if ("function" == typeof Proxy) return !0;
+                    try {
+                        return Date.prototype.toString.call(Reflect.construct(Date, [], (function() {}))), !0
+                    } catch (e) {
+                        return !1
+                    }
+                }
+
+                function f(e, t) {
+                    return (f = Object.setPrototypeOf || function(e, t) {
+                        return e.__proto__ = t, e
+                    })(e, t)
+                }
+
+                function m(e) {
+                    return (m = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+                        return e.__proto__ || Object.getPrototypeOf(e)
+                    })(e)
+                }
+                var v = function(e) {
+                    ! function(e, t) {
+                        if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function");
+                        e.prototype = Object.create(t && t.prototype, {
+                            constructor: {
+                                value: e,
+                                writable: !0,
+                                configurable: !0
                             }
-                        }]) && c(o.prototype, d), v
-                    }(d(Error))
-                },
-                7303: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        h: () => r
+                        }), t && f(e, t)
+                    }(v, e);
+                    var t, n, o, d, u = (t = v, n = p(), function() {
+                        var e, i = m(t);
+                        if (n) {
+                            var r = m(this).constructor;
+                            e = Reflect.construct(i, arguments, r)
+                        } else e = i.apply(this, arguments);
+                        return l(this, e)
                     });
-                    var i = n(4610);
 
-                    function r(e, t, n) {
-                        return new i._("Syntax Error: ".concat(n), void 0, e, [t])
+                    function v(e, t, n, r, a, o, c) {
+                        var d, p, f, m, y;
+                        ! function(e, t) {
+                            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+                        }(this, v), y = u.call(this, e);
+                        var g, w = Array.isArray(t) ? 0 !== t.length ? t : void 0 : t ? [t] : void 0,
+                            b = n;
+                        !b && w && (b = null === (g = w[0].loc) || void 0 === g ? void 0 : g.source);
+                        var P, E = r;
+                        !E && w && (E = w.reduce((function(e, t) {
+                            return t.loc && e.push(t.loc.start), e
+                        }), [])), E && 0 === E.length && (E = void 0), r && n ? P = r.map((function(e) {
+                            return (0, s.k)(n, e)
+                        })) : w && (P = w.reduce((function(e, t) {
+                            return t.loc && e.push((0, s.k)(t.loc.source, t.loc.start)), e
+                        }), []));
+                        var T = c;
+                        if (null == T && null != o) {
+                            var S = o.extensions;
+                            (0, i.Z)(S) && (T = S)
+                        }
+                        return Object.defineProperties(h(y), {
+                            name: {
+                                value: "GraphQLError"
+                            },
+                            message: {
+                                value: e,
+                                enumerable: !0,
+                                writable: !0
+                            },
+                            locations: {
+                                value: null !== (d = P) && void 0 !== d ? d : void 0,
+                                enumerable: null != P
+                            },
+                            path: {
+                                value: null != a ? a : void 0,
+                                enumerable: null != a
+                            },
+                            nodes: {
+                                value: null != w ? w : void 0
+                            },
+                            source: {
+                                value: null !== (p = b) && void 0 !== p ? p : void 0
+                            },
+                            positions: {
+                                value: null !== (f = E) && void 0 !== f ? f : void 0
+                            },
+                            originalError: {
+                                value: o
+                            },
+                            extensions: {
+                                value: null !== (m = T) && void 0 !== m ? m : void 0,
+                                enumerable: null != T
+                            }
+                        }), null != o && o.stack ? (Object.defineProperty(h(y), "stack", {
+                            value: o.stack,
+                            writable: !0,
+                            configurable: !0
+                        }), l(y)) : (Error.captureStackTrace ? Error.captureStackTrace(h(y), v) : Object.defineProperty(h(y), "stack", {
+                            value: Error().stack,
+                            writable: !0,
+                            configurable: !0
+                        }), y)
                     }
-                },
-                1087: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        Z: () => s
-                    });
-                    var i = n(3077),
-                        r = n(7986);
+                    return o = v, (d = [{
+                        key: "toString",
+                        value: function() {
+                            return function(e) {
+                                var t = e.message;
+                                if (e.nodes)
+                                    for (var n = 0, i = e.nodes; n < i.length; n++) {
+                                        var r = i[n];
+                                        r.loc && (t += "\n\n" + (0, a.Q)(r.loc))
+                                    } else if (e.source && e.locations)
+                                        for (var s = 0, o = e.locations; s < o.length; s++) {
+                                            var c = o[s];
+                                            t += "\n\n" + (0, a.z)(e.source, c)
+                                        }
+                                return t
+                            }(this)
+                        }
+                    }, {
+                        key: r.YF,
+                        get: function() {
+                            return "Object"
+                        }
+                    }]) && c(o.prototype, d), v
+                }(d(Error))
+            },
+            7303: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    h: () => r
+                });
+                var i = n(4610);
 
-                    function s(e) {
-                        var t = e.prototype.toJSON;
-                        "function" == typeof t || (0, i.Z)(0), e.prototype.inspect = t, r.Z && (e.prototype[r.Z] = t)
-                    }
-                },
-                3767: (e, t, n) => {
-                    "use strict";
+                function r(e, t, n) {
+                    return new i._("Syntax Error: ".concat(n), void 0, e, [t])
+                }
+            },
+            1087: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    Z: () => s
+                });
+                var i = n(3077),
+                    r = n(7986);
 
-                    function i(e, t) {
-                        if (!Boolean(e)) throw new Error(t)
-                    }
-                    n.d(t, {
-                        Z: () => i
-                    })
-                },
-                6589: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        Z: () => s
-                    });
-                    var i = n(7986);
+                function s(e) {
+                    var t = e.prototype.toJSON;
+                    "function" == typeof t || (0, i.Z)(0), e.prototype.inspect = t, r.Z && (e.prototype[r.Z] = t)
+                }
+            },
+            3767: (e, t, n) => {
+                "use strict";
 
-                    function r(e) {
-                        return (r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
-                            return typeof e
-                        } : function (e) {
-                            return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
-                        })(e)
-                    }
+                function i(e, t) {
+                    if (!Boolean(e)) throw new Error(t)
+                }
+                n.d(t, {
+                    Z: () => i
+                })
+            },
+            6589: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    Z: () => s
+                });
+                var i = n(7986);
 
-                    function s(e) {
-                        return a(e, [])
-                    }
+                function r(e) {
+                    return (r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+                        return typeof e
+                    } : function(e) {
+                        return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
+                    })(e)
+                }
 
-                    function a(e, t) {
-                        switch (r(e)) {
+                function s(e) {
+                    return a(e, [])
+                }
+
+                function a(e, t) {
+                    switch (r(e)) {
                         case "string":
                             return JSON.stringify(e);
                         case "function":
                             return e.name ? "[function ".concat(e.name, "]") : "[function]";
                         case "object":
-                            return null === e ? "null" : function (e, t) {
+                            return null === e ? "null" : function(e, t) {
                                 if (-1 !== t.indexOf(e)) return "[Circular]";
                                 var n = [].concat(t, [e]),
-                                    r = function (e) {
+                                    r = function(e) {
                                         var t = e[String(i.Z)];
                                         return "function" == typeof t ? t : "function" == typeof e.inspect ? e.inspect : void 0
                                     }(e);
                                 if (void 0 !== r) {
                                     var s = r.call(e);
                                     if (s !== e) return "string" == typeof s ? s : a(s, n)
-                                } else if (Array.isArray(e)) return function (e, t) {
+                                } else if (Array.isArray(e)) return function(e, t) {
                                     if (0 === e.length) return "[]";
                                     if (t.length > 2) return "[Array]";
                                     for (var n = Math.min(10, e.length), i = e.length - n, r = [], s = 0; s < n; ++s) r.push(a(e[s], t));
                                     return 1 === i ? r.push("... 1 more item") : i > 1 && r.push("... ".concat(i, " more items")), "[" + r.join(", ") + "]"
                                 }(e, n);
-                                return function (e, t) {
+                                return function(e, t) {
                                     var n = Object.keys(e);
-                                    return 0 === n.length ? "{}" : t.length > 2 ? "[" + function (e) {
+                                    return 0 === n.length ? "{}" : t.length > 2 ? "[" + function(e) {
                                         var t = Object.prototype.toString.call(e).replace(/^\[object /, "").replace(/]$/, "");
                                         if ("Object" === t && "function" == typeof e.constructor) {
                                             var n = e.constructor.name;
                                             if ("string" == typeof n && "" !== n) return n
                                         }
                                         return t
-                                    }(e) + "]" : "{ " + n.map((function (n) {
+                                    }(e) + "]" : "{ " + n.map((function(n) {
                                         return n + ": " + a(e[n], t)
                                     })).join(", ") + " }"
                                 }(e, n)
                             }(e, t);
                         default:
                             return String(e)
+                    }
+                }
+            },
+            9495: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    Z: () => i
+                });
+                const i = function(e, t) {
+                    return e instanceof t
+                }
+            },
+            3077: (e, t, n) => {
+                "use strict";
+
+                function i(e, t) {
+                    if (!Boolean(e)) throw new Error(null != t ? t : "Unexpected invariant triggered.")
+                }
+                n.d(t, {
+                    Z: () => i
+                })
+            },
+            9312: (e, t, n) => {
+                "use strict";
+
+                function i(e) {
+                    return (i = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+                        return typeof e
+                    } : function(e) {
+                        return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
+                    })(e)
+                }
+
+                function r(e) {
+                    return "object" == i(e) && null !== e
+                }
+                n.d(t, {
+                    Z: () => r
+                })
+            },
+            7986: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    Z: () => i
+                });
+                const i = "function" == typeof Symbol && "function" == typeof Symbol.for ? Symbol.for("nodejs.util.inspect.custom") : void 0
+            },
+            2387: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    Ye: () => r,
+                    WU: () => s
+                });
+                var i = n(1087),
+                    r = function() {
+                        function e(e, t, n) {
+                            this.start = e.start, this.end = t.end, this.startToken = e, this.endToken = t, this.source = n
                         }
-                    }
-                },
-                9495: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        Z: () => i
-                    });
-                    const i = function (e, t) {
-                        return e instanceof t
-                    }
-                },
-                3077: (e, t, n) => {
-                    "use strict";
-
-                    function i(e, t) {
-                        if (!Boolean(e)) throw new Error(null != t ? t : "Unexpected invariant triggered.")
-                    }
-                    n.d(t, {
-                        Z: () => i
-                    })
-                },
-                9312: (e, t, n) => {
-                    "use strict";
-
-                    function i(e) {
-                        return (i = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
-                            return typeof e
-                        } : function (e) {
-                            return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
-                        })(e)
-                    }
-
-                    function r(e) {
-                        return "object" == i(e) && null !== e
-                    }
-                    n.d(t, {
-                        Z: () => r
-                    })
-                },
-                7986: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        Z: () => i
-                    });
-                    const i = "function" == typeof Symbol && "function" == typeof Symbol.for ? Symbol.for("nodejs.util.inspect.custom") : void 0
-                },
-                2387: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        Ye: () => r,
-                        WU: () => s
-                    });
-                    var i = n(1087),
-                        r = function () {
-                            function e(e, t, n) {
-                                this.start = e.start, this.end = t.end, this.startToken = e, this.endToken = t, this.source = n
-                            }
-                            return e.prototype.toJSON = function () {
-                                return {
-                                    start: this.start,
-                                    end: this.end
-                                }
-                            }, e
-                        }();
-                    (0, i.Z)(r);
-                    var s = function () {
-                        function e(e, t, n, i, r, s, a) {
-                            this.kind = e, this.start = t, this.end = n, this.line = i, this.column = r, this.value = a, this.prev = s, this.next = null
-                        }
-                        return e.prototype.toJSON = function () {
+                        return e.prototype.toJSON = function() {
                             return {
-                                kind: this.kind,
-                                value: this.value,
-                                line: this.line,
-                                column: this.column
+                                start: this.start,
+                                end: this.end
                             }
                         }, e
                     }();
-                    (0, i.Z)(s)
-                },
-                7420: (e, t, n) => {
-                    "use strict";
+                (0, i.Z)(r);
+                var s = function() {
+                    function e(e, t, n, i, r, s, a) {
+                        this.kind = e, this.start = t, this.end = n, this.line = i, this.column = r, this.value = a, this.prev = s, this.next = null
+                    }
+                    return e.prototype.toJSON = function() {
+                        return {
+                            kind: this.kind,
+                            value: this.value,
+                            line: this.line,
+                            column: this.column
+                        }
+                    }, e
+                }();
+                (0, i.Z)(s)
+            },
+            7420: (e, t, n) => {
+                "use strict";
 
-                    function i(e) {
-                        var t = e.split(/\r\n|[\n\r]/g),
-                            n = function (e) {
-                                for (var t, n = !0, i = !0, r = 0, s = null, a = 0; a < e.length; ++a) switch (e.charCodeAt(a)) {
+                function i(e) {
+                    var t = e.split(/\r\n|[\n\r]/g),
+                        n = function(e) {
+                            for (var t, n = !0, i = !0, r = 0, s = null, a = 0; a < e.length; ++a) switch (e.charCodeAt(a)) {
                                 case 13:
                                     10 === e.charCodeAt(a + 1) && ++a;
                                 case 10:
@@ -1338,146 +1339,146 @@
                                     break;
                                 default:
                                     i && !n && (null === s || r < s) && (s = r), i = !1
-                                }
-                                return null !== (t = s) && void 0 !== t ? t : 0
-                            }(e);
-                        if (0 !== n)
-                            for (var i = 1; i < t.length; i++) t[i] = t[i].slice(n);
-                        for (var s = 0; s < t.length && r(t[s]);) ++s;
-                        for (var a = t.length; a > s && r(t[a - 1]);) --a;
-                        return t.slice(s, a).join("\n")
-                    }
-
-                    function r(e) {
-                        for (var t = 0; t < e.length; ++t)
-                            if (" " !== e[t] && "\t" !== e[t]) return !1;
-                        return !0
-                    }
-                    n.d(t, {
-                        W7: () => i
-                    })
-                },
-                4643: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        B: () => i
-                    });
-                    var i = Object.freeze({
-                        QUERY: "QUERY",
-                        MUTATION: "MUTATION",
-                        SUBSCRIPTION: "SUBSCRIPTION",
-                        FIELD: "FIELD",
-                        FRAGMENT_DEFINITION: "FRAGMENT_DEFINITION",
-                        FRAGMENT_SPREAD: "FRAGMENT_SPREAD",
-                        INLINE_FRAGMENT: "INLINE_FRAGMENT",
-                        VARIABLE_DEFINITION: "VARIABLE_DEFINITION",
-                        SCHEMA: "SCHEMA",
-                        SCALAR: "SCALAR",
-                        OBJECT: "OBJECT",
-                        FIELD_DEFINITION: "FIELD_DEFINITION",
-                        ARGUMENT_DEFINITION: "ARGUMENT_DEFINITION",
-                        INTERFACE: "INTERFACE",
-                        UNION: "UNION",
-                        ENUM: "ENUM",
-                        ENUM_VALUE: "ENUM_VALUE",
-                        INPUT_OBJECT: "INPUT_OBJECT",
-                        INPUT_FIELD_DEFINITION: "INPUT_FIELD_DEFINITION"
-                    })
-                },
-                6450: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        h: () => i
-                    });
-                    var i = Object.freeze({
-                        NAME: "Name",
-                        DOCUMENT: "Document",
-                        OPERATION_DEFINITION: "OperationDefinition",
-                        VARIABLE_DEFINITION: "VariableDefinition",
-                        SELECTION_SET: "SelectionSet",
-                        FIELD: "Field",
-                        ARGUMENT: "Argument",
-                        FRAGMENT_SPREAD: "FragmentSpread",
-                        INLINE_FRAGMENT: "InlineFragment",
-                        FRAGMENT_DEFINITION: "FragmentDefinition",
-                        VARIABLE: "Variable",
-                        INT: "IntValue",
-                        FLOAT: "FloatValue",
-                        STRING: "StringValue",
-                        BOOLEAN: "BooleanValue",
-                        NULL: "NullValue",
-                        ENUM: "EnumValue",
-                        LIST: "ListValue",
-                        OBJECT: "ObjectValue",
-                        OBJECT_FIELD: "ObjectField",
-                        DIRECTIVE: "Directive",
-                        NAMED_TYPE: "NamedType",
-                        LIST_TYPE: "ListType",
-                        NON_NULL_TYPE: "NonNullType",
-                        SCHEMA_DEFINITION: "SchemaDefinition",
-                        OPERATION_TYPE_DEFINITION: "OperationTypeDefinition",
-                        SCALAR_TYPE_DEFINITION: "ScalarTypeDefinition",
-                        OBJECT_TYPE_DEFINITION: "ObjectTypeDefinition",
-                        FIELD_DEFINITION: "FieldDefinition",
-                        INPUT_VALUE_DEFINITION: "InputValueDefinition",
-                        INTERFACE_TYPE_DEFINITION: "InterfaceTypeDefinition",
-                        UNION_TYPE_DEFINITION: "UnionTypeDefinition",
-                        ENUM_TYPE_DEFINITION: "EnumTypeDefinition",
-                        ENUM_VALUE_DEFINITION: "EnumValueDefinition",
-                        INPUT_OBJECT_TYPE_DEFINITION: "InputObjectTypeDefinition",
-                        DIRECTIVE_DEFINITION: "DirectiveDefinition",
-                        SCHEMA_EXTENSION: "SchemaExtension",
-                        SCALAR_TYPE_EXTENSION: "ScalarTypeExtension",
-                        OBJECT_TYPE_EXTENSION: "ObjectTypeExtension",
-                        INTERFACE_TYPE_EXTENSION: "InterfaceTypeExtension",
-                        UNION_TYPE_EXTENSION: "UnionTypeExtension",
-                        ENUM_TYPE_EXTENSION: "EnumTypeExtension",
-                        INPUT_OBJECT_TYPE_EXTENSION: "InputObjectTypeExtension"
-                    })
-                },
-                2496: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        h: () => o,
-                        u: () => c
-                    });
-                    var i = n(7303),
-                        r = n(2387),
-                        s = n(7525),
-                        a = n(7420),
-                        o = function () {
-                            function e(e) {
-                                var t = new r.WU(s.T.SOF, 0, 0, 0, 0, null);
-                                this.source = e, this.lastToken = t, this.token = t, this.line = 1, this.lineStart = 0
                             }
-                            var t = e.prototype;
-                            return t.advance = function () {
-                                return this.lastToken = this.token, this.token = this.lookahead()
-                            }, t.lookahead = function () {
-                                var e = this.token;
-                                if (e.kind !== s.T.EOF)
-                                    do {
-                                        var t;
-                                        e = null !== (t = e.next) && void 0 !== t ? t : e.next = h(this, e)
-                                    } while (e.kind === s.T.COMMENT);
-                                return e
-                            }, e
-                        }();
+                            return null !== (t = s) && void 0 !== t ? t : 0
+                        }(e);
+                    if (0 !== n)
+                        for (var i = 1; i < t.length; i++) t[i] = t[i].slice(n);
+                    for (var s = 0; s < t.length && r(t[s]);) ++s;
+                    for (var a = t.length; a > s && r(t[a - 1]);) --a;
+                    return t.slice(s, a).join("\n")
+                }
 
-                    function c(e) {
-                        return e === s.T.BANG || e === s.T.DOLLAR || e === s.T.AMP || e === s.T.PAREN_L || e === s.T.PAREN_R || e === s.T.SPREAD || e === s.T.COLON || e === s.T.EQUALS || e === s.T.AT || e === s.T.BRACKET_L || e === s.T.BRACKET_R || e === s.T.BRACE_L || e === s.T.PIPE || e === s.T.BRACE_R
-                    }
+                function r(e) {
+                    for (var t = 0; t < e.length; ++t)
+                        if (" " !== e[t] && "\t" !== e[t]) return !1;
+                    return !0
+                }
+                n.d(t, {
+                    W7: () => i
+                })
+            },
+            4643: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    B: () => i
+                });
+                var i = Object.freeze({
+                    QUERY: "QUERY",
+                    MUTATION: "MUTATION",
+                    SUBSCRIPTION: "SUBSCRIPTION",
+                    FIELD: "FIELD",
+                    FRAGMENT_DEFINITION: "FRAGMENT_DEFINITION",
+                    FRAGMENT_SPREAD: "FRAGMENT_SPREAD",
+                    INLINE_FRAGMENT: "INLINE_FRAGMENT",
+                    VARIABLE_DEFINITION: "VARIABLE_DEFINITION",
+                    SCHEMA: "SCHEMA",
+                    SCALAR: "SCALAR",
+                    OBJECT: "OBJECT",
+                    FIELD_DEFINITION: "FIELD_DEFINITION",
+                    ARGUMENT_DEFINITION: "ARGUMENT_DEFINITION",
+                    INTERFACE: "INTERFACE",
+                    UNION: "UNION",
+                    ENUM: "ENUM",
+                    ENUM_VALUE: "ENUM_VALUE",
+                    INPUT_OBJECT: "INPUT_OBJECT",
+                    INPUT_FIELD_DEFINITION: "INPUT_FIELD_DEFINITION"
+                })
+            },
+            6450: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    h: () => i
+                });
+                var i = Object.freeze({
+                    NAME: "Name",
+                    DOCUMENT: "Document",
+                    OPERATION_DEFINITION: "OperationDefinition",
+                    VARIABLE_DEFINITION: "VariableDefinition",
+                    SELECTION_SET: "SelectionSet",
+                    FIELD: "Field",
+                    ARGUMENT: "Argument",
+                    FRAGMENT_SPREAD: "FragmentSpread",
+                    INLINE_FRAGMENT: "InlineFragment",
+                    FRAGMENT_DEFINITION: "FragmentDefinition",
+                    VARIABLE: "Variable",
+                    INT: "IntValue",
+                    FLOAT: "FloatValue",
+                    STRING: "StringValue",
+                    BOOLEAN: "BooleanValue",
+                    NULL: "NullValue",
+                    ENUM: "EnumValue",
+                    LIST: "ListValue",
+                    OBJECT: "ObjectValue",
+                    OBJECT_FIELD: "ObjectField",
+                    DIRECTIVE: "Directive",
+                    NAMED_TYPE: "NamedType",
+                    LIST_TYPE: "ListType",
+                    NON_NULL_TYPE: "NonNullType",
+                    SCHEMA_DEFINITION: "SchemaDefinition",
+                    OPERATION_TYPE_DEFINITION: "OperationTypeDefinition",
+                    SCALAR_TYPE_DEFINITION: "ScalarTypeDefinition",
+                    OBJECT_TYPE_DEFINITION: "ObjectTypeDefinition",
+                    FIELD_DEFINITION: "FieldDefinition",
+                    INPUT_VALUE_DEFINITION: "InputValueDefinition",
+                    INTERFACE_TYPE_DEFINITION: "InterfaceTypeDefinition",
+                    UNION_TYPE_DEFINITION: "UnionTypeDefinition",
+                    ENUM_TYPE_DEFINITION: "EnumTypeDefinition",
+                    ENUM_VALUE_DEFINITION: "EnumValueDefinition",
+                    INPUT_OBJECT_TYPE_DEFINITION: "InputObjectTypeDefinition",
+                    DIRECTIVE_DEFINITION: "DirectiveDefinition",
+                    SCHEMA_EXTENSION: "SchemaExtension",
+                    SCALAR_TYPE_EXTENSION: "ScalarTypeExtension",
+                    OBJECT_TYPE_EXTENSION: "ObjectTypeExtension",
+                    INTERFACE_TYPE_EXTENSION: "InterfaceTypeExtension",
+                    UNION_TYPE_EXTENSION: "UnionTypeExtension",
+                    ENUM_TYPE_EXTENSION: "EnumTypeExtension",
+                    INPUT_OBJECT_TYPE_EXTENSION: "InputObjectTypeExtension"
+                })
+            },
+            2496: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    h: () => o,
+                    u: () => c
+                });
+                var i = n(7303),
+                    r = n(2387),
+                    s = n(7525),
+                    a = n(7420),
+                    o = function() {
+                        function e(e) {
+                            var t = new r.WU(s.T.SOF, 0, 0, 0, 0, null);
+                            this.source = e, this.lastToken = t, this.token = t, this.line = 1, this.lineStart = 0
+                        }
+                        var t = e.prototype;
+                        return t.advance = function() {
+                            return this.lastToken = this.token, this.token = this.lookahead()
+                        }, t.lookahead = function() {
+                            var e = this.token;
+                            if (e.kind !== s.T.EOF)
+                                do {
+                                    var t;
+                                    e = null !== (t = e.next) && void 0 !== t ? t : e.next = h(this, e)
+                                } while (e.kind === s.T.COMMENT);
+                            return e
+                        }, e
+                    }();
 
-                    function l(e) {
-                        return isNaN(e) ? s.T.EOF : e < 127 ? JSON.stringify(String.fromCharCode(e)) : '"\\u'.concat(("00" + e.toString(16).toUpperCase()).slice(-4), '"')
-                    }
+                function c(e) {
+                    return e === s.T.BANG || e === s.T.DOLLAR || e === s.T.AMP || e === s.T.PAREN_L || e === s.T.PAREN_R || e === s.T.SPREAD || e === s.T.COLON || e === s.T.EQUALS || e === s.T.AT || e === s.T.BRACKET_L || e === s.T.BRACKET_R || e === s.T.BRACE_L || e === s.T.PIPE || e === s.T.BRACE_R
+                }
 
-                    function h(e, t) {
-                        for (var n = e.source, a = n.body, o = a.length, c = t.end; c < o;) {
-                            var l = a.charCodeAt(c),
-                                h = e.line,
-                                f = 1 + c - e.lineStart;
-                            switch (l) {
+                function l(e) {
+                    return isNaN(e) ? s.T.EOF : e < 127 ? JSON.stringify(String.fromCharCode(e)) : '"\\u'.concat(("00" + e.toString(16).toUpperCase()).slice(-4), '"')
+                }
+
+                function h(e, t) {
+                    for (var n = e.source, a = n.body, o = a.length, c = t.end; c < o;) {
+                        var l = a.charCodeAt(c),
+                            h = e.line,
+                            f = 1 + c - e.lineStart;
+                        switch (l) {
                             case 65279:
                             case 9:
                             case 32:
@@ -1589,60 +1590,60 @@
                             case 121:
                             case 122:
                                 return g(n, c, h, f, t)
-                            }
-                            throw (0, i.h)(n, c, d(l))
                         }
-                        var y = e.line,
-                            w = 1 + c - e.lineStart;
-                        return new r.WU(s.T.EOF, o, o, y, w, t)
+                        throw (0, i.h)(n, c, d(l))
                     }
+                    var y = e.line,
+                        w = 1 + c - e.lineStart;
+                    return new r.WU(s.T.EOF, o, o, y, w, t)
+                }
 
-                    function d(e) {
-                        return e < 32 && 9 !== e && 10 !== e && 13 !== e ? "Cannot contain the invalid character ".concat(l(e), ".") : 39 === e ? "Unexpected single quote character ('), did you mean to use a double quote (\")?" : "Cannot parse the unexpected character ".concat(l(e), ".")
-                    }
+                function d(e) {
+                    return e < 32 && 9 !== e && 10 !== e && 13 !== e ? "Cannot contain the invalid character ".concat(l(e), ".") : 39 === e ? "Unexpected single quote character ('), did you mean to use a double quote (\")?" : "Cannot parse the unexpected character ".concat(l(e), ".")
+                }
 
-                    function u(e, t, n, i, a) {
-                        var o, c = e.body,
-                            l = t;
+                function u(e, t, n, i, a) {
+                    var o, c = e.body,
+                        l = t;
+                    do {
+                        o = c.charCodeAt(++l)
+                    } while (!isNaN(o) && (o > 31 || 9 === o));
+                    return new r.WU(s.T.COMMENT, t, l, n, i, a, c.slice(t + 1, l))
+                }
+
+                function p(e, t, n, a, o, c) {
+                    var h = e.body,
+                        d = n,
+                        u = t,
+                        p = !1;
+                    if (45 === d && (d = h.charCodeAt(++u)), 48 === d) {
+                        if ((d = h.charCodeAt(++u)) >= 48 && d <= 57) throw (0, i.h)(e, u, "Invalid number, unexpected digit after 0: ".concat(l(d), "."))
+                    } else u = f(e, u, d), d = h.charCodeAt(u);
+                    if (46 === d && (p = !0, d = h.charCodeAt(++u), u = f(e, u, d), d = h.charCodeAt(u)), 69 !== d && 101 !== d || (p = !0, 43 !== (d = h.charCodeAt(++u)) && 45 !== d || (d = h.charCodeAt(++u)), u = f(e, u, d), d = h.charCodeAt(u)), 46 === d || function(e) {
+                            return 95 === e || e >= 65 && e <= 90 || e >= 97 && e <= 122
+                        }(d)) throw (0, i.h)(e, u, "Invalid number, expected digit but got: ".concat(l(d), "."));
+                    return new r.WU(p ? s.T.FLOAT : s.T.INT, t, u, a, o, c, h.slice(t, u))
+                }
+
+                function f(e, t, n) {
+                    var r = e.body,
+                        s = t,
+                        a = n;
+                    if (a >= 48 && a <= 57) {
                         do {
-                            o = c.charCodeAt(++l)
-                        } while (!isNaN(o) && (o > 31 || 9 === o));
-                        return new r.WU(s.T.COMMENT, t, l, n, i, a, c.slice(t + 1, l))
+                            a = r.charCodeAt(++s)
+                        } while (a >= 48 && a <= 57);
+                        return s
                     }
+                    throw (0, i.h)(e, s, "Invalid number, expected digit but got: ".concat(l(a), "."))
+                }
 
-                    function p(e, t, n, a, o, c) {
-                        var h = e.body,
-                            d = n,
-                            u = t,
-                            p = !1;
-                        if (45 === d && (d = h.charCodeAt(++u)), 48 === d) {
-                            if ((d = h.charCodeAt(++u)) >= 48 && d <= 57) throw (0, i.h)(e, u, "Invalid number, unexpected digit after 0: ".concat(l(d), "."))
-                        } else u = f(e, u, d), d = h.charCodeAt(u);
-                        if (46 === d && (p = !0, d = h.charCodeAt(++u), u = f(e, u, d), d = h.charCodeAt(u)), 69 !== d && 101 !== d || (p = !0, 43 !== (d = h.charCodeAt(++u)) && 45 !== d || (d = h.charCodeAt(++u)), u = f(e, u, d), d = h.charCodeAt(u)), 46 === d || function (e) {
-                                return 95 === e || e >= 65 && e <= 90 || e >= 97 && e <= 122
-                            }(d)) throw (0, i.h)(e, u, "Invalid number, expected digit but got: ".concat(l(d), "."));
-                        return new r.WU(p ? s.T.FLOAT : s.T.INT, t, u, a, o, c, h.slice(t, u))
-                    }
-
-                    function f(e, t, n) {
-                        var r = e.body,
-                            s = t,
-                            a = n;
-                        if (a >= 48 && a <= 57) {
-                            do {
-                                a = r.charCodeAt(++s)
-                            } while (a >= 48 && a <= 57);
-                            return s
-                        }
-                        throw (0, i.h)(e, s, "Invalid number, expected digit but got: ".concat(l(a), "."))
-                    }
-
-                    function m(e, t, n, a, o) {
-                        for (var c, h, d, u, p = e.body, f = t + 1, m = f, v = 0, g = ""; f < p.length && !isNaN(v = p.charCodeAt(f)) && 10 !== v && 13 !== v;) {
-                            if (34 === v) return g += p.slice(m, f), new r.WU(s.T.STRING, t, f + 1, n, a, o, g);
-                            if (v < 32 && 9 !== v) throw (0, i.h)(e, f, "Invalid character within String: ".concat(l(v), "."));
-                            if (++f, 92 === v) {
-                                switch (g += p.slice(m, f - 1), v = p.charCodeAt(f)) {
+                function m(e, t, n, a, o) {
+                    for (var c, h, d, u, p = e.body, f = t + 1, m = f, v = 0, g = ""; f < p.length && !isNaN(v = p.charCodeAt(f)) && 10 !== v && 13 !== v;) {
+                        if (34 === v) return g += p.slice(m, f), new r.WU(s.T.STRING, t, f + 1, n, a, o, g);
+                        if (v < 32 && 9 !== v) throw (0, i.h)(e, f, "Invalid character within String: ".concat(l(v), "."));
+                        if (++f, 92 === v) {
+                            switch (g += p.slice(m, f - 1), v = p.charCodeAt(f)) {
                                 case 34:
                                     g += '"';
                                     break;
@@ -1677,84 +1678,84 @@
                                     break;
                                 default:
                                     throw (0, i.h)(e, f, "Invalid character escape sequence: \\".concat(String.fromCharCode(v), "."))
-                                }
-                                m = ++f
                             }
+                            m = ++f
                         }
-                        throw (0, i.h)(e, f, "Unterminated string.")
                     }
+                    throw (0, i.h)(e, f, "Unterminated string.")
+                }
 
-                    function v(e, t, n, o, c, h) {
-                        for (var d = e.body, u = t + 3, p = u, f = 0, m = ""; u < d.length && !isNaN(f = d.charCodeAt(u));) {
-                            if (34 === f && 34 === d.charCodeAt(u + 1) && 34 === d.charCodeAt(u + 2)) return m += d.slice(p, u), new r.WU(s.T.BLOCK_STRING, t, u + 3, n, o, c, (0, a.W7)(m));
-                            if (f < 32 && 9 !== f && 10 !== f && 13 !== f) throw (0, i.h)(e, u, "Invalid character within String: ".concat(l(f), "."));
-                            10 === f ? (++u, ++h.line, h.lineStart = u) : 13 === f ? (10 === d.charCodeAt(u + 1) ? u += 2 : ++u, ++h.line, h.lineStart = u) : 92 === f && 34 === d.charCodeAt(u + 1) && 34 === d.charCodeAt(u + 2) && 34 === d.charCodeAt(u + 3) ? (m += d.slice(p, u) + '"""', p = u += 4) : ++u
-                        }
-                        throw (0, i.h)(e, u, "Unterminated string.")
+                function v(e, t, n, o, c, h) {
+                    for (var d = e.body, u = t + 3, p = u, f = 0, m = ""; u < d.length && !isNaN(f = d.charCodeAt(u));) {
+                        if (34 === f && 34 === d.charCodeAt(u + 1) && 34 === d.charCodeAt(u + 2)) return m += d.slice(p, u), new r.WU(s.T.BLOCK_STRING, t, u + 3, n, o, c, (0, a.W7)(m));
+                        if (f < 32 && 9 !== f && 10 !== f && 13 !== f) throw (0, i.h)(e, u, "Invalid character within String: ".concat(l(f), "."));
+                        10 === f ? (++u, ++h.line, h.lineStart = u) : 13 === f ? (10 === d.charCodeAt(u + 1) ? u += 2 : ++u, ++h.line, h.lineStart = u) : 92 === f && 34 === d.charCodeAt(u + 1) && 34 === d.charCodeAt(u + 2) && 34 === d.charCodeAt(u + 3) ? (m += d.slice(p, u) + '"""', p = u += 4) : ++u
                     }
+                    throw (0, i.h)(e, u, "Unterminated string.")
+                }
 
-                    function y(e) {
-                        return e >= 48 && e <= 57 ? e - 48 : e >= 65 && e <= 70 ? e - 55 : e >= 97 && e <= 102 ? e - 87 : -1
+                function y(e) {
+                    return e >= 48 && e <= 57 ? e - 48 : e >= 65 && e <= 70 ? e - 55 : e >= 97 && e <= 102 ? e - 87 : -1
+                }
+
+                function g(e, t, n, i, a) {
+                    for (var o = e.body, c = o.length, l = t + 1, h = 0; l !== c && !isNaN(h = o.charCodeAt(l)) && (95 === h || h >= 48 && h <= 57 || h >= 65 && h <= 90 || h >= 97 && h <= 122);) ++l;
+                    return new r.WU(s.T.NAME, t, l, n, i, a, o.slice(t, l))
+                }
+            },
+            1654: (e, t, n) => {
+                "use strict";
+
+                function i(e, t) {
+                    for (var n, i = /\r\n|[\n\r]/g, r = 1, s = t + 1;
+                        (n = i.exec(e.body)) && n.index < t;) r += 1, s = t + 1 - (n.index + n[0].length);
+                    return {
+                        line: r,
+                        column: s
                     }
+                }
+                n.d(t, {
+                    k: () => i
+                })
+            },
+            9691: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    Qc: () => h
+                });
+                var i = n(7303),
+                    r = n(6450),
+                    s = n(2387),
+                    a = n(7525),
+                    o = n(1112),
+                    c = n(4643),
+                    l = n(2496);
 
-                    function g(e, t, n, i, a) {
-                        for (var o = e.body, c = o.length, l = t + 1, h = 0; l !== c && !isNaN(h = o.charCodeAt(l)) && (95 === h || h >= 48 && h <= 57 || h >= 65 && h <= 90 || h >= 97 && h <= 122);) ++l;
-                        return new r.WU(s.T.NAME, t, l, n, i, a, o.slice(t, l))
+                function h(e, t) {
+                    return new d(e, t).parseDocument()
+                }
+                var d = function() {
+                    function e(e, t) {
+                        var n = (0, o.T)(e) ? e : new o.H(e);
+                        this._lexer = new l.h(n), this._options = t
                     }
-                },
-                1654: (e, t, n) => {
-                    "use strict";
-
-                    function i(e, t) {
-                        for (var n, i = /\r\n|[\n\r]/g, r = 1, s = t + 1;
-                            (n = i.exec(e.body)) && n.index < t;) r += 1, s = t + 1 - (n.index + n[0].length);
+                    var t = e.prototype;
+                    return t.parseName = function() {
+                        var e = this.expectToken(a.T.NAME);
                         return {
-                            line: r,
-                            column: s
+                            kind: r.h.NAME,
+                            value: e.value,
+                            loc: this.loc(e)
                         }
-                    }
-                    n.d(t, {
-                        k: () => i
-                    })
-                },
-                9691: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        Qc: () => h
-                    });
-                    var i = n(7303),
-                        r = n(6450),
-                        s = n(2387),
-                        a = n(7525),
-                        o = n(1112),
-                        c = n(4643),
-                        l = n(2496);
-
-                    function h(e, t) {
-                        return new d(e, t).parseDocument()
-                    }
-                    var d = function () {
-                        function e(e, t) {
-                            var n = (0, o.T)(e) ? e : new o.H(e);
-                            this._lexer = new l.h(n), this._options = t
+                    }, t.parseDocument = function() {
+                        var e = this._lexer.token;
+                        return {
+                            kind: r.h.DOCUMENT,
+                            definitions: this.many(a.T.SOF, this.parseDefinition, a.T.EOF),
+                            loc: this.loc(e)
                         }
-                        var t = e.prototype;
-                        return t.parseName = function () {
-                            var e = this.expectToken(a.T.NAME);
-                            return {
-                                kind: r.h.NAME,
-                                value: e.value,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseDocument = function () {
-                            var e = this._lexer.token;
-                            return {
-                                kind: r.h.DOCUMENT,
-                                definitions: this.many(a.T.SOF, this.parseDefinition, a.T.EOF),
-                                loc: this.loc(e)
-                            }
-                        }, t.parseDefinition = function () {
-                            if (this.peek(a.T.NAME)) switch (this._lexer.token.value) {
+                    }, t.parseDefinition = function() {
+                        if (this.peek(a.T.NAME)) switch (this._lexer.token.value) {
                             case "query":
                             case "mutation":
                             case "subscription":
@@ -1772,143 +1773,143 @@
                                 return this.parseTypeSystemDefinition();
                             case "extend":
                                 return this.parseTypeSystemExtension()
-                            } else {
-                                if (this.peek(a.T.BRACE_L)) return this.parseOperationDefinition();
-                                if (this.peekDescription()) return this.parseTypeSystemDefinition()
-                            }
-                            throw this.unexpected()
-                        }, t.parseOperationDefinition = function () {
-                            var e = this._lexer.token;
-                            if (this.peek(a.T.BRACE_L)) return {
-                                kind: r.h.OPERATION_DEFINITION,
-                                operation: "query",
-                                name: void 0,
-                                variableDefinitions: [],
-                                directives: [],
-                                selectionSet: this.parseSelectionSet(),
-                                loc: this.loc(e)
-                            };
-                            var t, n = this.parseOperationType();
-                            return this.peek(a.T.NAME) && (t = this.parseName()), {
-                                kind: r.h.OPERATION_DEFINITION,
-                                operation: n,
-                                name: t,
-                                variableDefinitions: this.parseVariableDefinitions(),
-                                directives: this.parseDirectives(!1),
-                                selectionSet: this.parseSelectionSet(),
-                                loc: this.loc(e)
-                            }
-                        }, t.parseOperationType = function () {
-                            var e = this.expectToken(a.T.NAME);
-                            switch (e.value) {
+                        } else {
+                            if (this.peek(a.T.BRACE_L)) return this.parseOperationDefinition();
+                            if (this.peekDescription()) return this.parseTypeSystemDefinition()
+                        }
+                        throw this.unexpected()
+                    }, t.parseOperationDefinition = function() {
+                        var e = this._lexer.token;
+                        if (this.peek(a.T.BRACE_L)) return {
+                            kind: r.h.OPERATION_DEFINITION,
+                            operation: "query",
+                            name: void 0,
+                            variableDefinitions: [],
+                            directives: [],
+                            selectionSet: this.parseSelectionSet(),
+                            loc: this.loc(e)
+                        };
+                        var t, n = this.parseOperationType();
+                        return this.peek(a.T.NAME) && (t = this.parseName()), {
+                            kind: r.h.OPERATION_DEFINITION,
+                            operation: n,
+                            name: t,
+                            variableDefinitions: this.parseVariableDefinitions(),
+                            directives: this.parseDirectives(!1),
+                            selectionSet: this.parseSelectionSet(),
+                            loc: this.loc(e)
+                        }
+                    }, t.parseOperationType = function() {
+                        var e = this.expectToken(a.T.NAME);
+                        switch (e.value) {
                             case "query":
                                 return "query";
                             case "mutation":
                                 return "mutation";
                             case "subscription":
                                 return "subscription"
-                            }
-                            throw this.unexpected(e)
-                        }, t.parseVariableDefinitions = function () {
-                            return this.optionalMany(a.T.PAREN_L, this.parseVariableDefinition, a.T.PAREN_R)
-                        }, t.parseVariableDefinition = function () {
-                            var e = this._lexer.token;
-                            return {
-                                kind: r.h.VARIABLE_DEFINITION,
-                                variable: this.parseVariable(),
-                                type: (this.expectToken(a.T.COLON), this.parseTypeReference()),
-                                defaultValue: this.expectOptionalToken(a.T.EQUALS) ? this.parseValueLiteral(!0) : void 0,
-                                directives: this.parseDirectives(!0),
-                                loc: this.loc(e)
-                            }
-                        }, t.parseVariable = function () {
-                            var e = this._lexer.token;
-                            return this.expectToken(a.T.DOLLAR), {
-                                kind: r.h.VARIABLE,
-                                name: this.parseName(),
-                                loc: this.loc(e)
-                            }
-                        }, t.parseSelectionSet = function () {
-                            var e = this._lexer.token;
-                            return {
-                                kind: r.h.SELECTION_SET,
-                                selections: this.many(a.T.BRACE_L, this.parseSelection, a.T.BRACE_R),
-                                loc: this.loc(e)
-                            }
-                        }, t.parseSelection = function () {
-                            return this.peek(a.T.SPREAD) ? this.parseFragment() : this.parseField()
-                        }, t.parseField = function () {
-                            var e, t, n = this._lexer.token,
-                                i = this.parseName();
-                            return this.expectOptionalToken(a.T.COLON) ? (e = i, t = this.parseName()) : t = i, {
-                                kind: r.h.FIELD,
-                                alias: e,
-                                name: t,
-                                arguments: this.parseArguments(!1),
-                                directives: this.parseDirectives(!1),
-                                selectionSet: this.peek(a.T.BRACE_L) ? this.parseSelectionSet() : void 0,
-                                loc: this.loc(n)
-                            }
-                        }, t.parseArguments = function (e) {
-                            var t = e ? this.parseConstArgument : this.parseArgument;
-                            return this.optionalMany(a.T.PAREN_L, t, a.T.PAREN_R)
-                        }, t.parseArgument = function () {
-                            var e = this._lexer.token,
-                                t = this.parseName();
-                            return this.expectToken(a.T.COLON), {
-                                kind: r.h.ARGUMENT,
-                                name: t,
-                                value: this.parseValueLiteral(!1),
-                                loc: this.loc(e)
-                            }
-                        }, t.parseConstArgument = function () {
-                            var e = this._lexer.token;
-                            return {
-                                kind: r.h.ARGUMENT,
-                                name: this.parseName(),
-                                value: (this.expectToken(a.T.COLON), this.parseValueLiteral(!0)),
-                                loc: this.loc(e)
-                            }
-                        }, t.parseFragment = function () {
-                            var e = this._lexer.token;
-                            this.expectToken(a.T.SPREAD);
-                            var t = this.expectOptionalKeyword("on");
-                            return !t && this.peek(a.T.NAME) ? {
-                                kind: r.h.FRAGMENT_SPREAD,
-                                name: this.parseFragmentName(),
-                                directives: this.parseDirectives(!1),
-                                loc: this.loc(e)
-                            } : {
-                                kind: r.h.INLINE_FRAGMENT,
-                                typeCondition: t ? this.parseNamedType() : void 0,
-                                directives: this.parseDirectives(!1),
-                                selectionSet: this.parseSelectionSet(),
-                                loc: this.loc(e)
-                            }
-                        }, t.parseFragmentDefinition = function () {
-                            var e, t = this._lexer.token;
-                            return this.expectKeyword("fragment"), !0 === (null === (e = this._options) || void 0 === e ? void 0 : e.experimentalFragmentVariables) ? {
-                                kind: r.h.FRAGMENT_DEFINITION,
-                                name: this.parseFragmentName(),
-                                variableDefinitions: this.parseVariableDefinitions(),
-                                typeCondition: (this.expectKeyword("on"), this.parseNamedType()),
-                                directives: this.parseDirectives(!1),
-                                selectionSet: this.parseSelectionSet(),
-                                loc: this.loc(t)
-                            } : {
-                                kind: r.h.FRAGMENT_DEFINITION,
-                                name: this.parseFragmentName(),
-                                typeCondition: (this.expectKeyword("on"), this.parseNamedType()),
-                                directives: this.parseDirectives(!1),
-                                selectionSet: this.parseSelectionSet(),
-                                loc: this.loc(t)
-                            }
-                        }, t.parseFragmentName = function () {
-                            if ("on" === this._lexer.token.value) throw this.unexpected();
-                            return this.parseName()
-                        }, t.parseValueLiteral = function (e) {
-                            var t = this._lexer.token;
-                            switch (t.kind) {
+                        }
+                        throw this.unexpected(e)
+                    }, t.parseVariableDefinitions = function() {
+                        return this.optionalMany(a.T.PAREN_L, this.parseVariableDefinition, a.T.PAREN_R)
+                    }, t.parseVariableDefinition = function() {
+                        var e = this._lexer.token;
+                        return {
+                            kind: r.h.VARIABLE_DEFINITION,
+                            variable: this.parseVariable(),
+                            type: (this.expectToken(a.T.COLON), this.parseTypeReference()),
+                            defaultValue: this.expectOptionalToken(a.T.EQUALS) ? this.parseValueLiteral(!0) : void 0,
+                            directives: this.parseDirectives(!0),
+                            loc: this.loc(e)
+                        }
+                    }, t.parseVariable = function() {
+                        var e = this._lexer.token;
+                        return this.expectToken(a.T.DOLLAR), {
+                            kind: r.h.VARIABLE,
+                            name: this.parseName(),
+                            loc: this.loc(e)
+                        }
+                    }, t.parseSelectionSet = function() {
+                        var e = this._lexer.token;
+                        return {
+                            kind: r.h.SELECTION_SET,
+                            selections: this.many(a.T.BRACE_L, this.parseSelection, a.T.BRACE_R),
+                            loc: this.loc(e)
+                        }
+                    }, t.parseSelection = function() {
+                        return this.peek(a.T.SPREAD) ? this.parseFragment() : this.parseField()
+                    }, t.parseField = function() {
+                        var e, t, n = this._lexer.token,
+                            i = this.parseName();
+                        return this.expectOptionalToken(a.T.COLON) ? (e = i, t = this.parseName()) : t = i, {
+                            kind: r.h.FIELD,
+                            alias: e,
+                            name: t,
+                            arguments: this.parseArguments(!1),
+                            directives: this.parseDirectives(!1),
+                            selectionSet: this.peek(a.T.BRACE_L) ? this.parseSelectionSet() : void 0,
+                            loc: this.loc(n)
+                        }
+                    }, t.parseArguments = function(e) {
+                        var t = e ? this.parseConstArgument : this.parseArgument;
+                        return this.optionalMany(a.T.PAREN_L, t, a.T.PAREN_R)
+                    }, t.parseArgument = function() {
+                        var e = this._lexer.token,
+                            t = this.parseName();
+                        return this.expectToken(a.T.COLON), {
+                            kind: r.h.ARGUMENT,
+                            name: t,
+                            value: this.parseValueLiteral(!1),
+                            loc: this.loc(e)
+                        }
+                    }, t.parseConstArgument = function() {
+                        var e = this._lexer.token;
+                        return {
+                            kind: r.h.ARGUMENT,
+                            name: this.parseName(),
+                            value: (this.expectToken(a.T.COLON), this.parseValueLiteral(!0)),
+                            loc: this.loc(e)
+                        }
+                    }, t.parseFragment = function() {
+                        var e = this._lexer.token;
+                        this.expectToken(a.T.SPREAD);
+                        var t = this.expectOptionalKeyword("on");
+                        return !t && this.peek(a.T.NAME) ? {
+                            kind: r.h.FRAGMENT_SPREAD,
+                            name: this.parseFragmentName(),
+                            directives: this.parseDirectives(!1),
+                            loc: this.loc(e)
+                        } : {
+                            kind: r.h.INLINE_FRAGMENT,
+                            typeCondition: t ? this.parseNamedType() : void 0,
+                            directives: this.parseDirectives(!1),
+                            selectionSet: this.parseSelectionSet(),
+                            loc: this.loc(e)
+                        }
+                    }, t.parseFragmentDefinition = function() {
+                        var e, t = this._lexer.token;
+                        return this.expectKeyword("fragment"), !0 === (null === (e = this._options) || void 0 === e ? void 0 : e.experimentalFragmentVariables) ? {
+                            kind: r.h.FRAGMENT_DEFINITION,
+                            name: this.parseFragmentName(),
+                            variableDefinitions: this.parseVariableDefinitions(),
+                            typeCondition: (this.expectKeyword("on"), this.parseNamedType()),
+                            directives: this.parseDirectives(!1),
+                            selectionSet: this.parseSelectionSet(),
+                            loc: this.loc(t)
+                        } : {
+                            kind: r.h.FRAGMENT_DEFINITION,
+                            name: this.parseFragmentName(),
+                            typeCondition: (this.expectKeyword("on"), this.parseNamedType()),
+                            directives: this.parseDirectives(!1),
+                            selectionSet: this.parseSelectionSet(),
+                            loc: this.loc(t)
+                        }
+                    }, t.parseFragmentName = function() {
+                        if ("on" === this._lexer.token.value) throw this.unexpected();
+                        return this.parseName()
+                    }, t.parseValueLiteral = function(e) {
+                        var t = this._lexer.token;
+                        switch (t.kind) {
                             case a.T.BRACKET_L:
                                 return this.parseList(e);
                             case a.T.BRACE_L:
@@ -1930,96 +1931,96 @@
                                 return this.parseStringLiteral();
                             case a.T.NAME:
                                 switch (this._lexer.advance(), t.value) {
-                                case "true":
-                                    return {
-                                        kind: r.h.BOOLEAN, value: !0, loc: this.loc(t)
-                                    };
-                                case "false":
-                                    return {
-                                        kind: r.h.BOOLEAN, value: !1, loc: this.loc(t)
-                                    };
-                                case "null":
-                                    return {
-                                        kind: r.h.NULL, loc: this.loc(t)
-                                    };
-                                default:
-                                    return {
-                                        kind: r.h.ENUM, value: t.value, loc: this.loc(t)
-                                    }
+                                    case "true":
+                                        return {
+                                            kind: r.h.BOOLEAN, value: !0, loc: this.loc(t)
+                                        };
+                                    case "false":
+                                        return {
+                                            kind: r.h.BOOLEAN, value: !1, loc: this.loc(t)
+                                        };
+                                    case "null":
+                                        return {
+                                            kind: r.h.NULL, loc: this.loc(t)
+                                        };
+                                    default:
+                                        return {
+                                            kind: r.h.ENUM, value: t.value, loc: this.loc(t)
+                                        }
                                 }
-                                case a.T.DOLLAR:
-                                    if (!e) return this.parseVariable()
-                            }
-                            throw this.unexpected()
-                        }, t.parseStringLiteral = function () {
-                            var e = this._lexer.token;
-                            return this._lexer.advance(), {
-                                kind: r.h.STRING,
-                                value: e.value,
-                                block: e.kind === a.T.BLOCK_STRING,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseList = function (e) {
-                            var t = this,
-                                n = this._lexer.token;
-                            return {
-                                kind: r.h.LIST,
-                                values: this.any(a.T.BRACKET_L, (function () {
-                                    return t.parseValueLiteral(e)
-                                }), a.T.BRACKET_R),
-                                loc: this.loc(n)
-                            }
-                        }, t.parseObject = function (e) {
-                            var t = this,
-                                n = this._lexer.token;
-                            return {
-                                kind: r.h.OBJECT,
-                                fields: this.any(a.T.BRACE_L, (function () {
-                                    return t.parseObjectField(e)
-                                }), a.T.BRACE_R),
-                                loc: this.loc(n)
-                            }
-                        }, t.parseObjectField = function (e) {
-                            var t = this._lexer.token,
-                                n = this.parseName();
-                            return this.expectToken(a.T.COLON), {
-                                kind: r.h.OBJECT_FIELD,
-                                name: n,
-                                value: this.parseValueLiteral(e),
-                                loc: this.loc(t)
-                            }
-                        }, t.parseDirectives = function (e) {
-                            for (var t = []; this.peek(a.T.AT);) t.push(this.parseDirective(e));
-                            return t
-                        }, t.parseDirective = function (e) {
-                            var t = this._lexer.token;
-                            return this.expectToken(a.T.AT), {
-                                kind: r.h.DIRECTIVE,
-                                name: this.parseName(),
-                                arguments: this.parseArguments(e),
-                                loc: this.loc(t)
-                            }
-                        }, t.parseTypeReference = function () {
-                            var e, t = this._lexer.token;
-                            return this.expectOptionalToken(a.T.BRACKET_L) ? (e = this.parseTypeReference(), this.expectToken(a.T.BRACKET_R), e = {
-                                kind: r.h.LIST_TYPE,
-                                type: e,
-                                loc: this.loc(t)
-                            }) : e = this.parseNamedType(), this.expectOptionalToken(a.T.BANG) ? {
-                                kind: r.h.NON_NULL_TYPE,
-                                type: e,
-                                loc: this.loc(t)
-                            } : e
-                        }, t.parseNamedType = function () {
-                            var e = this._lexer.token;
-                            return {
-                                kind: r.h.NAMED_TYPE,
-                                name: this.parseName(),
-                                loc: this.loc(e)
-                            }
-                        }, t.parseTypeSystemDefinition = function () {
-                            var e = this.peekDescription() ? this._lexer.lookahead() : this._lexer.token;
-                            if (e.kind === a.T.NAME) switch (e.value) {
+                            case a.T.DOLLAR:
+                                if (!e) return this.parseVariable()
+                        }
+                        throw this.unexpected()
+                    }, t.parseStringLiteral = function() {
+                        var e = this._lexer.token;
+                        return this._lexer.advance(), {
+                            kind: r.h.STRING,
+                            value: e.value,
+                            block: e.kind === a.T.BLOCK_STRING,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseList = function(e) {
+                        var t = this,
+                            n = this._lexer.token;
+                        return {
+                            kind: r.h.LIST,
+                            values: this.any(a.T.BRACKET_L, (function() {
+                                return t.parseValueLiteral(e)
+                            }), a.T.BRACKET_R),
+                            loc: this.loc(n)
+                        }
+                    }, t.parseObject = function(e) {
+                        var t = this,
+                            n = this._lexer.token;
+                        return {
+                            kind: r.h.OBJECT,
+                            fields: this.any(a.T.BRACE_L, (function() {
+                                return t.parseObjectField(e)
+                            }), a.T.BRACE_R),
+                            loc: this.loc(n)
+                        }
+                    }, t.parseObjectField = function(e) {
+                        var t = this._lexer.token,
+                            n = this.parseName();
+                        return this.expectToken(a.T.COLON), {
+                            kind: r.h.OBJECT_FIELD,
+                            name: n,
+                            value: this.parseValueLiteral(e),
+                            loc: this.loc(t)
+                        }
+                    }, t.parseDirectives = function(e) {
+                        for (var t = []; this.peek(a.T.AT);) t.push(this.parseDirective(e));
+                        return t
+                    }, t.parseDirective = function(e) {
+                        var t = this._lexer.token;
+                        return this.expectToken(a.T.AT), {
+                            kind: r.h.DIRECTIVE,
+                            name: this.parseName(),
+                            arguments: this.parseArguments(e),
+                            loc: this.loc(t)
+                        }
+                    }, t.parseTypeReference = function() {
+                        var e, t = this._lexer.token;
+                        return this.expectOptionalToken(a.T.BRACKET_L) ? (e = this.parseTypeReference(), this.expectToken(a.T.BRACKET_R), e = {
+                            kind: r.h.LIST_TYPE,
+                            type: e,
+                            loc: this.loc(t)
+                        }) : e = this.parseNamedType(), this.expectOptionalToken(a.T.BANG) ? {
+                            kind: r.h.NON_NULL_TYPE,
+                            type: e,
+                            loc: this.loc(t)
+                        } : e
+                    }, t.parseNamedType = function() {
+                        var e = this._lexer.token;
+                        return {
+                            kind: r.h.NAMED_TYPE,
+                            name: this.parseName(),
+                            loc: this.loc(e)
+                        }
+                    }, t.parseTypeSystemDefinition = function() {
+                        var e = this.peekDescription() ? this._lexer.lookahead() : this._lexer.token;
+                        if (e.kind === a.T.NAME) switch (e.value) {
                             case "schema":
                                 return this.parseSchemaDefinition();
                             case "scalar":
@@ -2036,200 +2037,200 @@
                                 return this.parseInputObjectTypeDefinition();
                             case "directive":
                                 return this.parseDirectiveDefinition()
-                            }
-                            throw this.unexpected(e)
-                        }, t.peekDescription = function () {
-                            return this.peek(a.T.STRING) || this.peek(a.T.BLOCK_STRING)
-                        }, t.parseDescription = function () {
-                            if (this.peekDescription()) return this.parseStringLiteral()
-                        }, t.parseSchemaDefinition = function () {
-                            var e = this._lexer.token,
-                                t = this.parseDescription();
-                            this.expectKeyword("schema");
-                            var n = this.parseDirectives(!0),
-                                i = this.many(a.T.BRACE_L, this.parseOperationTypeDefinition, a.T.BRACE_R);
-                            return {
-                                kind: r.h.SCHEMA_DEFINITION,
-                                description: t,
-                                directives: n,
-                                operationTypes: i,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseOperationTypeDefinition = function () {
-                            var e = this._lexer.token,
-                                t = this.parseOperationType();
-                            this.expectToken(a.T.COLON);
-                            var n = this.parseNamedType();
-                            return {
-                                kind: r.h.OPERATION_TYPE_DEFINITION,
-                                operation: t,
-                                type: n,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseScalarTypeDefinition = function () {
-                            var e = this._lexer.token,
-                                t = this.parseDescription();
-                            this.expectKeyword("scalar");
-                            var n = this.parseName(),
-                                i = this.parseDirectives(!0);
-                            return {
-                                kind: r.h.SCALAR_TYPE_DEFINITION,
-                                description: t,
-                                name: n,
-                                directives: i,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseObjectTypeDefinition = function () {
-                            var e = this._lexer.token,
-                                t = this.parseDescription();
-                            this.expectKeyword("type");
-                            var n = this.parseName(),
-                                i = this.parseImplementsInterfaces(),
-                                s = this.parseDirectives(!0),
-                                a = this.parseFieldsDefinition();
-                            return {
-                                kind: r.h.OBJECT_TYPE_DEFINITION,
-                                description: t,
-                                name: n,
-                                interfaces: i,
-                                directives: s,
-                                fields: a,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseImplementsInterfaces = function () {
-                            var e;
-                            if (!this.expectOptionalKeyword("implements")) return [];
-                            if (!0 === (null === (e = this._options) || void 0 === e ? void 0 : e.allowLegacySDLImplementsInterfaces)) {
-                                var t = [];
-                                this.expectOptionalToken(a.T.AMP);
-                                do {
-                                    t.push(this.parseNamedType())
-                                } while (this.expectOptionalToken(a.T.AMP) || this.peek(a.T.NAME));
-                                return t
-                            }
-                            return this.delimitedMany(a.T.AMP, this.parseNamedType)
-                        }, t.parseFieldsDefinition = function () {
-                            var e;
-                            return !0 === (null === (e = this._options) || void 0 === e ? void 0 : e.allowLegacySDLEmptyFields) && this.peek(a.T.BRACE_L) && this._lexer.lookahead().kind === a.T.BRACE_R ? (this._lexer.advance(), this._lexer.advance(), []) : this.optionalMany(a.T.BRACE_L, this.parseFieldDefinition, a.T.BRACE_R)
-                        }, t.parseFieldDefinition = function () {
-                            var e = this._lexer.token,
-                                t = this.parseDescription(),
-                                n = this.parseName(),
-                                i = this.parseArgumentDefs();
-                            this.expectToken(a.T.COLON);
-                            var s = this.parseTypeReference(),
-                                o = this.parseDirectives(!0);
-                            return {
-                                kind: r.h.FIELD_DEFINITION,
-                                description: t,
-                                name: n,
-                                arguments: i,
-                                type: s,
-                                directives: o,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseArgumentDefs = function () {
-                            return this.optionalMany(a.T.PAREN_L, this.parseInputValueDef, a.T.PAREN_R)
-                        }, t.parseInputValueDef = function () {
-                            var e = this._lexer.token,
-                                t = this.parseDescription(),
-                                n = this.parseName();
-                            this.expectToken(a.T.COLON);
-                            var i, s = this.parseTypeReference();
-                            this.expectOptionalToken(a.T.EQUALS) && (i = this.parseValueLiteral(!0));
-                            var o = this.parseDirectives(!0);
-                            return {
-                                kind: r.h.INPUT_VALUE_DEFINITION,
-                                description: t,
-                                name: n,
-                                type: s,
-                                defaultValue: i,
-                                directives: o,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseInterfaceTypeDefinition = function () {
-                            var e = this._lexer.token,
-                                t = this.parseDescription();
-                            this.expectKeyword("interface");
-                            var n = this.parseName(),
-                                i = this.parseImplementsInterfaces(),
-                                s = this.parseDirectives(!0),
-                                a = this.parseFieldsDefinition();
-                            return {
-                                kind: r.h.INTERFACE_TYPE_DEFINITION,
-                                description: t,
-                                name: n,
-                                interfaces: i,
-                                directives: s,
-                                fields: a,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseUnionTypeDefinition = function () {
-                            var e = this._lexer.token,
-                                t = this.parseDescription();
-                            this.expectKeyword("union");
-                            var n = this.parseName(),
-                                i = this.parseDirectives(!0),
-                                s = this.parseUnionMemberTypes();
-                            return {
-                                kind: r.h.UNION_TYPE_DEFINITION,
-                                description: t,
-                                name: n,
-                                directives: i,
-                                types: s,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseUnionMemberTypes = function () {
-                            return this.expectOptionalToken(a.T.EQUALS) ? this.delimitedMany(a.T.PIPE, this.parseNamedType) : []
-                        }, t.parseEnumTypeDefinition = function () {
-                            var e = this._lexer.token,
-                                t = this.parseDescription();
-                            this.expectKeyword("enum");
-                            var n = this.parseName(),
-                                i = this.parseDirectives(!0),
-                                s = this.parseEnumValuesDefinition();
-                            return {
-                                kind: r.h.ENUM_TYPE_DEFINITION,
-                                description: t,
-                                name: n,
-                                directives: i,
-                                values: s,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseEnumValuesDefinition = function () {
-                            return this.optionalMany(a.T.BRACE_L, this.parseEnumValueDefinition, a.T.BRACE_R)
-                        }, t.parseEnumValueDefinition = function () {
-                            var e = this._lexer.token,
-                                t = this.parseDescription(),
-                                n = this.parseName(),
-                                i = this.parseDirectives(!0);
-                            return {
-                                kind: r.h.ENUM_VALUE_DEFINITION,
-                                description: t,
-                                name: n,
-                                directives: i,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseInputObjectTypeDefinition = function () {
-                            var e = this._lexer.token,
-                                t = this.parseDescription();
-                            this.expectKeyword("input");
-                            var n = this.parseName(),
-                                i = this.parseDirectives(!0),
-                                s = this.parseInputFieldsDefinition();
-                            return {
-                                kind: r.h.INPUT_OBJECT_TYPE_DEFINITION,
-                                description: t,
-                                name: n,
-                                directives: i,
-                                fields: s,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseInputFieldsDefinition = function () {
-                            return this.optionalMany(a.T.BRACE_L, this.parseInputValueDef, a.T.BRACE_R)
-                        }, t.parseTypeSystemExtension = function () {
-                            var e = this._lexer.lookahead();
-                            if (e.kind === a.T.NAME) switch (e.value) {
+                        }
+                        throw this.unexpected(e)
+                    }, t.peekDescription = function() {
+                        return this.peek(a.T.STRING) || this.peek(a.T.BLOCK_STRING)
+                    }, t.parseDescription = function() {
+                        if (this.peekDescription()) return this.parseStringLiteral()
+                    }, t.parseSchemaDefinition = function() {
+                        var e = this._lexer.token,
+                            t = this.parseDescription();
+                        this.expectKeyword("schema");
+                        var n = this.parseDirectives(!0),
+                            i = this.many(a.T.BRACE_L, this.parseOperationTypeDefinition, a.T.BRACE_R);
+                        return {
+                            kind: r.h.SCHEMA_DEFINITION,
+                            description: t,
+                            directives: n,
+                            operationTypes: i,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseOperationTypeDefinition = function() {
+                        var e = this._lexer.token,
+                            t = this.parseOperationType();
+                        this.expectToken(a.T.COLON);
+                        var n = this.parseNamedType();
+                        return {
+                            kind: r.h.OPERATION_TYPE_DEFINITION,
+                            operation: t,
+                            type: n,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseScalarTypeDefinition = function() {
+                        var e = this._lexer.token,
+                            t = this.parseDescription();
+                        this.expectKeyword("scalar");
+                        var n = this.parseName(),
+                            i = this.parseDirectives(!0);
+                        return {
+                            kind: r.h.SCALAR_TYPE_DEFINITION,
+                            description: t,
+                            name: n,
+                            directives: i,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseObjectTypeDefinition = function() {
+                        var e = this._lexer.token,
+                            t = this.parseDescription();
+                        this.expectKeyword("type");
+                        var n = this.parseName(),
+                            i = this.parseImplementsInterfaces(),
+                            s = this.parseDirectives(!0),
+                            a = this.parseFieldsDefinition();
+                        return {
+                            kind: r.h.OBJECT_TYPE_DEFINITION,
+                            description: t,
+                            name: n,
+                            interfaces: i,
+                            directives: s,
+                            fields: a,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseImplementsInterfaces = function() {
+                        var e;
+                        if (!this.expectOptionalKeyword("implements")) return [];
+                        if (!0 === (null === (e = this._options) || void 0 === e ? void 0 : e.allowLegacySDLImplementsInterfaces)) {
+                            var t = [];
+                            this.expectOptionalToken(a.T.AMP);
+                            do {
+                                t.push(this.parseNamedType())
+                            } while (this.expectOptionalToken(a.T.AMP) || this.peek(a.T.NAME));
+                            return t
+                        }
+                        return this.delimitedMany(a.T.AMP, this.parseNamedType)
+                    }, t.parseFieldsDefinition = function() {
+                        var e;
+                        return !0 === (null === (e = this._options) || void 0 === e ? void 0 : e.allowLegacySDLEmptyFields) && this.peek(a.T.BRACE_L) && this._lexer.lookahead().kind === a.T.BRACE_R ? (this._lexer.advance(), this._lexer.advance(), []) : this.optionalMany(a.T.BRACE_L, this.parseFieldDefinition, a.T.BRACE_R)
+                    }, t.parseFieldDefinition = function() {
+                        var e = this._lexer.token,
+                            t = this.parseDescription(),
+                            n = this.parseName(),
+                            i = this.parseArgumentDefs();
+                        this.expectToken(a.T.COLON);
+                        var s = this.parseTypeReference(),
+                            o = this.parseDirectives(!0);
+                        return {
+                            kind: r.h.FIELD_DEFINITION,
+                            description: t,
+                            name: n,
+                            arguments: i,
+                            type: s,
+                            directives: o,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseArgumentDefs = function() {
+                        return this.optionalMany(a.T.PAREN_L, this.parseInputValueDef, a.T.PAREN_R)
+                    }, t.parseInputValueDef = function() {
+                        var e = this._lexer.token,
+                            t = this.parseDescription(),
+                            n = this.parseName();
+                        this.expectToken(a.T.COLON);
+                        var i, s = this.parseTypeReference();
+                        this.expectOptionalToken(a.T.EQUALS) && (i = this.parseValueLiteral(!0));
+                        var o = this.parseDirectives(!0);
+                        return {
+                            kind: r.h.INPUT_VALUE_DEFINITION,
+                            description: t,
+                            name: n,
+                            type: s,
+                            defaultValue: i,
+                            directives: o,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseInterfaceTypeDefinition = function() {
+                        var e = this._lexer.token,
+                            t = this.parseDescription();
+                        this.expectKeyword("interface");
+                        var n = this.parseName(),
+                            i = this.parseImplementsInterfaces(),
+                            s = this.parseDirectives(!0),
+                            a = this.parseFieldsDefinition();
+                        return {
+                            kind: r.h.INTERFACE_TYPE_DEFINITION,
+                            description: t,
+                            name: n,
+                            interfaces: i,
+                            directives: s,
+                            fields: a,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseUnionTypeDefinition = function() {
+                        var e = this._lexer.token,
+                            t = this.parseDescription();
+                        this.expectKeyword("union");
+                        var n = this.parseName(),
+                            i = this.parseDirectives(!0),
+                            s = this.parseUnionMemberTypes();
+                        return {
+                            kind: r.h.UNION_TYPE_DEFINITION,
+                            description: t,
+                            name: n,
+                            directives: i,
+                            types: s,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseUnionMemberTypes = function() {
+                        return this.expectOptionalToken(a.T.EQUALS) ? this.delimitedMany(a.T.PIPE, this.parseNamedType) : []
+                    }, t.parseEnumTypeDefinition = function() {
+                        var e = this._lexer.token,
+                            t = this.parseDescription();
+                        this.expectKeyword("enum");
+                        var n = this.parseName(),
+                            i = this.parseDirectives(!0),
+                            s = this.parseEnumValuesDefinition();
+                        return {
+                            kind: r.h.ENUM_TYPE_DEFINITION,
+                            description: t,
+                            name: n,
+                            directives: i,
+                            values: s,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseEnumValuesDefinition = function() {
+                        return this.optionalMany(a.T.BRACE_L, this.parseEnumValueDefinition, a.T.BRACE_R)
+                    }, t.parseEnumValueDefinition = function() {
+                        var e = this._lexer.token,
+                            t = this.parseDescription(),
+                            n = this.parseName(),
+                            i = this.parseDirectives(!0);
+                        return {
+                            kind: r.h.ENUM_VALUE_DEFINITION,
+                            description: t,
+                            name: n,
+                            directives: i,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseInputObjectTypeDefinition = function() {
+                        var e = this._lexer.token,
+                            t = this.parseDescription();
+                        this.expectKeyword("input");
+                        var n = this.parseName(),
+                            i = this.parseDirectives(!0),
+                            s = this.parseInputFieldsDefinition();
+                        return {
+                            kind: r.h.INPUT_OBJECT_TYPE_DEFINITION,
+                            description: t,
+                            name: n,
+                            directives: i,
+                            fields: s,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseInputFieldsDefinition = function() {
+                        return this.optionalMany(a.T.BRACE_L, this.parseInputValueDef, a.T.BRACE_R)
+                    }, t.parseTypeSystemExtension = function() {
+                        var e = this._lexer.lookahead();
+                        if (e.kind === a.T.NAME) switch (e.value) {
                             case "schema":
                                 return this.parseSchemaExtension();
                             case "scalar":
@@ -2244,412 +2245,412 @@
                                 return this.parseEnumTypeExtension();
                             case "input":
                                 return this.parseInputObjectTypeExtension()
-                            }
-                            throw this.unexpected(e)
-                        }, t.parseSchemaExtension = function () {
-                            var e = this._lexer.token;
-                            this.expectKeyword("extend"), this.expectKeyword("schema");
-                            var t = this.parseDirectives(!0),
-                                n = this.optionalMany(a.T.BRACE_L, this.parseOperationTypeDefinition, a.T.BRACE_R);
-                            if (0 === t.length && 0 === n.length) throw this.unexpected();
-                            return {
-                                kind: r.h.SCHEMA_EXTENSION,
-                                directives: t,
-                                operationTypes: n,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseScalarTypeExtension = function () {
-                            var e = this._lexer.token;
-                            this.expectKeyword("extend"), this.expectKeyword("scalar");
-                            var t = this.parseName(),
-                                n = this.parseDirectives(!0);
-                            if (0 === n.length) throw this.unexpected();
-                            return {
-                                kind: r.h.SCALAR_TYPE_EXTENSION,
-                                name: t,
-                                directives: n,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseObjectTypeExtension = function () {
-                            var e = this._lexer.token;
-                            this.expectKeyword("extend"), this.expectKeyword("type");
-                            var t = this.parseName(),
-                                n = this.parseImplementsInterfaces(),
-                                i = this.parseDirectives(!0),
-                                s = this.parseFieldsDefinition();
-                            if (0 === n.length && 0 === i.length && 0 === s.length) throw this.unexpected();
-                            return {
-                                kind: r.h.OBJECT_TYPE_EXTENSION,
-                                name: t,
-                                interfaces: n,
-                                directives: i,
-                                fields: s,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseInterfaceTypeExtension = function () {
-                            var e = this._lexer.token;
-                            this.expectKeyword("extend"), this.expectKeyword("interface");
-                            var t = this.parseName(),
-                                n = this.parseImplementsInterfaces(),
-                                i = this.parseDirectives(!0),
-                                s = this.parseFieldsDefinition();
-                            if (0 === n.length && 0 === i.length && 0 === s.length) throw this.unexpected();
-                            return {
-                                kind: r.h.INTERFACE_TYPE_EXTENSION,
-                                name: t,
-                                interfaces: n,
-                                directives: i,
-                                fields: s,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseUnionTypeExtension = function () {
-                            var e = this._lexer.token;
-                            this.expectKeyword("extend"), this.expectKeyword("union");
-                            var t = this.parseName(),
-                                n = this.parseDirectives(!0),
-                                i = this.parseUnionMemberTypes();
-                            if (0 === n.length && 0 === i.length) throw this.unexpected();
-                            return {
-                                kind: r.h.UNION_TYPE_EXTENSION,
-                                name: t,
-                                directives: n,
-                                types: i,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseEnumTypeExtension = function () {
-                            var e = this._lexer.token;
-                            this.expectKeyword("extend"), this.expectKeyword("enum");
-                            var t = this.parseName(),
-                                n = this.parseDirectives(!0),
-                                i = this.parseEnumValuesDefinition();
-                            if (0 === n.length && 0 === i.length) throw this.unexpected();
-                            return {
-                                kind: r.h.ENUM_TYPE_EXTENSION,
-                                name: t,
-                                directives: n,
-                                values: i,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseInputObjectTypeExtension = function () {
-                            var e = this._lexer.token;
-                            this.expectKeyword("extend"), this.expectKeyword("input");
-                            var t = this.parseName(),
-                                n = this.parseDirectives(!0),
-                                i = this.parseInputFieldsDefinition();
-                            if (0 === n.length && 0 === i.length) throw this.unexpected();
-                            return {
-                                kind: r.h.INPUT_OBJECT_TYPE_EXTENSION,
-                                name: t,
-                                directives: n,
-                                fields: i,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseDirectiveDefinition = function () {
-                            var e = this._lexer.token,
-                                t = this.parseDescription();
-                            this.expectKeyword("directive"), this.expectToken(a.T.AT);
-                            var n = this.parseName(),
-                                i = this.parseArgumentDefs(),
-                                s = this.expectOptionalKeyword("repeatable");
-                            this.expectKeyword("on");
-                            var o = this.parseDirectiveLocations();
-                            return {
-                                kind: r.h.DIRECTIVE_DEFINITION,
-                                description: t,
-                                name: n,
-                                arguments: i,
-                                repeatable: s,
-                                locations: o,
-                                loc: this.loc(e)
-                            }
-                        }, t.parseDirectiveLocations = function () {
-                            return this.delimitedMany(a.T.PIPE, this.parseDirectiveLocation)
-                        }, t.parseDirectiveLocation = function () {
-                            var e = this._lexer.token,
-                                t = this.parseName();
-                            if (void 0 !== c.B[t.value]) return t;
-                            throw this.unexpected(e)
-                        }, t.loc = function (e) {
-                            var t;
-                            if (!0 !== (null === (t = this._options) || void 0 === t ? void 0 : t.noLocation)) return new s.Ye(e, this._lexer.lastToken, this._lexer.source)
-                        }, t.peek = function (e) {
-                            return this._lexer.token.kind === e
-                        }, t.expectToken = function (e) {
-                            var t = this._lexer.token;
-                            if (t.kind === e) return this._lexer.advance(), t;
-                            throw (0, i.h)(this._lexer.source, t.start, "Expected ".concat(p(e), ", found ").concat(u(t), "."))
-                        }, t.expectOptionalToken = function (e) {
-                            var t = this._lexer.token;
-                            if (t.kind === e) return this._lexer.advance(), t
-                        }, t.expectKeyword = function (e) {
-                            var t = this._lexer.token;
-                            if (t.kind !== a.T.NAME || t.value !== e) throw (0, i.h)(this._lexer.source, t.start, 'Expected "'.concat(e, '", found ').concat(u(t), "."));
-                            this._lexer.advance()
-                        }, t.expectOptionalKeyword = function (e) {
-                            var t = this._lexer.token;
-                            return t.kind === a.T.NAME && t.value === e && (this._lexer.advance(), !0)
-                        }, t.unexpected = function (e) {
-                            var t = null != e ? e : this._lexer.token;
-                            return (0, i.h)(this._lexer.source, t.start, "Unexpected ".concat(u(t), "."))
-                        }, t.any = function (e, t, n) {
-                            this.expectToken(e);
-                            for (var i = []; !this.expectOptionalToken(n);) i.push(t.call(this));
-                            return i
-                        }, t.optionalMany = function (e, t, n) {
-                            if (this.expectOptionalToken(e)) {
-                                var i = [];
-                                do {
-                                    i.push(t.call(this))
-                                } while (!this.expectOptionalToken(n));
-                                return i
-                            }
-                            return []
-                        }, t.many = function (e, t, n) {
-                            this.expectToken(e);
+                        }
+                        throw this.unexpected(e)
+                    }, t.parseSchemaExtension = function() {
+                        var e = this._lexer.token;
+                        this.expectKeyword("extend"), this.expectKeyword("schema");
+                        var t = this.parseDirectives(!0),
+                            n = this.optionalMany(a.T.BRACE_L, this.parseOperationTypeDefinition, a.T.BRACE_R);
+                        if (0 === t.length && 0 === n.length) throw this.unexpected();
+                        return {
+                            kind: r.h.SCHEMA_EXTENSION,
+                            directives: t,
+                            operationTypes: n,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseScalarTypeExtension = function() {
+                        var e = this._lexer.token;
+                        this.expectKeyword("extend"), this.expectKeyword("scalar");
+                        var t = this.parseName(),
+                            n = this.parseDirectives(!0);
+                        if (0 === n.length) throw this.unexpected();
+                        return {
+                            kind: r.h.SCALAR_TYPE_EXTENSION,
+                            name: t,
+                            directives: n,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseObjectTypeExtension = function() {
+                        var e = this._lexer.token;
+                        this.expectKeyword("extend"), this.expectKeyword("type");
+                        var t = this.parseName(),
+                            n = this.parseImplementsInterfaces(),
+                            i = this.parseDirectives(!0),
+                            s = this.parseFieldsDefinition();
+                        if (0 === n.length && 0 === i.length && 0 === s.length) throw this.unexpected();
+                        return {
+                            kind: r.h.OBJECT_TYPE_EXTENSION,
+                            name: t,
+                            interfaces: n,
+                            directives: i,
+                            fields: s,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseInterfaceTypeExtension = function() {
+                        var e = this._lexer.token;
+                        this.expectKeyword("extend"), this.expectKeyword("interface");
+                        var t = this.parseName(),
+                            n = this.parseImplementsInterfaces(),
+                            i = this.parseDirectives(!0),
+                            s = this.parseFieldsDefinition();
+                        if (0 === n.length && 0 === i.length && 0 === s.length) throw this.unexpected();
+                        return {
+                            kind: r.h.INTERFACE_TYPE_EXTENSION,
+                            name: t,
+                            interfaces: n,
+                            directives: i,
+                            fields: s,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseUnionTypeExtension = function() {
+                        var e = this._lexer.token;
+                        this.expectKeyword("extend"), this.expectKeyword("union");
+                        var t = this.parseName(),
+                            n = this.parseDirectives(!0),
+                            i = this.parseUnionMemberTypes();
+                        if (0 === n.length && 0 === i.length) throw this.unexpected();
+                        return {
+                            kind: r.h.UNION_TYPE_EXTENSION,
+                            name: t,
+                            directives: n,
+                            types: i,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseEnumTypeExtension = function() {
+                        var e = this._lexer.token;
+                        this.expectKeyword("extend"), this.expectKeyword("enum");
+                        var t = this.parseName(),
+                            n = this.parseDirectives(!0),
+                            i = this.parseEnumValuesDefinition();
+                        if (0 === n.length && 0 === i.length) throw this.unexpected();
+                        return {
+                            kind: r.h.ENUM_TYPE_EXTENSION,
+                            name: t,
+                            directives: n,
+                            values: i,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseInputObjectTypeExtension = function() {
+                        var e = this._lexer.token;
+                        this.expectKeyword("extend"), this.expectKeyword("input");
+                        var t = this.parseName(),
+                            n = this.parseDirectives(!0),
+                            i = this.parseInputFieldsDefinition();
+                        if (0 === n.length && 0 === i.length) throw this.unexpected();
+                        return {
+                            kind: r.h.INPUT_OBJECT_TYPE_EXTENSION,
+                            name: t,
+                            directives: n,
+                            fields: i,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseDirectiveDefinition = function() {
+                        var e = this._lexer.token,
+                            t = this.parseDescription();
+                        this.expectKeyword("directive"), this.expectToken(a.T.AT);
+                        var n = this.parseName(),
+                            i = this.parseArgumentDefs(),
+                            s = this.expectOptionalKeyword("repeatable");
+                        this.expectKeyword("on");
+                        var o = this.parseDirectiveLocations();
+                        return {
+                            kind: r.h.DIRECTIVE_DEFINITION,
+                            description: t,
+                            name: n,
+                            arguments: i,
+                            repeatable: s,
+                            locations: o,
+                            loc: this.loc(e)
+                        }
+                    }, t.parseDirectiveLocations = function() {
+                        return this.delimitedMany(a.T.PIPE, this.parseDirectiveLocation)
+                    }, t.parseDirectiveLocation = function() {
+                        var e = this._lexer.token,
+                            t = this.parseName();
+                        if (void 0 !== c.B[t.value]) return t;
+                        throw this.unexpected(e)
+                    }, t.loc = function(e) {
+                        var t;
+                        if (!0 !== (null === (t = this._options) || void 0 === t ? void 0 : t.noLocation)) return new s.Ye(e, this._lexer.lastToken, this._lexer.source)
+                    }, t.peek = function(e) {
+                        return this._lexer.token.kind === e
+                    }, t.expectToken = function(e) {
+                        var t = this._lexer.token;
+                        if (t.kind === e) return this._lexer.advance(), t;
+                        throw (0, i.h)(this._lexer.source, t.start, "Expected ".concat(p(e), ", found ").concat(u(t), "."))
+                    }, t.expectOptionalToken = function(e) {
+                        var t = this._lexer.token;
+                        if (t.kind === e) return this._lexer.advance(), t
+                    }, t.expectKeyword = function(e) {
+                        var t = this._lexer.token;
+                        if (t.kind !== a.T.NAME || t.value !== e) throw (0, i.h)(this._lexer.source, t.start, 'Expected "'.concat(e, '", found ').concat(u(t), "."));
+                        this._lexer.advance()
+                    }, t.expectOptionalKeyword = function(e) {
+                        var t = this._lexer.token;
+                        return t.kind === a.T.NAME && t.value === e && (this._lexer.advance(), !0)
+                    }, t.unexpected = function(e) {
+                        var t = null != e ? e : this._lexer.token;
+                        return (0, i.h)(this._lexer.source, t.start, "Unexpected ".concat(u(t), "."))
+                    }, t.any = function(e, t, n) {
+                        this.expectToken(e);
+                        for (var i = []; !this.expectOptionalToken(n);) i.push(t.call(this));
+                        return i
+                    }, t.optionalMany = function(e, t, n) {
+                        if (this.expectOptionalToken(e)) {
                             var i = [];
                             do {
                                 i.push(t.call(this))
                             } while (!this.expectOptionalToken(n));
                             return i
-                        }, t.delimitedMany = function (e, t) {
-                            this.expectOptionalToken(e);
-                            var n = [];
-                            do {
-                                n.push(t.call(this))
-                            } while (this.expectOptionalToken(e));
-                            return n
-                        }, e
-                    }();
-
-                    function u(e) {
-                        var t = e.value;
-                        return p(e.kind) + (null != t ? ' "'.concat(t, '"') : "")
-                    }
-
-                    function p(e) {
-                        return (0, l.u)(e) ? '"'.concat(e, '"') : e
-                    }
-                },
-                6803: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        Q: () => r,
-                        z: () => s
-                    });
-                    var i = n(1654);
-
-                    function r(e) {
-                        return s(e.source, (0, i.k)(e.source, e.start))
-                    }
-
-                    function s(e, t) {
-                        var n = e.locationOffset.column - 1,
-                            i = o(n) + e.body,
-                            r = t.line - 1,
-                            s = e.locationOffset.line - 1,
-                            c = t.line + s,
-                            l = 1 === t.line ? n : 0,
-                            h = t.column + l,
-                            d = "".concat(e.name, ":").concat(c, ":").concat(h, "\n"),
-                            u = i.split(/\r\n|[\n\r]/g),
-                            p = u[r];
-                        if (p.length > 120) {
-                            for (var f = Math.floor(h / 80), m = h % 80, v = [], y = 0; y < p.length; y += 80) v.push(p.slice(y, y + 80));
-                            return d + a([
-                                ["".concat(c), v[0]]
-                            ].concat(v.slice(1, f + 1).map((function (e) {
-                                return ["", e]
-                            })), [
-                                [" ", o(m - 1) + "^"],
-                                ["", v[f + 1]]
-                            ]))
                         }
-                        return d + a([
-                            ["".concat(c - 1), u[r - 1]],
-                            ["".concat(c), p],
-                            ["", o(h - 1) + "^"],
-                            ["".concat(c + 1), u[r + 1]]
-                        ])
-                    }
-
-                    function a(e) {
-                        var t = e.filter((function (e) {
-                                return e[0], void 0 !== e[1]
-                            })),
-                            n = Math.max.apply(Math, t.map((function (e) {
-                                return e[0].length
-                            })));
-                        return t.map((function (e) {
-                            var t, i = e[0],
-                                r = e[1];
-                            return o(n - (t = i).length) + t + (r ? " | " + r : " |")
-                        })).join("\n")
-                    }
-
-                    function o(e) {
-                        return Array(e + 1).join(" ")
-                    }
-                },
-                1112: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        H: () => c,
-                        T: () => l
-                    });
-                    var i = n(824),
-                        r = n(6589),
-                        s = n(3767),
-                        a = n(9495);
-
-                    function o(e, t) {
-                        for (var n = 0; n < t.length; n++) {
-                            var i = t[n];
-                            i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
-                        }
-                    }
-                    var c = function () {
-                        function e(e) {
-                            var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "GraphQL request",
-                                n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {
-                                    line: 1,
-                                    column: 1
-                                };
-                            "string" == typeof e || (0, s.Z)(0, "Body must be a string. Received: ".concat((0, r.Z)(e), ".")), this.body = e, this.name = t, this.locationOffset = n, this.locationOffset.line > 0 || (0, s.Z)(0, "line in locationOffset is 1-indexed and must be positive."), this.locationOffset.column > 0 || (0, s.Z)(0, "column in locationOffset is 1-indexed and must be positive.")
-                        }
-                        var t, n;
-                        return t = e, (n = [{
-                            key: i.YF,
-                            get: function () {
-                                return "Source"
-                            }
-                        }]) && o(t.prototype, n), e
-                    }();
-
-                    function l(e) {
-                        return (0, a.Z)(e, c)
-                    }
-                },
-                7525: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        T: () => i
-                    });
-                    var i = Object.freeze({
-                        SOF: "<SOF>",
-                        EOF: "<EOF>",
-                        BANG: "!",
-                        DOLLAR: "$",
-                        AMP: "&",
-                        PAREN_L: "(",
-                        PAREN_R: ")",
-                        SPREAD: "...",
-                        COLON: ":",
-                        EQUALS: "=",
-                        AT: "@",
-                        BRACKET_L: "[",
-                        BRACKET_R: "]",
-                        BRACE_L: "{",
-                        PIPE: "|",
-                        BRACE_R: "}",
-                        NAME: "Name",
-                        INT: "Int",
-                        FLOAT: "Float",
-                        STRING: "String",
-                        BLOCK_STRING: "BlockString",
-                        COMMENT: "Comment"
-                    })
-                },
-                824: (e, t, n) => {
-                    "use strict";
-                    n.d(t, {
-                        YF: () => i
-                    }), "function" == typeof Symbol && null != Symbol.iterator && Symbol.iterator, "function" == typeof Symbol && null != Symbol.asyncIterator && Symbol.asyncIterator;
-                    var i = "function" == typeof Symbol && null != Symbol.toStringTag ? Symbol.toStringTag : "@@toStringTag"
-                },
-                3379: (e, t, n) => {
-                    "use strict";
-                    var i, r = function () {
-                            var e = {};
-                            return function (t) {
-                                if (void 0 === e[t]) {
-                                    var n = document.querySelector(t);
-                                    if (window.HTMLIFrameElement && n instanceof window.HTMLIFrameElement) try {
-                                        n = n.contentDocument.head
-                                    } catch (e) {
-                                        n = null
-                                    }
-                                    e[t] = n
-                                }
-                                return e[t]
-                            }
-                        }(),
-                        s = [];
-
-                    function a(e) {
-                        for (var t = -1, n = 0; n < s.length; n++)
-                            if (s[n].identifier === e) {
-                                t = n;
-                                break
-                            } return t
-                    }
-
-                    function o(e, t) {
-                        for (var n = {}, i = [], r = 0; r < e.length; r++) {
-                            var o = e[r],
-                                c = t.base ? o[0] + t.base : o[0],
-                                l = n[c] || 0,
-                                h = "".concat(c, " ").concat(l);
-                            n[c] = l + 1;
-                            var d = a(h),
-                                u = {
-                                    css: o[1],
-                                    media: o[2],
-                                    sourceMap: o[3]
-                                }; - 1 !== d ? (s[d].references++, s[d].updater(u)) : s.push({
-                                identifier: h,
-                                updater: m(u, t),
-                                references: 1
-                            }), i.push(h)
-                        }
+                        return []
+                    }, t.many = function(e, t, n) {
+                        this.expectToken(e);
+                        var i = [];
+                        do {
+                            i.push(t.call(this))
+                        } while (!this.expectOptionalToken(n));
                         return i
-                    }
+                    }, t.delimitedMany = function(e, t) {
+                        this.expectOptionalToken(e);
+                        var n = [];
+                        do {
+                            n.push(t.call(this))
+                        } while (this.expectOptionalToken(e));
+                        return n
+                    }, e
+                }();
 
-                    function c(e) {
-                        var t = document.createElement("style"),
-                            i = e.attributes || {};
-                        if (void 0 === i.nonce) {
-                            var s = n.nc;
-                            s && (i.nonce = s)
-                        }
-                        if (Object.keys(i).forEach((function (e) {
-                                t.setAttribute(e, i[e])
-                            })), "function" == typeof e.insert) e.insert(t);
-                        else {
-                            var a = r(e.insert || "head");
-                            if (!a) throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
-                            a.appendChild(t)
-                        }
-                        return t
-                    }
-                    var l, h = (l = [], function (e, t) {
-                        return l[e] = t, l.filter(Boolean).join("\n")
-                    });
+                function u(e) {
+                    var t = e.value;
+                    return p(e.kind) + (null != t ? ' "'.concat(t, '"') : "")
+                }
 
-                    function d(e, t, n, i) {
-                        var r = n ? "" : i.media ? "@media ".concat(i.media, " {").concat(i.css, "}") : i.css;
-                        if (e.styleSheet) e.styleSheet.cssText = h(t, r);
-                        else {
-                            var s = document.createTextNode(r),
-                                a = e.childNodes;
-                            a[t] && e.removeChild(a[t]), a.length ? e.insertBefore(s, a[t]) : e.appendChild(s)
-                        }
-                    }
+                function p(e) {
+                    return (0, l.u)(e) ? '"'.concat(e, '"') : e
+                }
+            },
+            6803: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    Q: () => r,
+                    z: () => s
+                });
+                var i = n(1654);
 
-                    function u(e, t, n) {
-                        var i = n.css,
-                            r = n.media,
-                            s = n.sourceMap;
-                        if (r ? e.setAttribute("media", r) : e.removeAttribute("media"), s && "undefined" != typeof btoa && (i += "\n")), e.styleSheet) e.styleSheet.cssText = i;
+                function r(e) {
+                    return s(e.source, (0, i.k)(e.source, e.start))
+                }
+
+                function s(e, t) {
+                    var n = e.locationOffset.column - 1,
+                        i = o(n) + e.body,
+                        r = t.line - 1,
+                        s = e.locationOffset.line - 1,
+                        c = t.line + s,
+                        l = 1 === t.line ? n : 0,
+                        h = t.column + l,
+                        d = "".concat(e.name, ":").concat(c, ":").concat(h, "\n"),
+                        u = i.split(/\r\n|[\n\r]/g),
+                        p = u[r];
+                    if (p.length > 120) {
+                        for (var f = Math.floor(h / 80), m = h % 80, v = [], y = 0; y < p.length; y += 80) v.push(p.slice(y, y + 80));
+                        return d + a([
+                            ["".concat(c), v[0]]
+                        ].concat(v.slice(1, f + 1).map((function(e) {
+                            return ["", e]
+                        })), [
+                            [" ", o(m - 1) + "^"],
+                            ["", v[f + 1]]
+                        ]))
+                    }
+                    return d + a([
+                        ["".concat(c - 1), u[r - 1]],
+                        ["".concat(c), p],
+                        ["", o(h - 1) + "^"],
+                        ["".concat(c + 1), u[r + 1]]
+                    ])
+                }
+
+                function a(e) {
+                    var t = e.filter((function(e) {
+                            return e[0], void 0 !== e[1]
+                        })),
+                        n = Math.max.apply(Math, t.map((function(e) {
+                            return e[0].length
+                        })));
+                    return t.map((function(e) {
+                        var t, i = e[0],
+                            r = e[1];
+                        return o(n - (t = i).length) + t + (r ? " | " + r : " |")
+                    })).join("\n")
+                }
+
+                function o(e) {
+                    return Array(e + 1).join(" ")
+                }
+            },
+            1112: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    H: () => c,
+                    T: () => l
+                });
+                var i = n(824),
+                    r = n(6589),
+                    s = n(3767),
+                    a = n(9495);
+
+                function o(e, t) {
+                    for (var n = 0; n < t.length; n++) {
+                        var i = t[n];
+                        i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i)
+                    }
+                }
+                var c = function() {
+                    function e(e) {
+                        var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "GraphQL request",
+                            n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {
+                                line: 1,
+                                column: 1
+                            };
+                        "string" == typeof e || (0, s.Z)(0, "Body must be a string. Received: ".concat((0, r.Z)(e), ".")), this.body = e, this.name = t, this.locationOffset = n, this.locationOffset.line > 0 || (0, s.Z)(0, "line in locationOffset is 1-indexed and must be positive."), this.locationOffset.column > 0 || (0, s.Z)(0, "column in locationOffset is 1-indexed and must be positive.")
+                    }
+                    var t, n;
+                    return t = e, (n = [{
+                        key: i.YF,
+                        get: function() {
+                            return "Source"
+                        }
+                    }]) && o(t.prototype, n), e
+                }();
+
+                function l(e) {
+                    return (0, a.Z)(e, c)
+                }
+            },
+            7525: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    T: () => i
+                });
+                var i = Object.freeze({
+                    SOF: "<SOF>",
+                    EOF: "<EOF>",
+                    BANG: "!",
+                    DOLLAR: "$",
+                    AMP: "&",
+                    PAREN_L: "(",
+                    PAREN_R: ")",
+                    SPREAD: "...",
+                    COLON: ":",
+                    EQUALS: "=",
+                    AT: "@",
+                    BRACKET_L: "[",
+                    BRACKET_R: "]",
+                    BRACE_L: "{",
+                    PIPE: "|",
+                    BRACE_R: "}",
+                    NAME: "Name",
+                    INT: "Int",
+                    FLOAT: "Float",
+                    STRING: "String",
+                    BLOCK_STRING: "BlockString",
+                    COMMENT: "Comment"
+                })
+            },
+            824: (e, t, n) => {
+                "use strict";
+                n.d(t, {
+                    YF: () => i
+                }), "function" == typeof Symbol && null != Symbol.iterator && Symbol.iterator, "function" == typeof Symbol && null != Symbol.asyncIterator && Symbol.asyncIterator;
+                var i = "function" == typeof Symbol && null != Symbol.toStringTag ? Symbol.toStringTag : "@@toStringTag"
+            },
+            3379: (e, t, n) => {
+                "use strict";
+                var i, r = function() {
+                        var e = {};
+                        return function(t) {
+                            if (void 0 === e[t]) {
+                                var n = document.querySelector(t);
+                                if (window.HTMLIFrameElement && n instanceof window.HTMLIFrameElement) try {
+                                    n = n.contentDocument.head
+                                } catch (e) {
+                                    n = null
+                                }
+                                e[t] = n
+                            }
+                            return e[t]
+                        }
+                    }(),
+                    s = [];
+
+                function a(e) {
+                    for (var t = -1, n = 0; n < s.length; n++)
+                        if (s[n].identifier === e) {
+                            t = n;
+                            break
+                        } return t
+                }
+
+                function o(e, t) {
+                    for (var n = {}, i = [], r = 0; r < e.length; r++) {
+                        var o = e[r],
+                            c = t.base ? o[0] + t.base : o[0],
+                            l = n[c] || 0,
+                            h = "".concat(c, " ").concat(l);
+                        n[c] = l + 1;
+                        var d = a(h),
+                            u = {
+                                css: o[1],
+                                media: o[2],
+                                sourceMap: o[3]
+                            }; - 1 !== d ? (s[d].references++, s[d].updater(u)) : s.push({
+                            identifier: h,
+                            updater: m(u, t),
+                            references: 1
+                        }), i.push(h)
+                    }
+                    return i
+                }
+
+                function c(e) {
+                    var t = document.createElement("style"),
+                        i = e.attributes || {};
+                    if (void 0 === i.nonce) {
+                        var s = n.nc;
+                        s && (i.nonce = s)
+                    }
+                    if (Object.keys(i).forEach((function(e) {
+                            t.setAttribute(e, i[e])
+                        })), "function" == typeof e.insert) e.insert(t);
+                    else {
+                        var a = r(e.insert || "head");
+                        if (!a) throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+                        a.appendChild(t)
+                    }
+                    return t
+                }
+                var l, h = (l = [], function(e, t) {
+                    return l[e] = t, l.filter(Boolean).join("\n")
+                });
+
+                function d(e, t, n, i) {
+                    var r = n ? "" : i.media ? "@media ".concat(i.media, " {").concat(i.css, "}") : i.css;
+                    if (e.styleSheet) e.styleSheet.cssText = h(t, r);
+                    else {
+                        var s = document.createTextNode(r),
+                            a = e.childNodes;
+                        a[t] && e.removeChild(a[t]), a.length ? e.insertBefore(s, a[t]) : e.appendChild(s)
+                    }
+                }
+
+                function u(e, t, n) {
+                    var i = n.css,
+                        r = n.media,
+                        s = n.sourceMap;
+                    if (r ? e.setAttribute("media", r) : e.removeAttribute("media"), s && "undefined" != typeof btoa && (i += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(s)))), " */")), e.styleSheet) e.styleSheet.cssText = i;
                     else {
                         for (; e.firstChild;) e.removeChild(e.firstChild);
                         e.appendChild(document.createTextNode(i))
@@ -2663,24 +2664,24 @@
                     if (t.singleton) {
                         var s = f++;
                         n = p || (p = c(t)), i = d.bind(null, n, s, !1), r = d.bind(null, n, s, !0)
-                    } else n = c(t), i = u.bind(null, n, t), r = function () {
-                        ! function (e) {
+                    } else n = c(t), i = u.bind(null, n, t), r = function() {
+                        ! function(e) {
                             if (null === e.parentNode) return !1;
                             e.parentNode.removeChild(e)
                         }(n)
                     };
                     return i(e),
-                        function (t) {
+                        function(t) {
                             if (t) {
                                 if (t.css === e.css && t.media === e.media && t.sourceMap === e.sourceMap) return;
                                 i(e = t)
                             } else r()
                         }
                 }
-                e.exports = function (e, t) {
+                e.exports = function(e, t) {
                     (t = t || {}).singleton || "boolean" == typeof t.singleton || (t.singleton = (void 0 === i && (i = Boolean(window && document && document.all && !window.atob)), i));
                     var n = o(e = e || [], t);
-                    return function (e) {
+                    return function(e) {
                         if (e = e || [], "[object Array]" === Object.prototype.toString.call(e)) {
                             for (var i = 0; i < n.length; i++) {
                                 var r = a(n[i]);
@@ -2751,9 +2752,9 @@
                         return this.adapter.isSupportsImageUploading
                     }
                     requestPermissions(e) {
-                        return t = this, n = void 0, r = function* () {
+                        return t = this, n = void 0, r = function*() {
                             return this.adapter.requestPermissions(e)
-                        }, new((i = void 0) || (i = Promise))((function (e, s) {
+                        }, new((i = void 0) || (i = Promise))((function(e, s) {
                             function a(e) {
                                 try {
                                     c(r.next(e))
@@ -2772,7 +2773,7 @@
 
                             function c(t) {
                                 var n;
-                                t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function (e) {
+                                t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function(e) {
                                     e(n)
                                 }))).then(a, o)
                             }
@@ -2793,8 +2794,8 @@
                 }), u.Z.locals;
                 var p, f, m, v, y, g, w = n(6558),
                     b = n(9503),
-                    P = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    P = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -2813,20 +2814,20 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    E = function (e, t, n, i, r) {
+                    E = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
                         return "a" === i ? r.call(e, n) : r ? r.value = n : t.set(e, n), n
                     },
-                    T = function (e, t, n, i) {
+                    T = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -2885,20 +2886,20 @@
                         E(this, m, e, "f"), this._set(this.localStorages, "context", T(this, m, "f"))
                     }
                     migrateToContext(e) {
-                        return P(this, void 0, void 0, (function* () {
+                        return P(this, void 0, void 0, (function*() {
                             E(this, m, "", "f");
                             const [t, n, i] = yield Promise.all([this.loadPlayer(), this.loadSecretCode(), this.loadLanguage()]), r = n || (null == t ? void 0 : t.secretCode);
                             return E(this, m, e, "f"), yield Promise.all([this.savePlayer(t, T(this, v, "f")), this.saveSecretCode(r), this.saveLanguage(i)]), E(this, m, "", "f"), yield Promise.all([this.savePlayer(null, T(this, v, "f")), this.saveSecretCode(null), this.saveLanguage(null)]), [t, r]
                         }))
                     }
                     clearContext(e, t) {
-                        return P(this, void 0, void 0, (function* () {
+                        return P(this, void 0, void 0, (function*() {
                             const n = T(this, m, "f");
                             E(this, m, e, "f"), yield Promise.all([this.savePlayer(null, t), this.saveSecretCode(null), this.saveLanguage(null)]), E(this, m, n, "f")
                         }))
                     }
                     extractFromContext(e, t = !1) {
-                        return P(this, void 0, void 0, (function* () {
+                        return P(this, void 0, void 0, (function*() {
                             const n = T(this, m, "f");
                             E(this, m, e, "f");
                             const [i, r, s] = yield Promise.all(t ? [this.loadPlayerFromLocalStorage(), this.loadSecretCodeFromLocalStorage(), this.loadLanguage()] : [this.loadPlayer(), this.loadSecretCode(), this.loadLanguage()]), a = r || (null == i ? void 0 : i.secretCode);
@@ -2906,14 +2907,14 @@
                         }))
                     }
                     copyFromContext(e, t, n) {
-                        return P(this, void 0, void 0, (function* () {
+                        return P(this, void 0, void 0, (function*() {
                             const i = T(this, m, "f"),
                                 [r, s, a] = yield this.extractFromContext(e);
                             E(this, m, t, "f"), yield Promise.all([this.savePlayer(r, n), this.saveSecretCode(s), this.saveLanguage(a)]), E(this, m, i, "f")
                         }))
                     }
                     checkIsMigrated(e) {
-                        return P(this, void 0, void 0, (function* () {
+                        return P(this, void 0, void 0, (function*() {
                             let t = !1;
                             try {
                                 t = yield this.get(T(this, y, "f"), `migrated:${e}`)
@@ -2922,7 +2923,7 @@
                         }))
                     }
                     setMigrated(e) {
-                        return P(this, void 0, void 0, (function* () {
+                        return P(this, void 0, void 0, (function*() {
                             return this.set(T(this, y, "f"), `migrated:${e}`, !0)
                         }))
                     }
@@ -2940,12 +2941,12 @@
                         return this.set(t ? this.storages : this.localStorages, "players", [e]).catch(w.kg.warn)
                     }
                     loadSecretCode() {
-                        return P(this, void 0, void 0, (function* () {
+                        return P(this, void 0, void 0, (function*() {
                             return this.get(this.activeStorages, "sk").catch(w.kg.warn)
                         }))
                     }
                     loadSecretCodeFromLocalStorage() {
-                        return P(this, void 0, void 0, (function* () {
+                        return P(this, void 0, void 0, (function*() {
                             return this.get(this.localStorages, "sk").catch(w.kg.warn)
                         }))
                     }
@@ -2985,12 +2986,12 @@
                     }
                     isCrazyGamesAccountLinked(e) {
                         var t;
-                        return P(this, void 0, void 0, (function* () {
+                        return P(this, void 0, void 0, (function*() {
                             return Boolean(null !== (t = yield this.getRaw(this.localStorages, `crazyGames.account${e}.linked`)) && void 0 !== t && t)
                         }))
                     }
                     setCrazyGamesAccountLinked(e) {
-                        return P(this, void 0, void 0, (function* () {
+                        return P(this, void 0, void 0, (function*() {
                             yield this.setRaw(this.localStorages, `crazyGames.account${e}.linked`, !0)
                         }))
                     }
@@ -2998,14 +2999,14 @@
                         E(this, v, e, "f")
                     }
                 }
-                f = new WeakMap, m = new WeakMap, v = new WeakMap, y = new WeakMap, p = new WeakSet, g = function (e) {
+                f = new WeakMap, m = new WeakMap, v = new WeakMap, y = new WeakMap, p = new WeakSet, g = function(e) {
                     if (!e) return null;
                     const [t] = e;
                     return t
                 };
                 var _ = n(6388),
-                    A = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    A = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -3024,7 +3025,7 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
@@ -3068,7 +3069,7 @@
                     function l() {
                         const t = s;
                         c = null, s = null;
-                        const n = (() => A(this, void 0, void 0, (function* () {
+                        const n = (() => A(this, void 0, void 0, (function*() {
                             return yield e.apply(this, t)
                         })))();
                         return o = new C(n, i), n
@@ -3077,16 +3078,16 @@
                     function h(...e) {
                         return s = s ? r(s, e) : e, c || (c = o.then(l.bind(this))), c
                     }
-                    return h.cancel = () => A(this, void 0, void 0, (function* () {
+                    return h.cancel = () => A(this, void 0, void 0, (function*() {
                         const e = a;
                         o.cancel(), c = null, s = null, a = Promise.resolve(), o = new C(a, 0), yield e
-                    })), h.flush = () => A(this, void 0, void 0, (function* () {
+                    })), h.flush = () => A(this, void 0, void 0, (function*() {
                         o.flush(), yield a
                     })), h
                 }
 
                 function R(e) {
-                    return function (t, n, i) {
+                    return function(t, n, i) {
                         const r = i.value;
                         return i.value = k(r, e), i
                     }
@@ -3097,7 +3098,7 @@
                 };
                 new TextEncoder;
                 var D = n(6480),
-                    N = function (e, t, n, i) {
+                    N = function(e, t, n, i) {
                         var r, s = arguments.length,
                             a = s < 3 ? t : null === i ? i = Object.getOwnPropertyDescriptor(t, n) : i;
                         if ("object" == typeof Reflect && "function" == typeof Reflect.decorate) a = Reflect.decorate(e, t, n, i);
@@ -3105,8 +3106,8 @@
                             for (var o = e.length - 1; o >= 0; o--)(r = e[o]) && (a = (s < 3 ? r(a) : s > 3 ? r(t, n, a) : r(t, n)) || a);
                         return s > 3 && a && Object.defineProperty(t, n, a), a
                     },
-                    x = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    x = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -3125,7 +3126,7 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
@@ -3139,7 +3140,7 @@
                     open(e = {
                         orderBy: ["score"]
                     }) {
-                        return x(this, void 0, void 0, (function* () {
+                        return x(this, void 0, void 0, (function*() {
                             e.orderBy && "string" == typeof e.orderBy && (e.orderBy = [e.orderBy]);
                             const t = (Array.isArray(e.orderBy) ? e.orderBy : ["score"]).filter((e => "" !== e));
                             e = Object.assign(Object.assign({}, e), {
@@ -3150,13 +3151,13 @@
                         }))
                     }
                     openScoped(e) {
-                        return x(this, void 0, void 0, (function* () {
+                        return x(this, void 0, void 0, (function*() {
                             const [t] = yield Promise.all([this.fetchScoped(e), this.gp.loadOverlay()]), n = Object.assign({}, e), i = t.fields.map((e => e.key));
                             n.orderBy = e.includeFields ? i.filter((t => !e.includeFields.includes(t))) : i, this._events.emit("open"), yield this.gp.overlay.openLeaderboard(n, t), this._events.emit("close")
                         }))
                     }
                     fetch(e = {}) {
-                        return x(this, void 0, void 0, (function* () {
+                        return x(this, void 0, void 0, (function*() {
                             const t = (0, a._)();
                             this.gp.loader.inc();
                             const {
@@ -3182,7 +3183,7 @@
                         }))
                     }
                     fetchScoped(e) {
-                        return x(this, void 0, void 0, (function* () {
+                        return x(this, void 0, void 0, (function*() {
                             const t = (0, a._)();
                             this.gp.loader.inc();
                             const {
@@ -3208,7 +3209,7 @@
                         }))
                     }
                     fetchPlayerRating(e = {}) {
-                        return x(this, void 0, void 0, (function* () {
+                        return x(this, void 0, void 0, (function*() {
                             const t = (0, a._)();
                             this.gp.loader.inc();
                             const {
@@ -3228,7 +3229,7 @@
                         }))
                     }
                     fetchPlayerRatingScoped(e) {
-                        return x(this, void 0, void 0, (function* () {
+                        return x(this, void 0, void 0, (function*() {
                             const t = (0, a._)();
                             this.gp.loader.inc();
                             const {
@@ -3248,7 +3249,7 @@
                         }))
                     }
                     publishRecord(e) {
-                        return x(this, void 0, void 0, (function* () {
+                        return x(this, void 0, void 0, (function*() {
                             const t = (0, a._)();
                             this.gp.loader.inc();
                             try {
@@ -3265,7 +3266,7 @@
                 }
 
                 function F(e, t, n, i, r) {
-                    e.countOfPlayersAbove = (0, D.q3)(e.players, (null == t ? void 0 : t.abovePlayers) || []), e.topPlayers = [...e.players], e.abovePlayers = [...(null == t ? void 0 : t.abovePlayers) || []], e.belowPlayers = [...(null == t ? void 0 : t.belowPlayers) || []], e.player = (null == t ? void 0 : t.player) || null, e.players = function (e, t, n, i, r, s, a) {
+                    e.countOfPlayersAbove = (0, D.q3)(e.players, (null == t ? void 0 : t.abovePlayers) || []), e.topPlayers = [...e.players], e.abovePlayers = [...(null == t ? void 0 : t.abovePlayers) || []], e.belowPlayers = [...(null == t ? void 0 : t.belowPlayers) || []], e.player = (null == t ? void 0 : t.player) || null, e.players = function(e, t, n, i, r, s, a) {
                         if (!i || !t || "none" === t) return e;
                         if (e.some((e => e.id === i.id && e.position === i.position))) return e.map((e => i.id === e.id ? i : e));
                         const o = e.length,
@@ -3280,11 +3281,11 @@
                             t <= c || e.position++
                         })), e.length > o && e.pop();
                         else switch (t) {
-                        case "first":
-                            e.unshift(i);
-                            break;
-                        case "last":
-                            e.push(i)
+                            case "first":
+                                e.unshift(i);
+                                break;
+                            case "last":
+                                e.push(i)
                         }
                         return e = [...new Set(e.map((e => e.id)))].map((t => e.find((e => e.id === t)))), a && (e = e.sort(((e, t) => e.position - t.position))), e
                     }(e.players, (0, D.oo)(n, i), (0, D.wQ)(r, e.leaderboard), null == t ? void 0 : t.player, null == t ? void 0 : t.abovePlayers, null == t ? void 0 : t.belowPlayers, (0, D.pY)(n))
@@ -3302,7 +3303,7 @@
                     G = e, U.forEach((e => e(t))), requestAnimationFrame(B)
                 };
                 requestAnimationFrame(B);
-                var q, V, W, z, Y, K, J, Z, X, H, Q, ee, te, ne, ie, re, se, ae, oe, ce, le, he, de = function (e, t, n, i) {
+                var q, V, W, z, Y, K, J, Z, X, H, Q, ee, te, ne, ie, re, se, ae, oe, ce, le, he, de = function(e, t, n, i) {
                         var r, s = arguments.length,
                             a = s < 3 ? t : null === i ? i = Object.getOwnPropertyDescriptor(t, n) : i;
                         if ("object" == typeof Reflect && "function" == typeof Reflect.decorate) a = Reflect.decorate(e, t, n, i);
@@ -3310,8 +3311,8 @@
                             for (var o = e.length - 1; o >= 0; o--)(r = e[o]) && (a = (s < 3 ? r(a) : s > 3 ? r(t, n, a) : r(t, n)) || a);
                         return s > 3 && a && Object.defineProperty(t, n, a), a
                     },
-                    ue = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    ue = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -3330,20 +3331,20 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    pe = function (e, t, n, i, r) {
+                    pe = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
                         return "a" === i ? r.call(e, n) : r ? r.value = n : t.set(e, n), n
                     },
-                    fe = function (e, t, n, i) {
+                    fe = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -3361,8 +3362,8 @@
                             activeDaysConsecutive: 0,
                             playtimeAll: 0,
                             playtimeToday: 0
-                        }, V.set(this, ""), W.set(this, void 0), z.set(this, ""), Y.set(this, !1), K.set(this, {}), this._platformData = {}, J.set(this, void 0), Z.set(this, (() => {})), X.set(this, {}), H.set(this, {}), re.set(this, (function (e = {}) {
-                            return ue(this, void 0, void 0, (function* () {
+                        }, V.set(this, ""), W.set(this, void 0), z.set(this, ""), Y.set(this, !1), K.set(this, {}), this._platformData = {}, J.set(this, void 0), Z.set(this, (() => {})), X.set(this, {}), H.set(this, {}), re.set(this, (function(e = {}) {
+                            return ue(this, void 0, void 0, (function*() {
                                 const {
                                     silent: t = !0,
                                     override: n = !1,
@@ -3394,28 +3395,28 @@
                                             withToken: this.isFirstRequest
                                         });
                                         switch (a.__typename) {
-                                        case "PlayerSyncConflict": {
-                                            this.gp.loader.dec();
-                                            const e = a;
-                                            let n;
-                                            d ? n = this.toJSON() : (yield this.gp.loadOverlay(), o = !0, n = yield this.gp.overlay.pickPlayerOnConflict(e)), this.has("name") && !n.name && (n.name = this.get("name")), this.has("avatar") && !n.avatar && (n.avatar = this.get("avatar")), this.gp.loader.inc();
-                                            const i = yield this.gp._services.playerService.sync(Object.assign({
-                                                playerState: n,
-                                                override: !0
-                                            }, fe(this, W, "f").export()), {
-                                                withToken: this.isFirstRequest
-                                            });
-                                            if ("Player" !== i.__typename) return void r.abort();
-                                            t || fe(this, q, "m", ce).call(this, ""), o && this.gp.overlay.close(), yield fe(this, q, "m", ae).call(this, i, s), r.done(), yield fe(this, q, "m", oe).call(this, i.state);
-                                            break
-                                        }
-                                        case "Player": {
-                                            const {
-                                                state: e
-                                            } = a;
-                                            t || fe(this, q, "m", ce).call(this, ""), yield fe(this, q, "m", ae).call(this, a, s), r.done(), yield fe(this, q, "m", oe).call(this, e), this.playerAdapter.publishRecord(e);
-                                            break
-                                        }
+                                            case "PlayerSyncConflict": {
+                                                this.gp.loader.dec();
+                                                const e = a;
+                                                let n;
+                                                d ? n = this.toJSON() : (yield this.gp.loadOverlay(), o = !0, n = yield this.gp.overlay.pickPlayerOnConflict(e)), this.has("name") && !n.name && (n.name = this.get("name")), this.has("avatar") && !n.avatar && (n.avatar = this.get("avatar")), this.gp.loader.inc();
+                                                const i = yield this.gp._services.playerService.sync(Object.assign({
+                                                    playerState: n,
+                                                    override: !0
+                                                }, fe(this, W, "f").export()), {
+                                                    withToken: this.isFirstRequest
+                                                });
+                                                if ("Player" !== i.__typename) return void r.abort();
+                                                t || fe(this, q, "m", ce).call(this, ""), o && this.gp.overlay.close(), yield fe(this, q, "m", ae).call(this, i, s), r.done(), yield fe(this, q, "m", oe).call(this, i.state);
+                                                break
+                                            }
+                                            case "Player": {
+                                                const {
+                                                    state: e
+                                                } = a;
+                                                t || fe(this, q, "m", ce).call(this, ""), yield fe(this, q, "m", ae).call(this, a, s), r.done(), yield fe(this, q, "m", oe).call(this, e), this.playerAdapter.publishRecord(e);
+                                                break
+                                            }
                                         }
                                     } else if (t) yield this.gp._storage.savePlayer(this.toJSON(), !l).catch(w.kg.warn);
                                     else {
@@ -3433,8 +3434,8 @@
                                 }
                                 return r.ready.then((() => this._events.emit("sync", !0))).catch((() => this._events.emit("sync", !1))), r.ready
                             }))
-                        })), se.set(this, (function () {
-                            return ue(this, void 0, void 0, (function* () {
+                        })), se.set(this, (function() {
+                            return ue(this, void 0, void 0, (function*() {
                                 this.gp.loader.inc();
                                 try {
                                     const e = yield this.gp._services.playerService.getPlayer({
@@ -3451,7 +3452,7 @@
                         const o = (0, a._)();
                         this.ready = o.ready, pe(this, J, s, "f"), pe(this, W, r, "f"), pe(this, z, `,${this.coreSDk.platform.type}${fe(this,q,"a",Q)?`:${this.gp.platform.tag}`:""},${this.coreSDk.isDev?"d":"p"},`, "f"), r.on("syncPlayer", (() => {
                             this.ready.then((() => this.sync().finally((() => r.commitSyncPlayer()))))
-                        })), this._events.on("login", (e => ue(this, void 0, void 0, (function* () {
+                        })), this._events.on("login", (e => ue(this, void 0, void 0, (function*() {
                             e && (yield fe(this, W, "f").syncPurchases())
                         })))), fe(this, q, "m", te).call(this).finally((() => this._init(o)))
                     }
@@ -3477,7 +3478,7 @@
                         return "secretCode" === e ? this.secretCode || fe(this, V, "f") : "credentials" === e ? this.credentials || this.playerAdapter.userId : super.get(e)
                     }
                     loadProgress(e, t) {
-                        return ue(this, void 0, void 0, (function* () {
+                        return ue(this, void 0, void 0, (function*() {
                             const [n] = yield this.gp._storage.extractFromContext(t);
                             let i = !n;
                             if (n && (this.fromJSON(n), this.isStub && (i = !0)), i) {
@@ -3487,16 +3488,16 @@
                         }))
                     }
                     _init(e) {
-                        return ue(this, void 0, void 0, (function* () {
+                        return ue(this, void 0, void 0, (function*() {
                             this.gp.ready.then((() => {
-                                (this.id ? fe(this, se, "f").call(this) : fe(this, re, "f").call(this)).finally((() => ue(this, void 0, void 0, (function* () {
+                                (this.id ? fe(this, se, "f").call(this) : fe(this, re, "f").call(this)).finally((() => ue(this, void 0, void 0, (function*() {
                                     this.isLoggedInByPlatform && (yield fe(this, W, "f").syncPurchases()), e.done(), this._events.emit("ready")
                                 }))))
                             }))
                         }))
                     }
                     fetchFields() {
-                        return ue(this, void 0, void 0, (function* () {
+                        return ue(this, void 0, void 0, (function*() {
                             try {
                                 this.fields = (yield this.gp._services.playerService.fetchFields()).items, this._events.emit("fetchFields", !0)
                             } catch (e) {
@@ -3505,7 +3506,7 @@
                         }))
                     }
                     sync(e = {}) {
-                        return ue(this, void 0, void 0, (function* () {
+                        return ue(this, void 0, void 0, (function*() {
                             return fe(this, re, "f").call(this, e)
                         }))
                     }
@@ -3519,7 +3520,7 @@
                         if (fe(this, H, "f")[n]) return void w.kg.error(`AutoSync for ${n} storage already enabled. Call disableAutoSync() before re-enabling.`);
                         if (!e) return void w.kg.error("Interval is not defined");
                         let i = 0;
-                        fe(this, H, "f")[n] = $((() => ue(this, void 0, void 0, (function* () {
+                        fe(this, H, "f")[n] = $((() => ue(this, void 0, void 0, (function*() {
                             (new Date(this.gp.serverTime).getTime() - (fe(this, X, "f")[n] ? new Date(fe(this, X, "f")[n]).getTime() : 0)) / 1e3 >= e && this.updateTime > i && (i = Date.now(), yield fe(this, re, "f").call(this, {
                                 override: t,
                                 storage: n
@@ -3532,13 +3533,13 @@
                         fe(this, H, "f")[e] ? (fe(this, H, "f")[e](), delete fe(this, H, "f")[e]) : w.kg.error(`AutoSync for ${e} storage disable attempt: not active`)
                     }
                     load() {
-                        return ue(this, void 0, void 0, (function* () {
+                        return ue(this, void 0, void 0, (function*() {
                             return fe(this, se, "f").call(this)
                         }))
                     }
                     login(e = {}) {
                         var t;
-                        return ue(this, void 0, void 0, (function* () {
+                        return ue(this, void 0, void 0, (function*() {
                             let n = !1;
                             if (this.gp.platform._hasAuthModal) return (yield this.playerAdapter.loginPlayer(this, {
                                 isAuthModal: !0
@@ -3559,21 +3560,21 @@
                                     withSecretCode: this.gp.platform.isSecretCodeAuthAvailable && (null === (t = e.withSecretCode) || void 0 === t || t)
                                 });
                                 switch (i) {
-                                case "PLATFORM_AUTH":
-                                    yield fe(this, re, "f").call(this, {
-                                        silent: !1
-                                    }).then((() => {
-                                        n = !0, this._events.emit("login", !0)
-                                    })).catch((e => {
-                                        w.kg.error(e), this._events.emit("login", !1)
-                                    }));
-                                    break;
-                                case "SECRET_KEY_AUTH_LOGIN":
-                                    fe(this, q, "m", ce).call(this, r), yield fe(this, se, "f").call(this).then((() => {
-                                        n = !0, this._events.emit("login", !0)
-                                    })).catch((e => {
-                                        w.kg.error(e), this._events.emit("login", !1)
-                                    }))
+                                    case "PLATFORM_AUTH":
+                                        yield fe(this, re, "f").call(this, {
+                                            silent: !1
+                                        }).then((() => {
+                                            n = !0, this._events.emit("login", !0)
+                                        })).catch((e => {
+                                            w.kg.error(e), this._events.emit("login", !1)
+                                        }));
+                                        break;
+                                    case "SECRET_KEY_AUTH_LOGIN":
+                                        fe(this, q, "m", ce).call(this, r), yield fe(this, se, "f").call(this).then((() => {
+                                            n = !0, this._events.emit("login", !0)
+                                        })).catch((e => {
+                                            w.kg.error(e), this._events.emit("login", !1)
+                                        }))
                                 }
                                 this.gp.overlay.close()
                             } catch (e) {
@@ -3583,7 +3584,7 @@
                         }))
                     }
                     logout() {
-                        return ue(this, void 0, void 0, (function* () {
+                        return ue(this, void 0, void 0, (function*() {
                             if (this.gp.platform.isLogoutAvailable)
                                 if (this.isLoggedIn) try {
                                     const e = yield this.playerAdapter.logoutPlayer();
@@ -3595,7 +3596,7 @@
                         }))
                     }
                     _onLogout(e) {
-                        return ue(this, void 0, void 0, (function* () {
+                        return ue(this, void 0, void 0, (function*() {
                             this.resetCredentials(), this.isLoggedIn = !1, yield fe(this, q, "m", te).call(this), this._events.emit("logout", e), yield fe(this, se, "f").call(this)
                         }))
                     }
@@ -3603,13 +3604,13 @@
                         pe(this, V, "", "f"), this.credentials = "", fe(this, q, "m", ce).call(this, ""), this._hasFirstSync = !1, this.isFirstRequest = !0
                     }
                 }
-                V = new WeakMap, W = new WeakMap, z = new WeakMap, Y = new WeakMap, K = new WeakMap, J = new WeakMap, Z = new WeakMap, X = new WeakMap, H = new WeakMap, re = new WeakMap, se = new WeakMap, q = new WeakSet, Q = function () {
+                V = new WeakMap, W = new WeakMap, z = new WeakMap, Y = new WeakMap, K = new WeakMap, J = new WeakMap, Z = new WeakMap, X = new WeakMap, H = new WeakMap, re = new WeakMap, se = new WeakMap, q = new WeakSet, Q = function() {
                     return this.gp.platform.type === M.z.CUSTOM || this.gp.platform.type === M.z.PARTNER
-                }, ee = function (e, t) {
+                }, ee = function(e, t) {
                     return e ? t && (null == t ? void 0 : t.id) === e.id ? new Date(e.modifiedAt).getTime() > new Date(null == t ? void 0 : t.modifiedAt).getTime() + 3500 ? e : t : e : t
-                }, te = function () {
+                }, te = function() {
                     var e;
-                    return ue(this, void 0, void 0, (function* () {
+                    return ue(this, void 0, void 0, (function*() {
                         const {
                             platformData: t,
                             key: n
@@ -3646,8 +3647,8 @@
                             e && (delete e.platformType, delete e.secretCode, delete e.credentials, e.name = this.name, e.avatar = this.avatar, e.id = this.id, this.fromJSON(e), yield fe(this, re, "f").call(this))
                         }
                     }))
-                }, ne = function (e) {
-                    return ue(this, void 0, void 0, (function* () {
+                }, ne = function(e) {
+                    return ue(this, void 0, void 0, (function*() {
                         let t;
                         if (e ? this._isRequredDataUpdate && (t = this.playerAdapter.getPlayer()) : t = this.playerAdapter.loginPlayer(this), t) {
                             const n = yield t.catch((e => {
@@ -3660,13 +3661,13 @@
                             yield fe(this, q, "m", ie).call(this, n, e)
                         }
                     }))
-                }, ie = function (e, t) {
-                    return ue(this, void 0, void 0, (function* () {
+                }, ie = function(e, t) {
+                    return ue(this, void 0, void 0, (function*() {
                         var n;
                         t || (yield fe(this, q, "m", te).call(this)), e.name && !this.get("name") && (this.name = e.name), this.name = (n = this.name) && me.test(n) ? n.replace(/@.*/, "") : n, e.photoLarge && this._isRequredAvatarUpdate && (this.avatar = e.photoLarge)
                     }))
-                }, ae = function (e, t) {
-                    return ue(this, void 0, void 0, (function* () {
+                }, ae = function(e, t) {
+                    return ue(this, void 0, void 0, (function*() {
                         const n = this.credentials,
                             i = this.id;
                         fe(this, W, "f").updateServerTime(e.serverTime), this._firstReqHash = e.firstReqHash, this.stats = e.stats, fe(this, q, "m", le).call(this, e.token), this.playerAdapter.setCredentials(e.state.credentials);
@@ -3696,16 +3697,16 @@
                             d += e / 1e3, u += e / 1e3, d - this.stats.playtimeAll >= 1 && this._syncIncrementVariable(), this.stats.playtimeAll = Math.floor(d), this.stats.playtimeToday = Math.floor(u)
                         })), "f"), fe(this, W, "f").reset(), fe(this, W, "f").markTriggersActivated(e.rewardsData.activatedTriggersNow), fe(this, W, "f").markTriggersClaimed(e.rewardsData.claimedTriggersNow), fe(this, W, "f").markRewardsGiven(e.rewardsData.givenRewards), fe(this, W, "f").markAchievementsUnlocked(e.rewardsData.givenAchievements), fe(this, W, "f").markPurchasesGiven(e.rewardsData.givenProducts), fe(this, W, "f").markSchedulersDaysClaimed(e.rewardsData.claimedSchedulersDaysNow), fe(this, W, "f").setPlayerSegments(e.segments, e.newSegments, e.leftSegments), fe(this, W, "f").setAchievementsList(e.achievementsList), fe(this, W, "f").setPurchasedList(e.purchasesListV2), fe(this, W, "f").setRewardsList(e.rewards), fe(this, W, "f").setTriggersList(e.triggers), fe(this, W, "f").setPlayerSchedulersList(e.playerSchedulers), fe(this, W, "f").setPlayerEventsList(e.playerEvents), fe(this, W, "f").setExperiments(e.experiments), fe(this, W, "f").setUniques(e.uniques)
                     }))
-                }, oe = function (e) {
-                    return ue(this, void 0, void 0, (function* () {
+                }, oe = function(e) {
+                    return ue(this, void 0, void 0, (function*() {
                         this.isStub ? (this.tempSecredCode = e.secretCode, fe(this, q, "m", ce).call(this, e.secretCode)) : this.tempSecredCode && this.tempSecredCode === e.secretCode && (fe(this, q, "m", ce).call(this, ""), this.tempSecredCode = ""), this.isLoggedInByPlatform = this.playerAdapter.hasCredetials, this.isLoggedIn = this.isLoggedInByPlatform, this.hasAnyCredentials = this.isLoggedIn || !!this.secretCode, this.secretCode && this.secretCode != e.secretCode && fe(this, q, "m", ce).call(this, e.secretCode), this.hasAnyCredentials || (fe(this, q, "m", ce).call(this, e.secretCode), this.hasAnyCredentials = !0)
                     }))
-                }, ce = function (e) {
+                }, ce = function(e) {
                     this.secretCode = e, this.gp._storage.saveSecretCode(this.secretCode), fe(this, J, "f").call(this, this._authInfo)
-                }, le = function (e) {
+                }, le = function(e) {
                     e && this.gp.channels._connect(e)
-                }, he = function (e, t, n, i) {
-                    return ue(this, void 0, void 0, (function* () {
+                }, he = function(e, t, n, i) {
+                    return ue(this, void 0, void 0, (function*() {
                         if (e && !fe(this, K, "f")[e]) {
                             const [e] = yield this.gp._storage.extractFromContext(fe(this, z, "f"), !0);
                             if (e && e.id === t) return !1
@@ -3733,7 +3734,7 @@
                         this.isEnabled ? this.close() : this.open()
                     }
                 }
-                var we, be = function (e, t, n, i, r) {
+                var we, be = function(e, t, n, i, r) {
                     if ("m" === i) throw new TypeError("Private method is not writable");
                     if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                     if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -3744,9 +3745,9 @@
                         this.counters = [], this.visitParams = {}, this._experimentsVisitParams = {}, this._segmentsVisitParams = {}, we.set(this, 0)
                     }
                     addCounter(e) {
-                        return t = this, n = void 0, r = function* () {
+                        return t = this, n = void 0, r = function*() {
                             this.counters.push(e)
-                        }, new((i = void 0) || (i = Promise))((function (e, s) {
+                        }, new((i = void 0) || (i = Promise))((function(e, s) {
                             function a(e) {
                                 try {
                                     c(r.next(e))
@@ -3765,7 +3766,7 @@
 
                             function c(t) {
                                 var n;
-                                t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function (e) {
+                                t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function(e) {
                                     e(n)
                                 }))).then(a, o)
                             }
@@ -3784,7 +3785,7 @@
                     }
                     setVisitParams(e) {
                         this.visitParams = e,
-                            function (e, t, n, i) {
+                            function(e, t, n, i) {
                                 if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                                 if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                                 return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -3796,8 +3797,8 @@
                     }
                 }
                 we = new WeakMap;
-                var Ee, Te, Se, _e = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                var Ee, Te, Se, _e = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -3816,14 +3817,14 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    Ae = function (e, t, n, i) {
+                    Ae = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -3860,7 +3861,7 @@
                         return this.adapter.shareParams || {}
                     }
                     _getShareOptions(e) {
-                        return _e(this, void 0, void 0, (function* () {
+                        return _e(this, void 0, void 0, (function*() {
                             return yield this.gp.app.requestGameUrl(), {
                                 text: e.text || this.gp.app.title,
                                 image: e.image || "",
@@ -3870,7 +3871,7 @@
                     }
                     _shareByOverlay(e, t) {
                         var n;
-                        return _e(this, void 0, void 0, (function* () {
+                        return _e(this, void 0, void 0, (function*() {
                             if (this.gp.isMobile) try {
                                 const e = yield this._getShareOptions(t), i = Object.assign({}, e);
                                 if (e.image) {
@@ -3889,7 +3890,7 @@
                         }))
                     }
                     share(e = {}) {
-                        return _e(this, void 0, void 0, (function* () {
+                        return _e(this, void 0, void 0, (function*() {
                             if (!this.isSupportsShare) return this._events.emit("share", !1), !1;
                             const t = this.isSupportsNativeShare ? this.adapter.share(yield this._getShareOptions(e)) : this._shareByOverlay("share", e),
                                 n = yield t.catch((() => !1));
@@ -3897,7 +3898,7 @@
                         }))
                     }
                     post(e = {}) {
-                        return _e(this, void 0, void 0, (function* () {
+                        return _e(this, void 0, void 0, (function*() {
                             if (!this.isSupportsShare) return this._events.emit("post", !1), !1;
                             const t = this.isSupportsNativePosts ? this.adapter.post(yield this._getShareOptions(e)) : this._shareByOverlay("post", e),
                                 n = yield t.catch((() => !1));
@@ -3905,7 +3906,7 @@
                         }))
                     }
                     invite(e = {}) {
-                        return _e(this, void 0, void 0, (function* () {
+                        return _e(this, void 0, void 0, (function*() {
                             if (!this.isSupportsShare) return this._events.emit("invite", !1), !1;
                             const t = this.isSupportsNativeInvite ? this.adapter.invite(yield this._getShareOptions(e)) : this._shareByOverlay("invite", e),
                                 n = yield t.catch((() => !1));
@@ -3913,7 +3914,7 @@
                         }))
                     }
                     joinCommunity() {
-                        return _e(this, void 0, void 0, (function* () {
+                        return _e(this, void 0, void 0, (function*() {
                             if (!this.canJoinCommunity) return this._events.emit("joinCommunity", !1), !1;
                             let e = !0;
                             return this.isSupportsNativeCommunityJoin && (e = yield this.adapter.joinCommunity(Ae(this, Ee, "a", Te))), window.open(this.communityLink, "_blank"), this._events.emit("joinCommunity", e), e
@@ -3930,15 +3931,15 @@
                         return !!this.isSupportShareParams && (null !== (t = this.adapter.getShareParam(e)) && void 0 !== t ? t : "")
                     }
                 }
-                Ee = new WeakSet, Te = function () {
+                Ee = new WeakSet, Te = function() {
                     return this.config.platformConfig.communityLinks[this.gp.language] || this.config.platformConfig.communityLinks.en || ""
-                }, Se = function () {
+                }, Se = function() {
                     return Ae(this, Ee, "a", Te) || this.config.config.communityLinks[this.gp.language] || this.config.config.communityLinks.en || ""
                 };
                 var Ce = n(2954),
                     ke = n(3607),
-                    Re = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    Re = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -3957,7 +3958,7 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
@@ -3967,7 +3968,7 @@
 
                 function Oe() {
                     var e;
-                    return Re(this, void 0, void 0, (function* () {
+                    return Re(this, void 0, void 0, (function*() {
                         const t = new URL(window.location.href),
                             {
                                 searchParams: n,
@@ -3976,7 +3977,7 @@
                             } = t,
                             {
                                 platformType: s
-                            } = function () {
+                            } = function() {
                                 const {
                                     platformType: e
                                 } = window.__GS_BOOT_CONFIG__ || {};
@@ -3984,14 +3985,14 @@
                                     platformType: e
                                 }
                             }(),
-                            a = yield function () {
-                                return Re(this, void 0, void 0, (function* () {
+                            a = yield function() {
+                                return Re(this, void 0, void 0, (function*() {
                                     const e = (0, ke._X)(),
                                         {
                                             cordova: t
                                         } = window;
                                     if (t) try {
-                                        yield function () {
+                                        yield function() {
                                             const e = (0, ke._X)({
                                                 timeout: 5e3
                                             });
@@ -4011,7 +4012,7 @@
                                     return e.ready
                                 }))
                             }();
-                        return function (e) {
+                        return function(e) {
                             return !!e.hostname.includes(["games", "s3", "yandex", "net"].join(".")) || !!e.hash.includes("origin=https") && (e.hash.includes("app-id=") || e.searchParams.has("app-id"))
                         }(t) ? {
                             platformType: M.z.YANDEX
@@ -4037,7 +4038,7 @@
                             platformType: M.z.KONGREGATE
                         } : i.includes("static.developer.sberdevices.ru") || Array.isArray(window.appInitialData) && window.appInitialData.some((e => "app_context" === (null == e ? void 0 : e.type))) ? {
                             platformType: M.z.SMARTMARKET
-                        } : function (e) {
+                        } : function(e) {
                             const {
                                 searchParams: t
                             } = e;
@@ -4056,7 +4057,7 @@
                             platformType: M.z.PLAYDECK
                         } : r.includes("tgWebAppData") || r.includes("tgWebAppPlatform") ? {
                             platformType: M.z.TELEGRAM
-                        } : function (e) {
+                        } : function(e) {
                             var t, n;
                             const i = null === (t = e.get("_platform")) || void 0 === t ? void 0 : t.toUpperCase(),
                                 r = null === (n = e.get("_platform-key")) || void 0 === n ? void 0 : n.trim();
@@ -4064,7 +4065,7 @@
                         }(n) ? {
                             platformType: M.z.PARTNER,
                             platformKey: n.get("_platform-key") || ""
-                        } : function (e) {
+                        } : function(e) {
                             var t, n;
                             const i = null === (t = e.get("_platform")) || void 0 === t ? void 0 : t.toUpperCase(),
                                 r = null === (n = e.get("_platform-key")) || void 0 === n ? void 0 : n.trim();
@@ -4076,7 +4077,7 @@
                             platformType: M.z.FOTOSTRANA
                         } : i.includes(".y8.com") ? {
                             platformType: M.z.Y8
-                        } : function (e) {
+                        } : function(e) {
                             return !!e.hostname.includes(["coolmathgames", "com"].join("."))
                         }(t) ? {
                             platformType: M.z.COOLMATH
@@ -4093,8 +4094,8 @@
                     Le = n(4687),
                     Fe = n(1437),
                     Me = n(4835),
-                    je = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    je = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -4113,7 +4114,7 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
@@ -4127,7 +4128,7 @@
                     $e = e => {
                         var {
                             assets: t
-                        } = e, n = function (e, t) {
+                        } = e, n = function(e, t) {
                             var n = {};
                             for (var i in e) Object.prototype.hasOwnProperty.call(e, i) && t.indexOf(i) < 0 && (n[i] = e[i]);
                             if (null != e && "function" == typeof Object.getOwnPropertySymbols) {
@@ -4156,7 +4157,7 @@
                         tag: "ALL",
                         shareParams: {}
                     }) {
-                        return je(this, void 0, void 0, (function* () {
+                        return je(this, void 0, void 0, (function*() {
                             if (this.isAvailable) {
                                 this.gp.loader.inc();
                                 try {
@@ -4180,7 +4181,7 @@
                         tag: "ALL",
                         shareParams: {}
                     }) {
-                        return je(this, void 0, void 0, (function* () {
+                        return je(this, void 0, void 0, (function*() {
                             if (!this.isAvailable) return void w.kg.warn(`Not available on ${this.gp.platform.type}`);
                             const i = (0, a._)();
                             this.gp.loader.inc();
@@ -4206,8 +4207,8 @@
                         }))
                     }
                 }
-                var qe, Ve, We, ze = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                var qe, Ve, We, ze = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -4226,22 +4227,22 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    Ye = function (e, t, n, i) {
+                    Ye = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
                     };
                 class Ke {
                     constructor(e) {
-                        this.queryBuilder = e, qe.set(this, {}), Ve.set(this, (function (e = {}, t) {
-                            return ze(this, void 0, void 0, (function* () {
+                        this.queryBuilder = e, qe.set(this, {}), Ve.set(this, (function(e = {}, t) {
+                            return ze(this, void 0, void 0, (function*() {
                                 const n = (0, a._)();
                                 e.limit = e.limit || 10;
                                 try {
@@ -4257,8 +4258,8 @@
                                 }
                                 return n.ready
                             }))
-                        })), We.set(this, (function (e = {}, t) {
-                            return ze(this, void 0, void 0, (function* () {
+                        })), We.set(this, (function(e = {}, t) {
+                            return ze(this, void 0, void 0, (function*() {
                                 const n = this.queryBuilder(e),
                                     i = Ye(this, qe, "f")[n];
                                 if (!i) return yield this.fetch(e, t);
@@ -4291,14 +4292,14 @@
                         return Ye(this, Ve, "f").call(this, e, t)
                     }
                     fetchMore(e = {}, t) {
-                        return ze(this, void 0, void 0, (function* () {
+                        return ze(this, void 0, void 0, (function*() {
                             return Ye(this, We, "f").call(this, e, t)
                         }))
                     }
                 }
                 qe = new WeakMap, Ve = new WeakMap, We = new WeakMap;
-                var Je, Ze, Xe, He, Qe, et, tt, nt, it, rt, st = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                var Je, Ze, Xe, He, Qe, et, tt, nt, it, rt, st = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -4317,19 +4318,19 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    at = function (e, t, n, i) {
+                    at = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
                     },
-                    ot = function (e, t) {
+                    ot = function(e, t) {
                         var n = {};
                         for (var i in e) Object.prototype.hasOwnProperty.call(e, i) && t.indexOf(i) < 0 && (n[i] = e[i]);
                         if (null != e && "function" == typeof Object.getOwnPropertySymbols) {
@@ -4393,37 +4394,37 @@
                         return this._handleResponse(t, "rejectJoinRequest"), t
                     }
                     fetchMessages(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, nt, "f").fetch(e, (e => this.gp._services.channelsService.messages.fetchMessages(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchMessages"), t
                         }))
                     }
                     fetchMoreMessages(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, nt, "f").fetchMore(e, (e => this.gp._services.channelsService.messages.fetchMessages(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchMoreMessages"), t
                         }))
                     }
                     fetchPersonalMessages(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, it, "f").fetch(e, (e => this.gp._services.channelsService.messages.fetchPersonalMessages(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchPersonalMessages"), t
                         }))
                     }
                     fetchMorePersonalMessages(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, it, "f").fetchMore(e, (e => this.gp._services.channelsService.messages.fetchPersonalMessages(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchMorePersonalMessages"), t
                         }))
                     }
                     fetchFeedMessages(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, rt, "f").fetch(e, (e => this.gp._services.channelsService.messages.fetchFeedMessages(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchFeedMessages"), t
                         }))
                     }
                     fetchMoreFeedMessages(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, rt, "f").fetchMore(e, (e => this.gp._services.channelsService.messages.fetchFeedMessages(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchMoreFeedMessages"), t
                         }))
@@ -4465,73 +4466,73 @@
                         return this._handleResponse(t, "unmute"), t
                     }
                     fetchMembers(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, Ze, "f").fetch(e, (e => this.gp._services.channelsService.members.fetchMembers(e).then((e => e.players))));
                             return this._handleResponse(t, "fetchMembers"), t
                         }))
                     }
                     fetchMoreMembers(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, Ze, "f").fetchMore(e, (e => this.gp._services.channelsService.members.fetchMembers(e).then((e => e.players))));
                             return this._handleResponse(t, "fetchMoreMembers"), t
                         }))
                     }
                     fetchInvites(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, Xe, "f").fetch(e, (e => this.gp._services.channelsService.invites.fetchInvites(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchInvites"), t
                         }))
                     }
                     fetchMoreInvites(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, Xe, "f").fetchMore(e, (e => this.gp._services.channelsService.invites.fetchInvites(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchMoreInvites"), t
                         }))
                     }
                     fetchChannelInvites(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, He, "f").fetch(e, (e => this.gp._services.channelsService.invites.fetchChannelInvites(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchChannelInvites"), t
                         }))
                     }
                     fetchMoreChannelInvites(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, He, "f").fetchMore(e, (e => this.gp._services.channelsService.invites.fetchChannelInvites(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchMoreChannelInvites"), t
                         }))
                     }
                     fetchSentInvites(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, Qe, "f").fetch(e, (e => this.gp._services.channelsService.invites.fetchSentInvites(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchSentInvites"), t
                         }))
                     }
                     fetchMoreSentInvites(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, Qe, "f").fetchMore(e, (e => this.gp._services.channelsService.invites.fetchSentInvites(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchMoreSentInvites"), t
                         }))
                     }
                     fetchJoinRequests(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, et, "f").fetch(e, (e => this.gp._services.channelsService.joinRequests.fetchJoinRequests(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchJoinRequests"), t
                         }))
                     }
                     fetchMoreJoinRequests(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, et, "f").fetchMore(e, (e => this.gp._services.channelsService.joinRequests.fetchJoinRequests(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchMoreJoinRequests"), t
                         }))
                     }
                     fetchSentJoinRequests(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, tt, "f").fetch(e, (e => this.gp._services.channelsService.joinRequests.fetchSentJoinRequests(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchSentJoinRequests"), t
                         }))
                     }
                     fetchMoreSentJoinRequests(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = at(this, tt, "f").fetchMore(e, (e => this.gp._services.channelsService.joinRequests.fetchSentJoinRequests(e).then((e => e.items))));
                             return this._handleResponse(t, "fetchMoreSentJoinRequests"), t
                         }))
@@ -4547,7 +4548,7 @@
                         id: 0,
                         tags: []
                     }) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             let n = e;
                             if (!e && this._config.project.enableMainChat && (n = this._config.project.mainChatId), n) {
                                 this.gp.loader.inc();
@@ -4579,7 +4580,7 @@
                         playerId: 0,
                         tags: []
                     }) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             if (e) {
                                 this.gp.loader.inc();
                                 try {
@@ -4605,7 +4606,7 @@
                         playerId: 0,
                         tags: []
                     }) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             if (e) {
                                 this.gp.loader.inc();
                                 try {
@@ -4625,7 +4626,7 @@
                         }))
                     }
                     openChatOverlay(e, t, n) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const {
                                 playerId: i,
                                 activeOverlay: r
@@ -4656,19 +4657,19 @@
                         }
                     }
                     fetchChannel(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = this.gp._services.channelsService.channels.fetchChannel(e);
                             return this._handleResponse(t, "fetchChannel"), t
                         }))
                     }
                     fetchPersonalChannel(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = this.gp._services.channelsService.channels.fetchPersonalChannel(e);
                             return this._handleResponse(t, "fetchPersonalChannel"), t
                         }))
                     }
                     fetchFeedChannel(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = this.gp._services.channelsService.channels.fetchFeedChannel(e);
                             return this._handleResponse(t, "fetchFeedChannel"), t
                         }))
@@ -4677,7 +4678,7 @@
                         var {
                             ids: t = []
                         } = e, n = ot(e, ["ids"]);
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const e = n;
                             (t = t.map((e => Number(String(e).trim()))).filter(Boolean)).length > 0 && (e.ids = t);
                             const i = at(this, Je, "f").fetch(n, (e => this.gp._services.channelsService.channels.fetchChannels(e).then((e => e.items))));
@@ -4688,7 +4689,7 @@
                         var {
                             ids: t = []
                         } = e, n = ot(e, ["ids"]);
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const e = n;
                             (t = null == t ? void 0 : t.map((e => Number(String(e).trim()))).filter(Boolean)).length > 0 && (e.ids = t);
                             const i = at(this, Je, "f").fetchMore(n, (e => this.gp._services.channelsService.channels.fetchChannels(e).then((e => e.items))));
@@ -4708,16 +4709,16 @@
                         return this._handleResponse(t, "deleteChannel"), t
                     }
                     _connect(e) {
-                        return st(this, void 0, void 0, (function* () {
+                        return st(this, void 0, void 0, (function*() {
                             const t = () => this.gp._services.channelsService.ping(e);
                             if (window.setInterval(t, 3e4), t(), !this.canBeOnline) return;
                             const n = new TextDecoder,
                                 i = yield this.gp._services.channelsService.createCentrifugeClient(e, "wss://ws.eponesh.com/connection/websocket?format=protobuf", "https://ws.eponesh.com/connection/http_stream?format=protobuf", "https://ws.eponesh.com/connection/sse?format=protobuf");
                             i && i.on("connected", (e => {
                                 console.info(`connected over ${e.transport}`)
-                            })).on("connecting", (function (e) {
+                            })).on("connecting", (function(e) {
                                 console.info(`connecting: ${e.code}, ${e.reason}`)
-                            })).on("disconnected", (function (e) {
+                            })).on("disconnected", (function(e) {
                                 console.info(`disconnected: ${e.code}, ${e.reason}`)
                             })).on("publication", (e => {
                                 const t = JSON.parse(n.decode(e.data));
@@ -4727,8 +4728,8 @@
                     }
                 }
                 Je = new WeakMap, Ze = new WeakMap, Xe = new WeakMap, He = new WeakMap, Qe = new WeakMap, et = new WeakMap, tt = new WeakMap, nt = new WeakMap, it = new WeakMap, rt = new WeakMap;
-                var lt = function (e, t, n, i) {
-                    return new(n || (n = Promise))((function (r, s) {
+                var lt = function(e, t, n, i) {
+                    return new(n || (n = Promise))((function(r, s) {
                         function a(e) {
                             try {
                                 c(i.next(e))
@@ -4747,7 +4748,7 @@
 
                         function c(e) {
                             var t;
-                            e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                            e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                 e(t)
                             }))).then(a, o)
                         }
@@ -4761,7 +4762,7 @@
                     open({
                         type: e
                     }) {
-                        return lt(this, void 0, void 0, (function* () {
+                        return lt(this, void 0, void 0, (function*() {
                             this.gp.loader.inc();
                             try {
                                 const [t] = yield Promise.all([this.fetch({
@@ -4777,7 +4778,7 @@
                         type: e,
                         format: t = "HTML"
                     }) {
-                        return lt(this, void 0, void 0, (function* () {
+                        return lt(this, void 0, void 0, (function*() {
                             const n = (0, a._)();
                             this.gp.loader.inc();
                             try {
@@ -4796,7 +4797,7 @@
                         }))
                     }
                 }
-                var dt, ut = function (e, t, n, i) {
+                var dt, ut = function(e, t, n, i) {
                         var r, s = arguments.length,
                             a = s < 3 ? t : null === i ? i = Object.getOwnPropertyDescriptor(t, n) : i;
                         if ("object" == typeof Reflect && "function" == typeof Reflect.decorate) a = Reflect.decorate(e, t, n, i);
@@ -4804,7 +4805,7 @@
                             for (var o = e.length - 1; o >= 0; o--)(r = e[o]) && (a = (s < 3 ? r(a) : s > 3 ? r(t, n, a) : r(t, n)) || a);
                         return s > 3 && a && Object.defineProperty(t, n, a), a
                     },
-                    pt = function (e, t, n, i) {
+                    pt = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -4819,7 +4820,7 @@
                 };
                 class mt extends _.Z {
                     constructor(e, t, n) {
-                        super(), this.gp = e, this.platformAdapter = t, this.state = {}, this.list = [], dt.set(this, (function (e) {
+                        super(), this.gp = e, this.platformAdapter = t, this.state = {}, this.list = [], dt.set(this, (function(e) {
                             this.state = {}, this.list = e, e.forEach((e => {
                                 var t;
                                 const n = (null === (t = ft[e.type]) || void 0 === t ? void 0 : t.call(ft, e.value)) || e.value;
@@ -4841,14 +4842,14 @@
                         return (null === (t = this.list.find((t => t.key === e))) || void 0 === t ? void 0 : t.type) || "data"
                     }
                     fetch() {
-                        return e = this, t = void 0, i = function* () {
+                        return e = this, t = void 0, i = function*() {
                             try {
                                 const e = (yield this.gp._services.projectService.fetchVariables()).items;
                                 return pt(this, dt, "f").call(this, e), this._events.emit("fetch", e), e
                             } catch (e) {
                                 w.kg.error(e), this._events.emit("error:fetch", e)
                             }
-                        }, new((n = void 0) || (n = Promise))((function (r, s) {
+                        }, new((n = void 0) || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -4867,7 +4868,7 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
@@ -4884,7 +4885,7 @@
                 }
                 dt = new WeakMap, ut([R(300)], mt.prototype, "fetch", null), ut([R(300)], mt.prototype, "fetchPlatformVariables", null);
                 var vt, yt, gt, wt, bt = n(6041),
-                    Pt = function (e, t, n, i) {
+                    Pt = function(e, t, n, i) {
                         var r, s = arguments.length,
                             a = s < 3 ? t : null === i ? i = Object.getOwnPropertyDescriptor(t, n) : i;
                         if ("object" == typeof Reflect && "function" == typeof Reflect.decorate) a = Reflect.decorate(e, t, n, i);
@@ -4892,8 +4893,8 @@
                             for (var o = e.length - 1; o >= 0; o--)(r = e[o]) && (a = (s < 3 ? r(a) : s > 3 ? r(t, n, a) : r(t, n)) || a);
                         return s > 3 && a && Object.defineProperty(t, n, a), a
                     },
-                    Et = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    Et = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -4912,19 +4913,19 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    Tt = function (e, t, n, i) {
+                    Tt = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
                     },
-                    St = function (e, t) {
+                    St = function(e, t) {
                         var n = {};
                         for (var i in e) Object.prototype.hasOwnProperty.call(e, i) && t.indexOf(i) < 0 && (n[i] = e[i]);
                         if (null != e && "function" == typeof Object.getOwnPropertySymbols) {
@@ -4938,12 +4939,12 @@
                     It = "empty_filename";
                 class Ct extends Ke {
                     constructor() {
-                        super(kt), vt.set(this, void 0), yt.set(this, {}), gt.set(this, (function (e, t) {
+                        super(kt), vt.set(this, void 0), yt.set(this, {}), gt.set(this, (function(e, t) {
                             var {
                                 url: n,
                                 filename: i
                             } = e, r = St(e, ["url", "filename"]);
-                            return Et(this, void 0, void 0, (function* () {
+                            return Et(this, void 0, void 0, (function*() {
                                 if (!n) throw w.kg.error(_t), new Error(_t);
                                 if (!i) throw w.kg.error(It), new Error(It);
                                 if (Tt(this, yt, "f")[n]) {
@@ -4963,8 +4964,8 @@
                                     throw w.kg.error(e), e
                                 }
                             }))
-                        })), wt.set(this, (function (e, t) {
-                            return Et(this, void 0, void 0, (function* () {
+                        })), wt.set(this, (function(e, t) {
+                            return Et(this, void 0, void 0, (function*() {
                                 const {
                                     content: n,
                                     filename: i
@@ -4978,7 +4979,7 @@
                         }));
                         const {
                             openFile: e
-                        } = function () {
+                        } = function() {
                             let e = null;
                             const t = document.createElement("input");
                             t.type = "file", t.id = "gp-file-input", t.style.cssText = "position: fixed; top: -999px; left: -999px; z-index: 0;", t.onchange = e => i(e.target), t.tabIndex = -1, document.body.appendChild(t);
@@ -4992,12 +4993,12 @@
                             return {
                                 input: t,
                                 openFile: (i = "*") => {
-                                    return r = this, s = void 0, c = function* () {
+                                    return r = this, s = void 0, c = function*() {
                                         null == e || e.abort(), e = (0, a._)(), t.accept = i, t.click(), document.body.addEventListener("focus", n, !0);
                                         const r = yield e.ready;
                                         if (r) return r;
                                         throw new Error("cancelled")
-                                    }, new((o = void 0) || (o = Promise))((function (e, t) {
+                                    }, new((o = void 0) || (o = Promise))((function(e, t) {
                                         function n(e) {
                                             try {
                                                 a(c.next(e))
@@ -5016,7 +5017,7 @@
 
                                         function a(t) {
                                             var r;
-                                            t.done ? e(t.value) : (r = t.value, r instanceof o ? r : new o((function (e) {
+                                            t.done ? e(t.value) : (r = t.value, r instanceof o ? r : new o((function(e) {
                                                 e(r)
                                             }))).then(n, i)
                                         }
@@ -5026,7 +5027,7 @@
                                 }
                             }
                         }();
-                        ! function (e, t, n, i, r) {
+                        ! function(e, t, n, i, r) {
                             if ("m" === i) throw new TypeError("Private method is not writable");
                             if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                             if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -5034,7 +5035,7 @@
                         }(this, vt, e, "f")
                     }
                     chooseFile(e) {
-                        return Et(this, void 0, void 0, (function* () {
+                        return Et(this, void 0, void 0, (function*() {
                             const t = (0, a._)();
                             try {
                                 const n = yield Tt(this, vt, "f").call(this, e), i = URL.createObjectURL(n);
@@ -5049,7 +5050,7 @@
                         }))
                     }
                     upload(e, t) {
-                        return Et(this, void 0, void 0, (function* () {
+                        return Et(this, void 0, void 0, (function*() {
                             const n = (0, a._)();
                             try {
                                 e.file || (e.file = yield Tt(this, vt, "f").call(this, e.accept));
@@ -5062,12 +5063,12 @@
                         }))
                     }
                     uploadUrl(e, t) {
-                        return Et(this, void 0, void 0, (function* () {
+                        return Et(this, void 0, void 0, (function*() {
                             return Tt(this, gt, "f").call(this, e, t)
                         }))
                     }
                     uploadContent(e, t) {
-                        return Et(this, void 0, void 0, (function* () {
+                        return Et(this, void 0, void 0, (function*() {
                             return Tt(this, wt, "f").call(this, e, t)
                         }))
                     }
@@ -5077,8 +5078,8 @@
                     return `p${e.playerId||0}:${(e.tags||[]).join(",")}`
                 }
                 vt = new WeakMap, yt = new WeakMap, gt = new WeakMap, wt = new WeakMap, Pt([R(300)], Ct.prototype, "uploadUrl", null), Pt([R(300)], Ct.prototype, "uploadContent", null);
-                var Rt, Ot = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                var Rt, Ot = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -5097,14 +5098,14 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    Dt = function (e, t, n, i) {
+                    Dt = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -5121,19 +5122,19 @@
                         return (0, bt.Z)(e, t, n, i)
                     }
                     chooseFile() {
-                        return Ot(this, void 0, void 0, (function* () {
+                        return Ot(this, void 0, void 0, (function*() {
                             const e = Dt(this, Rt, "f").chooseFile(Nt);
                             return e.then((e => this._events.emit("choose", e))), e.catch((e => this._events.emit("error:choose", e))), e
                         }))
                     }
                     upload(e = {}) {
-                        return Ot(this, void 0, void 0, (function* () {
+                        return Ot(this, void 0, void 0, (function*() {
                             const t = Dt(this, Rt, "f").upload(Object.assign(Object.assign({}, e), {
                                 accept: Nt
                             }), (({
                                 file: e,
                                 tags: t
-                            }) => Ot(this, void 0, void 0, (function* () {
+                            }) => Ot(this, void 0, void 0, (function*() {
                                 const n = this.gp.app.title,
                                     i = yield this.gp.platform.requestPermissions({
                                         allowUploadImages: !0
@@ -5169,28 +5170,28 @@
                     uploadUrl(e = {
                         url: ""
                     }) {
-                        return Ot(this, void 0, void 0, (function* () {
+                        return Ot(this, void 0, void 0, (function*() {
                             return Dt(this, Rt, "f").uploadUrl(Object.assign(Object.assign({}, e), {
                                 filename: "image.jpeg"
                             }), (e => this.upload(e)))
                         }))
                     }
                     fetch(e = {}) {
-                        return Ot(this, void 0, void 0, (function* () {
+                        return Ot(this, void 0, void 0, (function*() {
                             const t = Dt(this, Rt, "f").fetch(e, (e => this.gp._services.imagesService.fetch(e).then((e => e.items))));
                             return this.gp.loader.inc(), t.then((e => this._events.emit("fetch", e))), t.catch((e => this._events.emit("error:fetch", e))), t.finally((() => this.gp.loader.dec())), t
                         }))
                     }
                     fetchMore(e = {}) {
-                        return Ot(this, void 0, void 0, (function* () {
+                        return Ot(this, void 0, void 0, (function*() {
                             const t = Dt(this, Rt, "f").fetchMore(e, (e => this.gp._services.imagesService.fetch(e).then((e => e.items))));
                             return this.gp.loader.inc(), t.then((e => this._events.emit("fetchMore", e))), t.catch((e => this._events.emit("error:fetchMore", e))), t.finally((() => this.gp.loader.dec())), t
                         }))
                     }
                 }
                 Rt = new WeakMap;
-                var Lt, Ft = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                var Lt, Ft = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -5209,14 +5210,14 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    Mt = function (e, t, n, i) {
+                    Mt = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -5229,29 +5230,29 @@
                         return this.acl.canUploadFiles
                     }
                     chooseFile(e) {
-                        return Ft(this, void 0, void 0, (function* () {
+                        return Ft(this, void 0, void 0, (function*() {
                             const t = Mt(this, Lt, "f").chooseFile(e);
                             return t.then((e => this._events.emit("choose", e))), t.catch((e => this._events.emit("error:choose", e))), t
                         }))
                     }
                     upload(e) {
-                        return Ft(this, void 0, void 0, (function* () {
+                        return Ft(this, void 0, void 0, (function*() {
                             const t = Mt(this, Lt, "f").upload(e, (e => this.gp._services.filesService.upload(e)));
                             return this.gp.loader.inc(), t.then((e => this._events.emit("upload", e))), t.catch((e => this._events.emit("error:upload", e))), t.finally((() => this.gp.loader.dec())), t
                         }))
                     }
                     uploadContent(e) {
-                        return Ft(this, void 0, void 0, (function* () {
+                        return Ft(this, void 0, void 0, (function*() {
                             return Mt(this, Lt, "f").uploadContent(e, (e => this.upload(e)))
                         }))
                     }
                     uploadUrl(e) {
-                        return Ft(this, void 0, void 0, (function* () {
+                        return Ft(this, void 0, void 0, (function*() {
                             return Mt(this, Lt, "f").uploadUrl(e, (e => this.upload(e)))
                         }))
                     }
                     loadContent(e) {
-                        return Ft(this, void 0, void 0, (function* () {
+                        return Ft(this, void 0, void 0, (function*() {
                             const t = fetch(new URL(e).toString()).then((t => {
                                 if (t.ok) return t.text();
                                 throw new Error(`Failed to load ${e}, errorCode: ${t.status}`)
@@ -5260,13 +5261,13 @@
                         }))
                     }
                     fetch(e = {}) {
-                        return Ft(this, void 0, void 0, (function* () {
+                        return Ft(this, void 0, void 0, (function*() {
                             const t = Mt(this, Lt, "f").fetch(e, (e => this.gp._services.filesService.fetch(e).then((e => e.items))));
                             return this.gp.loader.inc(), t.then((e => this._events.emit("fetch", e))), t.catch((e => this._events.emit("error:fetch", e))), t.finally((() => this.gp.loader.dec())), t
                         }))
                     }
                     fetchMore(e = {}) {
-                        return Ft(this, void 0, void 0, (function* () {
+                        return Ft(this, void 0, void 0, (function*() {
                             const t = Mt(this, Lt, "f").fetchMore(e, (e => this.gp._services.filesService.fetch(e).then((e => e.items))));
                             return this.gp.loader.inc(), t.then((e => this._events.emit("fetchMore", e))), t.catch((e => this._events.emit("error:fetchMore", e))), t.finally((() => this.gp.loader.dec())), t
                         }))
@@ -5281,13 +5282,13 @@
                     fetch({
                         ids: e
                     }) {
-                        return t = this, n = void 0, r = function* () {
+                        return t = this, n = void 0, r = function*() {
                             if (0 === e.map(Number).filter(Boolean).length) throw w.kg.error("empty_ids"), new Error("empty_ids");
                             const t = (0, a._)();
                             return this.gp.loader.inc(), t.ready.then((e => this._events.emit("fetch", e))).catch((e => this._events.emit("fetch:error", e))), this.gp._services.playerService.fetchPlayers({
                                 ids: e
                             }).then(t.done).catch(t.abort).finally((() => this.gp.loader.dec())), t.ready
-                        }, new((i = void 0) || (i = Promise))((function (e, s) {
+                        }, new((i = void 0) || (i = Promise))((function(e, s) {
                             function a(e) {
                                 try {
                                     c(r.next(e))
@@ -5306,7 +5307,7 @@
 
                             function c(t) {
                                 var n;
-                                t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function (e) {
+                                t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function(e) {
                                     e(n)
                                 }))).then(a, o)
                             }
@@ -5413,25 +5414,25 @@
                         }
                         a(e) {
                             switch (Zt && clearTimeout(this.n), e.type) {
-                            case "pageshow":
-                            case "resume":
-                                this.r(e, en());
-                                break;
-                            case "focus":
-                                this.r(e, Wt);
-                                break;
-                            case "blur":
-                                this.s === Wt && this.r(e, en());
-                                break;
-                            case "pagehide":
-                            case "unload":
-                                this.r(e, e.persisted ? Kt : Jt);
-                                break;
-                            case "visibilitychange":
-                                this.s !== Kt && this.s !== Jt && this.r(e, en());
-                                break;
-                            case "freeze":
-                                this.r(e, Kt)
+                                case "pageshow":
+                                case "resume":
+                                    this.r(e, en());
+                                    break;
+                                case "focus":
+                                    this.r(e, Wt);
+                                    break;
+                                case "blur":
+                                    this.s === Wt && this.r(e, en());
+                                    break;
+                                case "pagehide":
+                                case "unload":
+                                    this.r(e, e.persisted ? Kt : Jt);
+                                    break;
+                                case "visibilitychange":
+                                    this.s !== Kt && this.s !== Jt && this.r(e, en());
+                                    break;
+                                case "freeze":
+                                    this.r(e, Kt)
                             }
                         }
                     },
@@ -5442,7 +5443,7 @@
                     blur: t = 0,
                     fade: n = 0
                 }) {
-                    e ? (function (e) {
+                    e ? (function(e) {
                         document.querySelectorAll(".gp-custom-background").forEach((t => {
                             t.childNodes.forEach((e => {
                                 e.style.opacity = "0"
@@ -5450,14 +5451,14 @@
                                 t.remove()
                             }), 1e3 * e)
                         }))
-                    }(n), function (e) {
+                    }(n), function(e) {
                         const t = document.createElement("div");
                         document.body.style.setProperty("background", "transparent", "important"), t.classList.add("gp-custom-background"),
-                            function (e, t) {
+                            function(e, t) {
                                 const n = document.createElement("div");
                                 n.style.cssText = `\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        top: 0;\n        bottom: 0;\n        z-index: -1;\n        background: transparent;\n        backdrop-filter: blur(${e.blur}px);\n        \n        transition: ${e.fade}s;\n    `, n.classList.add("gp-custom-background-blur"), t.append(n)
                             }(e, t),
-                            function (e, t) {
+                            function(e, t) {
                                 const n = document.createElement("div");
                                 n.style.cssText = `\n        background-image: url(${e.url});\n        background-size: cover;\n        background-repeat: no-repeat;\n        background-position: center;\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        top: 0;\n        bottom: 0;\n        z-index: -2;\n        opacity: 0;\n        transition: ${e.fade}s;\n    `, n.classList.add("gp-custom-background-img"), t.append(n), setTimeout((() => {
                                     n.style.opacity = "1"
@@ -5471,11 +5472,11 @@
                 }
                 class sn {
                     getLanguage(e) {
-                        return t = this, n = void 0, r = function* () {
+                        return t = this, n = void 0, r = function*() {
                             const t = decodeURIComponent(window.location.toString()),
                                 n = new RegExp(`_${e}_lang=(?<lang>\\w{2})`).exec(t);
                             return n ? n.groups.lang : null
-                        }, new((i = void 0) || (i = Promise))((function (e, s) {
+                        }, new((i = void 0) || (i = Promise))((function(e, s) {
                             function a(e) {
                                 try {
                                     c(r.next(e))
@@ -5494,7 +5495,7 @@
 
                             function c(t) {
                                 var n;
-                                t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function (e) {
+                                t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function(e) {
                                     e(n)
                                 }))).then(a, o)
                             }
@@ -5510,8 +5511,8 @@
                         an.set(this, [new sn])
                     }
                     getLanguage(e) {
-                        return t = this, n = void 0, r = function* () {
-                            for (const t of function (e, t, n, i) {
+                        return t = this, n = void 0, r = function*() {
+                            for (const t of function(e, t, n, i) {
                                     if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                                     if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                                     return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -5522,7 +5523,7 @@
                                 return on.includes(i) ? i : null
                             }
                             return null
-                        }, new((i = void 0) || (i = Promise))((function (e, s) {
+                        }, new((i = void 0) || (i = Promise))((function(e, s) {
                             function a(e) {
                                 try {
                                     c(r.next(e))
@@ -5541,7 +5542,7 @@
 
                             function c(t) {
                                 var n;
-                                t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function (e) {
+                                t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function(e) {
                                     e(n)
                                 }))).then(a, o)
                             }
@@ -5558,7 +5559,7 @@
                         return t && e === ln.LH.Portrait || !t && e === ln.LH.Landscape
                     };
                 var un, pn = n(8866),
-                    fn = function (e, t, n, i) {
+                    fn = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -5572,7 +5573,7 @@
                         }))
                     }
                     waitForPointersUp() {
-                        return e = this, t = void 0, i = function* () {
+                        return e = this, t = void 0, i = function*() {
                             const e = new Promise((e => {
                                 if (0 === fn(this, un, "f").size) return e();
                                 const t = n => {
@@ -5581,7 +5582,7 @@
                                 document.addEventListener("pointerup", t)
                             }));
                             yield Promise.race([e, (0, pn.Z)(1500)])
-                        }, new((n = void 0) || (n = Promise))((function (r, s) {
+                        }, new((n = void 0) || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -5600,7 +5601,7 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
@@ -5624,8 +5625,8 @@
                     yn = {
                         [ln.x1.PlayerField]: vn
                     };
-                var gn, wn, bn, Pn, En, Tn, Sn, _n, An, In, Cn, kn, Rn, On, Dn, Nn, xn, Ln = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                var gn, wn, bn, Pn, En, Tn, Sn, _n, An, In, Cn, kn, Rn, On, Dn, Nn, xn, Ln = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -5644,20 +5645,20 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    Fn = function (e, t, n, i, r) {
+                    Fn = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
                         return "a" === i ? r.call(e, n) : r ? r.value = n : t.set(e, n), n
                     },
-                    Mn = function (e, t, n, i) {
+                    Mn = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -5679,7 +5680,7 @@
                             })), Mn(this, gn, "m", Nn).call(this)
                         })), Mn(this, Pn, "f").forEach((e => {
                             e.description = e.descriptions[this.gp.language] || e.descriptions.en, e.name = e.names[this.gp.language] || e.names.en, e.icon = (0, bt.Z)(e.icon, 256, 256, !1), e.iconSmall = (0, bt.Z)(e.icon, 48, 48, !1)
-                        })), this.gp.on("gameStart", (() => Ln(this, void 0, void 0, (function* () {
+                        })), this.gp.on("gameStart", (() => Ln(this, void 0, void 0, (function*() {
                             yield this.gp.player.ready, Mn(this, En, "f").forEach((e => {
                                 const t = Mn(this, gn, "m", An).call(this, e.rewardId);
                                 if (null == t ? void 0 : t.isAutoAccept) {
@@ -5699,7 +5700,7 @@
                         return [...Mn(this, En, "f")]
                     }
                     give(e) {
-                        return Ln(this, void 0, void 0, (function* () {
+                        return Ln(this, void 0, void 0, (function*() {
                             const t = Number(e.id) || e.tag,
                                 n = (0, a._)(),
                                 i = t => {
@@ -5738,7 +5739,7 @@
                                     id: s
                                 }), {
                                     reward: t
-                                } = e, i = function (e, t) {
+                                } = e, i = function(e, t) {
                                     var n = {};
                                     for (var i in e) Object.prototype.hasOwnProperty.call(e, i) && t.indexOf(i) < 0 && (n[i] = e[i]);
                                     if (null != e && "function" == typeof Object.getOwnPropertySymbols) {
@@ -5769,7 +5770,7 @@
                         }))
                     }
                     accept(e) {
-                        return Ln(this, void 0, void 0, (function* () {
+                        return Ln(this, void 0, void 0, (function*() {
                             const t = Number(e.id) || e.tag,
                                 n = (0, a._)(),
                                 i = t => {
@@ -5817,11 +5818,11 @@
                 function $n(e, t = 1) {
                     e.countAccepted += t
                 }
-                wn = new WeakMap, bn = new WeakMap, Pn = new WeakMap, En = new WeakMap, Tn = new WeakMap, Sn = new WeakMap, _n = new WeakMap, gn = new WeakSet, An = function (e) {
+                wn = new WeakMap, bn = new WeakMap, Pn = new WeakMap, En = new WeakMap, Tn = new WeakMap, Sn = new WeakMap, _n = new WeakMap, gn = new WeakSet, An = function(e) {
                     return Mn(this, Tn, "f")[e] || Mn(this, Sn, "f")[e]
-                }, In = function (e) {
+                }, In = function(e) {
                     return Mn(this, _n, "f")[e]
-                }, Cn = function (e) {
+                }, Cn = function(e) {
                     const t = {
                             reward: null,
                             playerReward: null
@@ -5835,7 +5836,7 @@
                         countAccepted: 0,
                         countTotal: 0
                     }, t
-                }, kn = function (e, t, n) {
+                }, kn = function(e, t, n) {
                     let i = [...n];
                     const r = t.reduce(((t, {
                             id: n,
@@ -5856,7 +5857,7 @@
                         }
                         return e
                     }), []), "f"), Mn(this, gn, "m", xn).call(this)
-                }, Rn = function (e) {
+                }, Rn = function(e) {
                     if (!Mn(this, gn, "m", An).call(this, e)) return;
                     const t = Mn(this, gn, "m", In).call(this, e);
                     t ? t.countTotal += 1 : (Mn(this, En, "f").unshift({
@@ -5864,10 +5865,10 @@
                         countTotal: 1,
                         countAccepted: 0
                     }), Mn(this, gn, "m", xn).call(this))
-                }, On = function (e) {
+                }, On = function(e) {
                     const t = Mn(this, gn, "m", An).call(this, e.rewardId);
                     t ? ($n(e), Mn(this, gn, "m", Dn).call(this, t)) : w.kg.error(`Reward ${e.rewardId} not found`)
-                }, Dn = function (e) {
+                }, Dn = function(e) {
                     try {
                         t = this.gp, e.mutations.forEach((e => {
                             const n = yn[e.type];
@@ -5880,17 +5881,17 @@
                         w.kg.error("failed to apply reward", e)
                     }
                     var t
-                }, Nn = function () {
+                }, Nn = function() {
                     Fn(this, Tn, {}, "f"), Fn(this, Sn, {}, "f"), Mn(this, Pn, "f").forEach((e => {
                         Mn(this, Tn, "f")[e.id] = e, Mn(this, Sn, "f")[e.tag] = e
                     }))
-                }, xn = function () {
+                }, xn = function() {
                     Fn(this, _n, {}, "f"), Mn(this, En, "f").forEach((e => {
                         Mn(this, _n, "f")[e.rewardId] = e
                     }))
                 };
-                var Gn, Bn, qn, Vn, Wn, zn, Yn, Kn, Jn, Zn, Xn, Hn, Qn = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                var Gn, Bn, qn, Vn, Wn, zn, Yn, Kn, Jn, Zn, Xn, Hn, Qn = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -5909,20 +5910,20 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    ei = function (e, t, n, i, r) {
+                    ei = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
                         return "a" === i ? r.call(e, n) : r ? r.value = n : t.set(e, n), n
                     },
-                    ti = function (e, t, n, i) {
+                    ti = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -5979,7 +5980,7 @@
                         return ti(this, Gn, "m", Jn).call(this, e)
                     }
                     claim(e) {
-                        return Qn(this, void 0, void 0, (function* () {
+                        return Qn(this, void 0, void 0, (function*() {
                             const t = e.id || e.tag,
                                 n = ti(this, Gn, "m", Kn).call(this, t),
                                 i = (0, a._)();
@@ -6002,7 +6003,7 @@
                         id: e,
                         tag: t
                     }) {
-                        return Qn(this, void 0, void 0, (function* () {
+                        return Qn(this, void 0, void 0, (function*() {
                             const n = e || t,
                                 {
                                     isActivated: i,
@@ -6014,9 +6015,9 @@
                         }))
                     }
                 }
-                Bn = new WeakMap, qn = new WeakMap, Vn = new WeakMap, Wn = new WeakMap, zn = new WeakMap, Yn = new WeakMap, Gn = new WeakSet, Kn = function (e) {
+                Bn = new WeakMap, qn = new WeakMap, Vn = new WeakMap, Wn = new WeakMap, zn = new WeakMap, Yn = new WeakMap, Gn = new WeakSet, Kn = function(e) {
                     return ti(this, Wn, "f")[e] || ti(this, zn, "f")[e]
-                }, Jn = function (e) {
+                }, Jn = function(e) {
                     const t = {
                             trigger: null,
                             isActivated: !1,
@@ -6029,7 +6030,7 @@
                         e && (t.isActivated = !0, t.isClaimed = e.claimed)
                     }
                     return t
-                }, Zn = function (e) {
+                }, Zn = function(e) {
                     const t = ti(this, Yn, "f")[e];
                     return t ? {
                         isActivated: !0,
@@ -6038,21 +6039,21 @@
                         isActivated: !1,
                         isClaimed: !1
                     }
-                }, Xn = function () {
+                }, Xn = function() {
                     ei(this, Wn, {}, "f"), ei(this, zn, {}, "f"), ti(this, qn, "f").forEach((e => {
                         ti(this, Wn, "f")[e.id] = e, ti(this, zn, "f")[e.tag] = e
                     }))
-                }, Hn = function () {
+                }, Hn = function() {
                     ei(this, Yn, {}, "f"), ti(this, Vn, "f").forEach((e => {
                         ti(this, Yn, "f")[e.triggerId] = e
                     }))
                 };
-                var ri, si = function (e, t, n, i) {
+                var ri, si = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
                     },
-                    ai = function (e, t, n, i, r) {
+                    ai = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -6186,8 +6187,8 @@
                     }
                 }
                 ri = new WeakMap;
-                var ci, li, hi, di, ui, pi, fi, mi, vi, yi, gi, wi, bi = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                var ci, li, hi, di, ui, pi, fi, mi, vi, yi, gi, wi, bi = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -6206,20 +6207,20 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    Pi = function (e, t, n, i, r) {
+                    Pi = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
                         return "a" === i ? r.call(e, n) : r ? r.value = n : t.set(e, n), n
                     },
-                    Ei = function (e, t, n, i) {
+                    Ei = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -6346,7 +6347,7 @@
                         return this.getSchedulerDay(e, n)
                     }
                     claimDay(e, t) {
-                        return bi(this, void 0, void 0, (function* () {
+                        return bi(this, void 0, void 0, (function*() {
                             return Ei(this, ci, "m", wi).call(this, "claimDay", Ei(this, ci, "m", mi).call(this, e, t), {
                                 schedulerIdOrTag: e,
                                 day: t
@@ -6354,7 +6355,7 @@
                         }))
                     }
                     claimDayAdditional(e, t, n) {
-                        return bi(this, void 0, void 0, (function* () {
+                        return bi(this, void 0, void 0, (function*() {
                             return Ei(this, ci, "m", wi).call(this, "claimDayAdditional", Ei(this, ci, "m", vi).call(this, e, t, n), {
                                 schedulerIdOrTag: e,
                                 day: t,
@@ -6363,7 +6364,7 @@
                         }))
                     }
                     claimAllDay(e, t) {
-                        return bi(this, void 0, void 0, (function* () {
+                        return bi(this, void 0, void 0, (function*() {
                             return Ei(this, ci, "m", wi).call(this, "claimAllDay", Ei(this, ci, "m", yi).call(this, e, t), {
                                 schedulerIdOrTag: e,
                                 day: t
@@ -6371,20 +6372,20 @@
                         }))
                     }
                     claimAllDays(e) {
-                        return bi(this, void 0, void 0, (function* () {
+                        return bi(this, void 0, void 0, (function*() {
                             return Ei(this, ci, "m", wi).call(this, "claimAllDays", Ei(this, ci, "m", gi).call(this, e), {
                                 schedulerIdOrTag: e
                             })
                         }))
                     }
                     register(e) {
-                        return bi(this, void 0, void 0, (function* () {
+                        return bi(this, void 0, void 0, (function*() {
                             return Ei(this, ci, "m", wi).call(this, "register", Ei(this, ci, "m", ui).call(this, (null == e ? void 0 : e.id) || (null == e ? void 0 : e.tag)), e)
                         }))
                     }
                 }
-                li = new WeakMap, hi = new WeakMap, di = new WeakMap, ci = new WeakSet, ui = function (e) {
-                    return bi(this, void 0, void 0, (function* () {
+                li = new WeakMap, hi = new WeakMap, di = new WeakMap, ci = new WeakSet, ui = function(e) {
+                    return bi(this, void 0, void 0, (function*() {
                         const t = this.getScheduler(e);
                         if (!t.scheduler) throw new Error(Ti);
                         const {
@@ -6399,7 +6400,7 @@
                             {
                                 scheduler: s
                             } = r;
-                        return function (e, t) {
+                        return function(e, t) {
                             var n = {};
                             for (var i in e) Object.prototype.hasOwnProperty.call(e, i) && t.indexOf(i) < 0 && (n[i] = e[i]);
                             if (null != e && "function" == typeof Object.getOwnPropertySymbols) {
@@ -6409,17 +6410,17 @@
                             return n
                         }(r, ["scheduler"])
                     }))
-                }, pi = function (e) {
+                }, pi = function(e) {
                     const t = {
                             scheduler: null,
                             playerScheduler: null
                         },
                         n = Ei(this, hi, "f").find((t => t.tag === e || t.id === Number(e)));
                     return n ? (t.scheduler = n, n && (t.playerScheduler = Ei(this, di, "f").find((e => e.schedulerId === n.id))), t) : t
-                }, fi = function (e, t) {
+                }, fi = function(e, t) {
                     return !Number.isNaN(e) && e > 0 && e <= t.days
-                }, mi = function (e, t) {
-                    return bi(this, void 0, void 0, (function* () {
+                }, mi = function(e, t) {
+                    return bi(this, void 0, void 0, (function*() {
                         const {
                             scheduler: n,
                             isDayReached: i,
@@ -6434,8 +6435,8 @@
                             day: t
                         }), yield Ei(this, li, "f").syncPlayer(), this.getSchedulerDay(e, t)
                     }))
-                }, vi = function (e, t, n) {
-                    return bi(this, void 0, void 0, (function* () {
+                }, vi = function(e, t, n) {
+                    return bi(this, void 0, void 0, (function*() {
                         const {
                             scheduler: i,
                             isDayReached: r
@@ -6453,8 +6454,8 @@
                         if (!a) throw "failed_to_claim";
                         return this.getSchedulerDay(e, t)
                     }))
-                }, yi = function (e, t) {
-                    return bi(this, void 0, void 0, (function* () {
+                }, yi = function(e, t) {
+                    return bi(this, void 0, void 0, (function*() {
                         const {
                             scheduler: n,
                             isDayReached: i
@@ -6468,8 +6469,8 @@
                             })), 0 === r.length) throw Ai;
                         return yield Promise.all(r), this.getSchedulerDay(e, t)
                     }))
-                }, gi = function (e) {
-                    return bi(this, void 0, void 0, (function* () {
+                }, gi = function(e) {
+                    return bi(this, void 0, void 0, (function*() {
                         const {
                             scheduler: t
                         } = Ei(this, ci, "m", pi).call(this, e);
@@ -6479,7 +6480,7 @@
                         if (0 === n.length) throw Ai;
                         return yield Promise.all(n), this.getScheduler(e)
                     }))
-                }, wi = function (e, t, n) {
+                }, wi = function(e, t, n) {
                     return t.then((t => (this._events.emit(e, t, {
                         input: n
                     }), t))).catch((t => {
@@ -6489,13 +6490,13 @@
                         }), i
                     }))
                 };
-                var ki, Ri, Oi, Di, Ni, xi = function (e, t, n, i, r) {
+                var ki, Ri, Oi, Di, Ni, xi = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
                         return "a" === i ? r.call(e, n) : r ? r.value = n : t.set(e, n), n
                     },
-                    Li = function (e, t, n, i) {
+                    Li = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -6550,27 +6551,27 @@
                         return t ? (t.triggers.forEach((e => {
                             e.bonuses.forEach((e => {
                                 switch (e.type) {
-                                case ln.Do.Reward:
-                                    const {
-                                        reward: t
-                                    } = this.gp.rewards.getReward(e.id);
-                                    t && i.rewards.push(Object.assign(Object.assign({}, t), {
-                                        isExists: this.gp.rewards.has(e.id)
-                                    }));
-                                    break;
-                                case ln.Do.Achievement:
-                                    const {
-                                        achievement: n
-                                    } = this.gp.achievements.getAchievement(e.id);
-                                    n && i.achievements.push(Object.assign(Object.assign({}, n), {
-                                        isExists: this.gp.achievements.has(e.id)
-                                    }));
-                                    break;
-                                case ln.Do.Product:
-                                    const r = this.gp.payments.getProduct(e.id);
-                                    r && i.products.push(Object.assign(Object.assign({}, r), {
-                                        isExists: this.gp.payments.has(e.id)
-                                    }))
+                                    case ln.Do.Reward:
+                                        const {
+                                            reward: t
+                                        } = this.gp.rewards.getReward(e.id);
+                                        t && i.rewards.push(Object.assign(Object.assign({}, t), {
+                                            isExists: this.gp.rewards.has(e.id)
+                                        }));
+                                        break;
+                                    case ln.Do.Achievement:
+                                        const {
+                                            achievement: n
+                                        } = this.gp.achievements.getAchievement(e.id);
+                                        n && i.achievements.push(Object.assign(Object.assign({}, n), {
+                                            isExists: this.gp.achievements.has(e.id)
+                                        }));
+                                        break;
+                                    case ln.Do.Product:
+                                        const r = this.gp.payments.getProduct(e.id);
+                                        r && i.products.push(Object.assign(Object.assign({}, r), {
+                                            isExists: this.gp.payments.has(e.id)
+                                        }))
                                 }
                             }), [])
                         })), i) : i
@@ -6589,7 +6590,7 @@
                         return !!(null == t ? void 0 : t.isActive) && !!n
                     }
                     join(e) {
-                        return t = this, n = void 0, r = function* () {
+                        return t = this, n = void 0, r = function*() {
                             const t = Number(e.id) || e.tag,
                                 n = (0, a._)(),
                                 i = t => {
@@ -6610,7 +6611,7 @@
                                     eventId: r.id
                                 }), {
                                     __typename: t
-                                } = e, i = function (e, t) {
+                                } = e, i = function(e, t) {
                                     var n = {};
                                     for (var i in e) Object.prototype.hasOwnProperty.call(e, i) && t.indexOf(i) < 0 && (n[i] = e[i]);
                                     if (null != e && "function" == typeof Object.getOwnPropertySymbols) {
@@ -6632,7 +6633,7 @@
                                 this.gp.loader.dec()
                             }
                             return n.ready
-                        }, new((i = void 0) || (i = Promise))((function (e, s) {
+                        }, new((i = void 0) || (i = Promise))((function(e, s) {
                             function a(e) {
                                 try {
                                     c(r.next(e))
@@ -6651,7 +6652,7 @@
 
                             function c(t) {
                                 var n;
-                                t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function (e) {
+                                t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function(e) {
                                     e(n)
                                 }))).then(a, o)
                             }
@@ -6660,7 +6661,7 @@
                         var t, n, i, r
                     }
                 }
-                Ri = new WeakMap, Oi = new WeakMap, Di = new WeakMap, ki = new WeakSet, Ni = function (e) {
+                Ri = new WeakMap, Oi = new WeakMap, Di = new WeakMap, ki = new WeakSet, Ni = function(e) {
                     const t = {
                             event: null,
                             playerEvent: null
@@ -6671,7 +6672,7 @@
                 var Mi, ji, Ui = n(6256);
                 class $i {
                     constructor() {
-                        Mi.add(this), this.type = function (e, t, n, i) {
+                        Mi.add(this), this.type = function(e, t, n, i) {
                             if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                             if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                             return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -6681,19 +6682,19 @@
                         return e.includes(this.type)
                     }
                 }
-                Mi = new WeakSet, ji = function () {
+                Mi = new WeakSet, ji = function() {
                     const e = new Ui.UAParser,
                         t = e.getOS(),
                         n = e.getDevice();
                     return "iOS" === t.name ? ln.U7.Ios : "Android" === t.name ? ln.U7.Android : "smarttv" === n.type ? ln.U7.Tv : ln.U7.Desktop
                 };
-                var Gi, Bi, qi, Vi, Wi, zi = function (e, t, n, i, r) {
+                var Gi, Bi, qi, Vi, Wi, zi = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
                         return "a" === i ? r.call(e, n) : r ? r.value = n : t.set(e, n), n
                     },
-                    Yi = function (e, t, n, i) {
+                    Yi = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -6709,7 +6710,7 @@
                         return e in Yi(this, Vi, "f") && Yi(this, Vi, "f")[e] === t
                     }
                 }
-                Bi = new WeakMap, qi = new WeakMap, Vi = new WeakMap, Gi = new WeakSet, Wi = function (e) {
+                Bi = new WeakMap, qi = new WeakMap, Vi = new WeakMap, Gi = new WeakSet, Wi = function(e) {
                     if (0 === e.length) return;
                     let t = !1;
                     const n = {};
@@ -6718,13 +6719,13 @@
                         return e[i.experiment] = i.cohort, n[`${this.gp.name.toUpperCase()}_AB_${i.experiment}`] = i.cohort, t || (null === (s = Yi(this, qi, "f")[r]) || void 0 === s ? void 0 : s.cohort) === i.cohort || (t = !0), e
                     }), {}), "f"), zi(this, qi, e, "f"), this.gp.analytics._experimentsVisitParams = n, t && this.gp.analytics.setVisitParams(this.gp.analytics.visitParams)
                 };
-                var Ji, Zi, Xi, Hi, Qi = function (e, t, n, i, r) {
+                var Ji, Zi, Xi, Hi, Qi = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
                         return "a" === i ? r.call(e, n) : r ? r.value = n : t.set(e, n), n
                     },
-                    er = function (e, t, n, i) {
+                    er = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -6740,11 +6741,11 @@
                         return er(this, Xi, "f").includes(e)
                     }
                 }
-                Zi = new WeakMap, Xi = new WeakMap, Ji = new WeakSet, Hi = function (e, t, n) {
+                Zi = new WeakMap, Xi = new WeakMap, Ji = new WeakSet, Hi = function(e, t, n) {
                     (0 === er(this, Xi, "f").length && e.length > 0 || t.length > 0 || n.length > 0) && (this.gp.analytics._segmentsVisitParams = e.reduce(((e, t) => (e[`GP_SEGMENT_${t}`] = "1", e)), {}), this.gp.analytics.setVisitParams(this.gp.analytics.visitParams)), Qi(this, Xi, e, "f"), t.forEach((e => this._events.emit("enter", e))), n.forEach((e => this._events.emit("leave", e)))
                 };
-                var nr, ir, rr, sr, ar = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                var nr, ir, rr, sr, ar = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -6763,20 +6764,20 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    or = function (e, t, n, i, r) {
+                    or = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
                         return "a" === i ? r.call(e, n) : r ? r.value = n : t.set(e, n), n
                     },
-                    cr = function (e, t, n, i) {
+                    cr = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -6793,7 +6794,7 @@
                         tag: e,
                         value: t
                     }) {
-                        return ar(this, void 0, void 0, (function* () {
+                        return ar(this, void 0, void 0, (function*() {
                             e || cr(this, nr, "m", sr).call(this, "check", new Error(lr));
                             try {
                                 const n = yield this.gp._services.playerService.checkUniqueValue({
@@ -6814,7 +6815,7 @@
                         tag: e,
                         value: t
                     }) {
-                        return ar(this, void 0, void 0, (function* () {
+                        return ar(this, void 0, void 0, (function*() {
                             e || cr(this, nr, "m", sr).call(this, "register", new Error(lr));
                             try {
                                 const n = yield this.gp._services.playerService.registerUniqueValue({
@@ -6833,7 +6834,7 @@
                     delete({
                         tag: e
                     }) {
-                        return ar(this, void 0, void 0, (function* () {
+                        return ar(this, void 0, void 0, (function*() {
                             e || cr(this, nr, "m", sr).call(this, "delete", new Error(lr)), cr(this, rr, "f").some((t => t.tag === e)) || cr(this, nr, "m", sr).call(this, "delete", new Error("unique_value_not_found"));
                             try {
                                 return yield this.gp._services.playerService.deleteUniqueValue({
@@ -6851,11 +6852,11 @@
                         return (null === (t = cr(this, rr, "f").find((t => t.tag === e))) || void 0 === t ? void 0 : t.value) || ""
                     }
                 }
-                ir = new WeakMap, rr = new WeakMap, nr = new WeakSet, sr = function (e, t) {
+                ir = new WeakMap, rr = new WeakMap, nr = new WeakSet, sr = function(e, t) {
                     throw w.kg.error(t), this._events.emit(`error:${e}`, (null == t ? void 0 : t.message) || t), t
                 };
-                var dr = function (e, t, n, i) {
-                    return new(n || (n = Promise))((function (r, s) {
+                var dr = function(e, t, n, i) {
+                    return new(n || (n = Promise))((function(r, s) {
                         function a(e) {
                             try {
                                 c(i.next(e))
@@ -6874,7 +6875,7 @@
 
                         function c(e) {
                             var t;
-                            e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                            e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                 e(t)
                             }))).then(a, o)
                         }
@@ -6893,7 +6894,7 @@
                         return "local" === this.type ? this.storage.localStorages : this.storage._storages
                     }
                     get(e) {
-                        return dr(this, void 0, void 0, (function* () {
+                        return dr(this, void 0, void 0, (function*() {
                             const t = yield this.storage.get(this.storages, ur(e));
                             return this._events.emit("get", {
                                 key: e,
@@ -6902,7 +6903,7 @@
                         }))
                     }
                     set(e, t) {
-                        return dr(this, void 0, void 0, (function* () {
+                        return dr(this, void 0, void 0, (function*() {
                             yield this.storage.set(this.storages, ur(e), t), this._events.emit("set", {
                                 key: e,
                                 value: t
@@ -6910,7 +6911,7 @@
                         }))
                     }
                     getGlobal(e) {
-                        return dr(this, void 0, void 0, (function* () {
+                        return dr(this, void 0, void 0, (function*() {
                             const t = yield this.storage.getRaw(this.storages, ur(e));
                             return this._events.emit("get:global", {
                                 key: e,
@@ -6919,7 +6920,7 @@
                         }))
                     }
                     setGlobal(e, t) {
-                        return dr(this, void 0, void 0, (function* () {
+                        return dr(this, void 0, void 0, (function*() {
                             yield this.storage.setRaw(this.storages, ur(e), t), this._events.emit("set:global", {
                                 key: e,
                                 value: t
@@ -6928,8 +6929,8 @@
                     }
                 }
                 var fr, mr, vr, yr, gr, wr, br, Pr, Er = n(1961),
-                    Tr = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    Tr = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -6948,19 +6949,19 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    Sr = function (e, t, n, i) {
+                    Sr = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
                     },
-                    _r = function (e, t, n, i, r) {
+                    _r = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -6996,7 +6997,7 @@
                         return hn()
                     }
                     init(e) {
-                        return Tr(this, void 0, void 0, (function* () {
+                        return Tr(this, void 0, void 0, (function*() {
                             this.channels.on("event:connect", (({
                                 hash: e
                             }) => {
@@ -7012,7 +7013,7 @@
                         }))
                     }
                     loadOverlay() {
-                        return Tr(this, void 0, void 0, (function* () {
+                        return Tr(this, void 0, void 0, (function*() {
                             this.overlay || (this.overlay = yield Promise.all([n.e(6690), n.e(9278), n.e(8881), n.e(7415)]).then(n.bind(n, 3918)).then((e => e.default(this))), this._events.emit("overlay:ready"))
                         }))
                     }
@@ -7023,7 +7024,7 @@
                         }
                     }
                     changeLanguage(e) {
-                        return Tr(this, void 0, void 0, (function* () {
+                        return Tr(this, void 0, void 0, (function*() {
                             if (this.language !== e) try {
                                 if (!Object.values(b.Uo).includes(e)) throw new Error(`Language ${e} not supported`);
                                 this.language = e, this._storage.saveLanguage(e), this.overlay && (yield this.overlay.changeLanguage(e)), Sr(this, yr, "f").setLang(this.language), this._events.emit("change:language", this.language)
@@ -7033,7 +7034,7 @@
                         }))
                     }
                     changeAvatarGenerator() {
-                        return Tr(this, void 0, void 0, (function* () {
+                        return Tr(this, void 0, void 0, (function*() {
                             w.kg.warn("[DEPRECATED]: changeAvatarGenerator")
                         }))
                     }
@@ -7047,24 +7048,24 @@
                         this.isPaused && (this.isPaused = !1, this._events.emit("resume"))
                     }
                     gameStart() {
-                        return Tr(this, void 0, void 0, (function* () {
+                        return Tr(this, void 0, void 0, (function*() {
                             yield this.ready, this.isGameStarted || (this._events.emit("gameStart"), this.isGameStarted = !0)
                         }))
                     }
                     gameplayStart() {
-                        return Tr(this, void 0, void 0, (function* () {
+                        return Tr(this, void 0, void 0, (function*() {
                             yield this.ready, this.isGameplay || (this.isGameplay = !0, this._events.emit("gameplayStart"))
                         }))
                     }
                     gameplayStop() {
-                        return Tr(this, void 0, void 0, (function* () {
+                        return Tr(this, void 0, void 0, (function*() {
                             yield this.ready, this.isGameplay && (this.isGameplay = !1, this._events.emit("gameplayStop"))
                         }))
                     }
                 }
-                mr = new WeakMap, vr = new WeakMap, yr = new WeakMap, gr = new WeakMap, fr = new WeakSet, wr = function (e) {
+                mr = new WeakMap, vr = new WeakMap, yr = new WeakMap, gr = new WeakMap, fr = new WeakSet, wr = function(e) {
                     var t;
-                    return Tr(this, void 0, void 0, (function* () {
+                    return Tr(this, void 0, void 0, (function*() {
                         const i = (0, a._)();
                         this.ready = i.ready;
                         const h = (null === (t = this._params) || void 0 === t ? void 0 : t.get("callback")) || "onGPInit";
@@ -7095,7 +7096,7 @@
                                 apiClient: v,
                                 setupAnalytics: y
                             } = m,
-                            g = function (e, t) {
+                            g = function(e, t) {
                                 var n = {};
                                 for (var i in e) Object.prototype.hasOwnProperty.call(e, i) && t.indexOf(i) < 0 && (n[i] = e[i]);
                                 if (null != e && "function" == typeof Object.getOwnPropertySymbols) {
@@ -7120,7 +7121,7 @@
                                 } catch (e) {}
                                 return this._storage.setStorages(n, i), this._storage.ready
                             },
-                            fetchConfig: e => Tr(this, void 0, void 0, (function* () {
+                            fetchConfig: e => Tr(this, void 0, void 0, (function*() {
                                 yield this._storage.ready;
                                 const [t, n, i, r] = yield Promise.all([this._storage.loadLanguage(), this._storage.loadConfig(), this._storage.loadAdsInfo(), Sr(this, mr, "f").getLanguage(this.name)]);
                                 return t || this._storage.saveLanguage(null), this.language = r || t || e || p || b.Uo.EN, Sr(this, yr, "f").setLang(this.language), this._services.projectService.fetchConfig().then((e => {
@@ -7139,7 +7140,7 @@
                         (e.platformChunk ? e.platformChunk(E, d) : e.preparePlatform({
                             platformType: d,
                             tools: E
-                        })).then((e => Tr(this, void 0, void 0, (function* () {
+                        })).then((e => Tr(this, void 0, void 0, (function*() {
                             const {
                                 adsAdapter: t,
                                 playerAdapter: r,
@@ -7158,7 +7159,7 @@
                                 } = y(h.config);
                                 e.forEach((e => this.analytics.addCounter(e))), p.forEach((e => this.analytics.addCounter(e)))
                             }
-                            this.avatarGenerator = h.config.avatarGenerator, this.avatarGeneratorTemplate = h.config.avatarGeneratorTemplate, this.loader = function (e) {
+                            this.avatarGenerator = h.config.avatarGenerator, this.avatarGeneratorTemplate = h.config.avatarGeneratorTemplate, this.loader = function(e) {
                                 let t = 0;
                                 const n = document.createElement("div");
 
@@ -7186,11 +7187,11 @@
                             nn.includes(e.newState) ? T() : _()
                         }))
                     }))
-                }, br = function () {
+                }, br = function() {
                     const {
                         showOrientationOverlay: e,
                         orientation: t
-                    } = Sr(this, vr, "f").config, n = e && this.isMobile && t != ln.LH.Any && this.device.type !== ln.U7.Tv, i = () => Tr(this, void 0, void 0, (function* () {
+                    } = Sr(this, vr, "f").config, n = e && this.isMobile && t != ln.LH.Any && this.device.type !== ln.U7.Tv, i = () => Tr(this, void 0, void 0, (function*() {
                         var e;
                         n && !dn(t) ? (yield this.loadOverlay(), dn(t) || this.overlay.showOrientationOverlay(t)) : null === (e = this.overlay) || void 0 === e || e.closeOrientationOverlay()
                     }));
@@ -7198,8 +7199,8 @@
                     r = e => {
                         this._events.emit("change:orientation", e), i()
                     }, window.matchMedia("(orientation: portrait)").addEventListener("change", (() => requestAnimationFrame((() => r(hn()))))), i()
-                }, Pr = function () {
-                    return Tr(this, void 0, void 0, (function* () {
+                }, Pr = function() {
+                    return Tr(this, void 0, void 0, (function*() {
                         const {
                             showUnsupportedOSOverlay: e,
                             targetOS: t
@@ -7210,7 +7211,8 @@
                         }))
                     }))
                 }
-            }, 3080: (e, t, n) => {
+            },
+            3080: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Z: () => j,
@@ -7222,8 +7224,8 @@
                     k = n(8293),
                     R = n(6388),
                     O = n(6041),
-                    D = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    D = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -7242,25 +7244,25 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    N = function (e, t, n, i, r) {
+                    N = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
                         return "a" === i ? r.call(e, n) : r ? r.value = n : t.set(e, n), n
                     },
-                    x = function (e, t, n, i) {
+                    x = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
                     },
-                    L = function (e, t) {
+                    L = function(e, t) {
                         var n = {};
                         for (var i in e) Object.prototype.hasOwnProperty.call(e, i) && t.indexOf(i) < 0 && (n[i] = e[i]);
                         if (null != e && "function" == typeof Object.getOwnPropertySymbols) {
@@ -7319,7 +7321,7 @@
                     open({
                         scrollTo: e
                     } = {}) {
-                        return D(this, void 0, void 0, (function* () {
+                        return D(this, void 0, void 0, (function*() {
                             this.gp.loader.inc();
                             try {
                                 const [t] = yield Promise.all([this.fetch(), this.gp.loadOverlay(), (0, I.p)(C.Z.app.trophy).catch(A.kg.error)]);
@@ -7332,7 +7334,7 @@
                         }))
                     }
                     fetch() {
-                        return D(this, void 0, void 0, (function* () {
+                        return D(this, void 0, void 0, (function*() {
                             const e = (0, k._)();
                             this.gp.loader.inc();
                             try {
@@ -7351,7 +7353,7 @@
                         }))
                     }
                     unlock(e) {
-                        return D(this, void 0, void 0, (function* () {
+                        return D(this, void 0, void 0, (function*() {
                             const t = (0, k._)(),
                                 n = n => (t.done({
                                     success: !1,
@@ -7405,7 +7407,7 @@
                     }
                     setProgress(e) {
                         var t;
-                        return D(this, void 0, void 0, (function* () {
+                        return D(this, void 0, void 0, (function*() {
                             const n = (0, k._)(),
                                 s = t => (n.done({
                                     success: !1,
@@ -7418,7 +7420,7 @@
                                 {
                                     achievement: o
                                 } = x(this, i, "m", b).call(this, a);
-                            return o ? a in x(this, h, "f") ? (x(this, h, "f")[a] = e.progress, null === (t = x(this, d, "f")[a]) || void 0 === t ? void 0 : t.ready) : (x(this, h, "f")[a] = e.progress, x(this, d, "f")[a] = n, setTimeout((() => D(this, void 0, void 0, (function* () {
+                            return o ? a in x(this, h, "f") ? (x(this, h, "f")[a] = e.progress, null === (t = x(this, d, "f")[a]) || void 0 === t ? void 0 : t.ready) : (x(this, h, "f")[a] = e.progress, x(this, d, "f")[a] = n, setTimeout((() => D(this, void 0, void 0, (function*() {
                                 const t = x(this, h, "f")[a],
                                     {
                                         playerAchievement: c
@@ -7467,13 +7469,13 @@
                     let t = "";
                     return t = window.devicePixelRatio > 1 ? e.unlocked ? e.icon || e.lockedIcon : e.lockedIcon || e.icon : e.unlocked ? e.iconSmall || e.lockedIconSmall : e.lockedIconSmall || e.iconSmall, t || C.Z.cdn.trophy
                 }
-                r = new WeakMap, s = new WeakMap, a = new WeakMap, o = new WeakMap, c = new WeakMap, l = new WeakMap, h = new WeakMap, d = new WeakMap, u = new WeakMap, p = new WeakMap, f = new WeakMap, m = new WeakMap, v = new WeakMap, i = new WeakSet, y = function (e) {
+                r = new WeakMap, s = new WeakMap, a = new WeakMap, o = new WeakMap, c = new WeakMap, l = new WeakMap, h = new WeakMap, d = new WeakMap, u = new WeakMap, p = new WeakMap, f = new WeakMap, m = new WeakMap, v = new WeakMap, i = new WeakSet, y = function(e) {
                     return x(this, u, "f")[e] || x(this, p, "f")[e]
-                }, g = function (e) {
+                }, g = function(e) {
                     return x(this, f, "f")[e]
-                }, w = function (e) {
+                }, w = function(e) {
                     return x(this, o, "f")[e]
-                }, b = function (e) {
+                }, b = function(e) {
                     const t = {
                             achievement: null,
                             playerAchievement: null,
@@ -7486,24 +7488,25 @@
                     r && (t.playerAchievement = r);
                     const s = x(this, i, "m", w).call(this, n.id);
                     return s && (t.achievementGroup = s), t
-                }, P = function (e) {
+                }, P = function(e) {
                     N(this, c, [...e], "f"), x(this, i, "m", _).call(this)
-                }, E = function (e) {
+                }, E = function(e) {
                     x(this, c, "f").some((t => t.achievementId === e.achievementId)) ? N(this, c, x(this, c, "f").map((t => t.achievementId === e.achievementId ? e : t)), "f") : x(this, c, "f").push(e), x(this, i, "m", _).call(this)
-                }, T = function () {
+                }, T = function() {
                     N(this, u, {}, "f"), N(this, p, {}, "f"), x(this, a, "f").forEach((e => {
                         x(this, u, "f")[e.id] = e, x(this, p, "f")[e.tag] = e
                     }))
-                }, S = function () {
+                }, S = function() {
                     N(this, m, {}, "f"), x(this, o, "f").forEach((e => {
                         x(this, m, "f")[e.id] = e
                     }))
-                }, _ = function () {
+                }, _ = function() {
                     N(this, f, {}, "f"), x(this, c, "f").forEach((e => {
                         x(this, f, "f")[e.achievementId] = e
                     }))
                 }
-            }, 4687: (e, t, n) => {
+            },
+            4687: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Z: () => R
@@ -7515,8 +7518,8 @@
                     T = n(5942),
                     S = n(6041),
                     _ = n(8866),
-                    A = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    A = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -7535,20 +7538,20 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    I = function (e, t, n, i, r) {
+                    I = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
                         return "a" === i ? r.call(e, n) : r ? r.value = n : t.set(e, n), n
                     },
-                    C = function (e, t, n, i) {
+                    C = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -7600,7 +7603,7 @@
                         return [...C(this, s, "f")]
                     }
                     fetchProducts() {
-                        return A(this, void 0, void 0, (function* () {
+                        return A(this, void 0, void 0, (function*() {
                             const e = (0, b._)();
                             this.gp.loader.inc();
                             try {
@@ -7622,7 +7625,7 @@
                         }))
                     }
                     purchase(e) {
-                        return A(this, void 0, void 0, (function* () {
+                        return A(this, void 0, void 0, (function*() {
                             const t = Number(e.id) || e.tag;
                             if (C(this, o, "f")[t]) throw new Error("payment_in_progress");
                             const n = (0, b._)(),
@@ -7705,7 +7708,7 @@
                         }))
                     }
                     consume(e) {
-                        return A(this, void 0, void 0, (function* () {
+                        return A(this, void 0, void 0, (function*() {
                             const t = Number(e.id) || e.tag;
                             C(this, c, "f")[t] && (yield C(this, c, "f")[t]);
                             const n = (0, b._)(),
@@ -7746,7 +7749,7 @@
                         }))
                     }
                     subscribe(e) {
-                        return A(this, void 0, void 0, (function* () {
+                        return A(this, void 0, void 0, (function*() {
                             const t = Number(e.id) || e.tag;
                             if (C(this, o, "f")[t]) return C(this, o, "f")[t];
                             const n = (0, b._)(),
@@ -7818,7 +7821,7 @@
                         }))
                     }
                     unsubscribe(e) {
-                        return A(this, void 0, void 0, (function* () {
+                        return A(this, void 0, void 0, (function*() {
                             const t = Number(e.id) || e.tag;
                             if (C(this, o, "f")[t]) return C(this, o, "f")[t];
                             const n = (0, b._)(),
@@ -7864,9 +7867,9 @@
                         }))
                     }
                     checkPurchaseStatus(e, t, n, i, r) {
-                        return A(this, void 0, void 0, (function* () {
+                        return A(this, void 0, void 0, (function*() {
                             let s = 0;
-                            const a = () => A(this, void 0, void 0, (function* () {
+                            const a = () => A(this, void 0, void 0, (function*() {
                                 try {
                                     const s = yield this.gp._services.paymentsService.getPlayerPurchase({
                                         projectId: e,
@@ -7899,13 +7902,13 @@
                 }
 
                 function O(e, t) {
-                    return function (e, t) {
+                    return function(e, t) {
                         const n = new Date(e);
                         return n.setDate(n.getDate() + t), n
                     }(new Date(e), t).toISOString()
                 }
-                r = new WeakMap, s = new WeakMap, a = new WeakMap, o = new WeakMap, c = new WeakMap, l = new WeakMap, h = new WeakMap, d = new WeakMap, i = new WeakSet, u = function () {
-                    return A(this, void 0, void 0, (function* () {
+                r = new WeakMap, s = new WeakMap, a = new WeakMap, o = new WeakMap, c = new WeakMap, l = new WeakMap, h = new WeakMap, d = new WeakMap, i = new WeakSet, u = function() {
+                    return A(this, void 0, void 0, (function*() {
                         const {
                             purchases: e,
                             payload: t
@@ -7919,7 +7922,7 @@
                         });
                         C(this, i, "m", v).call(this, n), this.adapter.consumeAllExpired(this.products, e, n)
                     }))
-                }, p = function (e) {
+                }, p = function(e) {
                     const t = {
                             product: null,
                             purchase: null
@@ -7929,19 +7932,19 @@
                     t.product = n;
                     const r = C(this, i, "m", m).call(this, n.id);
                     return r && (t.purchase = r), t
-                }, f = function (e) {
+                }, f = function(e) {
                     return C(this, l, "f")[e] || C(this, h, "f")[e]
-                }, m = function (e) {
+                }, m = function(e) {
                     return C(this, d, "f")[e]
-                }, v = function (e) {
+                }, v = function(e) {
                     I(this, s, e.map((e => Object.assign(Object.assign({}, e), {
                         id: e.productId
                     }))), "f"), C(this, i, "m", g).call(this)
-                }, y = function () {
+                }, y = function() {
                     I(this, l, {}, "f"), I(this, h, {}, "f"), C(this, a, "f").forEach((e => {
                         C(this, l, "f")[e.id] = e, C(this, h, "f")[e.tag] = e
                     }))
-                }, g = function () {
+                }, g = function() {
                     I(this, s, C(this, s, "f").reduce(((e, t) => {
                         const n = C(this, i, "m", f).call(this, t.productId);
                         return n && e.push(Object.assign(Object.assign({}, t), {
@@ -7952,7 +7955,8 @@
                         C(this, d, "f")[e.productId] = e
                     }))
                 }
-            }, 8276: (e, t, n) => {
+            },
+            8276: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Z: () => l,
@@ -7963,8 +7967,8 @@
                     s = n(6388),
                     a = n(6558),
                     o = n(8866),
-                    c = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    c = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -7983,7 +7987,7 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
@@ -8028,15 +8032,17 @@
                         return this.adapter.canShowFullscreenBeforeGamePlay
                     }
                     checkAdblock() {
-                        return c(this, void 0, void 0, (function* () {
+                        return c(this, void 0, void 0, (function*() {
                             return this.isAdblockEnabled = yield(0, i.Z)(), this.gp.logger.info("adblock is " + (this.isAdblockEnabled ? "detected" : "not detected")), this.isAdblockEnabled
                         }))
                     }
-                    sendShowAdsInfo(e) {}
+                    sendShowAdsInfo(e) {
+                        /*this.config.acl.canCollectStats&&fetch(`https://api.eponesh.com/gs/api/t/b/?q=${btoa(JSON.stringify(Object.assign(Object.assign({},e),{platformType:this.gp.platform.type,customPlatformTag:this.gp.platform.tag,projectId:this.gp.projectId})))}`)*/
+                    }
                     showFullscreen({
                         showCountdownOverlay: e = !1
                     } = {}) {
-                        return c(this, void 0, void 0, (function* () {
+                        return c(this, void 0, void 0, (function*() {
                             if (yield this.gp._pointersManager.waitForPointersUp(), !this.isFullscreenAvailable) return this._events.emit("close", !1), this._events.emit("fullscreen:close", !1), !1;
                             this._events.emit("start"), this._events.emit("fullscreen:start"), this.sendShowAdsInfo({
                                 type: "FULLSCREEN",
@@ -8063,7 +8069,7 @@
                     showRewardedVideo({
                         showRewardedFailedOverlay: e = !1
                     } = {}) {
-                        return c(this, void 0, void 0, (function* () {
+                        return c(this, void 0, void 0, (function*() {
                             if (yield this.gp._pointersManager.waitForPointersUp(), !this.isRewardedAvailable) return this._events.emit("close", !1), this._events.emit("rewarded:close", !1), !1;
                             const t = this.gp.fullscreen.isEnabled,
                                 n = t && this.adapter.needToLeaveFullscreenBeforeAds;
@@ -8081,7 +8087,7 @@
                         }))
                     }
                     showPreloader() {
-                        return c(this, void 0, void 0, (function* () {
+                        return c(this, void 0, void 0, (function*() {
                             if (yield this.gp._pointersManager.waitForPointersUp(), !this.isPreloaderAvailable) return this._events.emit("close", !1), this._events.emit("preloader:close", !1), !1;
                             const e = this.gp.fullscreen.isEnabled,
                                 t = e && this.adapter.needToLeaveFullscreenBeforeAds;
@@ -8098,7 +8104,7 @@
                     }
                     showSticky() {
                         var e;
-                        return c(this, void 0, void 0, (function* () {
+                        return c(this, void 0, void 0, (function*() {
                             if (!this.isStickyAvailable) return this._events.emit("close", !1), this._events.emit("sticky:close", !1), !1;
                             !this.stickyRefreshIntervalId && this.stickyBanner.refreshInterval && (this.stickyRefreshIntervalId = window.setInterval((() => this.refreshSticky()), 1e3 * this.stickyBanner.refreshInterval)), this._events.emit("start"), this._events.emit("sticky:start"), this.sendShowAdsInfo({
                                 type: "STICKY",
@@ -8113,7 +8119,7 @@
                     }
                     refreshSticky() {
                         var e;
-                        return c(this, void 0, void 0, (function* () {
+                        return c(this, void 0, void 0, (function*() {
                             if (!this.isStickyAvailable) return this._events.emit("close", !1), this._events.emit("sticky:close", !1), !1;
                             clearInterval(this.stickyRefreshIntervalId), this.stickyBanner.refreshInterval && (this.stickyRefreshIntervalId = window.setInterval((() => this.refreshSticky()), 1e3 * this.stickyBanner.refreshInterval)), this._events.emit("sticky:refresh"), this.sendShowAdsInfo({
                                 type: "STICKY",
@@ -8128,7 +8134,7 @@
                     }
                     closeSticky() {
                         var e;
-                        return c(this, void 0, void 0, (function* () {
+                        return c(this, void 0, void 0, (function*() {
                             const t = yield this.adapter.closeSticky();
                             return this.isStickyPlaying = !1, this._events.emit("close", !0), this._events.emit("sticky:close", !0), clearInterval(this.stickyRefreshIntervalId), null === (e = this.gp.overlay) || void 0 === e || e.setSizeOffsets(this.gp._overlaySizeOffsets), t
                         }))
@@ -8171,14 +8177,15 @@
                     return !!e && (new Date).getTime() - new Date(e).getTime() > t
                 }
                 const d = (e, t) => t ? e.mobileConfig : e.desktopConfig
-            }, 6316: (e, t, n) => {
+            },
+            6316: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Z: () => s
                 });
                 var i = n(4917),
-                    r = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    r = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -8197,7 +8204,7 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
@@ -8210,7 +8217,7 @@
                     }) {
                         this.visitParams = {}, this.counterId = e;
                         const t = window;
-                        t.dataLayer = t.dataLayer || [], t.gtag = function () {
+                        t.dataLayer = t.dataLayer || [], t.gtag = function() {
                             t.dataLayer.push(arguments)
                         }, this.gtag("js", new Date), this.gtag("config", e, {
                             send_page_view: !1
@@ -8222,7 +8229,7 @@
                         return window.gtag
                     }
                     hit(e) {
-                        return r(this, void 0, void 0, (function* () {
+                        return r(this, void 0, void 0, (function*() {
                             this.gtag("event", "page_view", {
                                 page_location: e,
                                 send_to: this.counterId
@@ -8230,7 +8237,7 @@
                         }))
                     }
                     goal(e, t) {
-                        return r(this, void 0, void 0, (function* () {
+                        return r(this, void 0, void 0, (function*() {
                             this.gtag("event", e, t ? Object.assign(Object.assign({}, this.visitParams), {
                                 value: t
                             }) : Object.assign({}, this.visitParams))
@@ -8240,14 +8247,15 @@
                         this.visitParams = e
                     }
                 }
-            }, 8266: (e, t, n) => {
+            },
+            8266: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Z: () => s
                 });
                 var i = n(4917),
-                    r = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    r = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -8266,7 +8274,7 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
@@ -8279,7 +8287,7 @@
                     }) {
                         this.visitParams = {}, this.counterId = e;
                         const t = window;
-                        t.ym = t.ym || function () {
+                        t.ym = t.ym || function() {
                             (t.ym.a = t.ym.a || []).push(arguments), t.ym.l = Date.now()
                         }, t.ym(e, "init", {
                             accurateTrackBounce: !0
@@ -8288,14 +8296,14 @@
                         })
                     }
                     hit(e) {
-                        return r(this, void 0, void 0, (function* () {
+                        return r(this, void 0, void 0, (function*() {
                             this.ym(this.counterId, "hit", e, {
                                 params: this.visitParams
                             })
                         }))
                     }
                     goal(e, t) {
-                        return r(this, void 0, void 0, (function* () {
+                        return r(this, void 0, void 0, (function*() {
                             this.ym(this.counterId, "reachGoal", t ? `${e}_${t}` : e, this.visitParams)
                         }))
                     }
@@ -8303,14 +8311,15 @@
                         this.visitParams = e, this.ym(this.counterId, "params", e)
                     }
                 }
-            }, 2954: (e, t, n) => {
+            },
+            2954: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Z: () => s
                 });
                 var i = n(6388),
-                    r = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                    r = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -8329,7 +8338,7 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
@@ -8353,13 +8362,13 @@
                         return this.adapter.isAlreadyReviewed
                     }
                     addShortcut() {
-                        return r(this, void 0, void 0, (function* () {
+                        return r(this, void 0, void 0, (function*() {
                             const e = yield this.adapter.addShortcut();
                             return this._events.emit("addShortcut", e), e
                         }))
                     }
                     requestReview() {
-                        return r(this, void 0, void 0, (function* () {
+                        return r(this, void 0, void 0, (function*() {
                             const e = yield this.adapter.requestReview();
                             return e.success ? this._events.emit("review", e) : this._events.emit("error:review", e.error), e
                         }))
@@ -8368,7 +8377,8 @@
                         return this.adapter.requestGameUrl()
                     }
                 }
-            }, 6388: (e, t, n) => {
+            },
+            6388: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Z: () => s
@@ -8389,19 +8399,20 @@
                         this._events.once(e, t)
                     }
                 }
-            }, 264: (e, t, n) => {
+            },
+            264: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Z: () => p
                 });
                 var i, r, s, a, o = n(6558),
                     c = n(6388),
-                    l = function (e, t, n, i) {
+                    l = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
                     },
-                    h = function (e, t, n, i, r) {
+                    h = function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -8459,7 +8470,7 @@
                             const n = d[t.type];
                             if (!n) return void(this.state[t.key] = e[t.key] || t.default);
                             const i = n(e[t.key]);
-                            this.state[t.key] = t.variants.length && !t.variants.some((e => e.value === i)) ? t.default : i, t.intervalIncrement && function (e, t, n, i) {
+                            this.state[t.key] = t.variants.length && !t.variants.some((e => e.value === i)) ? t.default : i, t.intervalIncrement && function(e, t, n, i) {
                                 Object.defineProperty(i, `${n.key}:secondsLeft`, {
                                     enumerable: !1,
                                     get: () => {
@@ -8618,19 +8629,20 @@
                         this._initializeIncrementFields()
                     }
                 }
-                r = new WeakMap, s = new WeakMap, i = new WeakSet, a = function (e) {
+                r = new WeakMap, s = new WeakMap, i = new WeakSet, a = function(e) {
                     this.fields = e, h(this, s, e.filter((e => !!e.limits)), "f"), h(this, r, {}, "f"), e.forEach((e => {
                         l(this, r, "f")[e.key] = e
                     }))
                 }
-            }, 2231: (e, t, n) => {
+            },
+            2231: (e, t, n) => {
                 "use strict";
 
                 function i(e) {
-                    return new Promise((function (t, n) {
-                        e.oncomplete = e.onsuccess = function () {
+                    return new Promise((function(t, n) {
+                        e.oncomplete = e.onsuccess = function() {
                             return t(e.result)
-                        }, e.onabort = e.onerror = function () {
+                        }, e.onabort = e.onerror = function() {
                             return n(e.error)
                         }
                     }))
@@ -8638,12 +8650,12 @@
 
                 function r(e, t) {
                     var n = indexedDB.open(e);
-                    n.onupgradeneeded = function () {
+                    n.onupgradeneeded = function() {
                         return n.result.createObjectStore(t)
                     };
                     var r = i(n);
-                    return function (e, n) {
-                        return r.then((function (i) {
+                    return function(e, n) {
+                        return r.then((function(i) {
                             return n(i.transaction(t, e).objectStore(t))
                         }))
                     }
@@ -8668,8 +8680,8 @@
                         }
                     }
                     set(e, t) {
-                        return this.store ? function (e, t) {
-                            return (arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : a())("readwrite", (function (n) {
+                        return this.store ? function(e, t) {
+                            return (arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : a())("readwrite", (function(n) {
                                 return n.put(t, e), i(n.transaction)
                             }))
                         }(e, t, this.store).catch((() => null)) : Promise.resolve()
@@ -8679,20 +8691,21 @@
                         const t = (0, c._)({
                             timeout: 2e3
                         });
-                        return function (e) {
-                            return (arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : a())("readonly", (function (t) {
+                        return function(e) {
+                            return (arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : a())("readonly", (function(t) {
                                 return i(t.get(e))
                             }))
                         }(e, this.store).then(t.done).catch((() => t.done(null))), t.ready
                     }
                 }
-            }, 2665: (e, t, n) => {
+            },
+            2665: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Z: () => a
                 });
-                var i, r = function (e, t, n, i) {
-                        return new(n || (n = Promise))((function (r, s) {
+                var i, r = function(e, t, n, i) {
+                        return new(n || (n = Promise))((function(r, s) {
                             function a(e) {
                                 try {
                                     c(i.next(e))
@@ -8711,14 +8724,14 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                                e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(a, o)
                             }
                             c((i = i.apply(e, t || [])).next())
                         }))
                     },
-                    s = function (e, t, n, i) {
+                    s = function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -8727,7 +8740,7 @@
                     constructor(e) {
                         this.projectId = e, i.set(this, void 0), this.isLocal = !0;
                         try {
-                            ! function (e, t, n, i, r) {
+                            ! function(e, t, n, i, r) {
                                 if ("m" === i) throw new TypeError("Private method is not writable");
                                 if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                                 if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -8739,12 +8752,12 @@
                         return `gs-db-project-${this.projectId}-${e}`
                     }
                     set(e, t) {
-                        return r(this, void 0, void 0, (function* () {
+                        return r(this, void 0, void 0, (function*() {
                             s(this, i, "f").setItem(this.getKey(e), JSON.stringify(t))
                         }))
                     }
                     get(e) {
-                        return r(this, void 0, void 0, (function* () {
+                        return r(this, void 0, void 0, (function*() {
                             try {
                                 return JSON.parse(s(this, i, "f").getItem(this.getKey(e)) || "null")
                             } catch (e) {}
@@ -8752,7 +8765,8 @@
                     }
                 }
                 i = new WeakMap
-            }, 3793: (e, t, n) => {
+            },
+            3793: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Do: () => f,
@@ -8763,217 +8777,217 @@
                     U7: () => he
                 });
                 var i, r, s, a, o, c, l, h, d, u, p, f, m, v, y, g, w, b, P, E, T, S, _, A, I, C, k, R, O, D, N, x, L, F, M, j, U, $, G, B, q, V, W, z, Y, K, J, Z, X, H, Q, ee, te, ne, ie, re, se, ae, oe, ce, le, he, de, ue, pe, fe, me, ve, ye, ge, we = n(4809);
-                ! function (e) {
+                ! function(e) {
                     e.UnlockPlayerAchievement = "UnlockPlayerAchievement", e.PlayerSetAchievementProgress = "PlayerSetAchievementProgress", e.FetchPlayerAchievements = "FetchPlayerAchievements", e.SyncPlayer = "SyncPlayer", e.GetPlayer = "GetPlayer", e.FetchPlayerFields = "FetchPlayerFields", e.CheckPlayerCode = "CheckPlayerCode", e.PlayerFetchPlayers = "PlayerFetchPlayers", e.SyncPlayerPurchases = "SyncPlayerPurchases", e.PurchasePlayerPurchase = "PurchasePlayerPurchase", e.ConsumePlayerPurchase = "ConsumePlayerPurchase", e.UnsubscribePlayerSubscription = "UnsubscribePlayerSubscription", e.ResumePlayerSubscription = "ResumePlayerSubscription", e.FetchPlayerPurchases = "FetchPlayerPurchases", e.FindPlayerPurchase = "FindPlayerPurchase", e.PlayerGetPaymentLink = "PlayerGetPaymentLink", e.FetchPlayerProjectVariables = "FetchPlayerProjectVariables", e.FetchPlayerProjectConfig = "FetchPlayerProjectConfig", e.GivePlayerReward = "GivePlayerReward", e.FetchPlayerRewards = "FetchPlayerRewards", e.PlayerPublishRecord = "PlayerPublishRecord", e.FetchTop = "FetchTop", e.FetchPlayerRating = "FetchPlayerRating", e.UploadPlayerImage = "UploadPlayerImage", e.FetchPlayerImages = "FetchPlayerImages", e.UploadPlayerFile = "UploadPlayerFile", e.FetchPlayerFiles = "FetchPlayerFiles", e.FetchPlayerGamesCollection = "FetchPlayerGamesCollection", e.PlayerJoinEvent = "PlayerJoinEvent", e.PlayerRegisterOnScheduler = "PlayerRegisterOnScheduler", e.FetchPlayerDocument = "FetchPlayerDocument", e.PlayerCreateChannel = "PlayerCreateChannel", e.PlayerUpdateChannel = "PlayerUpdateChannel", e.PlayerDeleteChannel = "PlayerDeleteChannel", e.PlayerMutePlayerInChannel = "PlayerMutePlayerInChannel", e.PlayerUnmutePlayerInChannel = "PlayerUnmutePlayerInChannel", e.PlayerSendPersonalMessage = "PlayerSendPersonalMessage", e.PlayerSendFeedMessage = "PlayerSendFeedMessage", e.PlayerSendMessage = "PlayerSendMessage", e.PlayerEditMessage = "PlayerEditMessage", e.PlayerDeleteMessage = "PlayerDeleteMessage", e.PlayerFetchChannelMessages = "PlayerFetchChannelMessages", e.PlayerFetchPersonalMessages = "PlayerFetchPersonalMessages", e.PlayerFetchFeedMessages = "PlayerFetchFeedMessages", e.PlayerKickFromChannel = "PlayerKickFromChannel", e.PlayerFetchChannelMembers = "PlayerFetchChannelMembers", e.PlayerJoinChannel = "PlayerJoinChannel", e.PlayerLeaveChannel = "PlayerLeaveChannel", e.PlayerCancelJoinChannel = "PlayerCancelJoinChannel", e.PlayerAcceptJoinRequestToChannel = "PlayerAcceptJoinRequestToChannel", e.PlayerRejectJoinRequestToChannel = "PlayerRejectJoinRequestToChannel", e.PlayerFetchChannelJoinRequests = "PlayerFetchChannelJoinRequests", e.PlayerFetchSentJoinRequests = "PlayerFetchSentJoinRequests", e.PlayerSendInviteToChannel = "PlayerSendInviteToChannel", e.PlayerCancelInviteToChannel = "PlayerCancelInviteToChannel", e.PlayerAcceptInviteToChannel = "PlayerAcceptInviteToChannel", e.PlayerRejectInviteToChannel = "PlayerRejectInviteToChannel", e.PlayerFetchChannelInvites = "PlayerFetchChannelInvites", e.PlayerFetchPlayerSentInvites = "PlayerFetchPlayerSentInvites", e.PlayerFetchPlayerInvites = "PlayerFetchPlayerInvites", e.CheckPlayerUniqueValue = "CheckPlayerUniqueValue", e.RegisterPlayerUniqueValue = "RegisterPlayerUniqueValue", e.DeletePlayerUniqueValue = "DeletePlayerUniqueValue", e.CreateAchievement = "CreateAchievement", e.UpdateAchievement = "UpdateAchievement", e.DeleteAchievement = "DeleteAchievement", e.CreateAchievementsGroup = "CreateAchievementsGroup", e.UpdateAchievementsGroup = "UpdateAchievementsGroup", e.DeleteAchievementsGroup = "DeleteAchievementsGroup", e.AddAchievementToPlayer = "AddAchievementToPlayer", e.RemoveAchievementFromPlayer = "RemoveAchievementFromPlayer", e.FetchAchievements = "FetchAchievements", e.FetchAchievementsGroups = "FetchAchievementsGroups", e.FetchPlayersAchievements = "FetchPlayersAchievements", e.FetchAdminPlayerAchievements = "FetchAdminPlayerAchievements", e.FetchAchievementStats = "FetchAchievementStats", e.FetchChannelInvites = "FetchChannelInvites", e.SendInviteToChannel = "SendInviteToChannel", e.CancelInviteToChannel = "CancelInviteToChannel", e.FetchChannelJoinRequests = "FetchChannelJoinRequests", e.RejectJoinRequestToChannel = "RejectJoinRequestToChannel", e.FetchChannelMembers = "FetchChannelMembers", e.KickFromChannel = "KickFromChannel", e.AddToChannel = "AddToChannel", e.FetchChannelMessages = "FetchChannelMessages", e.FetchPrivateMessages = "FetchPrivateMessages", e.FetchFeedMessages = "FetchFeedMessages", e.CreateChannelMessage = "CreateChannelMessage", e.UpdateChannelMessage = "UpdateChannelMessage", e.DeleteChannelMessage = "DeleteChannelMessage", e.SendPersonalMessage = "SendPersonalMessage", e.SendFeedMessage = "SendFeedMessage", e.FetchPlayerMute = "FetchPlayerMute", e.MutePlayerInChannel = "MutePlayerInChannel", e.UnmutePlayerInChannel = "UnmutePlayerInChannel", e.FetchChannelTemplate = "FetchChannelTemplate", e.FetchChannelTemplates = "FetchChannelTemplates", e.CreateChannelTemplate = "CreateChannelTemplate", e.UpdateChannelTemplate = "UpdateChannelTemplate", e.DeleteChannelTemplate = "DeleteChannelTemplate", e.FetchChannels = "FetchChannels", e.FetchChannel = "FetchChannel", e.CreateChannel = "CreateChannel", e.UpdateChannel = "UpdateChannel", e.DeleteChannel = "DeleteChannel", e.FetchDocuments = "FetchDocuments", e.SaveDocument = "SaveDocument", e.FetchEvents = "FetchEvents", e.CheckEventExists = "CheckEventExists", e.FetchAdminPlayerEvents = "FetchAdminPlayerEvents", e.FetchEventsStats = "FetchEventsStats", e.UpsertEvent = "UpsertEvent", e.DeleteEvent = "DeleteEvent", e.AddEventToPlayer = "AddEventToPlayer", e.RemoveEventFromPlayer = "RemoveEventFromPlayer", e.FetchFiles = "FetchFiles", e.UploadFile = "UploadFile", e.UpdateFile = "UpdateFile", e.DeleteFiles = "DeleteFiles", e.FetchGamesCollections = "FetchGamesCollections", e.CreateGamesCollection = "CreateGamesCollection", e.UpdateGamesCollection = "UpdateGamesCollection", e.DeleteGamesCollection = "DeleteGamesCollection", e.FetchImages = "FetchImages", e.UploadImage = "UploadImage", e.UpdateImage = "UpdateImage", e.DeleteImages = "DeleteImages", e.FetchLeaderboards = "FetchLeaderboards", e.FetchLeaderboard = "FetchLeaderboard", e.FetchLeaderboardVariant = "FetchLeaderboardVariant", e.FetchLeaderboardsVariants = "FetchLeaderboardsVariants", e.FetchLeaderboardRecords = "FetchLeaderboardRecords", e.FetchAdminPlayerRecords = "FetchAdminPlayerRecords", e.CreateLeaderboard = "CreateLeaderboard", e.UpdateLeaderboard = "UpdateLeaderboard", e.DeleteLeaderboard = "DeleteLeaderboard", e.DeleteLeaderboardVariant = "DeleteLeaderboardVariant", e.UpdateLeaderboardRecord = "UpdateLeaderboardRecord", e.DeleteLeaderboardRecord = "DeleteLeaderboardRecord", e.DeleteAdminPlayerRecords = "DeleteAdminPlayerRecords", e.FetchModel = "FetchModel", e.FetchModels = "FetchModels", e.UpdateModel = "UpdateModel", e.FetchPlatforms = "FetchPlatforms", e.AddPlatform = "AddPlatform", e.UpdatePlatform = "UpdatePlatform", e.UpdatePlatformBanners = "UpdatePlatformBanners", e.UpdatePlatformAds = "UpdatePlatformAds", e.DeletePlatform = "DeletePlatform", e.FindPlayerStateById = "FindPlayerStateByID", e.FindPlayerById = "FindPlayerByID", e.FetchPlayers = "FetchPlayers", e.FetchPlayersReports = "FetchPlayersReports", e.UpdatePlayer = "UpdatePlayer", e.DeletePlayer = "DeletePlayer", e.RestorePlayer = "RestorePlayer", e.BanPlayer = "BanPlayer", e.UnbanPlayer = "UnbanPlayer", e.RestorePlayerFromArchive = "RestorePlayerFromArchive", e.UpdatePlayerModifiedAt = "UpdatePlayerModifiedAt", e.FetchPlayersPurchases = "FetchPlayersPurchases", e.FetchAdminPlayerPurchases = "FetchAdminPlayerPurchases", e.FetchProducts = "FetchProducts", e.FetchPlayerPurchasesStats = "FetchPlayerPurchasesStats", e.GetPlayerPurchase = "GetPlayerPurchase", e.AddPurchaseToPlayer = "AddPurchaseToPlayer", e.UpdatePlayerPurchase = "UpdatePlayerPurchase", e.RemovePurchaseFromPlayer = "RemovePurchaseFromPlayer", e.CreateProduct = "CreateProduct", e.UpdateProduct = "UpdateProduct", e.DeleteProduct = "DeleteProduct", e.UpsertProjectVariable = "UpsertProjectVariable", e.DeleteProjectVariable = "DeleteProjectVariable", e.FetchRewards = "FetchRewards", e.FetchPlayersRewards = "FetchPlayersRewards", e.FetchAdminPlayerRewards = "FetchAdminPlayerRewards", e.CheckRewardExists = "CheckRewardExists", e.FetchRewardStats = "FetchRewardStats", e.CreateReward = "CreateReward", e.UpdateReward = "UpdateReward", e.DeleteReward = "DeleteReward", e.AddRewardToPlayer = "AddRewardToPlayer", e.SubstractRewardFromPlayer = "SubstractRewardFromPlayer", e.DropRewardsForPlayer = "DropRewardsForPlayer", e.FetchSchedulers = "FetchSchedulers", e.FetchSchedulerTriggers = "FetchSchedulerTriggers", e.CheckSchedulerExists = "CheckSchedulerExists", e.FetchPlayersSchedulers = "FetchPlayersSchedulers", e.UpsertScheduler = "UpsertScheduler", e.SaveSchedulerTriggersOnDay = "SaveSchedulerTriggersOnDay", e.DeleteScheduler = "DeleteScheduler", e.AddSchedulerToPlayer = "AddSchedulerToPlayer", e.RemoveSchedulerFromPlayer = "RemoveSchedulerFromPlayer", e.UpdatePlayerScheduler = "UpdatePlayerScheduler", e.FetchSegments = "FetchSegments", e.CreateSegment = "CreateSegment", e.UpdateSegment = "UpdateSegment", e.DeleteSegment = "DeleteSegment", e.FetchCommonTriggers = "FetchCommonTriggers", e.FetchAdminPlayerTriggers = "FetchAdminPlayerTriggers", e.CheckTriggerExists = "CheckTriggerExists", e.FetchTriggersStats = "FetchTriggersStats", e.CreateCommonTrigger = "CreateCommonTrigger", e.UpdateCommonTrigger = "UpdateCommonTrigger", e.DeleteCommonTrigger = "DeleteCommonTrigger", e.ActivateTriggerForPlayer = "ActivateTriggerForPlayer", e.DeactivateTriggerForPlayer = "DeactivateTriggerForPlayer", e.FetchAdsStats = "FetchAdsStats", e.FetchDwmStats = "FetchDWMStats", e.FetchFilesStats = "FetchFilesStats", e.FetchHostingStats = "FetchHostingStats", e.FetchImagesStats = "FetchImagesStats", e.FetchOnlineStats = "FetchOnlineStats", e.FetchStatsRequests = "FetchStatsRequests", e.FetchRetentionStats = "FetchRetentionStats", e.FetchSessionsStats = "FetchSessionsStats", e.FetchUniqueValues = "FetchUniqueValues", e.CreateUniqueValue = "CreateUniqueValue", e.UpdateUniqueValue = "UpdateUniqueValue", e.DeleteUniqueValue = "DeleteUniqueValue", e.FetchUniqueValuesRules = "FetchUniqueValuesRules", e.CreateUniqueValueRule = "CreateUniqueValueRule", e.UpdateUniqueValueRule = "UpdateUniqueValueRule", e.DeleteUniqueValueRule = "DeleteUniqueValueRule", e.PlayerAiCheckCensor = "PlayerAICheckCensor", e.AiCensor = "AICensor"
                 }(i || (i = {})),
-                function (e) {
+                function(e) {
                     e.Skip = "SKIP", e.Analytics = "ANALYTICS", e.Ai = "AI"
                 }(r || (r = {})),
-                function (e) {
+                function(e) {
                     e.Any = "ANY", e.Player = "PLAYER", e.Admin = "ADMIN", e.Developer = "DEVELOPER", e.Analytic = "ANALYTIC", e.ContentManager = "CONTENT_MANAGER", e.InternalDeveloper = "INTERNAL_DEVELOPER", e.InternalModerator = "INTERNAL_MODERATOR", e.Marketer = "MARKETER"
                 }(s || (s = {})),
-                function (e) {
+                function(e) {
                     e.Achievement = "ACHIEVEMENT", e.Platform = "PLATFORM", e.Dev = "DEV", e.Date = "DATE", e.Project = "PROJECT"
                 }(a || (a = {})),
-                function (e) {
+                function(e) {
                     e.Achievement = "ACHIEVEMENT", e.Platform = "PLATFORM", e.Dev = "DEV", e.Date = "DATE", e.Total = "TOTAL"
                 }(o || (o = {})),
-                function (e) {
+                function(e) {
                     e.YandexSimpleMonetization = "YandexSimpleMonetization", e.Adfox = "ADFOX", e.Rtb = "RTB", e.Gpt = "GPT", e.Adsgram = "ADSGRAM", e.Tmads = "TMADS"
                 }(c || (c = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Platform = "PLATFORM", e.BannerType = "BANNER_TYPE", e.Project = "PROJECT"
                 }(l || (l = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Platform = "PLATFORM", e.BannerType = "BANNER_TYPE", e.Requests = "REQUESTS", e.Displays = "DISPLAYS", e.Errors = "ERRORS", e.FillRate = "FILL_RATE", e.Revenue = "REVENUE"
                 }(h || (h = {})),
-                function (e) {
+                function(e) {
                     e.GamepushLlc = "GAMEPUSH_LLC", e.GamepushFzco = "GAMEPUSH_FZCO"
                 }(d || (d = {})),
-                function (e) {
+                function(e) {
                     e.Xsolla = "XSOLLA"
                 }(u || (u = {})),
-                function (e) {
+                function(e) {
                     e.Preloader = "PRELOADER", e.Fullscreen = "FULLSCREEN", e.Rewarded = "REWARDED", e.Sticky = "STICKY"
                 }(p || (p = {})),
-                function (e) {
+                function(e) {
                     e.Reward = "REWARD", e.Achievement = "ACHIEVEMENT", e.Product = "PRODUCT"
                 }(f || (f = {})),
-                function (e) {
+                function(e) {
                     e.Awaits = "AWAITS", e.Running = "RUNNING", e.Succeed = "SUCCEED", e.Failed = "FAILED"
                 }(m || (m = {})),
-                function (e) {
+                function(e) {
                     e.Eq = "EQ", e.Ne = "NE", e.Lt = "LT", e.Gt = "GT", e.Lte = "LTE", e.Gte = "GTE"
                 }(v || (v = {})),
-                function (e) {
+                function(e) {
                     e.PlayerStat = "PLAYER_STAT", e.EntityStat = "ENTITY_STAT", e.PlayerField = "PLAYER_FIELD"
                 }(y || (y = {})),
-                function (e) {
+                function(e) {
                     e.Rub = "RUB", e.Usd = "USD", e.Eur = "EUR", e.Aed = "AED", e.Inr = "INR", e.Krw = "KRW", e.Gbp = "GBP", e.Jpy = "JPY", e.Cny = "CNY", e.Try = "TRY", e.Brl = "BRL", e.Idr = "IDR"
                 }(g || (g = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Platform = "PLATFORM", e.Project = "PROJECT"
                 }(w || (w = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Platform = "PLATFORM", e.StickyFactor = "STICKY_FACTOR", e.Dau = "DAU", e.Wau = "WAU", e.Mau = "MAU", e.NewUsersDay = "NEW_USERS_DAY", e.NewUsersWeek = "NEW_USERS_WEEK", e.NewUsersMonth = "NEW_USERS_MONTH"
                 }(b || (b = {})),
-                function (e) {
+                function(e) {
                     e.AdsRevenueSum = "AdsRevenueSum", e.PurchasesRevenueSum = "PurchasesRevenueSum", e.TotalRevenue = "TotalRevenue", e.DeveloperRevenue = "DeveloperRevenue"
                 }(P || (P = {})),
-                function (e) {
+                function(e) {
                     e.Purchases = "Purchases", e.Ads = "Ads"
                 }(E || (E = {})),
-                function (e) {
+                function(e) {
                     e.Raw = "RAW", e.Txt = "TXT", e.Html = "HTML"
                 }(T || (T = {})),
-                function (e) {
+                function(e) {
                     e.PlayerPrivacyPolicy = "PLAYER_PRIVACY_POLICY"
                 }(S || (S = {})),
-                function (e) {
+                function(e) {
                     e.Name = "NAME", e.Description = "DESCRIPTION", e.Review = "REVIEW", e.FullDescription = "FULL_DESCRIPTION", e.HowToPlay = "HOW_TO_PLAY", e.ShareText = "SHARE_TEXT", e.DocumentContent = "DOCUMENT_CONTENT"
                 }(_ || (_ = {})),
-                function (e) {
+                function(e) {
                     e.Image = "IMAGE", e.File = "FILE", e.Channel = "CHANNEL", e.ChannelMessage = "CHANNEL_MESSAGE", e.ChannelTemplate = "CHANNEL_TEMPLATE", e.Achievement = "ACHIEVEMENT", e.AchievementsGroup = "ACHIEVEMENTS_GROUP", e.Product = "PRODUCT", e.Project = "PROJECT", e.Leaderboard = "LEADERBOARD", e.Reward = "REWARD", e.Trigger = "TRIGGER", e.Events = "EVENTS", e.Document = "DOCUMENT", e.GamesCollections = "GAMES_COLLECTIONS"
                 }(A || (A = {})),
-                function (e) {
+                function(e) {
                     e.Event = "EVENT", e.Platform = "PLATFORM", e.Dev = "DEV", e.Date = "DATE", e.Project = "PROJECT"
                 }(I || (I = {})),
-                function (e) {
+                function(e) {
                     e.Event = "EVENT", e.Platform = "PLATFORM", e.Dev = "DEV", e.Date = "DATE", e.Count = "COUNT"
                 }(C || (C = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Plan = "PLAN", e.Project = "PROJECT"
                 }(k || (k = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Plan = "PLAN", e.Count = "COUNT", e.Size = "SIZE"
                 }(R || (R = {})),
-                function (e) {
+                function(e) {
                     e.Any = "ANY", e.Portrait = "PORTRAIT", e.Landscape = "LANDSCAPE"
                 }(O || (O = {})),
-                function (e) {
+                function(e) {
                     e.Day = "DAY", e.Month = "MONTH", e.Year = "YEAR"
                 }(D || (D = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Plan = "PLAN", e.Project = "PROJECT"
                 }(N || (N = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Plan = "PLAN", e.Count = "COUNT"
                 }(x || (x = {})),
-                function (e) {
+                function(e) {
                     e.GameIcon = "GAME_ICON", e.GameIcon4X3 = "GAME_ICON4X3", e.GameIcon3X4 = "GAME_ICON3X4", e.GameCover = "GAME_COVER", e.GameCoverPortrait = "GAME_COVER_PORTRAIT", e.GameBackground = "GAME_BACKGROUND", e.GameScreenshotAlbum = "GAME_SCREENSHOT_ALBUM", e.GameScreenshotPortrait = "GAME_SCREENSHOT_PORTRAIT"
                 }(L || (L = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Plan = "PLAN", e.Project = "PROJECT"
                 }(F || (F = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Plan = "PLAN", e.Count = "COUNT"
                 }(M || (M = {})),
-                function (e) {
+                function(e) {
                     e.En = "EN", e.Fr = "FR", e.It = "IT", e.De = "DE", e.Es = "ES", e.Zh = "ZH", e.Pt = "PT", e.Ko = "KO", e.Ja = "JA", e.Ru = "RU", e.Tr = "TR", e.Ar = "AR", e.Hi = "HI", e.Id = "ID"
                 }(j || (j = {})),
-                function (e) {
+                function(e) {
                     e.Android = "ANDROID"
                 }(U || (U = {})),
-                function (e) {
+                function(e) {
                     e.Add = "ADD", e.Remove = "REMOVE", e.Set = "SET"
                 }($ || ($ = {})),
-                function (e) {
+                function(e) {
                     e.PlayerField = "PLAYER_FIELD"
                 }(G || (G = {})),
-                function (e) {
+                function(e) {
                     e.InvitationSent = "INVITATION_SENT", e.InProject = "IN_PROJECT"
                 }(B || (B = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Platform = "PLATFORM", e.Project = "PROJECT"
                 }(q || (q = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Platform = "PLATFORM", e.Avg = "AVG", e.Peak = "PEAK"
                 }(V || (V = {})),
-                function (e) {
+                function(e) {
                     e.New = "NEW", e.Paid = "PAID"
                 }(W || (W = {})),
-                function (e) {
+                function(e) {
                     e.Company = "COMPANY", e.Individual = "INDIVIDUAL", e.SoleProprietor = "SOLE_PROPRIETOR"
                 }(z || (z = {})),
-                function (e) {
+                function(e) {
                     e.Xsolla = "XSOLLA"
                 }(Y || (Y = {})),
-                function (e) {
+                function(e) {
                     e.Y8 = "Y8", e.Fotostrana = "FOTOSTRANA", e.JioGames = "JIO_GAMES", e.Telegram = "TELEGRAM", e.GooglePlay = "GOOGLE_PLAY", e.Yandex = "YANDEX", e.Vk = "VK", e.Ok = "OK", e.GameMonetize = "GAME_MONETIZE", e.GameDistribution = "GAME_DISTRIBUTION", e.CrazyGames = "CRAZY_GAMES", e.Smartmarket = "SMARTMARKET", e.Fb = "FB", e.Poki = "POKI", e.Gamepix = "GAMEPIX", e.VkPlay = "VK_PLAY", e.WgPlayground = "WG_PLAYGROUND", e.Beeline = "BEELINE", e.Kongregate = "KONGREGATE", e.Playdeck = "PLAYDECK", e.Custom = "CUSTOM", e.AppGallery = "APP_GALLERY", e.GalaxyStore = "GALAXY_STORE", e.OneStore = "ONE_STORE", e.AmazonAppstore = "AMAZON_APPSTORE", e.XiaomiGetapps = "XIAOMI_GETAPPS", e.Aptoide = "APTOIDE", e.Rustore = "RUSTORE", e.Android = "ANDROID", e.None = "NONE"
                 }(K || (K = {})),
-                function (e) {
+                function(e) {
                     e.Local = "LOCAL", e.Platform = "PLATFORM", e.Cloud = "CLOUD"
                 }(J || (J = {})),
-                function (e) {
+                function(e) {
                     e.Player = "PLAYER", e.Product = "PRODUCT", e.Platform = "PLATFORM", e.Consumed = "CONSUMED", e.Dev = "DEV", e.Date = "DATE", e.Project = "PROJECT"
                 }(Z || (Z = {})),
-                function (e) {
+                function(e) {
                     e.Player = "PLAYER", e.Product = "PRODUCT", e.Platform = "PLATFORM", e.Consumed = "CONSUMED", e.Dev = "DEV", e.Date = "DATE", e.Total = "TOTAL", e.Price = "PRICE"
                 }(X || (X = {})),
-                function (e) {
+                function(e) {
                     e.Common = "COMMON", e.Uncommon = "UNCOMMON", e.Rare = "RARE", e.Epic = "EPIC", e.Legendary = "LEGENDARY", e.Mythic = "MYTHIC"
                 }(H || (H = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Platform = "PLATFORM", e.Project = "PROJECT"
                 }(Q || (Q = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Platform = "PLATFORM", e.RetentionDay = "RETENTION_DAY", e.RetentionWeek = "RETENTION_WEEK", e.RetentionMonth = "RETENTION_MONTH", e.NewUsersDay = "NEW_USERS_DAY", e.NewUsersWeek = "NEW_USERS_WEEK", e.NewUsersMonth = "NEW_USERS_MONTH", e.ReturnedUsersDay = "RETURNED_USERS_DAY", e.ReturnedUsersWeek = "RETURNED_USERS_WEEK", e.ReturnedUsersMonth = "RETURNED_USERS_MONTH"
                 }(ee || (ee = {})),
-                function (e) {
+                function(e) {
                     e.Common = "COMMON"
                 }(te || (te = {})),
-                function (e) {
+                function(e) {
                     e.Reward = "REWARD", e.Platform = "PLATFORM", e.Dev = "DEV", e.Date = "DATE", e.Project = "PROJECT"
                 }(ne || (ne = {})),
-                function (e) {
+                function(e) {
                     e.Reward = "REWARD", e.Platform = "PLATFORM", e.Dev = "DEV", e.Date = "DATE", e.GivenCount = "GIVEN_COUNT", e.AcceptedCount = "ACCEPTED_COUNT"
                 }(ie || (ie = {})),
-                function (e) {
+                function(e) {
                     e.ActiveDays = "ACTIVE_DAYS", e.ActiveDaysConsecutive = "ACTIVE_DAYS_CONSECUTIVE"
                 }(re || (re = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Platform = "PLATFORM", e.Project = "PROJECT"
                 }(se || (se = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Platform = "PLATFORM", e.SessionTime = "SESSION_TIME", e.SessionsCount = "SESSIONS_COUNT", e.InGameTime = "IN_GAME_TIME"
                 }(ae || (ae = {})),
-                function (e) {
+                function(e) {
                     e.Px = "PX", e.Percent = "PERCENT"
                 }(oe || (oe = {})),
-                function (e) {
+                function(e) {
                     e.Asc = "ASC", e.Desc = "DESC"
                 }(ce || (ce = {})),
-                function (e) {
+                function(e) {
                     e.Account = "Account", e.Project = "Project", e.Platform = "Platform"
                 }(le || (le = {})),
-                function (e) {
+                function(e) {
                     e.Desktop = "Desktop", e.Ios = "IOS", e.Android = "Android", e.Tv = "TV"
                 }(he || (he = {})),
-                function (e) {
+                function(e) {
                     e.Honorary = "HONORARY", e.Release = "RELEASE", e.Absolute = "ABSOLUTE", e.Start = "START", e.Advanced = "ADVANCED", e.Pro = "PRO", e.Enterprise = "ENTERPRISE", e.Premium = "PREMIUM", e.Unlimited = "UNLIMITED"
                 }(de || (de = {})),
-                function (e) {
+                function(e) {
                     e.Common = "COMMON", e.Scheduler = "SCHEDULER", e.Event = "EVENT"
                 }(ue || (ue = {})),
-                function (e) {
+                function(e) {
                     e.Trigger = "TRIGGER", e.Type = "TYPE", e.Entity = "ENTITY", e.Platform = "PLATFORM", e.Dev = "DEV", e.Date = "DATE", e.Project = "PROJECT"
                 }(pe || (pe = {})),
-                function (e) {
+                function(e) {
                     e.Trigger = "TRIGGER", e.Type = "TYPE", e.Entity = "ENTITY", e.Platform = "PLATFORM", e.Dev = "DEV", e.Date = "DATE", e.Count = "COUNT"
                 }(fe || (fe = {})),
-                function (e) {
+                function(e) {
                     e.Player = "PLAYER"
                 }(me || (me = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Platform = "PLATFORM", e.Plan = "PLAN", e.Action = "ACTION", e.Project = "PROJECT"
                 }(ve || (ve = {})),
-                function (e) {
+                function(e) {
                     e.Date = "DATE", e.Action = "ACTION", e.Requests = "REQUESTS", e.Plan = "PLAN", e.Platform = "PLATFORM"
                 }(ye || (ye = {})),
-                function (e) {
+                function(e) {
                     e.PurchasePlayerPurchase = "PurchasePlayerPurchase", e.ConsumePlayerPurchase = "ConsumePlayerPurchase", e.ExpirePlayerSubscription = "ExpirePlayerSubscription", e.CancelPlayerSubscription = "CancelPlayerSubscription", e.ResumePlayerSubscription = "ResumePlayerSubscription", e.UnlockPlayerAchievement = "UnlockPlayerAchievement", e.PlayerSetAchievementProgress = "PlayerSetAchievementProgress", e.PlayerSendInviteToChannel = "PlayerSendInviteToChannel", e.PlayerCancelInviteToChannel = "PlayerCancelInviteToChannel", e.PlayerAcceptInviteToChannel = "PlayerAcceptInviteToChannel", e.PlayerRejectInviteToChannel = "PlayerRejectInviteToChannel", e.PlayerJoinChannel = "PlayerJoinChannel", e.PlayerLeaveChannel = "PlayerLeaveChannel", e.PlayerCancelJoinChannel = "PlayerCancelJoinChannel", e.PlayerAcceptJoinRequestToChannel = "PlayerAcceptJoinRequestToChannel", e.PlayerRejectJoinRequestToChannel = "PlayerRejectJoinRequestToChannel", e.PlayerKickFromChannel = "PlayerKickFromChannel", e.PlayerSendPersonalMessage = "PlayerSendPersonalMessage", e.PlayerSendFeedMessage = "PlayerSendFeedMessage", e.PlayerSendMessage = "PlayerSendMessage", e.PlayerEditMessage = "PlayerEditMessage", e.PlayerDeleteMessage = "PlayerDeleteMessage", e.PlayerMutePlayerInChannel = "PlayerMutePlayerInChannel", e.PlayerUnmutePlayerInChannel = "PlayerUnmutePlayerInChannel", e.PlayerCreateChannel = "PlayerCreateChannel", e.PlayerUpdateChannel = "PlayerUpdateChannel", e.PlayerDeleteChannel = "PlayerDeleteChannel", e.UploadPlayerFile = "UploadPlayerFile", e.UploadPlayerImage = "UploadPlayerImage", e.PlayerPublishRecord = "PlayerPublishRecord", e.SyncPlayer = "SyncPlayer", e.GetPlayer = "GetPlayer", e.GivePlayerReward = "GivePlayerReward", e.RegisterPlayerUniqueValue = "RegisterPlayerUniqueValue", e.DeletePlayerUniqueValue = "DeletePlayerUniqueValue"
                 }(ge || (ge = {}));
-                const be = we.ZP `
+                const be = we.ZP`
     fragment imageAsset on Asset {
   __typename
   ... on ImageAsset {
@@ -8990,7 +9004,7 @@
   }
 }
     `,
-                    Pe = we.ZP `
+                    Pe = we.ZP`
     fragment project on Project {
   id
   name
@@ -9022,14 +9036,15 @@
   }
 }
     ${be}`;
-                we.ZP `
+                we.ZP`
     mutation createProject($input: CreateProjectInput!) {
   result: CreateProject(input: $input) {
     ...project
   }
 }
     ${Pe}`
-            }, 6438: (e, t, n) => {
+            },
+            6438: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Z: () => s
@@ -9044,7 +9059,8 @@
                         e.done(0 === t.offsetHeight), document.body.removeChild(t)
                     }), 10), e.ready
                 }
-            }, 1049: (e, t, n) => {
+            },
+            1049: (e, t, n) => {
                 "use strict";
 
                 function i(e, t, n) {
@@ -9053,7 +9069,8 @@
                 n.d(t, {
                     Z: () => i
                 })
-            }, 5239: (e, t, n) => {
+            },
+            5239: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     X: () => i,
@@ -9061,11 +9078,11 @@
                 });
 
                 function i(e) {
-                    return t = this, n = void 0, r = function* () {
+                    return t = this, n = void 0, r = function*() {
                         const t = (new TextEncoder).encode(e),
                             n = yield crypto.subtle.digest("SHA-256", t);
                         return Array.from(new Uint8Array(n)).map((e => e.toString(16).padStart(2, "0"))).join("")
-                    }, new((i = void 0) || (i = Promise))((function (e, s) {
+                    }, new((i = void 0) || (i = Promise))((function(e, s) {
                         function a(e) {
                             try {
                                 c(r.next(e))
@@ -9084,7 +9101,7 @@
 
                         function c(t) {
                             var n;
-                            t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function (e) {
+                            t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function(e) {
                                 e(n)
                             }))).then(a, o)
                         }
@@ -9097,7 +9114,8 @@
                     for (var t = 0, n = 9; t < e.length;) n = Math.imul(n ^ e.charCodeAt(t++), 387420489);
                     return (n ^ n >>> 9).toString(16)
                 }
-            }, 6480: (e, t, n) => {
+            },
+            6480: (e, t, n) => {
                 "use strict";
 
                 function i(e, t) {
@@ -9124,7 +9142,8 @@
                     wQ: () => s,
                     q3: () => a
                 })
-            }, 1961: (e, t, n) => {
+            },
+            1961: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     vf: () => r,
@@ -9133,12 +9152,12 @@
                 var i = n(9503);
 
                 function r(e) {
-                    return t = this, i = void 0, s = function* () {
+                    return t = this, i = void 0, s = function*() {
                         const {
                             default: t
                         } = yield n(6958)(`./${e}.json`);
                         return t
-                    }, new((r = void 0) || (r = Promise))((function (e, n) {
+                    }, new((r = void 0) || (r = Promise))((function(e, n) {
                         function a(e) {
                             try {
                                 c(s.next(e))
@@ -9157,7 +9176,7 @@
 
                         function c(t) {
                             var n;
-                            t.done ? e(t.value) : (n = t.value, n instanceof r ? n : new r((function (e) {
+                            t.done ? e(t.value) : (n = t.value, n instanceof r ? n : new r((function(e) {
                                 e(n)
                             }))).then(a, o)
                         }
@@ -9170,7 +9189,8 @@
                     const e = navigator.language.slice(0, 2).toLowerCase();
                     return Object.values(i.Uo).includes(e) ? e : null
                 }
-            }, 4917: (e, t, n) => {
+            },
+            4917: (e, t, n) => {
                 "use strict";
 
                 function i({
@@ -9193,7 +9213,8 @@
                 n.d(t, {
                     Z: () => i
                 })
-            }, 6558: (e, t, n) => {
+            },
+            6558: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Yd: () => i,
@@ -9231,7 +9252,8 @@
                 }
                 let r = new i;
                 const s = e => r = e
-            }, 1437: (e, t, n) => {
+            },
+            1437: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     p: () => r
@@ -9243,7 +9265,8 @@
                         n = new Image;
                     return n.onload = () => t.done(n), n.onerror = () => t.abort(), n.onabort = () => t.abort(), n.src = e, t.ready
                 }
-            }, 3357: (e, t, n) => {
+            },
+            3357: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     q: () => r
@@ -9255,7 +9278,8 @@
                     isPlatformSave: e === i.pQ.Platform,
                     format: e
                 })
-            }, 6041: (e, t, n) => {
+            },
+            6041: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Z: () => a
@@ -9267,7 +9291,7 @@
                 function a(e, t, n, a) {
                     const o = r.exec(e);
                     if (!o) return e;
-                    const [c, l] = function (e) {
+                    const [c, l] = function(e) {
                         const t = s.exec(e);
                         return t ? [Number(t[1]) || 0, Number(t[2]) || 0] : [0, 0]
                     }(e);
@@ -9275,7 +9299,8 @@
                     const [, h, , , , d] = o;
                     return `https://cdn.${h}.com/static/${t||"-"}x${n||"-"}${a?"crop":""}/${d}`
                 }
-            }, 8866: (e, t, n) => {
+            },
+            8866: (e, t, n) => {
                 "use strict";
 
                 function i(e) {
@@ -9284,7 +9309,8 @@
                 n.d(t, {
                     Z: () => i
                 })
-            }, 4835: (e, t, n) => {
+            },
+            4835: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Z: () => i
@@ -9297,7 +9323,8 @@
                         trophy: "https://gs.eponesh.com/sdk/static/icons/reward.png"
                     }
                 }
-            }, 8293: (e, t, n) => {
+            },
+            8293: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     s: () => r,
@@ -9324,31 +9351,35 @@
                         t || n.abort(`Timeout ${e}ms exceeded`)
                     }), e), n.ready = r, n
                 }
-            }, 3607: (e, t, n) => {
+            },
+            3607: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     _X: () => i._
                 }), n(233), n(264);
                 var i = n(8293)
-            }, 5942: (e, t, n) => {
+            },
+            5942: (e, t, n) => {
                 "use strict";
                 var i;
                 n.d(t, {
                         z: () => i
                     }),
-                    function (e) {
+                    function(e) {
                         e.TELEGRAM = "TELEGRAM", e.YANDEX = "YANDEX", e.VK = "VK", e.OK = "OK", e.GAME_MONETIZE = "GAME_MONETIZE", e.GAME_DISTRIBUTION = "GAME_DISTRIBUTION", e.WG_PLAYGROUND = "WG_PLAYGROUND", e.CRAZY_GAMES = "CRAZY_GAMES", e.SMARTMARKET = "SMARTMARKET", e.GAMEPIX = "GAMEPIX", e.POKI = "POKI", e.VK_PLAY = "VK_PLAY", e.BEELINE = "BEELINE", e.KONGREGATE = "KONGREGATE", e.CUSTOM = "CUSTOM", e.PLAYDECK = "PLAYDECK", e.GOOGLE_PLAY = "GOOGLE_PLAY", e.APP_GALLERY = "APP_GALLERY", e.GALAXY_STORE = "GALAXY_STORE", e.ONE_STORE = "ONE_STORE", e.AMAZON_APPSTORE = "AMAZON_APPSTORE", e.XIAOMI_GETAPPS = "XIAOMI_GETAPPS", e.APTOIDE = "APTOIDE", e.RUSTORE = "RUSTORE", e.ANDROID = "ANDROID", e.FOTOSTRANA = "FOTOSTRANA", e.Y8 = "Y8", e.PARTNER = "PARTNER", e.COOLMATH = "COOLMATH", e.NONE = "NONE"
                     }(i || (i = {}))
-            }, 1438: (e, t, n) => {
+            },
+            1438: (e, t, n) => {
                 "use strict";
                 var i;
                 n.d(t, {
                         i: () => i
                     }),
-                    function (e) {
+                    function(e) {
                         e.New = "NEW", e.Paid = "PAID"
                     }(i || (i = {}))
-            }, 180: (e, t, n) => {
+            },
+            180: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     $: () => i,
@@ -9361,28 +9392,28 @@
                     iA: () => p
                 });
                 var i, r, s, a, o, c, l, h, d = n(5942);
-                ! function (e) {
+                ! function(e) {
                     e.PRELOADER = "PRELOADER", e.FULLSCREEN = "FULLSCREEN", e.REWARDED = "REWARDED", e.STICKY = "STICKY"
                 }(i || (i = {})),
-                function (e) {
+                function(e) {
                     e.YandexSimpleMonetization = "YandexSimpleMonetization", e.Adfox = "ADFOX", e.Gpt = "GPT", e.Rtb = "RTB", e.Advertonic = "ADVERTONIC", e.TmAds = "TMADS", e.Adsgram = "ADSGRAM"
                 }(r || (r = {})),
-                function (e) {
+                function(e) {
                     e.top = "TOP", e.bottom = "BOTTOM"
                 }(s || (s = {})),
-                function (e) {
+                function(e) {
                     e.Local = "LOCAL", e.Platform = "PLATFORM", e.Cloud = "CLOUD"
                 }(a || (a = {})),
-                function (e) {
+                function(e) {
                     e.External = "EXTERNAL", e.Internal = "INTERNAL"
                 }(o || (o = {})),
-                function (e) {
+                function(e) {
                     e.External = "EXTERNAL", e.Internal = "INTERNAL"
                 }(c || (c = {})),
-                function (e) {
+                function(e) {
                     e.External = "EXTERNAL", e.Internal = "INTERNAL", e.Pikabu = "PIKABU", e.ExternalToken = "EXTRANAL_TOKEN"
                 }(l || (l = {})),
-                function (e) {
+                function(e) {
                     e.Xsolla = "XSOLLA"
                 }(h || (h = {}));
                 const u = () => ({
@@ -9527,7 +9558,8 @@
                         ymCounterId: 0,
                         gtagCounterId: ""
                     }
-            }, 9503: (e, t, n) => {
+            },
+            9503: (e, t, n) => {
                 "use strict";
                 n.d(t, {
                     Uo: () => i,
@@ -9537,7 +9569,7 @@
                 });
                 var i, r = n(180),
                     s = n(3793);
-                ! function (e) {
+                ! function(e) {
                     e.EN = "en", e.FR = "fr", e.IT = "it", e.DE = "de", e.ES = "es", e.ZH = "zh", e.PT = "pt", e.KO = "ko", e.JA = "ja", e.RU = "ru", e.TR = "tr", e.AR = "ar", e.HI = "hi", e.ID = "id"
                 }(i || (i = {}));
                 const a = {
@@ -9666,7 +9698,8 @@
                             }
                         }
                     }
-            }, 4618: (e, t, n) => {
+            },
+            4618: (e, t, n) => {
                 var i = {
                     "./ar.json": [9582, 7808],
                     "./de.json": [3268, 9459],
@@ -9694,7 +9727,8 @@
                     return n.e(t[1]).then((() => n.t(r, 3)))
                 }
                 r.keys = () => Object.keys(i), r.id = 4618, e.exports = r
-            }, 6958: (e, t, n) => {
+            },
+            6958: (e, t, n) => {
                 var i = {
                     "./ar.json": [6278, 7808],
                     "./de.json": [9717, 9459],
@@ -9739,7 +9773,8 @@
                 }
                 r.keys = () => Object.keys(i), r.id = 6958, e.exports = r
             }
-    }, s = {};
+        },
+        s = {};
 
     function a(e) {
         var t = s[e];
@@ -9751,14 +9786,14 @@
         };
         return r[e].call(n.exports, n, n.exports, a), n.loaded = !0, n.exports
     }
-    a.m = r, a.amdD = function () {
+    a.m = r, a.amdD = function() {
         throw new Error("define cannot be used indirect")
     }, a.amdO = {}, a.n = e => {
         var t = e && e.__esModule ? () => e.default : () => e;
         return a.d(t, {
             a: t
         }), t
-    }, t = Object.getPrototypeOf ? e => Object.getPrototypeOf(e) : e => e.__proto__, a.t = function (n, i) {
+    }, t = Object.getPrototypeOf ? e => Object.getPrototypeOf(e) : e => e.__proto__, a.t = function(n, i) {
         if (1 & i && (n = this(n)), 8 & i) return n;
         if ("object" == typeof n && n) {
             if (4 & i && n.__esModule) return n;
@@ -9835,7 +9870,7 @@
         9852: "i18n/external-sdk-ja-json",
         9885: "platforms/platform.gamepix",
         9967: "platforms/platform.telegram"
-    } [e] || e) + "." + a.h() + ".js"), a.h = () => "551a189ae4c4f7effc61", a.g = function () {
+    } [e] || e) + "." + a.h() + ".js"), a.h = () => "551a189ae4c4f7effc61", a.g = function() {
         if ("object" == typeof globalThis) return globalThis;
         try {
             return this || new Function("return this")()
@@ -9919,7 +9954,7 @@
         a(2096);
         var e = a(233);
         const t = " fragment translations on Translations { en fr it de es zh pt ko ja ru tr ar id hi }";
-        var n, i = function (e, t, n, i) {
+        var n, i = function(e, t, n, i) {
             if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
             if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
             return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -9932,7 +9967,7 @@
         class h {
             constructor(e) {
                 n.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -9965,7 +10000,7 @@
         var d = a(6558);
         const u = e => `\n    __typename\n    ... on Problem { message }\n    ${e}\n`,
             p = new TextEncoder;
-        var f, m = function (e, t, n, i) {
+        var f, m = function(e, t, n, i) {
             if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
             if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
             return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -9985,7 +10020,7 @@
         class C {
             constructor(e) {
                 f.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -10082,7 +10117,7 @@
         class N {
             constructor(e) {
                 k.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -10093,7 +10128,7 @@
                 id: e,
                 tag: t
             }) {
-                return function (e, t, n, i) {
+                return function(e, t, n, i) {
                     if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                     if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                     return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -10112,7 +10147,7 @@
         class U {
             constructor(e) {
                 L.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -10120,13 +10155,13 @@
                     }(this, L, e, "f")
             }
             join(e) {
-                return t = this, n = void 0, r = function* () {
-                    return function (e, t, n, i) {
+                return t = this, n = void 0, r = function*() {
+                    return function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
                     }(this, L, "f").fetch(j, e)
-                }, new((i = void 0) || (i = Promise))((function (e, s) {
+                }, new((i = void 0) || (i = Promise))((function(e, s) {
                     function a(e) {
                         try {
                             c(r.next(e))
@@ -10145,7 +10180,7 @@
 
                     function c(t) {
                         var n;
-                        t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function (e) {
+                        t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function(e) {
                             e(n)
                         }))).then(a, o)
                     }
@@ -10155,8 +10190,8 @@
             }
         }
         L = new WeakMap;
-        var $, G = function (e, t, n, i) {
-                return new(n || (n = Promise))((function (r, s) {
+        var $, G = function(e, t, n, i) {
+                return new(n || (n = Promise))((function(r, s) {
                     function a(e) {
                         try {
                             c(i.next(e))
@@ -10175,14 +10210,14 @@
 
                     function c(e) {
                         var t;
-                        e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                        e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                             e(t)
                         }))).then(a, o)
                     }
                     c((i = i.apply(e, t || [])).next())
                 }))
             },
-            B = function (e, t, n, i) {
+            B = function(e, t, n, i) {
                 if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                 if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                 return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -10197,7 +10232,7 @@
         class Z {
             constructor(e) {
                 $.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -10244,19 +10279,19 @@
             loginPlayer({
                 token: e
             }) {
-                return G(this, void 0, void 0, (function* () {
+                return G(this, void 0, void 0, (function*() {
                     return B(this, $, "f").fetch("\nmutation ($input: LoginPlayerInput!) {\n    result: LoginPlayer(input: $input) {\n        __typename\n        ... on Problem { message }\n        ... on Success { success }\n    }\n}", {
                         token: e
                     })
                 }))
             }
             logoutPlayer() {
-                return G(this, void 0, void 0, (function* () {
+                return G(this, void 0, void 0, (function*() {
                     return B(this, $, "f").fetch("\nmutation {\n    result: LogoutPlayer {\n        __typename\n        ... on Problem { message }\n        ... on Success { success }\n    }\n}")
                 }))
             }
             fetchFields() {
-                return G(this, void 0, void 0, (function* () {
+                return G(this, void 0, void 0, (function*() {
                     return B(this, $, "f").fetch(Y)
                 }))
             }
@@ -10301,7 +10336,7 @@
             }
         }
         $ = new WeakMap;
-        var X, H = function (e, t, n, i) {
+        var X, H = function(e, t, n, i) {
             if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
             if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
             return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -10312,7 +10347,7 @@
         class ne {
             constructor(e) {
                 X.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -10331,7 +10366,7 @@
         class re {
             constructor(e) {
                 ie.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -10343,7 +10378,7 @@
                 tag: t,
                 urlFrom: n
             }) {
-                return function (e, t, n, i) {
+                return function(e, t, n, i) {
                     if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                     if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                     return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -10357,8 +10392,8 @@
             }
         }
         ie = new WeakMap;
-        var se, ae = function (e, t, n, i) {
-                return new(n || (n = Promise))((function (r, s) {
+        var se, ae = function(e, t, n, i) {
+                return new(n || (n = Promise))((function(r, s) {
                     function a(e) {
                         try {
                             c(i.next(e))
@@ -10377,14 +10412,14 @@
 
                     function c(e) {
                         var t;
-                        e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                        e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                             e(t)
                         }))).then(a, o)
                     }
                     c((i = i.apply(e, t || [])).next())
                 }))
             },
-            oe = function (e, t, n, i) {
+            oe = function(e, t, n, i) {
                 if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                 if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                 return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -10400,7 +10435,7 @@
         class ve {
             constructor(e) {
                 se.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -10415,7 +10450,7 @@
                 withMe: r = "none",
                 showNearest: s
             }) {
-                return ae(this, void 0, void 0, (function* () {
+                return ae(this, void 0, void 0, (function*() {
                     return oe(this, se, "f").fetchMany(de, {
                         orderBy: e,
                         order: n,
@@ -10434,7 +10469,7 @@
                 limit: i = 10,
                 showNearest: r
             }) {
-                return ae(this, void 0, void 0, (function* () {
+                return ae(this, void 0, void 0, (function*() {
                     return oe(this, se, "f").fetch(ue, {
                         orderBy: e,
                         order: n,
@@ -10454,7 +10489,7 @@
                 order: a,
                 showNearest: o
             }) {
-                return ae(this, void 0, void 0, (function* () {
+                return ae(this, void 0, void 0, (function*() {
                     return oe(this, se, "f").fetchMany(pe, {
                         id: e,
                         tag: t,
@@ -10477,7 +10512,7 @@
                 order: s,
                 showNearest: a
             }) {
-                return ae(this, void 0, void 0, (function* () {
+                return ae(this, void 0, void 0, (function*() {
                     return oe(this, se, "f").fetch(fe, {
                         id: e,
                         tag: t,
@@ -10496,7 +10531,7 @@
                 record: i,
                 override: r
             }) {
-                return ae(this, void 0, void 0, (function* () {
+                return ae(this, void 0, void 0, (function*() {
                     return oe(this, se, "f").fetch(me, {
                         id: e,
                         tag: t,
@@ -10512,7 +10547,7 @@
         class ge {
             constructor(e) {
                 ye.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -10523,7 +10558,7 @@
                 type: e,
                 format: t
             }) {
-                return function (e, t, n, i) {
+                return function(e, t, n, i) {
                     if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                     if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                     return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -10535,7 +10570,7 @@
             }
         }
         ye = new WeakMap;
-        var we, be = function (e, t, n, i) {
+        var we, be = function(e, t, n, i) {
             if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
             if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
             return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -10549,7 +10584,7 @@
         class Ie {
             constructor(e) {
                 we.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -10604,7 +10639,7 @@
             }
         }
         we = new WeakMap;
-        var Ce, ke = function (e, t, n, i) {
+        var Ce, ke = function(e, t, n, i) {
             if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
             if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
             return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -10616,7 +10651,7 @@
         class xe {
             constructor(e) {
                 Ce.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -10651,7 +10686,7 @@
         class Fe {
             constructor(e) {
                 Le.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -10659,13 +10694,13 @@
                     }(this, Le, e, "f")
             }
             register(e) {
-                return t = this, n = void 0, r = function* () {
-                    return function (e, t, n, i) {
+                return t = this, n = void 0, r = function*() {
+                    return function(e, t, n, i) {
                         if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                         if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                         return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
                     }(this, Le, "f").fetch("\n    mutation ($input: PlayerRegisterOnSchedulerInput!) {\n        result: PlayerRegisterOnScheduler(input: $input) {\n            __typename\n            ... on Problem { message }\n            ... on PlayerScheduler { \n    daysClaimed\n    schedulerId\n    stats {\n        activeDays\n        activeDaysConsecutive\n    }\n }\n        }\n    }\n", e)
-                }, new((i = void 0) || (i = Promise))((function (e, s) {
+                }, new((i = void 0) || (i = Promise))((function(e, s) {
                     function a(e) {
                         try {
                             c(r.next(e))
@@ -10684,7 +10719,7 @@
 
                     function c(t) {
                         var n;
-                        t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function (e) {
+                        t.done ? e(t.value) : (n = t.value, n instanceof i ? n : new i((function(e) {
                             e(n)
                         }))).then(a, o)
                     }
@@ -10695,8 +10730,8 @@
         }
         Le = new WeakMap;
         var Me, je, Ue, $e, Ge = a(5239),
-            Be = function (e, t, n, i) {
-                return new(n || (n = Promise))((function (r, s) {
+            Be = function(e, t, n, i) {
+                return new(n || (n = Promise))((function(r, s) {
                     function a(e) {
                         try {
                             c(i.next(e))
@@ -10715,19 +10750,19 @@
 
                     function c(e) {
                         var t;
-                        e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function (e) {
+                        e.done ? r(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                             e(t)
                         }))).then(a, o)
                     }
                     c((i = i.apply(e, t || [])).next())
                 }))
             },
-            qe = function (e, t, n, i) {
+            qe = function(e, t, n, i) {
                 if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                 if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                 return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
             },
-            Ve = function (e, t, n, i, r) {
+            Ve = function(e, t, n, i, r) {
                 if ("m" === i) throw new TypeError("Private method is not writable");
                 if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                 if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -10773,7 +10808,7 @@
                 fetch(`${this.config.apiUrl}/ping?t=${e}`)
             }
             signQuery(e = null) {
-                return Be(this, void 0, void 0, (function* () {
+                return Be(this, void 0, void 0, (function*() {
                     const t = {
                             projectId: this.config.projectId,
                             query: Ye(e),
@@ -10787,7 +10822,7 @@
                 }))
             }
             fetch(e, t, n) {
-                return Be(this, void 0, void 0, (function* () {
+                return Be(this, void 0, void 0, (function*() {
                     return this.fetchMany(e, t, n).then((({
                         result: e
                     }) => ((e => {
@@ -10796,7 +10831,7 @@
                 }))
             }
             fetchMany(e, t, n = {}) {
-                return Be(this, void 0, void 0, (function* () {
+                return Be(this, void 0, void 0, (function*() {
                     const {
                         input: i,
                         hash: r
@@ -10809,7 +10844,7 @@
                                 lang: this.config.lang.toUpperCase()
                             }, n)
                         }),
-                        c = function (e = {}) {
+                        c = function(e = {}) {
                             return Object.keys(e).filter((t => e[t] instanceof File))
                         }(t);
                     if (c.length > 0) {
@@ -10839,7 +10874,7 @@
                     }).catch((e => {
                         if (String(null == e ? void 0 : e.message).includes("Failed to fetch")) throw "connection_error";
                         throw e
-                    })).then((e => Be(this, void 0, void 0, (function* () {
+                    })).then((e => Be(this, void 0, void 0, (function*() {
                         var t;
                         if (!e.ok) {
                             const t = yield e.text();
@@ -10860,7 +10895,7 @@
             return Array.isArray(e) ? e.map(Ye) : null !== e && "object" == typeof e ? (Object.getOwnPropertySymbols(e).length > 0 && (e = JSON.parse(JSON.stringify(e))), t = {}, Object.keys(e).sort().forEach((n => t[n] = Ye(e[n]))), t) : e
         }
         Me = new WeakMap, je = new WeakMap, Ue = new WeakMap, $e = new WeakMap;
-        var Ke, Je = function (e, t, n, i) {
+        var Ke, Je = function(e, t, n, i) {
             if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
             if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
             return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -10877,7 +10912,7 @@
         class st {
             constructor(e) {
                 Ke.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -10947,7 +10982,7 @@
             }
         }
         Ke = new WeakMap;
-        var at, ot = function (e, t, n, i) {
+        var at, ot = function(e, t, n, i) {
             if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
             if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
             return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -10966,7 +11001,7 @@
         class wt {
             constructor(e) {
                 at.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -11086,7 +11121,7 @@
             return e.items = e.items.map(bt), e
         }
         at = new WeakMap;
-        var Et, Tt = function (e, t, n, i) {
+        var Et, Tt = function(e, t, n, i) {
             if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
             if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
             return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -11099,7 +11134,7 @@
         class kt {
             constructor(e) {
                 Et.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -11148,7 +11183,7 @@
             }
         }
         Et = new WeakMap;
-        var Rt, Ot = function (e, t, n, i) {
+        var Rt, Ot = function(e, t, n, i) {
             if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
             if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
             return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -11163,7 +11198,7 @@
         class Ut {
             constructor(e) {
                 Rt.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -11239,7 +11274,7 @@
             }
         }
         Rt = new WeakMap;
-        var $t, Gt = function (e, t, n, i) {
+        var $t, Gt = function(e, t, n, i) {
             if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
             if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
             return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -11258,7 +11293,7 @@
         class Qt {
             constructor(e) {
                 $t.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -11359,7 +11394,7 @@
         $t = new WeakMap;
 
         function en(e, t, n, i) {
-            return r = this, s = void 0, c = function* () {
+            return r = this, s = void 0, c = function*() {
                 const r = [{
                         transport: "websocket",
                         endpoint: t
@@ -11378,7 +11413,7 @@
                     protocol: "protobuf",
                     debug: !0
                 })
-            }, new((o = void 0) || (o = Promise))((function (e, t) {
+            }, new((o = void 0) || (o = Promise))((function(e, t) {
                 function n(e) {
                     try {
                         a(c.next(e))
@@ -11397,7 +11432,7 @@
 
                 function a(t) {
                     var r;
-                    t.done ? e(t.value) : (r = t.value, r instanceof o ? r : new o((function (e) {
+                    t.done ? e(t.value) : (r = t.value, r instanceof o ? r : new o((function(e) {
                         e(r)
                     }))).then(n, i)
                 }
@@ -11405,7 +11440,7 @@
             }));
             var r, s, o, c
         }
-        var tn, nn = function (e, t, n, i) {
+        var tn, nn = function(e, t, n, i) {
             if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
             if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
             return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -11413,7 +11448,7 @@
         class rn {
             constructor(e) {
                 tn.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -11430,7 +11465,7 @@
         class cn {
             constructor(e) {
                 sn.set(this, void 0),
-                    function (e, t, n, i, r) {
+                    function(e, t, n, i, r) {
                         if ("m" === i) throw new TypeError("Private method is not writable");
                         if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
                         if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -11441,7 +11476,7 @@
                 text: e,
                 options: t
             }) {
-                return function (e, t, n, i) {
+                return function(e, t, n, i) {
                     if ("a" === n && !i) throw new TypeError("Private accessor was defined without a getter");
                     if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
                     return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
@@ -11491,15 +11526,15 @@
             }
         }
         window.__SDKProvider = "GamePush", new dn(void 0, {
-            preparePlatform: function ({
+            preparePlatform: function({
                 platformType: e,
                 tools: t
             }) {
-                return function (e, t) {
+                return function(e, t) {
                     return (hn[e] || hn[ln.z.NONE])().then((n => n.default(t, e)))
                 }(e, t)
             },
-            servicesChunk: function (e) {
+            servicesChunk: function(e) {
                 const t = new ze(e);
                 return {
                     apiClient: t,
