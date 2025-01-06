@@ -9326,9 +9326,6 @@ console.error = function() {
                 }
             },
 
-console.error = function() {
-    // Просто ничего не делаем, чтобы скрыть ошибку в консоли
-};
 
 8293: (e, t, n) => {
     "use strict";
