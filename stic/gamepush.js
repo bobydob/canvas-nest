@@ -9820,7 +9820,7 @@ console.error = function() {
         })
     }, a.f = {}, a.e = e => Promise.all(Object.keys(a.f).reduce(((t, n) => (a.f[n](e, t), t)), [])), a.u = e => (({
         72: "utils/centrifuge.protobuf",
-        369: "static",
+        369: "platforms/platform.gm",
         423: "i18n/external-sdk-tr-json",
         477: "platforms/platform.gp",
         848: "i18n/ja-json",
