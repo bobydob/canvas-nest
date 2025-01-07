@@ -1,4 +1,3 @@
-/*! For license information please see gamepush.js.LICENSE.txt */
 (() => {
     var e, t, n, i, r = {
             2616: e => {
@@ -9878,7 +9877,7 @@ console.error = function() {
         9852: "i18n/external-sdk-ja-json",
         9885: "platforms/platform.gamepix",
         9967: "platforms/platform.telegram"
-    } [e] || e) + "." + a.h() + ".js"), a.h = () => "551a189ae4c4f7effc61", a.g = function() {
+    } [e] || e) + "." + a.h() + ".js"), a.h = () => "", a.g = function() {
         if ("object" == typeof globalThis) return globalThis;
         try {
             return this || new Function("return this")()
